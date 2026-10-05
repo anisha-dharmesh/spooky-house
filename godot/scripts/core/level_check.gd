@@ -1,6 +1,6 @@
 class_name LevelCheck
 extends RefCounted
-## Checks a level for mistakes and can plan walking routes. A port of src/levels/validate.ts.
+## Checks the world and its tasks for mistakes and can plan walking routes.
 
 const CELL := 0.2
 
@@ -11,25 +11,31 @@ var rows := 0
 var blocked := PackedByteArray()
 
 
-func _init(p_world: WorldData) -> void:
+## `locked`: the rooms that are shut at this point of the game (their doors count as walls).
+func _init(p_world: WorldData, locked: Dictionary = {}) -> void:
 	world = p_world
 	var b := world.bounds
 	origin = b.position
 	cols = int(ceil(b.size.x / CELL))
 	rows = int(ceil(b.size.y / CELL))
 	blocked.resize(cols * rows)
-	var blockers := world.blockers()
 	var r := GameLogic.PLAYER_RADIUS
 	for cy in rows:
 		for cx in cols:
 			var p := cell_center(cx, cy)
-			var bad := p.x < b.position.x + r or p.y < b.position.y + r or p.x > b.end.x - r or p.y > b.end.y - r
-			if not bad:
-				for rc in blockers:
-					if Geo.dist_to_rect(p, rc) < r - 0.02:
-						bad = true
-						break
-			blocked[cy * cols + cx] = 1 if bad else 0
+			if p.x < b.position.x + r or p.y < b.position.y + r or p.x > b.end.x - r or p.y > b.end.y - r:
+				blocked[cy * cols + cx] = 1
+	# mark the cells near each blocker (instead of testing every cell against every blocker: the world is big)
+	for rc in world.blockers(locked):
+		var x0 := maxi(0, int(floor((rc.position.x - r - origin.x) / CELL)))
+		var x1 := mini(cols - 1, int(ceil((rc.end.x + r - origin.x) / CELL)))
+		var y0 := maxi(0, int(floor((rc.position.y - r - origin.y) / CELL)))
+		var y1 := mini(rows - 1, int(ceil((rc.end.y + r - origin.y) / CELL)))
+		for cy in range(y0, y1 + 1):
+			for cx in range(x0, x1 + 1):
+				var i := cy * cols + cx
+				if blocked[i] == 0 and Geo.dist_to_rect(cell_center(cx, cy), rc) < r - 0.02:
+					blocked[i] = 1
 
 
 func cell_center(cx: int, cy: int) -> Vector2:
@@ -131,74 +137,160 @@ func path_to_rect(from: Vector2, r: Rect2, within: float) -> Array[Vector2]:
 
 
 ## Returns a list of problems (empty = fine).
-static func validate(level: Dictionary, rooms: Dictionary, kinds: Dictionary) -> Array[String]:
+static func validate(world_def: Dictionary, tasks: Array, rooms: Dictionary, kinds: Dictionary) -> Array[String]:
 	var errors: Array[String] = []
-	var tag := "Level %d: " % int(level.id)
-	for id in level.rooms:
-		if rooms.get(id, {}).is_empty():
-			errors.append(tag + 'unknown room "%s"' % id)
+	var ids: Array = world_def.get("rooms", [])
+	var layout_errors: Array = []
+	var placed := WorldBuilder.layout(ids, rooms, layout_errors)
+	for e in layout_errors:
+		errors.append("World: " + String(e))
 	if errors.size() > 0:
 		return errors
-	var world := WorldBuilder.build(level, rooms)
-	var chk := LevelCheck.new(world)
-	var dist := chk.flood(world.spawn)
-	if not chk.reachable_from(dist, world.spawn):
-		errors.append(tag + "the spawn point is inside a wall or furniture")
+	for i in ids.size():
+		for j in range(i + 1, ids.size()):
+			if _footprint(placed[ids[i]]).intersects(_footprint(placed[ids[j]])):
+				errors.append('World: rooms "%s" and "%s" overlap' % [ids[i], ids[j]])
+	if not world_def.has("respawn") or not ids.has(world_def.respawn.room):
+		errors.append('World: "respawn" must name a room of the world')
+	if errors.size() > 0:
 		return errors
-	var all_items: Array = []
-	for id in level.rooms:
-		all_items.append_array(rooms[id].items)
+	var world := WorldBuilder.build(world_def, tasks, rooms)
+	var everything := world.blockers()
+
+	# which task opens which room
+	var opens_at := {}
+	var task_ids := {}
+	var item_owner := {}
+	var extra_ids := {}
+	for i in tasks.size():
+		var t: Dictionary = tasks[i]
+		var tag := "Task %d: " % int(t.id)
+		if task_ids.has(int(t.id)):
+			errors.append(tag + "the id is used twice")
+		task_ids[int(t.id)] = true
+		for r in t.get("unlocks", []):
+			if not ids.has(r):
+				errors.append(tag + 'unlocks "%s", which is not a room of the world' % r)
+			opens_at[r] = i
+		for e in t.get("extras", []):
+			if extra_ids.has(e.id):
+				errors.append(tag + 'extra "%s" is also in another task' % e.id)
+			extra_ids[e.id] = true
+		for s in t.steps:
+			if s.type == "pickup" or s.type == "use":
+				if item_owner.has(s.item) and item_owner[s.item] != i:
+					errors.append(tag + 'item "%s" is also used by task %d' % [s.item, int(tasks[item_owner[s.item]].id)])
+				item_owner[s.item] = i
+
+	var checks := {}   # which rooms are shut -> its LevelCheck (several tasks share one)
 	var reach := GameLogic.REACH - 0.07
-	if level.steps.size() == 0:
-		errors.append(tag + "has no steps")
-	var n := 0
-	for s in level.steps:
-		n += 1
-		var at := tag + "step %d: " % n
-		if s.type == "pickup" or s.type == "use":
-			var found: Variant = null
-			for it in all_items:
-				if it.uid == s.item:
-					found = it
-			if found == null:
-				errors.append(at + 'no item "%s" in the rooms of this level' % s.item)
-			elif not found.tags.has("pickup"):
-				errors.append(at + '"%s" can\'t be picked up (no "pickup" tag)' % s.item)
-			else:
-				for p in world.pickups:
-					if p.uid == s.item and not chk.can_reach_rect(dist, p.rect, reach):
-						errors.append(at + 'the player can\'t get to "%s"' % s.item)
-		if s.type == "use":
-			var tg: Variant = null
-			for t in world.targets:
-				if t.id == s.target:
-					tg = t
-			if tg == null:
-				errors.append(at + 'no target "%s" (a room item uid, or an id from "extras")' % s.target)
-			elif not chk.can_reach_rect(dist, tg.rect, reach):
-				errors.append(at + 'the player can\'t get to "%s"' % s.target)
-		if s.type == "reach":
-			var ex: Variant = null
-			for e in world.exits:
-				if e.id == s.zone:
-					ex = e
-			if ex == null:
-				errors.append(at + 'no exit "%s" (add it to "exits")' % s.zone)
-			elif not chk.can_reach_rect(dist, ex.rect, 0.0):
-				errors.append(at + 'the player can\'t get to exit "%s"' % s.zone)
+	for i in tasks.size():
+		var t: Dictionary = tasks[i]
+		var tag := "Task %d: " % int(t.id)
+		var locked := _locked_at(opens_at, i)
+		var chk := _check_for(world, locked, checks)
+		var dist := chk.flood(world.respawn)
+		if not chk.reachable_from(dist, world.respawn):
+			errors.append(tag + "the respawn point is inside a wall or furniture")
+			return errors
+		if t.steps.size() == 0:
+			errors.append(tag + "has no steps")
+		var n := 0
+		for s in t.steps:
+			n += 1
+			var at := tag + "step %d: " % n
+			match s.type:
+				"pickup", "use":
+					var sprite: Variant = null
+					for sp in world.sprites:
+						if sp.uid == s.item:
+							sprite = sp
+					if sprite == null:
+						errors.append(at + 'no item "%s" (write it as room id/uid, like gh_kitchen/cement_bag_1)' % s.item)
+					elif not sprite.tags.has("pickup"):
+						errors.append(at + '"%s" can\'t be picked up (no "pickup" tag)' % s.item)
+					else:
+						for p in world.pickups:
+							if p.uid == s.item and not chk.can_reach_rect(dist, p.rect, reach):
+								errors.append(at + 'the player can\'t get to "%s" at this point (a locked room?)' % s.item)
+					if s.type == "use":
+						var tg: Variant = null
+						for tt in world.targets:
+							if tt.id == s.target:
+								tg = tt
+						if tg == null:
+							errors.append(at + 'no target "%s" (room id/uid of an item, or an id from "extras")' % s.target)
+						elif not chk.can_reach_rect(dist, tg.rect, reach):
+							errors.append(at + 'the player can\'t get to "%s" at this point (a locked room?)' % s.target)
+				"reach":
+					var rm := world.room_by_id(String(s.get("room", "")))
+					if rm.is_empty():
+						errors.append(at + 'no room "%s" to reach' % s.get("room", ""))
+					elif not chk.can_reach_rect(dist, (rm.interior as Rect2).grow(-0.5), 0.0):
+						errors.append(at + 'the player can\'t get into "%s" at this point' % s.room)
+				_:
+					errors.append(at + 'unknown step type "%s"' % s.type)
+		# the rooms this task opens must be reachable once it is done
+		var after := _check_for(world, _locked_at(opens_at, i + 1), checks)
+		var dist_after := after.flood(world.respawn)
+		for r in t.get("unlocks", []):
+			var rm2 := world.room_by_id(r)
+			if not rm2.is_empty() and not after.can_reach_rect(dist_after, (rm2.interior as Rect2).grow(-0.5), 0.0):
+				errors.append(tag + 'the room "%s" it unlocks can\'t be reached' % r)
+		for b in t.get("baddies", []):
+			if not kinds.has(b.kind):
+				errors.append(tag + 'baddie "%s": unknown kind "%s"' % [b.id, b.kind])
+			if b.patrol.size() < 2:
+				errors.append(tag + 'baddie "%s": needs at least 2 patrol points' % b.id)
+				continue
+			var pts: Array[Vector2] = []
+			var ok := true
+			for pt in b.patrol:
+				if not world.origins.has(pt.room):
+					errors.append(tag + 'baddie "%s": no room "%s"' % [b.id, pt.room])
+					ok = false
+					continue
+				pts.append(world.spot(pt))
+			if not ok:
+				continue
+			for k in pts.size():
+				for rc in everything:
+					if Geo.point_in_rect(pts[k], rc):
+						errors.append(tag + 'baddie "%s": patrol point %d is inside a wall or furniture' % [b.id, k + 1])
+						break
+				var nxt := pts[(k + 1) % pts.size()]
+				if not Geo.has_line_of_sight(pts[k], nxt, everything):
+					errors.append(tag + 'baddie "%s": the walk from point %d to the next one crosses a wall or furniture' % [b.id, k + 1])
+
+	# with everything open, every hiding spot must be reachable
+	var open_chk := _check_for(world, {}, checks)
+	var open_dist := open_chk.flood(world.respawn)
 	for h in world.hides:
-		if not chk.can_reach_rect(dist, h.rect, reach):
-			errors.append(tag + 'hiding spot "%s" (%s) can\'t be reached' % [h.name, h.uid])
-	for b in level.baddies:
-		if not kinds.has(b.kind):
-			errors.append(tag + 'baddie "%s": unknown kind "%s"' % [b.id, b.kind])
-		if b.patrol.size() < 2:
-			errors.append(tag + 'baddie "%s": needs at least 2 patrol points' % b.id)
-	var blockers := world.blockers()
-	for mb in world.baddies:
-		for p in mb.patrol:
-			for r in blockers:
-				if Geo.point_in_rect(p.pos, r):
-					errors.append(tag + 'baddie "%s": a patrol point is inside a wall or furniture' % mb.id)
-					break
+		if not open_chk.can_reach_rect(open_dist, h.rect, reach):
+			errors.append('World: hiding spot "%s" (%s) can\'t be reached' % [h.name, h.uid])
 	return errors
+
+
+## The rooms still shut when task number `i` (0-based) starts.
+static func _locked_at(opens_at: Dictionary, i: int) -> Dictionary:
+	var locked := {}
+	for r in opens_at:
+		if opens_at[r] >= i:
+			locked[r] = true
+	return locked
+
+
+static func _check_for(world: WorldData, locked: Dictionary, cache: Dictionary) -> LevelCheck:
+	var keys := locked.keys()
+	keys.sort()
+	var key := ",".join(keys)
+	if not cache.has(key):
+		cache[key] = LevelCheck.new(world, locked)
+	return cache[key]
+
+
+## A room with its walls, as a slightly shrunk rect (so rooms that share a doorway wall don't count as overlapping).
+static func _footprint(p: Dictionary) -> Rect2:
+	var w: float = p.room.size.w * WorldBuilder.T
+	var h: float = p.room.size.h * WorldBuilder.T
+	return Rect2(p.ox - WorldBuilder.B, p.oy - WorldBuilder.B, w + 2 * WorldBuilder.B, h + 2 * WorldBuilder.B).grow(-0.01)

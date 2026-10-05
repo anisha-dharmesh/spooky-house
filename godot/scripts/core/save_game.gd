@@ -1,5 +1,6 @@
 extends Node
-## Autoload "SaveGame": language and stars per level, kept in user://save.cfg.
+## Autoload "SaveGame": language and stars per task, kept in user://save.cfg.
+## A finished task and its stars are all that is saved: the game always starts in Anisha's room.
 
 const PATH := "user://save.cfg"
 var _cfg := ConfigFile.new()
@@ -7,6 +8,9 @@ var _cfg := ConfigFile.new()
 
 func _ready() -> void:
 	_cfg.load(PATH)
+	if _cfg.has_section("levels") and not _cfg.has_section("tasks"): # saves from when tasks were called levels
+		for k in _cfg.get_section_keys("levels"):
+			_cfg.set_value("tasks", k, _cfg.get_value("levels", k))
 	GameData.lang = _cfg.get_value("settings", "lang", "en")
 
 
@@ -15,22 +19,30 @@ func save_lang(lang: String) -> void:
 	_cfg.save(PATH)
 
 
-func is_completed(level_id: int) -> bool:
-	return _cfg.has_section_key("levels", str(level_id))
+func completed_ids() -> Array:
+	var out: Array = []
+	if _cfg.has_section("tasks"):
+		for k in _cfg.get_section_keys("tasks"):
+			out.append(int(k))
+	return out
 
 
-func stars(level_id: int) -> int:
-	return int(_cfg.get_value("levels", str(level_id), 0))
+func is_completed(task_id: int) -> bool:
+	return _cfg.has_section_key("tasks", str(task_id))
 
 
-func record(level_id: int, star_count: int) -> void:
-	_cfg.set_value("levels", str(level_id), maxi(star_count, stars(level_id)))
+func stars(task_id: int) -> int:
+	return int(_cfg.get_value("tasks", str(task_id), 0))
+
+
+func record(task_id: int, star_count: int) -> void:
+	_cfg.set_value("tasks", str(task_id), maxi(star_count, stars(task_id)))
 	_cfg.save(PATH)
 
 
 func total_stars() -> int:
 	var n := 0
-	if _cfg.has_section("levels"):
-		for k in _cfg.get_section_keys("levels"):
-			n += int(_cfg.get_value("levels", k, 0))
+	if _cfg.has_section("tasks"):
+		for k in _cfg.get_section_keys("tasks"):
+			n += int(_cfg.get_value("tasks", k, 0))
 	return n

@@ -1,7 +1,9 @@
 # Anisha's Spooky House: 3D (Godot)
 
-The 3D version of the game, built with **Godot 4.7** and GDScript. Everything is grey placeholder boxes for now,
-built automatically from the art pack's room layouts. Objects without a model yet are grey boxes.
+The 3D version of the game, built with **Godot 4.7** and GDScript. It is **one continuous world**: Anisha starts in her room,
+walks through town to Granny's house and does tasks one after another. Finishing a task can unlock rooms (until then the door
+says LOCKED). If she is caught she wakes up in her room and drops everything she carried. The world is built automatically
+from the art pack's room layouts. Objects without a model yet are grey boxes.
 
 ## Run it
 
@@ -9,7 +11,7 @@ built automatically from the art pack's room layouts. Objects without a model ye
 2. Open this `godot/` folder in Godot (Project Manager → Import → `project.godot`) and press **Play** (F5).
    The first time, Godot imports the fonts; wait for it to finish.
 
-From a terminal: `godot --path godot`.
+From a terminal: `godot --path godot`. To start at a later task: `godot --path godot -- --task 2`.
 
 ## Controls
 
@@ -31,18 +33,19 @@ Two cameras: the tilted **dollhouse** view (walls drop low so you can see in) an
 
 | Path | What |
 | --- | --- |
-| `scripts/core/world_builder.gd` | Turns a level's rooms (from the art pack) into walls, furniture, hiding spots, exits |
+| `scripts/core/world_builder.gd` | Turns the world's rooms (from the art pack) into walls, doors, furniture and hiding spots |
 | `scripts/core/geo.gd` | Floor-plan geometry: sight rays, cones, collisions |
-| `scripts/game/game_logic.gd` | The rules: movement, patrols, sight, "seen" meter, items, hiding, steps, pets. No drawing |
-| `scripts/game/level_view.gd` | Shows the logic in 3D, plus both cameras and the sight cones |
+| `scripts/game/game_logic.gd` | The rules: movement, patrols, sight, "seen" meter, locked rooms, items, hiding, the tasks in order, getting caught, pets. No drawing |
+| `scripts/game/level_view.gd` | Shows the logic in 3D, plus both cameras, the sight cones and the light (dark in Granny's house, bright elsewhere) |
 | `scripts/game/model_library.gd` | Makes each object (a grey box today). **This is where real 3D models plug in** |
 | `scripts/ui/` | Title screen, HUD, pause / caught / prank-done screens, touch controls |
-| `data/` | Levels, baddies, text (English and Hindi) and the room layouts. Edit these directly |
+| `data/` | The world, the tasks, baddies, text (English and Hindi) and the room layouts. Edit these directly |
 | `tests/` | Headless checks |
 
 ## Data
 
-Levels, baddie kinds, text and room layouts are plain JSON in `data/`. Adding a level: see [../docs/ADDING_LEVELS.md](../docs/ADDING_LEVELS.md).
+The world (`world.json`), the tasks (`tasks.json`), baddie kinds, text and room layouts are plain JSON in `data/`.
+Adding a task or a room: see [../docs/ADDING_TASKS.md](../docs/ADDING_TASKS.md).
 
 ## 3D models
 
@@ -67,16 +70,17 @@ but do not take you anywhere yet.
 ## Checks
 
 ```bash
-godot --headless --path godot --script tests/level_test.gd    # validates every level and has a bot play it
-godot --headless --path godot --script tests/world_test.gd    # prints a summary of each built level
+godot --headless --path godot --script tests/task_test.gd     # validates the world and every task, and has a bot do each task
+godot --headless --path godot --script tests/rules_test.gd    # locked rooms, tasks in order, early pickups, getting caught, saves
+godot --headless --path godot --script tests/world_test.gd    # prints where every room is
 npm run check                                                 # all of the checks, including the model checks
-godot --headless --path godot -- --selftest                   # presses keys in the real game: move, camera, pick up
+godot --headless --path godot -- --selftest                   # presses keys in the real game: move, camera, pick up, finish a task, get caught
 ```
 
 After a fresh clone, run `godot --headless --path godot --import` once so Godot registers the scripts and fonts.
 
-The bot walks the shortest route (sneaking, never hiding) at many different start moments. A level must be winnable at some
-moment. The share of start moments it wins shows how hard the level is: Level 1 is won 15 times out of 20.
+The bot starts in Anisha's room with the earlier tasks done, waits a different time each try, then walks the shortest route
+(sneaking, never hiding). A task must be winnable at some moment. The share of start moments it wins shows how hard the task is.
 
 ## Publishing
 
@@ -86,4 +90,7 @@ are easier. We should decide the target before setting up exports.
 
 ## Not built yet
 
-Level map screen, stairs and lift between floors (the models are there but are decoration for now), sound, models for the other 150 objects, the other baddies (Labubu, Kabla), and only Level 1 exists. Anisha's look is a stand-in until she decides.
+Stairs and lift between floors (the models are there but are decoration for now), the rest of the town (playground, school,
+hospital, palace; there is only a short street between the two houses), an arrow pointing to where the task is, sound, models for
+the other 150 objects, the other baddies (Labubu, Kabla), and only two tasks exist (task 2, the lemon in the tea, is a stand-in from
+the approved suggestions until Anisha picks hers). Anisha's look is a stand-in until she decides.

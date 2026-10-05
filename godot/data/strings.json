@@ -180,8 +180,8 @@
   "hi": "पहले {item} चाहिए!"
  },
  "notYet": {
-  "en": "Not yet… do the earlier steps first.",
-  "hi": "अभी नहीं… पहले पिछले काम करो।"
+  "en": "Not yet… do your current task first.",
+  "hi": "अभी नहीं… पहले अपना अभी वाला काम करो।"
  },
  "getOut": {
   "en": "Come out",
@@ -230,5 +230,45 @@
  "keysHelp3d": {
   "en": "WASD / arrows move · Shift sneak · E use · H hide · C pet · V camera · Q / R turn view",
   "hi": "WASD / तीर चलो · Shift चुपके · E उठाओ · H छुपो · C पालतू · V कैमरा · Q / R दृश्य घुमाओ"
+ },
+ "task": {
+  "en": "Task {n}",
+  "hi": "काम {n}"
+ },
+ "taskComplete": {
+  "en": "Task {n} complete",
+  "hi": "काम {n} पूरा"
+ },
+ "nextTask": {
+  "en": "Next task",
+  "hi": "अगला काम"
+ },
+ "doorLocked": {
+  "en": "Locked for now. Finish your tasks to open it.",
+  "hi": "अभी बंद है। अपने काम पूरे करो, तब खुलेगा।"
+ },
+ "lockedLabel": {
+  "en": "LOCKED",
+  "hi": "बंद"
+ },
+ "backHome": {
+  "en": "Back to my room",
+  "hi": "अपने कमरे में वापस"
+ },
+ "sentHome": {
+  "en": "You are sent back to your room and drop everything you were carrying.",
+  "hi": "तुम्हें तुम्हारे कमरे में भेज दिया गया और जो कुछ तुम्हारे पास था वो गिर गया।"
+ },
+ "newArea": {
+  "en": "New: {rooms}",
+  "hi": "नया खुला: {rooms}"
+ },
+ "allTasksDone": {
+  "en": "That is every task for now. More coming soon!",
+  "hi": "अभी के लिए बस इतने काम हैं। और जल्दी आएंगे!"
+ },
+ "allDone": {
+  "en": "All tasks done!",
+  "hi": "सारे काम पूरे!"
  }
 }

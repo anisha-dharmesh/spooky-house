@@ -1,11 +1,10 @@
 extends Node
-## Runs the game: title screen, the level, and the pause / caught / prank-done overlays.
+## Runs the game: title screen, the world, and the pause / caught / task-done overlays.
 
 var _title: TitleScreen
 var _view: LevelView
 var _hud: Hud
 var _touch: TouchControls
-var _level_id := 1
 var _ui_layer: CanvasLayer
 
 
@@ -21,8 +20,8 @@ func _ready() -> void:
 	if "--selftest" in args:
 		_selftest()
 		return
-	if "--level" in args:
-		start_level(int(args[args.find("--level") + 1]))
+	if "--task" in args:
+		start_game(int(args[args.find("--task") + 1]))
 	else:
 		show_title()
 
@@ -38,19 +37,12 @@ func _use_touch() -> bool:
 func show_title() -> void:
 	_clear_game()
 	_title = TitleScreen.new()
-	_title.play_pressed.connect(func() -> void: start_level(_next_level_id()))
+	_title.play_pressed.connect(func() -> void: start_game())
 	_title.language_chosen.connect(func(lang: String) -> void:
 		GameData.set_lang(lang)
 		SaveGame.save_lang(lang)
 		show_title())
 	_ui_layer.add_child(_title)
-
-
-func _next_level_id() -> int:
-	for l in GameData.levels:
-		if not SaveGame.is_completed(int(l.id)):
-			return int(l.id)
-	return int(GameData.levels[GameData.levels.size() - 1].id)
 
 
 func _clear_game() -> void:
@@ -63,16 +55,20 @@ func _clear_game() -> void:
 	_touch = null
 
 
-func start_level(id: int) -> void:
+## Starts the world. `from_task` (a task id, for testing: --task 2) skips ahead as if the tasks before it were done;
+## otherwise the game carries on from the saved progress.
+func start_game(from_task: int = 0) -> void:
 	_clear_game()
-	_level_id = id
-	var level := GameData.get_level(id)
-	if level.is_empty():
-		show_title()
-		return
+	var done: Array = []
+	if from_task > 0:
+		for t in GameData.tasks:
+			if int(t.id) < from_task:
+				done.append(int(t.id))
+	else:
+		done = SaveGame.completed_ids()
 	_view = LevelView.new()
 	add_child(_view)
-	_view.setup(level)
+	_view.setup(done)
 	_hud = Hud.new()
 	add_child(_hud)
 	var touch := _use_touch()
@@ -89,22 +85,30 @@ func start_level(id: int) -> void:
 		_view.logic.player_pos = Vector2(float(xy[0]), float(xy[1]))
 	if "--third" in args:
 		_view.toggle_camera()
-	if "--result" in args: # screenshot helper: show the caught / prank-done screen straight away
-		var res := String(args[args.find("--result") + 1])
-		_view.logic.result = res
-		_view.logic.finished.emit(res)
+	if "--result" in args: # screenshot helper: show the caught or task-done screen straight away
+		if String(args[args.find("--result") + 1]) == "caught":
+			_view.logic.result = "caught"
+			_view.logic.finished.emit("caught")
+		else:
+			_view.logic.task_completed.emit(_view.logic.task, _view.logic.rating(), [])
 	if "--pause" in args:
 		_pause()
 	_view.pause_requested.connect(_pause)
+	_view.logic.task_completed.connect(_on_task_completed)
 	_hud.pause_requested.connect(_pause)
 	_hud.resume_requested.connect(_resume)
-	_hud.retry_requested.connect(func() -> void: start_level(_level_id))
-	_hud.next_requested.connect(func() -> void: start_level(_level_id + 1))
+	_hud.respawn_requested.connect(_respawn)
+	_hud.continue_requested.connect(_resume)
 	_hud.menu_requested.connect(show_title)
 
 
+func _on_task_completed(task: Dictionary, rating: Dictionary, _opened: Array) -> void:
+	SaveGame.record(int(task.id), int(rating.stars))
+	_view.active = false # the world waits while the "prank done" screen is up
+
+
 func _pause() -> void:
-	if _view.logic.result != "":
+	if _view.logic.result != "" or _hud.has_overlay():
 		return
 	_view.active = false
 	_hud.show_pause()
@@ -115,9 +119,15 @@ func _resume() -> void:
 	_hud.hide_overlay()
 
 
+## Back to her room after being caught (or from the pause menu).
+func _respawn() -> void:
+	_view.logic.respawn()
+	_resume()
+
+
 ## `godot --headless --path godot -- --selftest`: presses keys in the real game and checks the controls work.
 func _selftest() -> void:
-	start_level(1)
+	start_game(1)
 	var start := _view.logic.player_pos
 	Input.action_press("move_left")
 	for i in 90:
@@ -127,7 +137,7 @@ func _selftest() -> void:
 	_view.toggle_camera()
 	var cam_mode := _view.cam_mode
 	# grab the cement by standing next to it and pressing Use
-	var cement: Dictionary = _view.logic.pick_by_uid("cement_bag_1")
+	var cement: Dictionary = _view.logic.pick_by_id("gh_kitchen/cement_bag_1")
 	_view.logic.player_pos = (cement.rect as Rect2).get_center() + Vector2(1.0, 0)
 	var ev := InputEventAction.new()
 	ev.action = "use"
@@ -135,6 +145,33 @@ func _selftest() -> void:
 	Input.parse_input_event(ev)
 	await get_tree().process_frame
 	await get_tree().process_frame
-	var has_cement := _view.logic.inventory.has("cement_bag_1")
+	var has_cement := _view.logic.inventory.has("gh_kitchen/cement_bag_1")
 	print("moved %.2f m holding left; camera mode %d; picked up cement: %s" % [moved, cam_mode, has_cement])
-	get_tree().quit(0 if (moved > 1.0 and cam_mode == 1 and has_cement) else 1)
+	var ok: bool = moved > 1.0 and cam_mode == 1 and has_cement
+
+	# finish task 2 in the real game: the store room door should slide away and the "prank done" screen should show
+	start_game(2)
+	var logic := _view.logic
+	var slabs_before := _view._door_slabs.size()
+	var spots := [logic.pick_by_id("gh_kitchen/lemon_1").rect]
+	for t in logic.world.targets:
+		if t.id == "gh_kitchen/tea_cup_1":
+			spots.append(t.rect)
+	for r in spots:
+		logic.player_pos = (r as Rect2).get_center()
+		logic.use()
+	logic.player_pos = logic.world.room_by_id("lh_hall").interior.get_center()
+	await get_tree().create_timer(1.3).timeout # the door slides open, then the screen comes up
+	var slabs_after := _view._door_slabs.size()
+	var screen := _hud.has_overlay()
+	print("task 2 done: door slabs %d -> %d; prank-done screen up: %s; world waiting: %s" % [slabs_before, slabs_after, screen, not _view.active])
+	ok = ok and slabs_before > 0 and slabs_after == 0 and screen and not _view.active
+	_resume()
+	logic.result = "caught"
+	logic.finished.emit("caught")
+	await get_tree().create_timer(1.2).timeout
+	var caught_screen := _hud.has_overlay()
+	_respawn()
+	print("caught: screen up: %s; back in her room: %s" % [caught_screen, logic.player_pos == logic.world.respawn])
+	ok = ok and caught_screen and logic.player_pos == logic.world.respawn and logic.result == ""
+	get_tree().quit(0 if ok else 1)

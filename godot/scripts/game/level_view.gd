@@ -1,7 +1,8 @@
 class_name LevelView
 extends Node3D
-## Shows a level in 3D and drives the game each frame. Two cameras: a tilted "dollhouse" view from above
+## Shows the world in 3D and drives the game each frame. Two cameras: a tilted "dollhouse" view from above
 ## and a third-person view behind Anisha (V switches, Q / R or a drag turns the third-person camera).
+## Only Granny's house is spooky: the light and fog change as Anisha walks in and out of it.
 
 signal pause_requested
 
@@ -10,7 +11,6 @@ const WALL_H_THIRD := 2.6
 
 var logic: GameLogic
 var world: WorldData
-var level: Dictionary
 var active := true
 var touch: Node = null   # TouchControls when on a touch device
 
@@ -21,95 +21,142 @@ var yaw := 0.0
 var _player: Node3D
 var _player_fade: Array = []   # materials whose alpha shows sneaking / hiding
 var _player_anim: AnimationPlayer
-var _baddie_anims: Array = []
 var _prev_player := Vector2.ZERO
 var _you_label: Label3D
-var _baddies: Array[Node3D] = []
-var _bubbles: Array[Label3D] = []
-var _cones: Array[MeshInstance3D] = []
+var _bnodes := {}              # baddie id -> {node, bubble, cone, anim}
 var _cone_mat: StandardMaterial3D
-var _walls: Array[MeshInstance3D] = []
+var _walls: Array[MeshInstance3D] = []   # walls and shut doors: all drop low for the dollhouse view
+var _door_slabs: Array[Dictionary] = []  # {room, to, node, label} for doors that are shut
+var _wall_mats := {}
+var _floor_tex := {}
 var _wall_h := WALL_H_DOLLHOUSE
 var _pickup_nodes := {}
 var _target_nodes := {}
 var _marker: MeshInstance3D
 var _light: OmniLight3D
+var _sun: DirectionalLight3D
+var _env: Environment
+var _mood := {}                # the blended look of the light right now
 var _time := 0.0
 
 
-func setup(p_level: Dictionary) -> void:
-	level = p_level
-	world = WorldBuilder.build(level, GameData.rooms_for(level))
-	logic = GameLogic.new(level, world, GameData.baddie_kinds)
+## `done_ids`: tasks already finished (from the save).
+func setup(done_ids: Array) -> void:
+	world = WorldBuilder.build(GameData.world_def, GameData.tasks, GameData.world_rooms())
+	logic = GameLogic.new(world, GameData.tasks, GameData.baddie_kinds, done_ids)
 	_build_environment()
 	_build_rooms()
 	_build_walls()
+	_build_doors()
 	_build_props()
-	_build_extras_and_exits()
+	_build_extras()
 	_build_characters()
+	_sync_baddie_nodes()
 	_build_camera()
-	logic.item_picked.connect(func(uid: String) -> void:
-		if _pickup_nodes.has(uid):
-			_pickup_nodes[uid].visible = false)
+	logic.item_picked.connect(func(id: String) -> void:
+		if _pickup_nodes.has(id):
+			_pickup_nodes[id].visible = false)
+	logic.items_restored.connect(func(ids: Array) -> void:
+		for id in ids:
+			if _pickup_nodes.has(id):
+				_pickup_nodes[id].visible = true)
 	logic.steps_changed.connect(_place_marker)
 	logic.pet_called.connect(_on_pet_called)
-	logic.steps_changed.connect(_pop_used_target)
+	logic.target_used.connect(_pop_target)
+	logic.baddies_changed.connect(_sync_baddie_nodes)
+	logic.room_unlocked.connect(_open_doors_into)
+	logic.respawned.connect(_on_respawned)
+	for id in logic.picked: # used up in tasks that are already done
+		if _pickup_nodes.has(id):
+			_pickup_nodes[id].visible = false
 	_place_marker()
 
 
 # ---------- building ----------
 
-## Only Granny's house is spooky. Every other location gets a normal, bright daytime mood.
+## Only Granny's house is spooky. Every other place gets a normal, bright daytime mood.
 const SPOOKY_LOCATIONS := ["granny_house"]
+const MOODS := {
+	"spooky": {"bg": Color(0.03, 0.03, 0.035), "ambient": Color(0.62, 0.62, 0.66), "ambient_energy": 0.55,
+		"fog": 0.012, "sun": 0.55, "sun_color": Color(0.85, 0.87, 1.0), "light": 1.1},
+	"day": {"bg": Color(0.62, 0.66, 0.72), "ambient": Color(0.9, 0.9, 0.92), "ambient_energy": 0.9,
+		"fog": 0.0, "sun": 1.0, "sun_color": Color(1.0, 0.97, 0.9), "light": 0.0},
+}
 
 
-func _is_spooky() -> bool:
-	var first: Dictionary = GameData.room(level.rooms[0])
-	return SPOOKY_LOCATIONS.has(first.get("location", ""))
+func _is_spooky(location: String) -> bool:
+	return SPOOKY_LOCATIONS.has(location)
+
+
+func _mood_for(location: String) -> Dictionary:
+	return MOODS["spooky" if _is_spooky(location) else "day"]
 
 
 func _build_environment() -> void:
-	var spooky := _is_spooky()
-	var env := Environment.new()
-	env.background_mode = Environment.BG_COLOR
-	env.ambient_light_source = Environment.AMBIENT_SOURCE_COLOR
-	if spooky:
-		env.background_color = Color(0.03, 0.03, 0.035)
-		env.ambient_light_color = Color(0.62, 0.62, 0.66)
-		env.ambient_light_energy = 0.55
-		env.fog_enabled = true
-		env.fog_light_color = Color(0.05, 0.05, 0.06)
-		env.fog_density = 0.012
-	else:
-		env.background_color = Color(0.62, 0.66, 0.72)
-		env.ambient_light_color = Color(0.9, 0.9, 0.92)
-		env.ambient_light_energy = 0.9
+	_env = Environment.new()
+	_env.background_mode = Environment.BG_COLOR
+	_env.ambient_light_source = Environment.AMBIENT_SOURCE_COLOR
+	_env.fog_enabled = true
+	_env.fog_light_color = Color(0.05, 0.05, 0.06)
 	var we := WorldEnvironment.new()
-	we.environment = env
+	we.environment = _env
 	add_child(we)
-	var sun := DirectionalLight3D.new()
-	sun.rotation_degrees = Vector3(-62, -25, 0)
-	sun.light_energy = 0.55 if spooky else 1.0
-	sun.light_color = Color(0.85, 0.87, 1.0) if spooky else Color(1.0, 0.97, 0.9)
-	sun.shadow_enabled = true
-	add_child(sun)
+	_sun = DirectionalLight3D.new()
+	_sun.rotation_degrees = Vector3(-62, -25, 0)
+	_sun.shadow_enabled = true
+	add_child(_sun)
 	# the light that follows Anisha is only needed in the dark
 	_light = OmniLight3D.new()
 	_light.omni_range = 7.0
-	_light.light_energy = 1.1 if spooky else 0.0
 	_light.light_color = Color(1, 0.98, 0.92)
 	add_child(_light)
+	_mood = _mood_for(world.room_at(logic.player_pos).get("location", "")).duplicate()
+	_apply_mood()
 
 
-func _grid_texture() -> ImageTexture:
+func _apply_mood() -> void:
+	_env.background_color = _mood.bg
+	_env.ambient_light_color = _mood.ambient
+	_env.ambient_light_energy = _mood.ambient_energy
+	_env.fog_density = _mood.fog
+	_sun.light_energy = _mood.sun
+	_sun.light_color = _mood.sun_color
+	_light.light_energy = _mood.light
+
+
+## Eases the light toward the look of the place Anisha is standing in.
+func _blend_mood(delta: float) -> void:
+	var here := world.room_at(logic.player_pos)
+	if here.is_empty():
+		return
+	var target := _mood_for(here.location)
+	var k := 1.0 - exp(-2.5 * delta)
+	for key in target:
+		_mood[key] = lerp(_mood[key], target[key], k)
+	_apply_mood()
+
+
+## A dark grid for Granny's house, a lighter one for the rest, a grey one for the street.
+func _grid_texture(kind: String) -> ImageTexture:
+	if _floor_tex.has(kind):
+		return _floor_tex[kind]
+	var base := Color(0.1, 0.1, 0.11)
+	var line := Color(0.15, 0.15, 0.165)
+	if kind == "day":
+		base = Color(0.5, 0.48, 0.46)
+		line = Color(0.58, 0.56, 0.54)
+	elif kind == "road":
+		base = Color(0.3, 0.3, 0.32)
+		line = Color(0.36, 0.36, 0.38)
 	var img := Image.create(64, 64, true, Image.FORMAT_RGB8)
-	img.fill(Color(0.1, 0.1, 0.11))
+	img.fill(base)
 	for i in 64:
 		for k in 2:
-			img.set_pixel(i, k, Color(0.15, 0.15, 0.165))
-			img.set_pixel(k, i, Color(0.15, 0.15, 0.165))
+			img.set_pixel(i, k, line)
+			img.set_pixel(k, i, line)
 	img.generate_mipmaps()
-	return ImageTexture.create_from_image(img)
+	_floor_tex[kind] = ImageTexture.create_from_image(img)
+	return _floor_tex[kind]
 
 
 func _box(rect: Rect2, height: float, y0: float, mat: Material) -> MeshInstance3D:
@@ -135,11 +182,11 @@ func _flat_material(c: Color, glow: bool = false) -> StandardMaterial3D:
 
 
 func _build_rooms() -> void:
-	var tex := _grid_texture()
 	for room in world.rooms:
 		var r: Rect2 = room.interior
+		var kind := "road" if room.ground == "road" else ("spooky" if _is_spooky(room.location) else "day")
 		var mat := StandardMaterial3D.new()
-		mat.albedo_texture = tex
+		mat.albedo_texture = _grid_texture(kind)
 		mat.uv1_scale = Vector3(r.size.x, r.size.y, 1)
 		mat.texture_repeat = true
 		mat.texture_filter = BaseMaterial3D.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
@@ -164,13 +211,57 @@ func _build_rooms() -> void:
 
 
 func _build_walls() -> void:
-	var mat := _flat_material(Color(0.2, 0.2, 0.22))
-	for w in world.walls:
-		var mi := _box(w, 1.0, 0.0, mat)
+	_wall_mats["spooky"] = _flat_material(Color(0.2, 0.2, 0.22))
+	_wall_mats["day"] = _flat_material(Color(0.74, 0.72, 0.68))
+	for i in world.walls.size():
+		var w: Rect2 = world.walls[i]
+		var loc: String = world.room_by_id(world.wall_rooms[i]).get("location", "")
+		var mi := _box(w, 1.0, 0.0, _wall_mats["spooky" if _is_spooky(loc) else "day"])
 		mi.set_meta("rect", w)
 		add_child(mi)
 		_walls.append(mi)
 	_apply_wall_height(WALL_H_DOLLHOUSE)
+
+
+## Doors into rooms that are still locked are solid slabs with a LOCKED label, until the task that unlocks them is done.
+func _build_doors() -> void:
+	var mat := _flat_material(Color(0.9, 0.9, 0.86), true)
+	for d in logic.closed_doors:
+		var rect: Rect2 = d.rect
+		var mi := _box(rect, 1.0, 0.0, mat)
+		mi.set_meta("rect", rect)
+		add_child(mi)
+		_walls.append(mi)
+		var label: Label3D = null
+		if not logic.locked.has(d.room): # the side you walk up to
+			label = Label3D.new()
+			label.text = GameData.t("lockedLabel")
+			label.font = UIKit.body_font()
+			label.font_size = 40
+			label.pixel_size = 0.006
+			label.billboard = BaseMaterial3D.BILLBOARD_ENABLED
+			label.no_depth_test = true
+			var c := rect.get_center()
+			label.position = Vector3(c.x, 1.9, c.y)
+			add_child(label)
+		_door_slabs.append({"room": d.room, "to": d.to, "node": mi, "label": label})
+
+
+func _open_doors_into(room_id: String) -> void:
+	for i in range(_door_slabs.size() - 1, -1, -1):
+		var d: Dictionary = _door_slabs[i]
+		if d.room != room_id and d.to != room_id:
+			continue
+		if logic.locked.has(d.room) or logic.locked.has(d.to):
+			continue # the other room beyond it is still locked
+		var node: MeshInstance3D = d.node
+		_walls.erase(node)
+		var tw := create_tween()
+		tw.tween_property(node, "scale:y", 0.01, 0.4)
+		tw.tween_callback(node.queue_free)
+		if d.label != null:
+			(d.label as Label3D).queue_free()
+		_door_slabs.remove_at(i)
 
 
 func _apply_wall_height(h: float) -> void:
@@ -224,7 +315,7 @@ func _is_target(uid: String) -> bool:
 	return false
 
 
-func _build_extras_and_exits() -> void:
+func _build_extras() -> void:
 	for t in world.targets:
 		if t.kind != "shoes":
 			continue
@@ -255,17 +346,6 @@ func _build_extras_and_exits() -> void:
 		node.add_child(label)
 		add_child(node)
 		_target_nodes[t.id] = node
-	for e in world.exits:
-		var label := Label3D.new()
-		label.text = GameData.L(e.label)
-		label.font = UIKit.body_font()
-		label.font_size = 40
-		label.pixel_size = 0.008
-		label.modulate = Color(1, 1, 1, 0.6)
-		label.rotation_degrees.x = -90
-		var c := (e.rect as Rect2).get_center()
-		label.position = Vector3(c.x, 0.03, c.y)
-		add_child(label)
 	# pulsing ring on whatever the current step needs
 	_marker = MeshInstance3D.new()
 	var tm := TorusMesh.new()
@@ -302,38 +382,53 @@ func _build_characters() -> void:
 	_cone_mat.vertex_color_use_as_albedo = true
 	_cone_mat.cull_mode = BaseMaterial3D.CULL_DISABLED
 	_cone_mat.no_depth_test = false
+
+
+## Baddies come and go with the tasks, so their nodes are made (and removed) to match logic.baddies.
+func _sync_baddie_nodes() -> void:
+	var present := {}
 	for b in logic.baddies:
-		var kind: Dictionary = GameData.baddie_kinds.get(b.kind, {})
-		var made := ModelLibrary.make_character(String(kind.get("model", "")), 0.28, 1.5, GameLogic.BADDIE_RADIUS * 0.85, true)
-		var node: Node3D = made.node
-		_baddie_anims.append(made.anim)
-		var name_label := Label3D.new()
-		name_label.text = GameData.L(b.name)
-		name_label.font = UIKit.body_font()
-		name_label.font_size = 40
-		name_label.pixel_size = 0.005
-		name_label.billboard = BaseMaterial3D.BILLBOARD_ENABLED
-		name_label.position = Vector3(0, 2.0, 0)
-		name_label.no_depth_test = true
-		node.add_child(name_label)
-		var bubble := Label3D.new()
-		bubble.text = "?"
-		bubble.font = UIKit.title_font()
-		bubble.font_size = 90
-		bubble.pixel_size = 0.01
-		bubble.billboard = BaseMaterial3D.BILLBOARD_ENABLED
-		bubble.position = Vector3(0, 2.6, 0)
-		bubble.visible = false
-		bubble.no_depth_test = true
-		node.add_child(bubble)
-		add_child(node)
-		_baddies.append(node)
-		_bubbles.append(bubble)
-		var cone := MeshInstance3D.new()
-		cone.mesh = ImmediateMesh.new()
-		cone.material_override = _cone_mat
-		add_child(cone)
-		_cones.append(cone)
+		present[b.id] = true
+		if not _bnodes.has(b.id):
+			_bnodes[b.id] = _make_baddie_node(b)
+	for id in _bnodes.keys():
+		if not present.has(id):
+			var e: Dictionary = _bnodes[id]
+			(e.node as Node3D).queue_free()
+			(e.cone as MeshInstance3D).queue_free()
+			_bnodes.erase(id)
+
+
+func _make_baddie_node(b: Dictionary) -> Dictionary:
+	var kind: Dictionary = GameData.baddie_kinds.get(b.kind, {})
+	var made := ModelLibrary.make_character(String(kind.get("model", "")), 0.28, 1.5, GameLogic.BADDIE_RADIUS * 0.85, true)
+	var node: Node3D = made.node
+	var name_label := Label3D.new()
+	name_label.text = GameData.L(b.name)
+	name_label.font = UIKit.body_font()
+	name_label.font_size = 40
+	name_label.pixel_size = 0.005
+	name_label.billboard = BaseMaterial3D.BILLBOARD_ENABLED
+	name_label.position = Vector3(0, 2.0, 0)
+	name_label.no_depth_test = true
+	node.add_child(name_label)
+	var bubble := Label3D.new()
+	bubble.text = "?"
+	bubble.font = UIKit.title_font()
+	bubble.font_size = 90
+	bubble.pixel_size = 0.01
+	bubble.billboard = BaseMaterial3D.BILLBOARD_ENABLED
+	bubble.position = Vector3(0, 2.6, 0)
+	bubble.visible = false
+	bubble.no_depth_test = true
+	node.add_child(bubble)
+	node.position = Vector3(b.pos.x, 0, b.pos.y)
+	add_child(node)
+	var cone := MeshInstance3D.new()
+	cone.mesh = ImmediateMesh.new()
+	cone.material_override = _cone_mat
+	add_child(cone)
+	return {"node": node, "bubble": bubble, "cone": cone, "anim": made.anim}
 
 
 func _build_camera() -> void:
@@ -365,7 +460,7 @@ func _process(delta: float) -> void:
 			if touch != null:
 				turn += touch.cam_turn
 			yaw += turn * 1.8 * dt
-	_sync_visuals()
+	_sync_visuals(delta)
 	_update_camera(dt, false)
 
 
@@ -396,7 +491,7 @@ func toggle_camera() -> void:
 		yaw = logic.player_facing + PI / 2.0 # start looking the way she is facing
 
 
-func _sync_visuals() -> void:
+func _sync_visuals(delta: float) -> void:
 	var p := logic.player_pos
 	_player.position = Vector3(p.x, 0, p.y)
 	_player.rotation.y = -logic.player_facing
@@ -405,13 +500,16 @@ func _sync_visuals() -> void:
 		mat.albedo_color.a = alpha
 	_animate_player()
 	_light.position = Vector3(p.x, 2.4, p.y)
-	for i in logic.baddies.size():
-		var b: Dictionary = logic.baddies[i]
-		_baddies[i].position = Vector3(b.pos.x, 0, b.pos.y)
-		_baddies[i].rotation.y = -b.facing
-		_bubbles[i].visible = b.distracted_left > 0.0
-		_animate_baddie(i, b)
-		_draw_cone(i, b)
+	_blend_mood(delta)
+	for b in logic.baddies:
+		var e: Dictionary = _bnodes.get(b.id, {})
+		if e.is_empty():
+			continue
+		(e.node as Node3D).position = Vector3(b.pos.x, 0, b.pos.y)
+		(e.node as Node3D).rotation.y = -b.facing
+		(e.bubble as Label3D).visible = b.distracted_left > 0.0
+		_animate_baddie(e, b)
+		_draw_cone(e.cone, b)
 	# bob the things that can be picked up
 	for uid in _pickup_nodes:
 		var n: Node3D = _pickup_nodes[uid]
@@ -439,8 +537,8 @@ func _animate_player() -> void:
 		_play(_player_anim, "idle")
 
 
-func _animate_baddie(i: int, b: Dictionary) -> void:
-	var ap: AnimationPlayer = _baddie_anims[i]
+func _animate_baddie(e: Dictionary, b: Dictionary) -> void:
+	var ap: AnimationPlayer = e.anim
 	if logic.result == "caught" and b.kind == logic.caught_by:
 		_play(ap, "caught_you")
 	elif b.distracted_left > 0.0:
@@ -451,8 +549,8 @@ func _animate_baddie(i: int, b: Dictionary) -> void:
 		_play(ap, "walk")
 
 
-func _draw_cone(i: int, b: Dictionary) -> void:
-	var mesh: ImmediateMesh = _cones[i].mesh
+func _draw_cone(cone: MeshInstance3D, b: Dictionary) -> void:
+	var mesh: ImmediateMesh = cone.mesh
 	mesh.clear_surfaces()
 	if b.distracted_left > 0.0:
 		return
@@ -472,7 +570,7 @@ func _place_marker() -> void:
 	var found := false
 	match step.get("type", ""):
 		"pickup":
-			var pk := logic.pick_by_uid(step.item)
+			var pk := logic.pick_by_id(step.item)
 			if not pk.is_empty():
 				r = pk.rect
 				found = true
@@ -482,31 +580,38 @@ func _place_marker() -> void:
 					r = t.rect
 					found = true
 		"reach":
-			for e in world.exits:
-				if e.id == step.zone:
-					r = e.rect
-					found = true
+			var rm := world.room_by_id(step.room)
+			if not rm.is_empty():
+				r = rm.interior
+				found = true
 	_marker.visible = found
 	if found:
 		var c := r.get_center()
 		_marker.position = Vector3(c.x, 0.06, c.y)
 		var rad := maxf(0.7, minf(r.size.x, r.size.y) / 2.0 + 0.15)
+		if step.get("type", "") == "reach":
+			rad = 1.4 # a room is big: just ring its middle
 		_marker.set_meta("radius", rad)
 		(_marker.mesh as TorusMesh).inner_radius = rad - 0.04
 		(_marker.mesh as TorusMesh).outer_radius = rad + 0.04
 
 
-func _pop_used_target() -> void:
+func _pop_target(id: String) -> void:
 	# a little pop on the thing that was just used
-	var done := logic.step_index - 1
-	if done < 0 or done >= level.steps.size():
-		return
-	var s: Dictionary = level.steps[done]
-	if s.type == "use" and _target_nodes.has(s.target):
-		var n: Node3D = _target_nodes[s.target]
+	if _target_nodes.has(id):
+		var n: Node3D = _target_nodes[id]
 		var tw := create_tween()
 		tw.tween_property(n, "scale", Vector3.ONE * 1.35, 0.12)
 		tw.tween_property(n, "scale", Vector3.ONE, 0.2)
+
+
+## Back in her room: put the camera and the animation state where she is now.
+func _on_respawned() -> void:
+	_prev_player = logic.player_pos
+	yaw = 0.0 if cam_mode == 0 else logic.player_facing + PI / 2.0
+	_sync_visuals(0.0)
+	_update_camera(1.0, true)
+	_place_marker()
 
 
 func _on_pet_called(from: Vector2, to: Vector2) -> void:
@@ -533,7 +638,7 @@ func _update_camera(dt: float, snap: bool) -> void:
 	else:
 		var f := Vector2(sin(yaw), -cos(yaw))
 		# pull the camera in if a wall is behind Anisha
-		var back := Geo.cast_ray(p, (-f).angle(), 5.5, world.walls)
+		var back := Geo.cast_ray(p, (-f).angle(), 5.5, Geo.near(p, 6.0, world.walls))
 		var dist := clampf(back - 0.35, 2.2, 5.5)
 		want = target - Vector3(f.x, 0, f.y) * dist + Vector3(0, 1.3 + dist * 0.5, 0)
 	var k := 1.0 if snap else 1.0 - exp(-9.0 * dt)

@@ -49,6 +49,17 @@ static func ray_rect(o: Vector2, d: Vector2, r: Rect2) -> float:
 	return tmin
 
 
+## The rects that touch the square of half-size `radius` around a point. The world is big, so work with only
+## the few rects nearby (sight, walking) instead of every wall in town.
+static func near(center: Vector2, radius: float, rects: Array[Rect2]) -> Array[Rect2]:
+	var out: Array[Rect2] = []
+	var box := Rect2(center - Vector2(radius, radius), Vector2(radius, radius) * 2.0)
+	for r in rects:
+		if box.intersects(r, true):
+			out.append(r)
+	return out
+
+
 ## How far a ray travels before hitting a rect (or max_dist).
 static func cast_ray(o: Vector2, angle: float, max_dist: float, rects: Array[Rect2]) -> float:
 	var d := Vector2(cos(angle), sin(angle))
@@ -64,7 +75,7 @@ static func has_line_of_sight(a: Vector2, b: Vector2, rects: Array[Rect2]) -> bo
 	var d := a.distance_to(b)
 	if d < 1e-6:
 		return true
-	return cast_ray(a, (b - a).angle(), d, rects) >= d - 0.01
+	return cast_ray(a, (b - a).angle(), d, near((a + b) / 2.0, d / 2.0 + 0.1, rects)) >= d - 0.01
 
 
 static func in_cone(o: Vector2, facing: float, half_angle: float, range_m: float, p: Vector2) -> bool:
@@ -76,9 +87,10 @@ static func in_cone(o: Vector2, facing: float, half_angle: float, range_m: float
 ## Polygon of a vision cone clipped by walls. The first point is the origin.
 static func cone_polygon(o: Vector2, facing: float, half_angle: float, range_m: float, blockers: Array[Rect2], steps: int = 28) -> PackedVector2Array:
 	var pts := PackedVector2Array([o])
+	var close := near(o, range_m + 0.1, blockers)
 	for i in steps + 1:
 		var a := facing - half_angle + (2.0 * half_angle * i) / steps
-		var d := cast_ray(o, a, range_m, blockers)
+		var d := cast_ray(o, a, range_m, close)
 		pts.append(o + Vector2(cos(a), sin(a)) * d)
 	return pts
 

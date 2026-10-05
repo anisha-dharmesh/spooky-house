@@ -1,10 +1,10 @@
 class_name Hud
 extends CanvasLayer
-## Heads-up display and the pause / caught / prank-done screens.
+## Heads-up display and the pause / caught / task-done screens.
 
-signal retry_requested
+signal respawn_requested   # back to her room (after being caught, or from the pause menu)
 signal menu_requested
-signal next_requested
+signal continue_requested  # carry on after a finished task
 signal resume_requested
 signal pause_requested
 signal camera_requested
@@ -12,7 +12,6 @@ signal pet_requested
 
 var view: LevelView
 var logic: GameLogic
-var level: Dictionary
 
 var _steps_box: VBoxContainer
 var _meter_fill: ColorRect
@@ -28,7 +27,6 @@ var _overlay: Control
 func setup(p_view: LevelView, show_keys: bool) -> void:
 	view = p_view
 	logic = p_view.logic
-	level = p_view.level
 	layer = 10
 	var root := Control.new()
 	root.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
@@ -114,6 +112,8 @@ func setup(p_view: LevelView, show_keys: bool) -> void:
 	logic.inventory_changed.connect(_refresh_slots)
 	logic.toast.connect(func(key: String, vars: Dictionary) -> void: show_toast(GameData.t(key, vars)))
 	logic.finished.connect(_on_finished)
+	logic.task_completed.connect(func(task: Dictionary, rating: Dictionary, opened: Array) -> void:
+		get_tree().create_timer(0.7).timeout.connect(func() -> void: _show_task_done(task, rating, opened)))
 	_refresh_steps()
 	_refresh_slots()
 
@@ -146,7 +146,7 @@ func _update_hint() -> void:
 			text = ("" if touch else "E: ") + GameData.t("grab", {"item": near.pickup.name})
 		"target":
 			var item := ""
-			for s in level.steps:
+			for s in logic.task.get("steps", []):
 				if s.type == "use" and s.target == near.target.id:
 					item = s.item
 			if item != "" and logic.inventory.has(item):
@@ -162,13 +162,20 @@ func _update_hint() -> void:
 func _refresh_steps() -> void:
 	for c in _steps_box.get_children():
 		c.queue_free()
-	_steps_box.add_child(UIKit.label(GameData.t("level", {"n": int(level.id)}), 18, UIKit.DIM))
-	var task := UIKit.label(GameData.L(level.task), 23)
-	task.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	task.custom_minimum_size = Vector2(264, 0)
-	_steps_box.add_child(task)
+	var task := logic.task
+	if task.is_empty():
+		var all := UIKit.label(GameData.t("allDone"), 23)
+		all.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		all.custom_minimum_size = Vector2(264, 0)
+		_steps_box.add_child(all)
+		return
+	_steps_box.add_child(UIKit.label(GameData.t("task", {"n": int(task.id)}), 18, UIKit.DIM))
+	var title := UIKit.label(GameData.L(task.task), 23)
+	title.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	title.custom_minimum_size = Vector2(264, 0)
+	_steps_box.add_child(title)
 	var i := 0
-	for s in level.steps:
+	for s in task.steps:
 		var row := HBoxContainer.new()
 		row.add_theme_constant_override("separation", 8)
 		var done := i < logic.step_index
@@ -237,7 +244,7 @@ func _center(l: Label) -> Label:
 func show_pause() -> void:
 	var box := _make_overlay()
 	box.add_child(_center(UIKit.label(GameData.t("paused"), 64, UIKit.WHITE, true)))
-	for spec in [["resume", "primary", resume_requested], ["restart", "ghost", retry_requested], ["menu", "ghost", menu_requested]]:
+	for spec in [["resume", "primary", resume_requested], ["backHome", "ghost", respawn_requested], ["menu", "ghost", menu_requested]]:
 		var b := UIKit.button(GameData.t(spec[0]), spec[1], 28, func() -> void: spec[2].emit())
 		b.custom_minimum_size = Vector2(320, 64)
 		box.add_child(b)
@@ -247,70 +254,85 @@ func hide_overlay() -> void:
 	_clear_overlay()
 
 
-func _on_finished(result: String) -> void:
-	get_tree().create_timer(0.6 if result == "caught" else 0.9).timeout.connect(func() -> void: _show_result(result))
+func has_overlay() -> bool:
+	return _overlay != null
 
 
-func _show_result(result: String) -> void:
+func _on_finished(_result: String) -> void: # she was caught
+	get_tree().create_timer(0.6).timeout.connect(_show_caught)
+
+
+func _show_caught() -> void:
 	var box := _make_overlay()
-	if result == "caught":
-		var kind: Dictionary = GameData.baddie_kinds.get(logic.caught_by, {})
-		box.add_child(_center(UIKit.label(GameData.t("caught"), 110, UIKit.WHITE, true)))
-		box.add_child(_center(UIKit.label(GameData.t("sawYou", {"name": GameData.L(kind.get("name", "The baddie"))}), 32, UIKit.LIGHT)))
-		var tip := UIKit.label(GameData.L(level.tip), 22, UIKit.LIGHT)
+	var kind: Dictionary = GameData.baddie_kinds.get(logic.caught_by, {})
+	box.add_child(_center(UIKit.label(GameData.t("caught"), 110, UIKit.WHITE, true)))
+	box.add_child(_center(UIKit.label(GameData.t("sawYou", {"name": GameData.L(kind.get("name", "The baddie"))}), 32, UIKit.LIGHT)))
+	var sent := _center(UIKit.label(GameData.t("sentHome"), 24, UIKit.LIGHT))
+	sent.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	sent.custom_minimum_size = Vector2(560, 0)
+	box.add_child(sent)
+	if not logic.task.is_empty():
+		var tip := UIKit.label(GameData.L(logic.task.tip), 22, UIKit.LIGHT)
 		tip.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		tip.custom_minimum_size = Vector2(520, 0)
 		var tip_panel := PanelContainer.new()
 		tip_panel.add_theme_stylebox_override("panel", UIKit.box(UIKit.CHIP, UIKit.BORDER, 16))
 		tip_panel.add_child(tip)
 		box.add_child(tip_panel)
-		var row := HBoxContainer.new()
-		row.alignment = BoxContainer.ALIGNMENT_CENTER
-		row.add_theme_constant_override("separation", 14)
-		var again := UIKit.button(GameData.t("tryAgain"), "primary", 30, func() -> void: retry_requested.emit())
-		again.custom_minimum_size = Vector2(260, 68)
-		var menu := UIKit.button(GameData.t("menu"), "ghost", 26, func() -> void: menu_requested.emit())
-		menu.custom_minimum_size = Vector2(150, 68)
-		row.add_child(again)
-		row.add_child(menu)
-		box.add_child(row)
+	var row := HBoxContainer.new()
+	row.alignment = BoxContainer.ALIGNMENT_CENTER
+	row.add_theme_constant_override("separation", 14)
+	var again := UIKit.button(GameData.t("backHome"), "primary", 30, func() -> void: respawn_requested.emit())
+	again.custom_minimum_size = Vector2(320, 68)
+	var menu := UIKit.button(GameData.t("menu"), "ghost", 26, func() -> void: menu_requested.emit())
+	menu.custom_minimum_size = Vector2(150, 68)
+	row.add_child(again)
+	row.add_child(menu)
+	box.add_child(row)
+
+
+func _show_task_done(task: Dictionary, rating: Dictionary, opened: Array) -> void:
+	var box := _make_overlay()
+	box.add_child(_center(UIKit.label(GameData.t("taskComplete", {"n": int(task.id)}), 24, UIKit.DIM)))
+	box.add_child(_center(UIKit.label(GameData.t("prankDone"), 100, UIKit.WHITE, true)))
+	var text := UIKit.label(GameData.L(task.completeText), 28, UIKit.LIGHT)
+	text.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	text.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	text.custom_minimum_size = Vector2(760, 0)
+	box.add_child(text)
+	var sr := UIKit.StarRow.new()
+	sr.earned = [true, rating.not_seen, rating.quick]
+	var center := CenterContainer.new()
+	center.add_child(sr)
+	box.add_child(center)
+	var labels := HBoxContainer.new()
+	labels.alignment = BoxContainer.ALIGNMENT_CENTER
+	labels.add_theme_constant_override("separation", 0)
+	var texts := [GameData.t("starPrankDone"), GameData.t("starNotSeenLabel") if sr.earned[1] else GameData.t("starNotSeen"), GameData.t("starQuickLabel") if sr.earned[2] else GameData.t("starBeQuicker")]
+	for i in 3:
+		var l := UIKit.label(texts[i], 22, UIKit.WHITE if sr.earned[i] else UIKit.DIM)
+		l.custom_minimum_size = Vector2(2.6 * sr.star_r, 0)
+		l.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		labels.add_child(l)
+	box.add_child(labels)
+	if not opened.is_empty():
+		var names: Array = []
+		for id in opened:
+			names.append(String(logic.world.room_by_id(id).get("name", id)))
+		box.add_child(_center(UIKit.label(GameData.t("newArea", {"rooms": ", ".join(names)}), 28, UIKit.WHITE)))
+	var row := HBoxContainer.new()
+	row.alignment = BoxContainer.ALIGNMENT_CENTER
+	row.add_theme_constant_override("separation", 14)
+	var main_btn: Button
+	if logic.task.is_empty():
+		box.add_child(_center(UIKit.label(GameData.t("allTasksDone"), 24, UIKit.LIGHT)))
+		main_btn = UIKit.button(GameData.t("menu"), "primary", 30, func() -> void: menu_requested.emit())
+		var keep := UIKit.button(GameData.t("resume"), "ghost", 26, func() -> void: continue_requested.emit())
+		keep.custom_minimum_size = Vector2(220, 68)
+		row.add_child(main_btn)
+		row.add_child(keep)
 	else:
-		var stars := logic.stars()
-		SaveGame.record(int(level.id), stars)
-		box.add_child(_center(UIKit.label(GameData.t("levelComplete", {"n": int(level.id)}), 24, UIKit.DIM)))
-		box.add_child(_center(UIKit.label(GameData.t("prankDone"), 100, UIKit.WHITE, true)))
-		var text := UIKit.label(GameData.L(level.completeText), 28, UIKit.LIGHT)
-		text.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-		text.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-		text.custom_minimum_size = Vector2(760, 0)
-		box.add_child(text)
-		var sr := UIKit.StarRow.new()
-		sr.earned = [true, logic.max_meter < GameLogic.NOT_SEEN_LIMIT, logic.elapsed <= float(level.get("parTime", 60))]
-		var center := CenterContainer.new()
-		center.add_child(sr)
-		box.add_child(center)
-		var labels := HBoxContainer.new()
-		labels.alignment = BoxContainer.ALIGNMENT_CENTER
-		labels.add_theme_constant_override("separation", 0)
-		var texts := [GameData.t("starPrankDone"), GameData.t("starNotSeenLabel") if sr.earned[1] else GameData.t("starNotSeen"), GameData.t("starQuickLabel") if sr.earned[2] else GameData.t("starBeQuicker")]
-		for i in 3:
-			var l := UIKit.label(texts[i], 22, UIKit.WHITE if sr.earned[i] else UIKit.DIM)
-			l.custom_minimum_size = Vector2(2.6 * sr.star_r, 0)
-			l.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-			labels.add_child(l)
-		box.add_child(labels)
-		var row2 := HBoxContainer.new()
-		row2.alignment = BoxContainer.ALIGNMENT_CENTER
-		row2.add_theme_constant_override("separation", 14)
-		var nxt := GameData.next_level(int(level.id))
-		var main_btn: Button
-		if nxt.is_empty():
-			main_btn = UIKit.button(GameData.t("menu"), "primary", 30, func() -> void: menu_requested.emit())
-		else:
-			main_btn = UIKit.button(GameData.t("nextLevel", {"n": int(nxt.id)}), "primary", 30, func() -> void: next_requested.emit())
-		main_btn.custom_minimum_size = Vector2(300, 68)
-		var again2 := UIKit.button(GameData.t("playAgain"), "ghost", 26, func() -> void: retry_requested.emit())
-		again2.custom_minimum_size = Vector2(220, 68)
-		row2.add_child(main_btn)
-		row2.add_child(again2)
-		box.add_child(row2)
+		main_btn = UIKit.button(GameData.t("nextTask"), "primary", 30, func() -> void: continue_requested.emit())
+		row.add_child(main_btn)
+	main_btn.custom_minimum_size = Vector2(300, 68)
+	box.add_child(row)

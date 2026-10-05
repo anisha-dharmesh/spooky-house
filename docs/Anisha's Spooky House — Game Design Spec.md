@@ -35,6 +35,13 @@ Each baddie is introduced on its own, with a few calm levels before the next new
 
 ## World map
 
+> **Update, Oct 5, 2026: one continuous game, not level by level** (Dharmesh's idea). The player no longer leaves and
+> re-enters for each level. The whole world is one map she can walk around freely; she does **tasks in order** (the old
+> "levels" are now tasks) and **some doors are locked** until a task opens them. A locked door is shut and says LOCKED. She
+> may look around and pick up items for later tasks early, but a prank only counts when it is her current task. Finishing a
+> task can unlock rooms (the room unlock order below becomes the order of the locks). No "find a key" locks: only tasks open doors.
+> Built so far: her little house, a short street, and the ground floor of Granny's house (see `godot/README.md`).
+
 Everything sits inside one connected **Town**, so moving between places feels real. The player starts at home, sneaks to granny's house, and new places open with levels.
 
 | Place | Opens at | What's there |
@@ -108,6 +115,9 @@ Each level gives one prank task; sneak in, collect what you need, do the prank, 
 3. **Safe zones:** the balcony and the roof (incl. the play zone). Baddies cannot catch you there.
 4. **Hiding spots:** inside the hall cupboard, behind the store-room pots, under the bedroom bed/drawers. Hidden = not seen.
 5. **Caught = replay the level.**
+   > **Update, Oct 5, 2026 (Dharmesh):** with the continuous world, getting caught sends Anisha **back to her room** and she
+   > **loses everything she was carrying** (the items go back where they were). The current task starts again; tasks she has
+   > finished and rooms she has unlocked stay. So being caught costs the walk back through town, which makes it matter.
 6. **Pet help:** when granny (or a baddie) is chasing you and you need help, a pet (parrot, dog or cat) runs out of the animal room and distracts the chaser so you can escape.
 7. **Stairs and lift** move you between floors and work as escape routes.
 8. **Slide** goes from the roof straight down into the pool.

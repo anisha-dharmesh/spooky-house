@@ -18,23 +18,23 @@ godot --path godot -- --gallery   # look at all the 3D models
 | Folder | What |
 | --- | --- |
 | `godot/` | The game |
-| `godot/data/` | Levels, baddies, text (English and Hindi) and the room layouts |
+| `godot/data/` | The world, the tasks, baddies, text (English and Hindi) and the room layouts |
 | `godot/assets/models/` | The 3D models (generated; see `MODELS.md` there) |
 | `scripts/` | Tools that build the 3D models (`npm run models`) |
 | `tests/` | Checks for the generated models (`npm test`) |
-| `docs/` | The game design spec, how to add levels, how to get 3D models, and the art pack notes and pictures |
+| `docs/` | The game design spec, how to add tasks, how to get 3D models, and the art pack notes and pictures |
 
 ## Checks
 
 ```bash
 npm install     # once
-npm run check   # model checks, then Godot's level check, a bot that plays each level, and a controls test
+npm run check   # model checks, then Godot's world and task check, a bot that does each task, rules tests, and a controls test
 ```
 
-## Adding levels and making models
+## Adding tasks and making models
 
-- Levels: [docs/ADDING_LEVELS.md](docs/ADDING_LEVELS.md). Pick rooms from the art pack and add one entry to
-  `godot/data/levels.json`. No code needed.
+- Tasks and rooms: [docs/ADDING_TASKS.md](docs/ADDING_TASKS.md). The game is one continuous world; add rooms from the art pack to
+  `godot/data/world.json` and a task to `godot/data/tasks.json`. No code needed.
 - 3D models: [docs/3D_MODEL_BRIEF.md](docs/3D_MODEL_BRIEF.md). The rules every model follows and how to make more.
 
 ## History
