@@ -1,0 +1,205 @@
+{
+ "id": "gh_roof",
+ "name": "Roof",
+ "location": "granny_house",
+ "floor": "Roof",
+ "unlockLevel": 33,
+ "note": "SAFE ZONE. Top of the long slide to the pool.",
+ "tileSize": 40,
+ "size": {
+  "w": 17,
+  "h": 10,
+  "px_w": 680,
+  "px_h": 400
+ },
+ "ground": "concrete",
+ "outdoor": true,
+ "safeZone": true,
+ "doors": [
+  {
+   "side": "W",
+   "to": "gh_play_zone",
+   "x": 0,
+   "y": 4,
+   "w": 1,
+   "h": 2
+  },
+  {
+   "side": "S",
+   "to": "sp_pool_deck",
+   "x": 7,
+   "y": 9,
+   "w": 2,
+   "h": 1
+  }
+ ],
+ "spawn": {
+  "x": 1,
+  "y": 5
+ },
+ "items": [
+  {
+   "uid": "solar_panel_1",
+   "sprite": "solar_panel",
+   "name": "Solar panel",
+   "x": 7,
+   "y": 0,
+   "w": 3,
+   "h": 2,
+   "rotation": 0,
+   "anchor": "N",
+   "tags": [
+    "solid",
+    "prank"
+   ]
+  },
+  {
+   "uid": "solar_panel_2",
+   "sprite": "solar_panel",
+   "name": "Solar panel",
+   "x": 4,
+   "y": 0,
+   "w": 3,
+   "h": 2,
+   "rotation": 0,
+   "anchor": "N",
+   "tags": [
+    "solid",
+    "prank"
+   ]
+  },
+  {
+   "uid": "solar_panel_3",
+   "sprite": "solar_panel",
+   "name": "Solar panel",
+   "x": 10,
+   "y": 0,
+   "w": 3,
+   "h": 2,
+   "rotation": 0,
+   "anchor": "N",
+   "tags": [
+    "solid",
+    "prank"
+   ]
+  },
+  {
+   "uid": "water_tank_1",
+   "sprite": "water_tank",
+   "name": "Water tank",
+   "x": 15,
+   "y": 0,
+   "w": 2,
+   "h": 2,
+   "rotation": 0,
+   "anchor": "NE",
+   "tags": [
+    "solid",
+    "prank"
+   ]
+  },
+  {
+   "uid": "slide_chute_1",
+   "sprite": "slide_chute",
+   "name": "Slide (roof to pool)",
+   "x": 11,
+   "y": 4,
+   "w": 6,
+   "h": 2,
+   "rotation": 90,
+   "anchor": "E",
+   "tags": [
+    "climb"
+   ]
+  },
+  {
+   "uid": "lift_1",
+   "sprite": "lift",
+   "name": "Lift",
+   "x": 0,
+   "y": 0,
+   "w": 2,
+   "h": 2,
+   "rotation": 0,
+   "anchor": "NW",
+   "tags": [
+    "lift"
+   ]
+  },
+  {
+   "uid": "dustbin_1",
+   "sprite": "dustbin",
+   "name": "Dustbin",
+   "x": 0,
+   "y": 9,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "SW",
+   "tags": [
+    "solid",
+    "hide"
+   ]
+  }
+ ],
+ "colliders": [
+  {
+   "uid": "solar_panel_1",
+   "x": 7,
+   "y": 0,
+   "w": 3,
+   "h": 2
+  },
+  {
+   "uid": "solar_panel_2",
+   "x": 4,
+   "y": 0,
+   "w": 3,
+   "h": 2
+  },
+  {
+   "uid": "solar_panel_3",
+   "x": 10,
+   "y": 0,
+   "w": 3,
+   "h": 2
+  },
+  {
+   "uid": "water_tank_1",
+   "x": 15,
+   "y": 0,
+   "w": 2,
+   "h": 2
+  },
+  {
+   "uid": "dustbin_1",
+   "x": 0,
+   "y": 9,
+   "w": 1,
+   "h": 1
+  }
+ ],
+ "hideSpots": [
+  "dustbin_1"
+ ],
+ "pickups": [],
+ "prankTargets": [
+  "solar_panel_1",
+  "solar_panel_2",
+  "solar_panel_3",
+  "water_tank_1"
+ ],
+ "climbables": [
+  "slide_chute_1"
+ ],
+ "navigation": [
+  "lift_1"
+ ],
+ "images": {
+  "svg": "rooms/granny_house/gh_roof.svg",
+  "png": "rooms/granny_house/gh_roof.png",
+  "floorOnly": "rooms/granny_house/gh_roof_floor.png",
+  "preview": "preview/gh_roof_labelled.png",
+  "wallBorderPx": 14
+ }
+}

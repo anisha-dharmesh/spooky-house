@@ -1,0 +1,211 @@
+{
+ "id": "lh_fluffy_room",
+ "name": "Fluffy room",
+ "location": "little_house",
+ "floor": "Ground",
+ "unlockLevel": 1,
+ "note": "Very fluffy, pretty room. Details still to come from Anisha.",
+ "tileSize": 40,
+ "size": {
+  "w": 9,
+  "h": 8,
+  "px_w": 360,
+  "px_h": 320
+ },
+ "ground": "carpet",
+ "outdoor": false,
+ "safeZone": false,
+ "doors": [
+  {
+   "side": "S",
+   "to": "lh_hall",
+   "x": 3,
+   "y": 7,
+   "w": 2,
+   "h": 1
+  }
+ ],
+ "spawn": {
+  "x": 4,
+  "y": 6
+ },
+ "items": [
+  {
+   "uid": "rug_1",
+   "sprite": "rug",
+   "name": "Rug",
+   "x": 2,
+   "y": 1,
+   "w": 4,
+   "h": 3,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": []
+  },
+  {
+   "uid": "bed_single_1",
+   "sprite": "bed_single",
+   "name": "Single bed",
+   "x": 0,
+   "y": 3,
+   "w": 4,
+   "h": 2,
+   "rotation": -90,
+   "anchor": "W",
+   "tags": [
+    "solid",
+    "hide"
+   ]
+  },
+  {
+   "uid": "bean_bag_1",
+   "sprite": "bean_bag",
+   "name": "Bean bag",
+   "x": 7,
+   "y": 0,
+   "w": 2,
+   "h": 2,
+   "rotation": 0,
+   "anchor": "NE",
+   "tags": [
+    "solid",
+    "safe"
+   ]
+  },
+  {
+   "uid": "fairy_lights_1",
+   "sprite": "fairy_lights",
+   "name": "Fairy lights",
+   "x": 2,
+   "y": 0,
+   "w": 4,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "N",
+   "tags": [
+    "decor"
+   ]
+  },
+  {
+   "uid": "soft_toy_1",
+   "sprite": "soft_toy",
+   "name": "Soft toy",
+   "x": 5,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "pickup"
+   ]
+  },
+  {
+   "uid": "soft_toy_2",
+   "sprite": "soft_toy",
+   "name": "Soft toy",
+   "x": 7,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "pickup"
+   ]
+  },
+  {
+   "uid": "cushion_1",
+   "sprite": "cushion",
+   "name": "Cushion",
+   "x": 1,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "pickup"
+   ]
+  },
+  {
+   "uid": "cushion_2",
+   "sprite": "cushion",
+   "name": "Cushion",
+   "x": 6,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "pickup"
+   ]
+  },
+  {
+   "uid": "soft_toy_3",
+   "sprite": "soft_toy",
+   "name": "Soft toy",
+   "x": 3,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "on:bed_single",
+   "tags": [
+    "pickup"
+   ],
+   "onTopOf": "bed_single_1"
+  },
+  {
+   "uid": "cobweb_1",
+   "sprite": "cobweb",
+   "name": "Cobweb",
+   "x": 0,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "NW",
+   "tags": [
+    "decor"
+   ]
+  }
+ ],
+ "colliders": [
+  {
+   "uid": "bed_single_1",
+   "x": 0,
+   "y": 3,
+   "w": 4,
+   "h": 2
+  },
+  {
+   "uid": "bean_bag_1",
+   "x": 7,
+   "y": 0,
+   "w": 2,
+   "h": 2
+  }
+ ],
+ "hideSpots": [
+  "bed_single_1"
+ ],
+ "pickups": [
+  "soft_toy_1",
+  "soft_toy_2",
+  "cushion_1",
+  "cushion_2",
+  "soft_toy_3"
+ ],
+ "prankTargets": [],
+ "climbables": [],
+ "navigation": [],
+ "images": {
+  "svg": "rooms/little_house/lh_fluffy_room.svg",
+  "png": "rooms/little_house/lh_fluffy_room.png",
+  "floorOnly": "rooms/little_house/lh_fluffy_room_floor.png",
+  "preview": "preview/lh_fluffy_room_labelled.png",
+  "wallBorderPx": 14
+ }
+}

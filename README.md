@@ -5,6 +5,8 @@ Built with [Phaser 3](https://phaser.io), TypeScript and Vite. Runs in any brows
 
 The game design is in [docs/](docs/). The rooms and objects come from the art pack (see `docs/art/`).
 
+There is also a 3D version in Godot: see [godot/](godot/README.md).
+
 ## Run it
 
 ```bash

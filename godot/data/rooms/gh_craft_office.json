@@ -1,0 +1,298 @@
+{
+ "id": "gh_craft_office",
+ "name": "Craft room / office",
+ "location": "granny_house",
+ "floor": "Floor 2",
+ "unlockLevel": 20,
+ "note": "Source of glue, colours and scissors.",
+ "tileSize": 40,
+ "size": {
+  "w": 12,
+  "h": 9,
+  "px_w": 480,
+  "px_h": 360
+ },
+ "ground": "wood",
+ "outdoor": false,
+ "safeZone": false,
+ "doors": [
+  {
+   "side": "E",
+   "to": "gh_puja_room",
+   "x": 11,
+   "y": 3,
+   "w": 1,
+   "h": 2
+  },
+  {
+   "side": "S",
+   "to": "gh_exercise_room",
+   "x": 5,
+   "y": 8,
+   "w": 2,
+   "h": 1
+  }
+ ],
+ "spawn": {
+  "x": 10,
+  "y": 4
+ },
+ "items": [
+  {
+   "uid": "desk_1",
+   "sprite": "desk",
+   "name": "Desk",
+   "x": 4,
+   "y": 0,
+   "w": 3,
+   "h": 2,
+   "rotation": 0,
+   "anchor": "N",
+   "tags": [
+    "solid"
+   ]
+  },
+  {
+   "uid": "office_chair_1",
+   "sprite": "office_chair",
+   "name": "Office chair",
+   "x": 5,
+   "y": 4,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "solid"
+   ]
+  },
+  {
+   "uid": "bookshelf_1",
+   "sprite": "bookshelf",
+   "name": "Bookshelf",
+   "x": 0,
+   "y": 2,
+   "w": 1,
+   "h": 4,
+   "rotation": -90,
+   "anchor": "W",
+   "tags": [
+    "solid"
+   ]
+  },
+  {
+   "uid": "colored_paper_1",
+   "sprite": "colored_paper",
+   "name": "Coloured paper",
+   "x": 3,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "pickup"
+   ]
+  },
+  {
+   "uid": "scissors_1",
+   "sprite": "scissors",
+   "name": "Scissors",
+   "x": 7,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "pickup",
+    "prank"
+   ]
+  },
+  {
+   "uid": "glue_1",
+   "sprite": "glue",
+   "name": "Glue bottle",
+   "x": 3,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "pickup",
+    "prank"
+   ]
+  },
+  {
+   "uid": "pencil_1",
+   "sprite": "pencil",
+   "name": "Pencil",
+   "x": 8,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "pickup",
+    "prank"
+   ]
+  },
+  {
+   "uid": "eraser_1",
+   "sprite": "eraser",
+   "name": "Eraser",
+   "x": 8,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "pickup"
+   ]
+  },
+  {
+   "uid": "stairs_1",
+   "sprite": "stairs",
+   "name": "Zigzag stairs",
+   "x": 10,
+   "y": 6,
+   "w": 2,
+   "h": 3,
+   "rotation": 0,
+   "anchor": "SE",
+   "tags": [
+    "stairs"
+   ]
+  },
+  {
+   "uid": "lift_1",
+   "sprite": "lift",
+   "name": "Lift",
+   "x": 10,
+   "y": 0,
+   "w": 2,
+   "h": 2,
+   "rotation": 0,
+   "anchor": "NE",
+   "tags": [
+    "lift"
+   ]
+  },
+  {
+   "uid": "computer_1",
+   "sprite": "computer",
+   "name": "Computer",
+   "x": 5,
+   "y": 0,
+   "w": 2,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "on:desk",
+   "tags": [
+    "solid",
+    "prank"
+   ],
+   "onTopOf": "desk_1"
+  },
+  {
+   "uid": "book_big_1",
+   "sprite": "book_big",
+   "name": "Big instruction book",
+   "x": 6,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "on:desk",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "onTopOf": "desk_1"
+  },
+  {
+   "uid": "pen_holder_1",
+   "sprite": "pen_holder",
+   "name": "Pen holder",
+   "x": 4,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "on:desk",
+   "tags": [
+    "pickup"
+   ],
+   "onTopOf": "desk_1"
+  },
+  {
+   "uid": "cobweb_1",
+   "sprite": "cobweb",
+   "name": "Cobweb",
+   "x": 0,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "NW",
+   "tags": [
+    "decor"
+   ]
+  }
+ ],
+ "colliders": [
+  {
+   "uid": "desk_1",
+   "x": 4,
+   "y": 0,
+   "w": 3,
+   "h": 2
+  },
+  {
+   "uid": "office_chair_1",
+   "x": 5,
+   "y": 4,
+   "w": 1,
+   "h": 1
+  },
+  {
+   "uid": "bookshelf_1",
+   "x": 0,
+   "y": 2,
+   "w": 1,
+   "h": 4
+  }
+ ],
+ "hideSpots": [],
+ "pickups": [
+  "colored_paper_1",
+  "scissors_1",
+  "glue_1",
+  "pencil_1",
+  "eraser_1",
+  "book_big_1",
+  "pen_holder_1"
+ ],
+ "prankTargets": [
+  "scissors_1",
+  "glue_1",
+  "pencil_1",
+  "computer_1",
+  "book_big_1"
+ ],
+ "climbables": [],
+ "navigation": [
+  "stairs_1",
+  "lift_1"
+ ],
+ "images": {
+  "svg": "rooms/granny_house/gh_craft_office.svg",
+  "png": "rooms/granny_house/gh_craft_office.png",
+  "floorOnly": "rooms/granny_house/gh_craft_office_floor.png",
+  "preview": "preview/gh_craft_office_labelled.png",
+  "wallBorderPx": 14
+ }
+}

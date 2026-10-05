@@ -1,0 +1,167 @@
+{
+ "id": "gh_dance_room",
+ "name": "Dance room",
+ "location": "granny_house",
+ "floor": "Floor 3",
+ "unlockLevel": 15,
+ "note": "",
+ "tileSize": 40,
+ "size": {
+  "w": 12,
+  "h": 9,
+  "px_w": 480,
+  "px_h": 360
+ },
+ "ground": "wood",
+ "outdoor": false,
+ "safeZone": false,
+ "doors": [
+  {
+   "side": "E",
+   "to": "gh_study",
+   "x": 11,
+   "y": 3,
+   "w": 1,
+   "h": 2
+  },
+  {
+   "side": "S",
+   "to": "gh_yoga_room",
+   "x": 5,
+   "y": 8,
+   "w": 2,
+   "h": 1
+  }
+ ],
+ "spawn": {
+  "x": 10,
+  "y": 4
+ },
+ "items": [
+  {
+   "uid": "jbl_speaker_1",
+   "sprite": "jbl_speaker",
+   "name": "JBL speaker",
+   "x": 5,
+   "y": 0,
+   "w": 2,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "N",
+   "tags": [
+    "solid",
+    "prank"
+   ]
+  },
+  {
+   "uid": "mirror_wall_1",
+   "sprite": "mirror_wall",
+   "name": "Mirror wall",
+   "x": 0,
+   "y": 2,
+   "w": 1,
+   "h": 4,
+   "rotation": -90,
+   "anchor": "W",
+   "tags": [
+    "decor"
+   ]
+  },
+  {
+   "uid": "disco_light_1",
+   "sprite": "disco_light",
+   "name": "Disco light",
+   "x": 5,
+   "y": 4,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "decor"
+   ]
+  },
+  {
+   "uid": "disco_light_2",
+   "sprite": "disco_light",
+   "name": "Disco light",
+   "x": 3,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "decor"
+   ]
+  },
+  {
+   "uid": "stairs_1",
+   "sprite": "stairs",
+   "name": "Zigzag stairs",
+   "x": 10,
+   "y": 6,
+   "w": 2,
+   "h": 3,
+   "rotation": 0,
+   "anchor": "SE",
+   "tags": [
+    "stairs"
+   ]
+  },
+  {
+   "uid": "lift_1",
+   "sprite": "lift",
+   "name": "Lift",
+   "x": 10,
+   "y": 0,
+   "w": 2,
+   "h": 2,
+   "rotation": 0,
+   "anchor": "NE",
+   "tags": [
+    "lift"
+   ]
+  },
+  {
+   "uid": "cobweb_1",
+   "sprite": "cobweb",
+   "name": "Cobweb",
+   "x": 0,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "NW",
+   "tags": [
+    "decor"
+   ]
+  }
+ ],
+ "colliders": [
+  {
+   "uid": "jbl_speaker_1",
+   "x": 5,
+   "y": 0,
+   "w": 2,
+   "h": 1
+  }
+ ],
+ "hideSpots": [],
+ "pickups": [],
+ "prankTargets": [
+  "jbl_speaker_1"
+ ],
+ "climbables": [],
+ "navigation": [
+  "stairs_1",
+  "lift_1"
+ ],
+ "images": {
+  "svg": "rooms/granny_house/gh_dance_room.svg",
+  "png": "rooms/granny_house/gh_dance_room.png",
+  "floorOnly": "rooms/granny_house/gh_dance_room_floor.png",
+  "preview": "preview/gh_dance_room_labelled.png",
+  "wallBorderPx": 14
+ }
+}

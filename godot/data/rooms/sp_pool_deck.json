@@ -1,0 +1,270 @@
+{
+ "id": "sp_pool_deck",
+ "name": "Pool deck",
+ "location": "swimming_pool",
+ "floor": "Outside",
+ "unlockLevel": 50,
+ "note": "Oil-in-pool and wet-towel pranks. The slide from the roof lands here.",
+ "tileSize": 40,
+ "size": {
+  "w": 20,
+  "h": 13,
+  "px_w": 800,
+  "px_h": 520
+ },
+ "ground": "tile",
+ "outdoor": true,
+ "safeZone": false,
+ "doors": [
+  {
+   "side": "N",
+   "to": "gh_roof",
+   "x": 9,
+   "y": 0,
+   "w": 2,
+   "h": 1
+  },
+  {
+   "side": "W",
+   "to": "sp_changing_room",
+   "x": 0,
+   "y": 5,
+   "w": 1,
+   "h": 2
+  }
+ ],
+ "spawn": {
+  "x": 10,
+  "y": 1
+ },
+ "items": [
+  {
+   "uid": "pool_1",
+   "sprite": "pool",
+   "name": "Swimming pool",
+   "x": 6,
+   "y": 4,
+   "w": 8,
+   "h": 5,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "prank"
+   ]
+  },
+  {
+   "uid": "slide_chute_1",
+   "sprite": "slide_chute",
+   "name": "Slide (roof to pool)",
+   "x": 18,
+   "y": 0,
+   "w": 2,
+   "h": 6,
+   "rotation": 0,
+   "anchor": "NE",
+   "tags": [
+    "climb"
+   ]
+  },
+  {
+   "uid": "lounger_1",
+   "sprite": "lounger",
+   "name": "Sun lounger",
+   "x": 9,
+   "y": 10,
+   "w": 1,
+   "h": 3,
+   "rotation": 180,
+   "anchor": "S",
+   "tags": [
+    "solid"
+   ]
+  },
+  {
+   "uid": "lounger_2",
+   "sprite": "lounger",
+   "name": "Sun lounger",
+   "x": 10,
+   "y": 10,
+   "w": 1,
+   "h": 3,
+   "rotation": 180,
+   "anchor": "S",
+   "tags": [
+    "solid"
+   ]
+  },
+  {
+   "uid": "lounger_3",
+   "sprite": "lounger",
+   "name": "Sun lounger",
+   "x": 8,
+   "y": 10,
+   "w": 1,
+   "h": 3,
+   "rotation": 180,
+   "anchor": "S",
+   "tags": [
+    "solid"
+   ]
+  },
+  {
+   "uid": "beach_umbrella_1",
+   "sprite": "beach_umbrella",
+   "name": "Umbrella",
+   "x": 0,
+   "y": 11,
+   "w": 2,
+   "h": 2,
+   "rotation": 0,
+   "anchor": "SW",
+   "tags": [
+    "solid",
+    "hide"
+   ]
+  },
+  {
+   "uid": "lifeguard_chair_1",
+   "sprite": "lifeguard_chair",
+   "name": "Lifeguard chair",
+   "x": 0,
+   "y": 0,
+   "w": 2,
+   "h": 2,
+   "rotation": 0,
+   "anchor": "NW",
+   "tags": [
+    "solid",
+    "safe"
+   ]
+  },
+  {
+   "uid": "towel_stack_1",
+   "sprite": "towel_stack",
+   "name": "Towel stack",
+   "x": 4,
+   "y": 4,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "pickup",
+    "prank"
+   ]
+  },
+  {
+   "uid": "towel_rack_1",
+   "sprite": "towel_rack",
+   "name": "Towel rack",
+   "x": 0,
+   "y": 7,
+   "w": 1,
+   "h": 2,
+   "rotation": -90,
+   "anchor": "W",
+   "tags": [
+    "solid"
+   ]
+  },
+  {
+   "uid": "pool_ladder_1",
+   "sprite": "pool_ladder",
+   "name": "Pool ladder",
+   "x": 6,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "on:pool",
+   "tags": [
+    "climb"
+   ],
+   "onTopOf": "pool_1"
+  },
+  {
+   "uid": "float_ring_1",
+   "sprite": "float_ring",
+   "name": "Swim ring",
+   "x": 7,
+   "y": 7,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "on:pool",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "onTopOf": "pool_1"
+  }
+ ],
+ "colliders": [
+  {
+   "uid": "lounger_1",
+   "x": 9,
+   "y": 10,
+   "w": 1,
+   "h": 3
+  },
+  {
+   "uid": "lounger_2",
+   "x": 10,
+   "y": 10,
+   "w": 1,
+   "h": 3
+  },
+  {
+   "uid": "lounger_3",
+   "x": 8,
+   "y": 10,
+   "w": 1,
+   "h": 3
+  },
+  {
+   "uid": "beach_umbrella_1",
+   "x": 0,
+   "y": 11,
+   "w": 2,
+   "h": 2
+  },
+  {
+   "uid": "lifeguard_chair_1",
+   "x": 0,
+   "y": 0,
+   "w": 2,
+   "h": 2
+  },
+  {
+   "uid": "towel_rack_1",
+   "x": 0,
+   "y": 7,
+   "w": 1,
+   "h": 2
+  }
+ ],
+ "hideSpots": [
+  "beach_umbrella_1"
+ ],
+ "pickups": [
+  "towel_stack_1",
+  "float_ring_1"
+ ],
+ "prankTargets": [
+  "pool_1",
+  "towel_stack_1",
+  "float_ring_1"
+ ],
+ "climbables": [
+  "slide_chute_1",
+  "pool_ladder_1"
+ ],
+ "navigation": [],
+ "images": {
+  "svg": "rooms/swimming_pool/sp_pool_deck.svg",
+  "png": "rooms/swimming_pool/sp_pool_deck.png",
+  "floorOnly": "rooms/swimming_pool/sp_pool_deck_floor.png",
+  "preview": "preview/sp_pool_deck_labelled.png",
+  "wallBorderPx": 14
+ }
+}

@@ -1,0 +1,83 @@
+# Anisha's Spooky House: 3D (Godot)
+
+The 3D version of the game, built with **Godot 4.7** and GDScript. Everything is grey placeholder boxes for now,
+built automatically from the same room layouts as the web version, until real 3D models arrive.
+
+## Run it
+
+1. Install Godot 4.7 (`brew install --cask godot`).
+2. Open this `godot/` folder in Godot (Project Manager → Import → `project.godot`) and press **Play** (F5).
+   The first time, Godot imports the fonts; wait for it to finish.
+
+From a terminal: `godot --path godot`.
+
+## Controls
+
+| | Keyboard | Touch |
+| --- | --- | --- |
+| Move | WASD / arrows | Stick (left side) |
+| Sneak | Hold Shift | Sneak button (toggle) |
+| Use / grab | E or Space | Use button |
+| Hide / come out | H | Hide button |
+| Call a pet | C | Pet button (top) |
+| Switch camera | V | View button (top) |
+| Turn the third-person camera | Q / R, or right-mouse drag | Drag on the right half |
+| Pause | Esc or P | II button (top) |
+
+Two cameras: the tilted **dollhouse** view (walls drop low so you can see in) and **third person** behind Anisha
+(walls rise to full height). Touch controls turn on by themselves on phones and tablets (`--touch` forces them on a computer).
+
+## Where things are
+
+| Path | What |
+| --- | --- |
+| `scripts/core/world_builder.gd` | Turns a level's rooms (from the art pack) into walls, furniture, hiding spots, exits |
+| `scripts/core/geo.gd` | Floor-plan geometry: sight rays, cones, collisions |
+| `scripts/game/game_logic.gd` | The rules: movement, patrols, sight, "seen" meter, items, hiding, steps, pets. No drawing |
+| `scripts/game/level_view.gd` | Shows the logic in 3D, plus both cameras and the sight cones |
+| `scripts/game/model_library.gd` | Makes each object (a grey box today). **This is where real 3D models plug in** |
+| `scripts/ui/` | Title screen, HUD, pause / caught / prank-done screens, touch controls |
+| `data/` | Levels, baddies, text and rooms. Copied from the web version (see below) |
+| `tests/` | Headless checks |
+
+## Shared data
+
+Levels, baddie kinds, text (English and Hindi) and room layouts are shared with the web version. They are edited in `src/data/`
+in the repo root, and copied here with:
+
+```bash
+npm run godot:data
+```
+
+Adding a level is the same as for the web version: see [../docs/ADDING_LEVELS.md](../docs/ADDING_LEVELS.md).
+
+## Real 3D models
+
+Put a glTF file named after the object in `assets/models/`, for example `fridge.glb` for the "fridge" object
+(object names are in the room files and the labelled pictures in `docs/art/preview/`). It replaces the grey box
+automatically, with no code change. Build models so that **1 unit = 1 metre**, the object fills its footprint
+(a 4 × 2 tile sofa is 4 m × 2 m), and the origin is the centre of the base. The characters (Anisha, the baddies) are
+capsules for now and will need a small change in `ModelLibrary.make_person` once their models exist.
+
+## Checks
+
+```bash
+godot --headless --path godot --script tests/level_test.gd    # validates every level and has a bot play it
+godot --headless --path godot --script tests/world_test.gd    # prints a summary of each built level
+godot --headless --path godot -- --selftest                   # presses keys in the real game: move, camera, pick up
+```
+
+After a fresh clone, run `godot --headless --path godot --import` once so Godot registers the scripts and fonts.
+
+The bot walks the shortest route (sneaking, never hiding) at many different start moments. A level must be winnable at some
+moment. The share of start moments it wins shows how hard the level is: Level 1 is won 15 times out of 20.
+
+## Publishing
+
+Not set up yet. Godot's web export needs its export templates (a large download, done in the editor under Editor → Manage Export
+Templates), and web builds of 3D games are big (about 30 to 40 MB) and can struggle on older phones. Desktop and Android builds
+are easier. We should decide the target before setting up exports.
+
+## Not built yet (compared with the web version)
+
+Level map screen, stairs and lift between floors, sound, real models, the other baddies (Labubu, Kabla), and only Level 1 exists.

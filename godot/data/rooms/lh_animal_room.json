@@ -1,0 +1,202 @@
+{
+ "id": "lh_animal_room",
+ "name": "Animal room",
+ "location": "little_house",
+ "floor": "Ground",
+ "unlockLevel": 1,
+ "note": "Pets run out from here to distract a chaser.",
+ "tileSize": 40,
+ "size": {
+  "w": 9,
+  "h": 8,
+  "px_w": 360,
+  "px_h": 320
+ },
+ "ground": "wood",
+ "outdoor": false,
+ "safeZone": false,
+ "doors": [
+  {
+   "side": "W",
+   "to": "lh_hall",
+   "x": 0,
+   "y": 3,
+   "w": 1,
+   "h": 2
+  }
+ ],
+ "spawn": {
+  "x": 1,
+  "y": 4
+ },
+ "items": [
+  {
+   "uid": "parrot_cage_1",
+   "sprite": "parrot_cage",
+   "name": "Parrot cage",
+   "x": 8,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "NE",
+   "tags": [
+    "solid"
+   ]
+  },
+  {
+   "uid": "dog_bed_1",
+   "sprite": "dog_bed",
+   "name": "Dog bed",
+   "x": 7,
+   "y": 6,
+   "w": 2,
+   "h": 2,
+   "rotation": 0,
+   "anchor": "SE",
+   "tags": [
+    "solid"
+   ]
+  },
+  {
+   "uid": "cat_basket_1",
+   "sprite": "cat_basket",
+   "name": "Cat basket",
+   "x": 0,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "NW",
+   "tags": [
+    "solid"
+   ]
+  },
+  {
+   "uid": "pet_bowl_1",
+   "sprite": "pet_bowl",
+   "name": "Pet food bowl",
+   "x": 4,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "pickup"
+   ]
+  },
+  {
+   "uid": "pet_bowl_2",
+   "sprite": "pet_bowl",
+   "name": "Pet food bowl",
+   "x": 2,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "pickup"
+   ]
+  },
+  {
+   "uid": "pet_toys_1",
+   "sprite": "pet_toys",
+   "name": "Pet toys",
+   "x": 6,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "pickup"
+   ]
+  },
+  {
+   "uid": "pet_parrot_1",
+   "sprite": "pet_parrot",
+   "name": "Parrot (pet helper)",
+   "x": 8,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "on:parrot_cage",
+   "tags": [
+    "pet"
+   ],
+   "onTopOf": "parrot_cage_1"
+  },
+  {
+   "uid": "pet_dog_1",
+   "sprite": "pet_dog",
+   "name": "Dog (pet helper)",
+   "x": 7,
+   "y": 6,
+   "w": 1,
+   "h": 2,
+   "rotation": 0,
+   "anchor": "on:dog_bed",
+   "tags": [
+    "pet"
+   ],
+   "onTopOf": "dog_bed_1"
+  },
+  {
+   "uid": "pet_cat_1",
+   "sprite": "pet_cat",
+   "name": "Cat (pet helper)",
+   "x": 0,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "on:cat_basket",
+   "tags": [
+    "pet"
+   ],
+   "onTopOf": "cat_basket_1"
+  }
+ ],
+ "colliders": [
+  {
+   "uid": "parrot_cage_1",
+   "x": 8,
+   "y": 0,
+   "w": 1,
+   "h": 1
+  },
+  {
+   "uid": "dog_bed_1",
+   "x": 7,
+   "y": 6,
+   "w": 2,
+   "h": 2
+  },
+  {
+   "uid": "cat_basket_1",
+   "x": 0,
+   "y": 0,
+   "w": 1,
+   "h": 1
+  }
+ ],
+ "hideSpots": [],
+ "pickups": [
+  "pet_bowl_1",
+  "pet_bowl_2",
+  "pet_toys_1"
+ ],
+ "prankTargets": [],
+ "climbables": [],
+ "navigation": [],
+ "images": {
+  "svg": "rooms/little_house/lh_animal_room.svg",
+  "png": "rooms/little_house/lh_animal_room.png",
+  "floorOnly": "rooms/little_house/lh_animal_room_floor.png",
+  "preview": "preview/lh_animal_room_labelled.png",
+  "wallBorderPx": 14
+ }
+}

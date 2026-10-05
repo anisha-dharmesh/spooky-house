@@ -1,0 +1,295 @@
+{
+ "id": "hs_ward",
+ "name": "Ward",
+ "location": "hospital",
+ "floor": "Floor 1",
+ "unlockLevel": 43,
+ "note": "Hide under the beds or behind curtains.",
+ "tileSize": 40,
+ "size": {
+  "w": 16,
+  "h": 10,
+  "px_w": 640,
+  "px_h": 400
+ },
+ "ground": "tile",
+ "outdoor": false,
+ "safeZone": false,
+ "doors": [
+  {
+   "side": "W",
+   "to": "hs_reception",
+   "x": 0,
+   "y": 4,
+   "w": 1,
+   "h": 2
+  }
+ ],
+ "spawn": {
+  "x": 1,
+  "y": 5
+ },
+ "items": [
+  {
+   "uid": "hospital_bed_1",
+   "sprite": "hospital_bed",
+   "name": "Hospital bed",
+   "x": 7,
+   "y": 0,
+   "w": 2,
+   "h": 4,
+   "rotation": 0,
+   "anchor": "N",
+   "tags": [
+    "solid",
+    "hide"
+   ]
+  },
+  {
+   "uid": "hospital_bed_2",
+   "sprite": "hospital_bed",
+   "name": "Hospital bed",
+   "x": 5,
+   "y": 0,
+   "w": 2,
+   "h": 4,
+   "rotation": 0,
+   "anchor": "N",
+   "tags": [
+    "solid",
+    "hide"
+   ]
+  },
+  {
+   "uid": "hospital_bed_3",
+   "sprite": "hospital_bed",
+   "name": "Hospital bed",
+   "x": 9,
+   "y": 0,
+   "w": 2,
+   "h": 4,
+   "rotation": 0,
+   "anchor": "N",
+   "tags": [
+    "solid",
+    "hide"
+   ]
+  },
+  {
+   "uid": "hospital_bed_4",
+   "sprite": "hospital_bed",
+   "name": "Hospital bed",
+   "x": 7,
+   "y": 6,
+   "w": 2,
+   "h": 4,
+   "rotation": 180,
+   "anchor": "S",
+   "tags": [
+    "solid",
+    "hide"
+   ]
+  },
+  {
+   "uid": "hospital_bed_5",
+   "sprite": "hospital_bed",
+   "name": "Hospital bed",
+   "x": 5,
+   "y": 6,
+   "w": 2,
+   "h": 4,
+   "rotation": 180,
+   "anchor": "S",
+   "tags": [
+    "solid",
+    "hide"
+   ]
+  },
+  {
+   "uid": "curtain_screen_1",
+   "sprite": "curtain_screen",
+   "name": "Curtain screen",
+   "x": 10,
+   "y": 5,
+   "w": 3,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "solid",
+    "hide"
+   ]
+  },
+  {
+   "uid": "drip_stand_1",
+   "sprite": "drip_stand",
+   "name": "Drip stand",
+   "x": 3,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "solid"
+   ]
+  },
+  {
+   "uid": "drip_stand_2",
+   "sprite": "drip_stand",
+   "name": "Drip stand",
+   "x": 12,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "solid"
+   ]
+  },
+  {
+   "uid": "wheelchair_1",
+   "sprite": "wheelchair",
+   "name": "Wheelchair",
+   "x": 14,
+   "y": 4,
+   "w": 2,
+   "h": 2,
+   "rotation": 90,
+   "anchor": "E",
+   "tags": [
+    "solid",
+    "prank"
+   ]
+  },
+  {
+   "uid": "hanging_bulb_1",
+   "sprite": "hanging_bulb",
+   "name": "Hanging bulb",
+   "x": 3,
+   "y": 7,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "decor"
+   ]
+  },
+  {
+   "uid": "cobweb_1",
+   "sprite": "cobweb",
+   "name": "Cobweb",
+   "x": 0,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "NW",
+   "tags": [
+    "decor"
+   ]
+  },
+  {
+   "uid": "cobweb_2",
+   "sprite": "cobweb",
+   "name": "Cobweb",
+   "x": 15,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rotation": 90,
+   "anchor": "NE",
+   "tags": [
+    "decor"
+   ]
+  }
+ ],
+ "colliders": [
+  {
+   "uid": "hospital_bed_1",
+   "x": 7,
+   "y": 0,
+   "w": 2,
+   "h": 4
+  },
+  {
+   "uid": "hospital_bed_2",
+   "x": 5,
+   "y": 0,
+   "w": 2,
+   "h": 4
+  },
+  {
+   "uid": "hospital_bed_3",
+   "x": 9,
+   "y": 0,
+   "w": 2,
+   "h": 4
+  },
+  {
+   "uid": "hospital_bed_4",
+   "x": 7,
+   "y": 6,
+   "w": 2,
+   "h": 4
+  },
+  {
+   "uid": "hospital_bed_5",
+   "x": 5,
+   "y": 6,
+   "w": 2,
+   "h": 4
+  },
+  {
+   "uid": "curtain_screen_1",
+   "x": 10,
+   "y": 5,
+   "w": 3,
+   "h": 1
+  },
+  {
+   "uid": "drip_stand_1",
+   "x": 3,
+   "y": 2,
+   "w": 1,
+   "h": 1
+  },
+  {
+   "uid": "drip_stand_2",
+   "x": 12,
+   "y": 3,
+   "w": 1,
+   "h": 1
+  },
+  {
+   "uid": "wheelchair_1",
+   "x": 14,
+   "y": 4,
+   "w": 2,
+   "h": 2
+  }
+ ],
+ "hideSpots": [
+  "hospital_bed_1",
+  "hospital_bed_2",
+  "hospital_bed_3",
+  "hospital_bed_4",
+  "hospital_bed_5",
+  "curtain_screen_1"
+ ],
+ "pickups": [],
+ "prankTargets": [
+  "wheelchair_1"
+ ],
+ "climbables": [],
+ "navigation": [],
+ "images": {
+  "svg": "rooms/hospital/hs_ward.svg",
+  "png": "rooms/hospital/hs_ward.png",
+  "floorOnly": "rooms/hospital/hs_ward_floor.png",
+  "preview": "preview/hs_ward_labelled.png",
+  "wallBorderPx": 14
+ }
+}

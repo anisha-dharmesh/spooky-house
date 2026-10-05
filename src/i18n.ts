@@ -1,7 +1,7 @@
 export type Lang = 'en' | 'hi';
 export type Text = string | { en: string; hi?: string };
 
-const UI: Record<string, { en: string; hi: string }> = {
+export const UI: Record<string, { en: string; hi: string }> = {
   anisha: { en: "Anisha's", hi: 'अनीशा का' },
   gameTitle: { en: 'Spooky House', hi: 'भूतिया घर' },
   tagline: { en: "Sneak in. Pull a prank. Don't get caught.", hi: 'चुपके से जाओ। शरारत करो। पकड़े मत जाना।' },
@@ -56,6 +56,13 @@ const UI: Record<string, { en: string; hi: string }> = {
   pause: { en: 'Pause', hi: 'रोको' },
   keysHelp: { en: 'Arrows / WASD move · Shift sneak · E use · H hide · C pet · P pause', hi: 'तीर / WASD चलो · Shift चुपके · E उठाओ · H छुपो · C पालतू · P रोको' },
   language: { en: 'Language', hi: 'भाषा' },
+  seen: { en: 'Seen', hi: 'देखा' },
+  menu: { en: 'Menu', hi: 'मेन्यू' },
+  view: { en: 'View', hi: 'दृश्य' },
+  keysHelp3d: {
+    en: 'WASD / arrows move · Shift sneak · E use · H hide · C pet · V camera · Q / R turn view',
+    hi: 'WASD / तीर चलो · Shift चुपके · E उठाओ · H छुपो · C पालतू · V कैमरा · Q / R दृश्य घुमाओ',
+  },
 };
 
 let current: Lang = 'en';

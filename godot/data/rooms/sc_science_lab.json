@@ -1,0 +1,220 @@
+{
+ "id": "sc_science_lab",
+ "name": "Science lab",
+ "location": "school",
+ "floor": "Floor 1",
+ "unlockLevel": 31,
+ "note": "",
+ "tileSize": 40,
+ "size": {
+  "w": 14,
+  "h": 9,
+  "px_w": 560,
+  "px_h": 360
+ },
+ "ground": "tile",
+ "outdoor": false,
+ "safeZone": false,
+ "doors": [
+  {
+   "side": "N",
+   "to": "sc_library",
+   "x": 6,
+   "y": 0,
+   "w": 2,
+   "h": 1
+  }
+ ],
+ "spawn": {
+  "x": 7,
+  "y": 1
+ },
+ "items": [
+  {
+   "uid": "lab_bench_1",
+   "sprite": "lab_bench",
+   "name": "Science lab bench",
+   "x": 4,
+   "y": 4,
+   "w": 6,
+   "h": 2,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "solid"
+   ]
+  },
+  {
+   "uid": "lab_bench_2",
+   "sprite": "lab_bench",
+   "name": "Science lab bench",
+   "x": 1,
+   "y": 7,
+   "w": 6,
+   "h": 2,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "solid"
+   ]
+  },
+  {
+   "uid": "skeleton_model_1",
+   "sprite": "skeleton_model",
+   "name": "Skeleton model",
+   "x": 13,
+   "y": 0,
+   "w": 1,
+   "h": 2,
+   "rotation": 0,
+   "anchor": "NE",
+   "tags": [
+    "solid",
+    "decor"
+   ]
+  },
+  {
+   "uid": "blackboard_1",
+   "sprite": "blackboard",
+   "name": "Blackboard",
+   "x": 0,
+   "y": 0,
+   "w": 6,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "N",
+   "tags": [
+    "decor",
+    "prank"
+   ]
+  },
+  {
+   "uid": "first_aid_box_1",
+   "sprite": "first_aid_box",
+   "name": "First-aid box",
+   "x": 0,
+   "y": 4,
+   "w": 1,
+   "h": 1,
+   "rotation": -90,
+   "anchor": "W",
+   "tags": [
+    "pickup"
+   ]
+  },
+  {
+   "uid": "sink_1",
+   "sprite": "sink",
+   "name": "Sink",
+   "x": 7,
+   "y": 8,
+   "w": 2,
+   "h": 1,
+   "rotation": 180,
+   "anchor": "S",
+   "tags": [
+    "solid",
+    "prank"
+   ]
+  },
+  {
+   "uid": "microscope_1",
+   "sprite": "microscope",
+   "name": "Microscope",
+   "x": 4,
+   "y": 4,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "on:lab_bench",
+   "tags": [
+    "pickup"
+   ],
+   "onTopOf": "lab_bench_1"
+  },
+  {
+   "uid": "flask_1",
+   "sprite": "flask",
+   "name": "Flask",
+   "x": 2,
+   "y": 7,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "on:lab_bench",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "onTopOf": "lab_bench_2"
+  },
+  {
+   "uid": "flask_2",
+   "sprite": "flask",
+   "name": "Flask",
+   "x": 5,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "on:lab_bench",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "onTopOf": "lab_bench_1"
+  }
+ ],
+ "colliders": [
+  {
+   "uid": "lab_bench_1",
+   "x": 4,
+   "y": 4,
+   "w": 6,
+   "h": 2
+  },
+  {
+   "uid": "lab_bench_2",
+   "x": 1,
+   "y": 7,
+   "w": 6,
+   "h": 2
+  },
+  {
+   "uid": "skeleton_model_1",
+   "x": 13,
+   "y": 0,
+   "w": 1,
+   "h": 2
+  },
+  {
+   "uid": "sink_1",
+   "x": 7,
+   "y": 8,
+   "w": 2,
+   "h": 1
+  }
+ ],
+ "hideSpots": [],
+ "pickups": [
+  "first_aid_box_1",
+  "microscope_1",
+  "flask_1",
+  "flask_2"
+ ],
+ "prankTargets": [
+  "blackboard_1",
+  "sink_1",
+  "flask_1",
+  "flask_2"
+ ],
+ "climbables": [],
+ "navigation": [],
+ "images": {
+  "svg": "rooms/school/sc_science_lab.svg",
+  "png": "rooms/school/sc_science_lab.png",
+  "floorOnly": "rooms/school/sc_science_lab_floor.png",
+  "preview": "preview/sc_science_lab_labelled.png",
+  "wallBorderPx": 14
+ }
+}
