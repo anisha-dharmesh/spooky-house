@@ -1,6 +1,6 @@
 extends Node
 ## Autoload "GameData": levels, baddie kinds, rooms and translated text, loaded from res://data.
-## The same files drive the web (Phaser) version; run `npm run godot:data` in the repo root to refresh them.
+## These files are edited directly: see docs/ADDING_LEVELS.md.
 
 signal language_changed
 

@@ -1,11 +1,11 @@
 # Adding a level
 
 Levels are built from the **rooms in the art pack** (41 rooms, 184 objects, already laid out). A level is one entry in
-`src/data/levels.json`: pick rooms, say where Anisha starts, where the baddie walks, and what the prank steps are.
+`godot/data/levels.json`: pick rooms, say where Anisha starts, where the baddie walks, and what the prank steps are.
 No map editor and no code needed.
 
 To see every room with all its objects named, open the pictures in `docs/art/preview/` (for example `gh_kitchen_labelled.png`).
-After adding a level, run `npm run check`. It tells you in plain words if something is missing or the player can't reach it.
+After adding a level, run `npm run check`. It tells you in plain words if something is missing or the player can't reach it, and has a bot try to win it.
 
 ## The parts of a level
 
@@ -39,7 +39,7 @@ After adding a level, run `npm run check`. It tells you in plain words if someth
 
 ## Steps
 
-Done in order. Objects are named by their **uid** in the room's file (`public/assets/rooms/<place>/<room>.json`, under `items`,
+Done in order. Objects are named by their **uid** in the room's file (`godot/data/rooms/<room>.json`, under `items`,
 or on the labelled preview picture's matching file).
 
 | Type | Fields | Meaning |
@@ -59,7 +59,7 @@ Each step has `"text": { "en": "…", "hi": "…" }` for the task list.
 
 He walks the points in a loop (at least 2) and starts at the first. Keep points on open floor, not on furniture.
 `speed`, `range` (sight distance, in pixels) and `halfAngle` (half the width of the sight cone, in degrees) override the
-defaults for that kind in `src/data/baddies.json`.
+defaults for that kind in `godot/data/baddies.json`.
 
 **Making levels a little harder, one thing at a time:** raise `speed`, `range` or `halfAngle`, add a patrol point, add a second
 baddie, add another item to collect, or lower `parTime`.
@@ -71,8 +71,8 @@ These come from the pack: objects tagged `hide` (big cupboard, pots, beds) are h
 
 ## A new kind of baddie
 
-Add it to `src/data/baddies.json`, then use its key as `"kind"`. Labubu and Kabla are ready to add this way. Giving each its
-own face and behaviour (guarding, chasing, quiet) needs a small change in `src/game/Baddie.ts`.
+Add it to `godot/data/baddies.json`, then use its key as `"kind"`. Labubu and Kabla are ready to add this way. Giving each its
+own model and behaviour (guarding, chasing, quiet) needs a small change in `godot/scripts/game/game_logic.gd` and a model in `godot/assets/models/`.
 
 ## Text
 
@@ -82,6 +82,6 @@ Any text can be a plain string or `{ "en": "…", "hi": "…" }`. Missing Hindi 
 ## Try it
 
 ```bash
-npm run check   # catches typos, missing items, unreachable things
-npm run dev     # play it
+npm run check            # catches typos, missing items, unreachable things (needs Godot installed)
+godot --path godot -- --level 2   # play level 2 straight away
 ```

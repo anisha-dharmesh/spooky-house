@@ -309,6 +309,9 @@ Build a playable vertical slice first, so Anisha can see herself walk, then grow
 7. Level data file driving the 100 levels (rooms open, baddies active, speeds, task, required items).
 8. Town map and outdoor areas (playground, garden, Sand Park, Palace).
 
+> **Update, Oct 5, 2026: the game is built in 3D with Godot** (see `godot/`). A first 2D version in Phaser was built and then
+> removed; it is still in the git history (commit `fff3950`). The suggestions below are the original ones.
+
 **Technical suggestions**
 
 - Target browser (desktop + phone/tablet touch), e.g. Phaser 3 or plain Canvas; 2D top-down or side-view with floors.

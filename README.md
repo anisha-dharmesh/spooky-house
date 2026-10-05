@@ -1,55 +1,45 @@
 # Anisha's Spooky House
 
-A spooky stealth-prank game, designed by Anisha. Sneak around a haunted house, pull pranks on the baddies, don't get caught.
-Built with [Phaser 3](https://phaser.io), TypeScript and Vite. Runs in any browser (desktop, phone, tablet).
+A stealth-prank game, designed by Anisha (age 8). Sneak around Granny's spooky house, pull pranks on the baddies, and don't
+get caught. Built in **3D with Godot 4.7** (GDScript).
 
-The game design is in [docs/](docs/). The rooms and objects come from the art pack (see `docs/art/`).
+The game is in [godot/](godot/README.md): how to run it, the controls, and where everything is.
 
-There is also a 3D version in Godot: see [godot/](godot/README.md).
-
-## Run it
+## Quick start
 
 ```bash
-npm install
-npm run dev        # play at http://localhost:5173
+brew install --cask godot     # once
+godot --path godot            # play
+godot --path godot -- --gallery   # look at all the 3D models
 ```
 
-Controls: arrows or WASD to move, **Shift** to sneak, **E** or Space to use, **H** to hide, **C** to call a pet, **P** to pause.
-On a phone or tablet, on-screen buttons appear automatically (add `?touch=1` to the address to see them on a computer).
-
-## Check your work
-
-```bash
-npm run check      # type-check + tests (also proves every level can be won)
-```
-
-## Publish
-
-```bash
-npm run build      # makes the dist/ folder (about 2.7 MB)
-npm run zip        # dist/ as spooky-house.zip, ready for itch.io
-```
-
-- **itch.io:** new project, kind "HTML", upload `spooky-house.zip`, tick "played in the browser".
-- **GitHub Pages / Netlify / Cloudflare Pages:** publish the `dist/` folder.
-- **Game portals (Poki, CrazyGames, Newgrounds):** upload the same zip; each has its own review.
-
-## Adding levels and details
-
-See [docs/ADDING_LEVELS.md](docs/ADDING_LEVELS.md). In short: pick rooms from the art pack and add one entry to
-`src/data/levels.json`. No code needed.
-
-## Where things live
+## Folders
 
 | Folder | What |
 | --- | --- |
-| `public/assets/` | The art pack: object atlas, room layouts and floors |
-| `docs/art/` | Pack notes and labelled pictures of every room |
-| `src/data/levels.json` | One entry per level: rooms, task, steps, baddies, tips, text in English and Hindi |
-| `src/data/baddies.json` | The kinds of baddie (speed, sight range) |
-| `src/scenes/` | Title, map, game, caught and complete screens |
-| `src/game/` | Player, baddie, sight and wall maths |
-| `src/i18n.ts` | Menu text in English and Hindi |
-| `tests/` | Checks, including "can this level be won?" |
+| `godot/` | The game |
+| `godot/data/` | Levels, baddies, text (English and Hindi) and the room layouts |
+| `godot/assets/models/` | The 3D models (generated; see `MODELS.md` there) |
+| `scripts/` | Tools that build the 3D models (`npm run models`) |
+| `tests/` | Checks for the generated models (`npm test`) |
+| `docs/` | The game design spec, how to add levels, how to get 3D models, and the art pack notes and pictures |
+
+## Checks
+
+```bash
+npm install     # once
+npm run check   # model checks, then Godot's level check, a bot that plays each level, and a controls test
+```
+
+## Adding levels and making models
+
+- Levels: [docs/ADDING_LEVELS.md](docs/ADDING_LEVELS.md). Pick rooms from the art pack and add one entry to
+  `godot/data/levels.json`. No code needed.
+- 3D models: [docs/3D_MODEL_BRIEF.md](docs/3D_MODEL_BRIEF.md). The rules every model follows and how to make more.
+
+## History
+
+A first 2D version (Phaser, in the browser) was built and later removed in favour of the 3D game. It is still in the git
+history: commit `fff3950`.
 
 Hindi text was written by Claude and should be checked by a Hindi speaker.

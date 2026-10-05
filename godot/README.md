@@ -1,7 +1,7 @@
 # Anisha's Spooky House: 3D (Godot)
 
 The 3D version of the game, built with **Godot 4.7** and GDScript. Everything is grey placeholder boxes for now,
-built automatically from the same room layouts as the web version, until real 3D models arrive.
+built automatically from the art pack's room layouts. Objects without a model yet are grey boxes.
 
 ## Run it
 
@@ -37,19 +37,12 @@ Two cameras: the tilted **dollhouse** view (walls drop low so you can see in) an
 | `scripts/game/level_view.gd` | Shows the logic in 3D, plus both cameras and the sight cones |
 | `scripts/game/model_library.gd` | Makes each object (a grey box today). **This is where real 3D models plug in** |
 | `scripts/ui/` | Title screen, HUD, pause / caught / prank-done screens, touch controls |
-| `data/` | Levels, baddies, text and rooms. Copied from the web version (see below) |
+| `data/` | Levels, baddies, text (English and Hindi) and the room layouts. Edit these directly |
 | `tests/` | Headless checks |
 
-## Shared data
+## Data
 
-Levels, baddie kinds, text (English and Hindi) and room layouts are shared with the web version. They are edited in `src/data/`
-in the repo root, and copied here with:
-
-```bash
-npm run godot:data
-```
-
-Adding a level is the same as for the web version: see [../docs/ADDING_LEVELS.md](../docs/ADDING_LEVELS.md).
+Levels, baddie kinds, text and room layouts are plain JSON in `data/`. Adding a level: see [../docs/ADDING_LEVELS.md](../docs/ADDING_LEVELS.md).
 
 ## 3D models
 
@@ -75,6 +68,7 @@ Objects with no model yet are grey boxes sized from the room files, and the char
 ```bash
 godot --headless --path godot --script tests/level_test.gd    # validates every level and has a bot play it
 godot --headless --path godot --script tests/world_test.gd    # prints a summary of each built level
+npm run check                                                 # all of the checks, including the model checks
 godot --headless --path godot -- --selftest                   # presses keys in the real game: move, camera, pick up
 ```
 
@@ -89,6 +83,6 @@ Not set up yet. Godot's web export needs its export templates (a large download,
 Templates), and web builds of 3D games are big (about 30 to 40 MB) and can struggle on older phones. Desktop and Android builds
 are easier. We should decide the target before setting up exports.
 
-## Not built yet (compared with the web version)
+## Not built yet
 
 Level map screen, stairs and lift between floors (the models are there but are decoration for now), sound, models for the other 150 objects, the other baddies (Labubu, Kabla), and only Level 1 exists. Anisha's look is a stand-in until she decides.

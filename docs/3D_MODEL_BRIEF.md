@@ -88,8 +88,8 @@ placeholder boxes use today, so real models drop straight in.
 **Heights are the placeholders' guesses, so adjust them if a real object looks better taller or shorter.** Three objects are not floor objects: `hanging_bulb` hangs from the ceiling (2.4 m up), and `wall_clock` and `photo_frame` hang flat on a wall at about 1.5 m. Make them as wall or ceiling pieces and tell me, and I'll place them there instead of on the floor. Small pickups such as the knife, chilli and lemon should be modelled at their real size (the game can sit them on the counter or table).
 
 Plus the characters (Anisha, scary teacher) and **her shoes** (a pair, about 0.3 m long, the teacher's) for the prank.
-The 2D pictures for every object are in `public/assets/rooms` and the labelled room pictures in `docs/art/preview/`.
-The full list of 184 objects with sizes is the pack's `items.json`.
+The labelled 2D pictures of every room are in `docs/art/preview/` and the room layouts are in `godot/data/rooms/`.
+The full list of 184 objects with sizes is `godot/data/pack-items.json`.
 
 ---
 
@@ -118,7 +118,7 @@ For characters, repeat with the character's description and the 2D drawing attac
 ## Prompt B: give this to Claude Code (generated low-poly models)
 
 > In the `spooky-house` repo, write a Node script `scripts/make-models.mjs` that generates a low-poly `.glb` for every
-> object in `public/assets/rooms/*/*.json` (item ids and footprints are in the room files; heights are in
+> object in `godot/data/rooms/*.json` (item ids and footprints are in the room files; heights are in
 > `godot/scripts/game/model_library.gd`). Follow `docs/3D_MODEL_BRIEF.md`: 1 unit = 1 m, origin at the centre of the base on the
 > floor, front toward +Z, file named `<sprite id>.glb`, grey materials only, under 3,000 triangles. Build each object from
 > simple primitives so it reads as the real thing (a fridge has two doors and handles, a sofa has seat, back and arms, a chair has

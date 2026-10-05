@@ -6,7 +6,7 @@ import path from 'node:path';
 import { Model } from './models/gltf.mjs';
 import { RECIPES } from './models/recipes.mjs';
 
-const items = Object.fromEntries(JSON.parse(fs.readFileSync('src/data/pack-items.json', 'utf8')).map((i) => [i.id, i]));
+const items = Object.fromEntries(JSON.parse(fs.readFileSync('godot/data/pack-items.json', 'utf8')).map((i) => [i.id, i]));
 const MARGIN = 0.04;
 const MAX_TRIS = 3000;
 

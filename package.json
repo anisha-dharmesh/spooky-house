@@ -1,30 +1,16 @@
 {
   "name": "anishas-spooky-house",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
-  "description": "Anisha's Spooky House: a spooky stealth-prank game.",
+  "description": "Tools for Anisha's Spooky House (the game itself is the Godot project in godot/).",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc --noEmit && vite build",
-    "preview": "vite preview",
-    "typecheck": "tsc --noEmit",
+    "models": "node scripts/make-models.mjs",
     "test": "vitest run",
-    "check": "tsc --noEmit && vitest run",
-    "zip": "npm run build && cd dist && zip -r ../spooky-house.zip .",
-    "godot:data": "node scripts/export-godot-data.mjs",
-    "models": "node scripts/make-models.mjs"
-  },
-  "dependencies": {
-    "@fontsource/creepster": "^5.3.0",
-    "@fontsource/kalam": "^5.3.0",
-    "@fontsource/patrick-hand": "^5.3.0",
-    "phaser": "^3.90.0"
+    "test:godot": "godot --headless --path godot --import && godot --headless --path godot --script tests/level_test.gd && godot --headless --path godot -- --selftest",
+    "check": "npm test && npm run test:godot"
   },
   "devDependencies": {
-    "@types/node": "^26.6.4",
-    "typescript": "^7.0.2",
-    "vite": "^8.3.2",
     "vitest": "^5.0.3"
   }
 }
