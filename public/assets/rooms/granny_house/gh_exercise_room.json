@@ -1,0 +1,153 @@
+{
+ "id": "gh_exercise_room",
+ "name": "Exercise room",
+ "location": "granny_house",
+ "floor": "Floor 2",
+ "unlockLevel": 36,
+ "note": "Speed-up / oily treadmill pranks.",
+ "tileSize": 40,
+ "size": {
+  "w": 11,
+  "h": 9,
+  "px_w": 440,
+  "px_h": 360
+ },
+ "ground": "rubber",
+ "outdoor": false,
+ "safeZone": false,
+ "doors": [
+  {
+   "side": "N",
+   "to": "gh_craft_office",
+   "x": 4,
+   "y": 0,
+   "w": 2,
+   "h": 1
+  }
+ ],
+ "spawn": {
+  "x": 5,
+  "y": 1
+ },
+ "items": [
+  {
+   "uid": "treadmill_1",
+   "sprite": "treadmill",
+   "name": "Treadmill",
+   "x": 0,
+   "y": 3,
+   "w": 4,
+   "h": 2,
+   "rotation": -90,
+   "anchor": "W",
+   "tags": [
+    "solid",
+    "prank"
+   ]
+  },
+  {
+   "uid": "exercise_bike_1",
+   "sprite": "exercise_bike",
+   "name": "Exercise bike",
+   "x": 9,
+   "y": 0,
+   "w": 2,
+   "h": 2,
+   "rotation": 0,
+   "anchor": "NE",
+   "tags": [
+    "solid"
+   ]
+  },
+  {
+   "uid": "dumbbell_1",
+   "sprite": "dumbbell",
+   "name": "Dumbbell",
+   "x": 5,
+   "y": 4,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "pickup"
+   ]
+  },
+  {
+   "uid": "dumbbell_2",
+   "sprite": "dumbbell",
+   "name": "Dumbbell",
+   "x": 2,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "pickup"
+   ]
+  },
+  {
+   "uid": "mirror_wall_1",
+   "sprite": "mirror_wall",
+   "name": "Mirror wall",
+   "x": 0,
+   "y": 0,
+   "w": 4,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "N",
+   "tags": [
+    "decor"
+   ]
+  },
+  {
+   "uid": "music_player_1",
+   "sprite": "music_player",
+   "name": "Music player",
+   "x": 10,
+   "y": 8,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "SE",
+   "tags": [
+    "prank"
+   ]
+  }
+ ],
+ "colliders": [
+  {
+   "uid": "treadmill_1",
+   "x": 0,
+   "y": 3,
+   "w": 4,
+   "h": 2
+  },
+  {
+   "uid": "exercise_bike_1",
+   "x": 9,
+   "y": 0,
+   "w": 2,
+   "h": 2
+  }
+ ],
+ "hideSpots": [],
+ "pickups": [
+  "dumbbell_1",
+  "dumbbell_2"
+ ],
+ "prankTargets": [
+  "treadmill_1",
+  "music_player_1"
+ ],
+ "climbables": [],
+ "navigation": [],
+ "images": {
+  "svg": "rooms/granny_house/gh_exercise_room.svg",
+  "png": "rooms/granny_house/gh_exercise_room.png",
+  "floorOnly": "rooms/granny_house/gh_exercise_room_floor.png",
+  "preview": "preview/gh_exercise_room_labelled.png",
+  "wallBorderPx": 14
+ }
+}

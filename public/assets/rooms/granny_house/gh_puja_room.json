@@ -1,0 +1,210 @@
+{
+ "id": "gh_puja_room",
+ "name": "Puja room",
+ "location": "granny_house",
+ "floor": "Floor 2",
+ "unlockLevel": 27,
+ "note": "",
+ "tileSize": 40,
+ "size": {
+  "w": 8,
+  "h": 7,
+  "px_w": 320,
+  "px_h": 280
+ },
+ "ground": "marble",
+ "outdoor": false,
+ "safeZone": false,
+ "doors": [
+  {
+   "side": "W",
+   "to": "gh_craft_office",
+   "x": 0,
+   "y": 2,
+   "w": 1,
+   "h": 2
+  }
+ ],
+ "spawn": {
+  "x": 1,
+  "y": 3
+ },
+ "items": [
+  {
+   "uid": "rug_1",
+   "sprite": "rug",
+   "name": "Rug",
+   "x": 4,
+   "y": 2,
+   "w": 4,
+   "h": 3,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": []
+  },
+  {
+   "uid": "idol_1",
+   "sprite": "idol",
+   "name": "Idol of the gods",
+   "x": 3,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "N",
+   "tags": [
+    "solid"
+   ]
+  },
+  {
+   "uid": "idol_2",
+   "sprite": "idol",
+   "name": "Idol of the gods",
+   "x": 4,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "N",
+   "tags": [
+    "solid"
+   ]
+  },
+  {
+   "uid": "idol_3",
+   "sprite": "idol",
+   "name": "Idol of the gods",
+   "x": 2,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "N",
+   "tags": [
+    "solid"
+   ]
+  },
+  {
+   "uid": "puja_thali_1",
+   "sprite": "puja_thali",
+   "name": "Thali with diyas",
+   "x": 4,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "pickup"
+   ]
+  },
+  {
+   "uid": "diya_1",
+   "sprite": "diya",
+   "name": "Diya",
+   "x": 6,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "decor"
+   ]
+  },
+  {
+   "uid": "diya_2",
+   "sprite": "diya",
+   "name": "Diya",
+   "x": 2,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "decor"
+   ]
+  },
+  {
+   "uid": "matchbox_1",
+   "sprite": "matchbox",
+   "name": "Matchbox",
+   "x": 5,
+   "y": 4,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "pickup"
+   ]
+  },
+  {
+   "uid": "cobweb_1",
+   "sprite": "cobweb",
+   "name": "Cobweb",
+   "x": 0,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "NW",
+   "tags": [
+    "decor"
+   ]
+  },
+  {
+   "uid": "cobweb_2",
+   "sprite": "cobweb",
+   "name": "Cobweb",
+   "x": 7,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rotation": 90,
+   "anchor": "NE",
+   "tags": [
+    "decor"
+   ]
+  }
+ ],
+ "colliders": [
+  {
+   "uid": "idol_1",
+   "x": 3,
+   "y": 0,
+   "w": 1,
+   "h": 1
+  },
+  {
+   "uid": "idol_2",
+   "x": 4,
+   "y": 0,
+   "w": 1,
+   "h": 1
+  },
+  {
+   "uid": "idol_3",
+   "x": 2,
+   "y": 0,
+   "w": 1,
+   "h": 1
+  }
+ ],
+ "hideSpots": [],
+ "pickups": [
+  "puja_thali_1",
+  "matchbox_1"
+ ],
+ "prankTargets": [],
+ "climbables": [],
+ "navigation": [],
+ "images": {
+  "svg": "rooms/granny_house/gh_puja_room.svg",
+  "png": "rooms/granny_house/gh_puja_room.png",
+  "floorOnly": "rooms/granny_house/gh_puja_room_floor.png",
+  "preview": "preview/gh_puja_room_labelled.png",
+  "wallBorderPx": 14
+ }
+}

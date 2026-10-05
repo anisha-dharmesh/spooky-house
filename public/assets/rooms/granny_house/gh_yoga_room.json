@@ -1,0 +1,150 @@
+{
+ "id": "gh_yoga_room",
+ "name": "Yoga room",
+ "location": "granny_house",
+ "floor": "Floor 3",
+ "unlockLevel": 37,
+ "note": "Swap calm music for loud music; tear the mat.",
+ "tileSize": 40,
+ "size": {
+  "w": 9,
+  "h": 8,
+  "px_w": 360,
+  "px_h": 320
+ },
+ "ground": "wood",
+ "outdoor": false,
+ "safeZone": false,
+ "doors": [
+  {
+   "side": "N",
+   "to": "gh_dance_room",
+   "x": 3,
+   "y": 0,
+   "w": 2,
+   "h": 1
+  }
+ ],
+ "spawn": {
+  "x": 4,
+  "y": 1
+ },
+ "items": [
+  {
+   "uid": "yoga_mat_1",
+   "sprite": "yoga_mat",
+   "name": "Yoga mat",
+   "x": 6,
+   "y": 2,
+   "w": 2,
+   "h": 4,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "prank"
+   ]
+  },
+  {
+   "uid": "yoga_mat_2",
+   "sprite": "yoga_mat",
+   "name": "Yoga mat",
+   "x": 0,
+   "y": 1,
+   "w": 2,
+   "h": 4,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "prank"
+   ]
+  },
+  {
+   "uid": "music_player_1",
+   "sprite": "music_player",
+   "name": "Music player",
+   "x": 8,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "NE",
+   "tags": [
+    "prank"
+   ]
+  },
+  {
+   "uid": "plant_pot_1",
+   "sprite": "plant_pot",
+   "name": "Plant pot",
+   "x": 0,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "NW",
+   "tags": [
+    "solid"
+   ]
+  },
+  {
+   "uid": "plant_pot_2",
+   "sprite": "plant_pot",
+   "name": "Plant pot",
+   "x": 8,
+   "y": 7,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "SE",
+   "tags": [
+    "solid"
+   ]
+  },
+  {
+   "uid": "diya_1",
+   "sprite": "diya",
+   "name": "Diya",
+   "x": 6,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "decor"
+   ]
+  }
+ ],
+ "colliders": [
+  {
+   "uid": "plant_pot_1",
+   "x": 0,
+   "y": 0,
+   "w": 1,
+   "h": 1
+  },
+  {
+   "uid": "plant_pot_2",
+   "x": 8,
+   "y": 7,
+   "w": 1,
+   "h": 1
+  }
+ ],
+ "hideSpots": [],
+ "pickups": [],
+ "prankTargets": [
+  "yoga_mat_1",
+  "yoga_mat_2",
+  "music_player_1"
+ ],
+ "climbables": [],
+ "navigation": [],
+ "images": {
+  "svg": "rooms/granny_house/gh_yoga_room.svg",
+  "png": "rooms/granny_house/gh_yoga_room.png",
+  "floorOnly": "rooms/granny_house/gh_yoga_room_floor.png",
+  "preview": "preview/gh_yoga_room_labelled.png",
+  "wallBorderPx": 14
+ }
+}

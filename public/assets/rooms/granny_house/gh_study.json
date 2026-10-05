@@ -1,0 +1,243 @@
+{
+ "id": "gh_study",
+ "name": "Study",
+ "location": "granny_house",
+ "floor": "Floor 3",
+ "unlockLevel": 24,
+ "note": "Her favourite books.",
+ "tileSize": 40,
+ "size": {
+  "w": 9,
+  "h": 8,
+  "px_w": 360,
+  "px_h": 320
+ },
+ "ground": "wood",
+ "outdoor": false,
+ "safeZone": false,
+ "doors": [
+  {
+   "side": "W",
+   "to": "gh_dance_room",
+   "x": 0,
+   "y": 3,
+   "w": 1,
+   "h": 2
+  },
+  {
+   "side": "E",
+   "to": "gh_climbing_room",
+   "x": 8,
+   "y": 3,
+   "w": 1,
+   "h": 2
+  }
+ ],
+ "spawn": {
+  "x": 1,
+  "y": 4
+ },
+ "items": [
+  {
+   "uid": "bookshelf_1",
+   "sprite": "bookshelf",
+   "name": "Bookshelf",
+   "x": 2,
+   "y": 0,
+   "w": 4,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "N",
+   "tags": [
+    "solid"
+   ]
+  },
+  {
+   "uid": "bookshelf_2",
+   "sprite": "bookshelf",
+   "name": "Bookshelf",
+   "x": 2,
+   "y": 6,
+   "w": 4,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "E",
+   "tags": [
+    "solid"
+   ]
+  },
+  {
+   "uid": "desk_1",
+   "sprite": "desk",
+   "name": "Desk",
+   "x": 1,
+   "y": 1,
+   "w": 3,
+   "h": 2,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "solid"
+   ]
+  },
+  {
+   "uid": "office_chair_1",
+   "sprite": "office_chair",
+   "name": "Office chair",
+   "x": 7,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "solid"
+   ]
+  },
+  {
+   "uid": "lamp_floor_1",
+   "sprite": "lamp_floor",
+   "name": "Floor lamp",
+   "x": 0,
+   "y": 7,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "SW",
+   "tags": [
+    "solid"
+   ]
+  },
+  {
+   "uid": "book_big_1",
+   "sprite": "book_big",
+   "name": "Big instruction book",
+   "x": 1,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "on:desk",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "onTopOf": "desk_1"
+  },
+  {
+   "uid": "pencil_1",
+   "sprite": "pencil",
+   "name": "Pencil",
+   "x": 2,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "on:desk",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "onTopOf": "desk_1"
+  },
+  {
+   "uid": "pen_holder_1",
+   "sprite": "pen_holder",
+   "name": "Pen holder",
+   "x": 2,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "on:desk",
+   "tags": [
+    "pickup"
+   ],
+   "onTopOf": "desk_1"
+  },
+  {
+   "uid": "cobweb_1",
+   "sprite": "cobweb",
+   "name": "Cobweb",
+   "x": 0,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "NW",
+   "tags": [
+    "decor"
+   ]
+  },
+  {
+   "uid": "cobweb_2",
+   "sprite": "cobweb",
+   "name": "Cobweb",
+   "x": 8,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rotation": 90,
+   "anchor": "NE",
+   "tags": [
+    "decor"
+   ]
+  }
+ ],
+ "colliders": [
+  {
+   "uid": "bookshelf_1",
+   "x": 2,
+   "y": 0,
+   "w": 4,
+   "h": 1
+  },
+  {
+   "uid": "bookshelf_2",
+   "x": 2,
+   "y": 6,
+   "w": 4,
+   "h": 1
+  },
+  {
+   "uid": "desk_1",
+   "x": 1,
+   "y": 1,
+   "w": 3,
+   "h": 2
+  },
+  {
+   "uid": "office_chair_1",
+   "x": 7,
+   "y": 1,
+   "w": 1,
+   "h": 1
+  },
+  {
+   "uid": "lamp_floor_1",
+   "x": 0,
+   "y": 7,
+   "w": 1,
+   "h": 1
+  }
+ ],
+ "hideSpots": [],
+ "pickups": [
+  "book_big_1",
+  "pencil_1",
+  "pen_holder_1"
+ ],
+ "prankTargets": [
+  "book_big_1",
+  "pencil_1"
+ ],
+ "climbables": [],
+ "navigation": [],
+ "images": {
+  "svg": "rooms/granny_house/gh_study.svg",
+  "png": "rooms/granny_house/gh_study.png",
+  "floorOnly": "rooms/granny_house/gh_study_floor.png",
+  "preview": "preview/gh_study_labelled.png",
+  "wallBorderPx": 14
+ }
+}

@@ -1,0 +1,302 @@
+{
+ "id": "sc_library",
+ "name": "Library",
+ "location": "school",
+ "floor": "Floor 1",
+ "unlockLevel": 28,
+ "note": "Shelves block her view.",
+ "tileSize": 40,
+ "size": {
+  "w": 14,
+  "h": 9,
+  "px_w": 560,
+  "px_h": 360
+ },
+ "ground": "carpet",
+ "outdoor": false,
+ "safeZone": false,
+ "doors": [
+  {
+   "side": "W",
+   "to": "sc_staff_room",
+   "x": 0,
+   "y": 3,
+   "w": 1,
+   "h": 2
+  },
+  {
+   "side": "S",
+   "to": "sc_science_lab",
+   "x": 6,
+   "y": 8,
+   "w": 2,
+   "h": 1
+  }
+ ],
+ "spawn": {
+  "x": 1,
+  "y": 4
+ },
+ "items": [
+  {
+   "uid": "bookshelf_1",
+   "sprite": "bookshelf",
+   "name": "Bookshelf",
+   "x": 5,
+   "y": 0,
+   "w": 4,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "N",
+   "tags": [
+    "solid"
+   ]
+  },
+  {
+   "uid": "bookshelf_2",
+   "sprite": "bookshelf",
+   "name": "Bookshelf",
+   "x": 1,
+   "y": 0,
+   "w": 4,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "N",
+   "tags": [
+    "solid"
+   ]
+  },
+  {
+   "uid": "bookshelf_3",
+   "sprite": "bookshelf",
+   "name": "Bookshelf",
+   "x": 0,
+   "y": 5,
+   "w": 1,
+   "h": 4,
+   "rotation": -90,
+   "anchor": "W",
+   "tags": [
+    "solid"
+   ]
+  },
+  {
+   "uid": "bookshelf_4",
+   "sprite": "bookshelf",
+   "name": "Bookshelf",
+   "x": 13,
+   "y": 2,
+   "w": 1,
+   "h": 4,
+   "rotation": 90,
+   "anchor": "E",
+   "tags": [
+    "solid"
+   ]
+  },
+  {
+   "uid": "reading_table_1",
+   "sprite": "reading_table",
+   "name": "Reading table",
+   "x": 5,
+   "y": 3,
+   "w": 4,
+   "h": 2,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "solid",
+    "hide"
+   ]
+  },
+  {
+   "uid": "reading_table_2",
+   "sprite": "reading_table",
+   "name": "Reading table",
+   "x": 9,
+   "y": 7,
+   "w": 4,
+   "h": 2,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "solid",
+    "hide"
+   ]
+  },
+  {
+   "uid": "chair_1",
+   "sprite": "chair",
+   "name": "Chair",
+   "x": 10,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "solid",
+    "prank"
+   ]
+  },
+  {
+   "uid": "chair_2",
+   "sprite": "chair",
+   "name": "Chair",
+   "x": 4,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "solid",
+    "prank"
+   ]
+  },
+  {
+   "uid": "globe_1",
+   "sprite": "globe",
+   "name": "Globe",
+   "x": 13,
+   "y": 8,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "SE",
+   "tags": [
+    "solid"
+   ]
+  },
+  {
+   "uid": "book_big_1",
+   "sprite": "book_big",
+   "name": "Big instruction book",
+   "x": 8,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "on:reading_table",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "onTopOf": "reading_table_1"
+  },
+  {
+   "uid": "cobweb_1",
+   "sprite": "cobweb",
+   "name": "Cobweb",
+   "x": 0,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "NW",
+   "tags": [
+    "decor"
+   ]
+  },
+  {
+   "uid": "cobweb_2",
+   "sprite": "cobweb",
+   "name": "Cobweb",
+   "x": 13,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rotation": 90,
+   "anchor": "NE",
+   "tags": [
+    "decor"
+   ]
+  }
+ ],
+ "colliders": [
+  {
+   "uid": "bookshelf_1",
+   "x": 5,
+   "y": 0,
+   "w": 4,
+   "h": 1
+  },
+  {
+   "uid": "bookshelf_2",
+   "x": 1,
+   "y": 0,
+   "w": 4,
+   "h": 1
+  },
+  {
+   "uid": "bookshelf_3",
+   "x": 0,
+   "y": 5,
+   "w": 1,
+   "h": 4
+  },
+  {
+   "uid": "bookshelf_4",
+   "x": 13,
+   "y": 2,
+   "w": 1,
+   "h": 4
+  },
+  {
+   "uid": "reading_table_1",
+   "x": 5,
+   "y": 3,
+   "w": 4,
+   "h": 2
+  },
+  {
+   "uid": "reading_table_2",
+   "x": 9,
+   "y": 7,
+   "w": 4,
+   "h": 2
+  },
+  {
+   "uid": "chair_1",
+   "x": 10,
+   "y": 3,
+   "w": 1,
+   "h": 1
+  },
+  {
+   "uid": "chair_2",
+   "x": 4,
+   "y": 6,
+   "w": 1,
+   "h": 1
+  },
+  {
+   "uid": "globe_1",
+   "x": 13,
+   "y": 8,
+   "w": 1,
+   "h": 1
+  }
+ ],
+ "hideSpots": [
+  "reading_table_1",
+  "reading_table_2"
+ ],
+ "pickups": [
+  "book_big_1"
+ ],
+ "prankTargets": [
+  "chair_1",
+  "chair_2",
+  "book_big_1"
+ ],
+ "climbables": [],
+ "navigation": [],
+ "images": {
+  "svg": "rooms/school/sc_library.svg",
+  "png": "rooms/school/sc_library.png",
+  "floorOnly": "rooms/school/sc_library_floor.png",
+  "preview": "preview/sc_library_labelled.png",
+  "wallBorderPx": 14
+ }
+}

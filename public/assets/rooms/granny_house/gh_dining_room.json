@@ -1,0 +1,329 @@
+{
+ "id": "gh_dining_room",
+ "name": "Dining room",
+ "location": "granny_house",
+ "floor": "Floor 1",
+ "unlockLevel": 12,
+ "note": "Glue-on-chair prank.",
+ "tileSize": 40,
+ "size": {
+  "w": 12,
+  "h": 9,
+  "px_w": 480,
+  "px_h": 360
+ },
+ "ground": "wood",
+ "outdoor": false,
+ "safeZone": false,
+ "doors": [
+  {
+   "side": "W",
+   "to": "gh_bedroom",
+   "x": 0,
+   "y": 3,
+   "w": 1,
+   "h": 2
+  },
+  {
+   "side": "E",
+   "to": "gh_bathroom",
+   "x": 11,
+   "y": 3,
+   "w": 1,
+   "h": 2
+  },
+  {
+   "side": "S",
+   "to": "gh_granny_room",
+   "x": 5,
+   "y": 8,
+   "w": 2,
+   "h": 1
+  }
+ ],
+ "spawn": {
+  "x": 1,
+  "y": 4
+ },
+ "items": [
+  {
+   "uid": "table_dining_1",
+   "sprite": "table_dining",
+   "name": "Dining table",
+   "x": 3,
+   "y": 3,
+   "w": 5,
+   "h": 3,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "solid"
+   ]
+  },
+  {
+   "uid": "chair_1",
+   "sprite": "chair",
+   "name": "Chair",
+   "x": 3,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "solid",
+    "prank"
+   ]
+  },
+  {
+   "uid": "chair_2",
+   "sprite": "chair",
+   "name": "Chair",
+   "x": 8,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "solid",
+    "prank"
+   ]
+  },
+  {
+   "uid": "chair_3",
+   "sprite": "chair",
+   "name": "Chair",
+   "x": 3,
+   "y": 7,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "solid",
+    "prank"
+   ]
+  },
+  {
+   "uid": "chair_4",
+   "sprite": "chair",
+   "name": "Chair",
+   "x": 9,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "solid",
+    "prank"
+   ]
+  },
+  {
+   "uid": "wardrobe_small_1",
+   "sprite": "wardrobe_small",
+   "name": "Small wardrobe",
+   "x": 5,
+   "y": 0,
+   "w": 2,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "N",
+   "tags": [
+    "solid"
+   ]
+  },
+  {
+   "uid": "photo_frame_1",
+   "sprite": "photo_frame",
+   "name": "Photo frame",
+   "x": 4,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "N",
+   "tags": [
+    "prank"
+   ]
+  },
+  {
+   "uid": "lift_1",
+   "sprite": "lift",
+   "name": "Lift",
+   "x": 0,
+   "y": 0,
+   "w": 2,
+   "h": 2,
+   "rotation": 0,
+   "anchor": "NW",
+   "tags": [
+    "lift"
+   ]
+  },
+  {
+   "uid": "hanging_bulb_1",
+   "sprite": "hanging_bulb",
+   "name": "Hanging bulb",
+   "x": 10,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "decor"
+   ]
+  },
+  {
+   "uid": "plate_1",
+   "sprite": "plate",
+   "name": "Plate",
+   "x": 3,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "on:table_dining",
+   "tags": [
+    "pickup"
+   ],
+   "onTopOf": "table_dining_1"
+  },
+  {
+   "uid": "thali_1",
+   "sprite": "thali",
+   "name": "Thali",
+   "x": 4,
+   "y": 4,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "on:table_dining",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "onTopOf": "table_dining_1"
+  },
+  {
+   "uid": "glass_1",
+   "sprite": "glass",
+   "name": "Glass",
+   "x": 5,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "on:table_dining",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "onTopOf": "table_dining_1"
+  },
+  {
+   "uid": "bowl_1",
+   "sprite": "bowl",
+   "name": "Bowl",
+   "x": 3,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "on:table_dining",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "onTopOf": "table_dining_1"
+  },
+  {
+   "uid": "cobweb_1",
+   "sprite": "cobweb",
+   "name": "Cobweb",
+   "x": 11,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rotation": 90,
+   "anchor": "NE",
+   "tags": [
+    "decor"
+   ]
+  }
+ ],
+ "colliders": [
+  {
+   "uid": "table_dining_1",
+   "x": 3,
+   "y": 3,
+   "w": 5,
+   "h": 3
+  },
+  {
+   "uid": "chair_1",
+   "x": 3,
+   "y": 1,
+   "w": 1,
+   "h": 1
+  },
+  {
+   "uid": "chair_2",
+   "x": 8,
+   "y": 1,
+   "w": 1,
+   "h": 1
+  },
+  {
+   "uid": "chair_3",
+   "x": 3,
+   "y": 7,
+   "w": 1,
+   "h": 1
+  },
+  {
+   "uid": "chair_4",
+   "x": 9,
+   "y": 6,
+   "w": 1,
+   "h": 1
+  },
+  {
+   "uid": "wardrobe_small_1",
+   "x": 5,
+   "y": 0,
+   "w": 2,
+   "h": 1
+  }
+ ],
+ "hideSpots": [],
+ "pickups": [
+  "plate_1",
+  "thali_1",
+  "glass_1",
+  "bowl_1"
+ ],
+ "prankTargets": [
+  "chair_1",
+  "chair_2",
+  "chair_3",
+  "chair_4",
+  "photo_frame_1",
+  "thali_1",
+  "glass_1",
+  "bowl_1"
+ ],
+ "climbables": [],
+ "navigation": [
+  "lift_1"
+ ],
+ "images": {
+  "svg": "rooms/granny_house/gh_dining_room.svg",
+  "png": "rooms/granny_house/gh_dining_room.png",
+  "floorOnly": "rooms/granny_house/gh_dining_room_floor.png",
+  "preview": "preview/gh_dining_room_labelled.png",
+  "wallBorderPx": 14
+ }
+}

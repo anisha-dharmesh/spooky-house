@@ -1,0 +1,206 @@
+{
+ "id": "hs_pharmacy",
+ "name": "Pharmacy",
+ "location": "hospital",
+ "floor": "Ground",
+ "unlockLevel": 45,
+ "note": "",
+ "tileSize": 40,
+ "size": {
+  "w": 9,
+  "h": 8,
+  "px_w": 360,
+  "px_h": 320
+ },
+ "ground": "tile",
+ "outdoor": false,
+ "safeZone": false,
+ "doors": [
+  {
+   "side": "E",
+   "to": "hs_reception",
+   "x": 8,
+   "y": 3,
+   "w": 1,
+   "h": 2
+  }
+ ],
+ "spawn": {
+  "x": 7,
+  "y": 4
+ },
+ "items": [
+  {
+   "uid": "medicine_shelf_1",
+   "sprite": "medicine_shelf",
+   "name": "Medicine shelf",
+   "x": 2,
+   "y": 0,
+   "w": 4,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "N",
+   "tags": [
+    "solid",
+    "prank"
+   ]
+  },
+  {
+   "uid": "medicine_shelf_2",
+   "sprite": "medicine_shelf",
+   "name": "Medicine shelf",
+   "x": 0,
+   "y": 2,
+   "w": 1,
+   "h": 4,
+   "rotation": -90,
+   "anchor": "W",
+   "tags": [
+    "solid",
+    "prank"
+   ]
+  },
+  {
+   "uid": "counter_1",
+   "sprite": "counter",
+   "name": "Kitchen counter",
+   "x": 3,
+   "y": 3,
+   "w": 2,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "solid"
+   ]
+  },
+  {
+   "uid": "counter_2",
+   "sprite": "counter",
+   "name": "Kitchen counter",
+   "x": 2,
+   "y": 5,
+   "w": 2,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "solid"
+   ]
+  },
+  {
+   "uid": "box_stack_1",
+   "sprite": "box_stack",
+   "name": "Stack of boxes",
+   "x": 7,
+   "y": 6,
+   "w": 2,
+   "h": 2,
+   "rotation": 0,
+   "anchor": "SE",
+   "tags": [
+    "solid",
+    "hide"
+   ]
+  },
+  {
+   "uid": "first_aid_box_1",
+   "sprite": "first_aid_box",
+   "name": "First-aid box",
+   "x": 3,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "on:counter",
+   "tags": [
+    "pickup"
+   ],
+   "onTopOf": "counter_1"
+  },
+  {
+   "uid": "cobweb_1",
+   "sprite": "cobweb",
+   "name": "Cobweb",
+   "x": 0,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "NW",
+   "tags": [
+    "decor"
+   ]
+  },
+  {
+   "uid": "cobweb_2",
+   "sprite": "cobweb",
+   "name": "Cobweb",
+   "x": 8,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rotation": 90,
+   "anchor": "NE",
+   "tags": [
+    "decor"
+   ]
+  }
+ ],
+ "colliders": [
+  {
+   "uid": "medicine_shelf_1",
+   "x": 2,
+   "y": 0,
+   "w": 4,
+   "h": 1
+  },
+  {
+   "uid": "medicine_shelf_2",
+   "x": 0,
+   "y": 2,
+   "w": 1,
+   "h": 4
+  },
+  {
+   "uid": "counter_1",
+   "x": 3,
+   "y": 3,
+   "w": 2,
+   "h": 1
+  },
+  {
+   "uid": "counter_2",
+   "x": 2,
+   "y": 5,
+   "w": 2,
+   "h": 1
+  },
+  {
+   "uid": "box_stack_1",
+   "x": 7,
+   "y": 6,
+   "w": 2,
+   "h": 2
+  }
+ ],
+ "hideSpots": [
+  "box_stack_1"
+ ],
+ "pickups": [
+  "first_aid_box_1"
+ ],
+ "prankTargets": [
+  "medicine_shelf_1",
+  "medicine_shelf_2"
+ ],
+ "climbables": [],
+ "navigation": [],
+ "images": {
+  "svg": "rooms/hospital/hs_pharmacy.svg",
+  "png": "rooms/hospital/hs_pharmacy.png",
+  "floorOnly": "rooms/hospital/hs_pharmacy_floor.png",
+  "preview": "preview/hs_pharmacy_labelled.png",
+  "wallBorderPx": 14
+ }
+}

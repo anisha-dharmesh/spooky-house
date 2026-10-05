@@ -1,0 +1,37 @@
+{
+  "levels": [
+    {
+      "id": 1,
+      "name": { "en": "Granny's kitchen", "hi": "दादी की रसोई" },
+      "rooms": ["gh_kitchen", "gh_hall"],
+      "exits": [{ "id": "exit", "room": "gh_hall", "to": "town", "label": { "en": "front door", "hi": "सामने का दरवाज़ा" } }],
+      "extras": [{ "id": "shoes", "kind": "shoes", "room": "gh_hall", "tile": [14.5, 8.2], "label": { "en": "her shoes", "hi": "उसके जूते" } }],
+      "spawn": { "room": "gh_kitchen", "tile": [11.5, 7.5] },
+      "task": { "en": "Put cement in the scary teacher's shoe", "hi": "डरावनी टीचर के जूते में सीमेंट डालो" },
+      "steps": [
+        { "type": "pickup", "item": "cement_bag_1", "text": { "en": "Grab the cement", "hi": "सीमेंट उठाओ" } },
+        { "type": "use", "item": "cement_bag_1", "target": "shoes", "text": { "en": "Sneak to her shoes", "hi": "उसके जूतों तक चुपके से जाओ" } },
+        { "type": "reach", "zone": "exit", "text": { "en": "Run back home", "hi": "भागकर घर जाओ" } }
+      ],
+      "needs": { "en": "Cement bag", "hi": "सीमेंट की थैली" },
+      "watchOut": { "en": "Scary teacher (slow)", "hi": "डरावनी टीचर (धीमी)" },
+      "hideIn": { "en": "Hall cupboard", "hi": "हॉल की अलमारी" },
+      "baddies": [
+        {
+          "id": "teacher1",
+          "kind": "teacher",
+          "patrol": [
+            { "room": "gh_hall", "tile": [7, 2.5], "wait": 0.8 },
+            { "room": "gh_hall", "tile": [10.5, 2.5], "wait": 0.8 },
+            { "room": "gh_hall", "tile": [10.5, 6.5], "wait": 1 },
+            { "room": "gh_hall", "tile": [7, 6.5], "wait": 1 }
+          ]
+        }
+      ],
+      "petHelp": 2,
+      "parTime": 75,
+      "tip": { "en": "Tip: when she turns your way, jump into the hall cupboard.", "hi": "सुझाव: जब वो तुम्हारी तरफ़ मुड़े, तो हॉल की अलमारी में छुप जाओ।" },
+      "completeText": { "en": "Her shoes are full of cement. She's stomping around the hall!", "hi": "उसके जूते सीमेंट से भर गए। वो हॉल में पैर पटकती घूम रही है!" }
+    }
+  ]
+}

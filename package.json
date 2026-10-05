@@ -1,0 +1,28 @@
+{
+  "name": "anishas-spooky-house",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Anisha's Spooky House: a spooky stealth-prank game.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "check": "tsc --noEmit && vitest run",
+    "zip": "npm run build && cd dist && zip -r ../spooky-house.zip ."
+  },
+  "dependencies": {
+    "@fontsource/creepster": "^5.3.0",
+    "@fontsource/kalam": "^5.3.0",
+    "@fontsource/patrick-hand": "^5.3.0",
+    "phaser": "^3.90.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.4",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.2",
+    "vitest": "^5.0.3"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "teacher": {
+    "name": { "en": "Scary teacher", "hi": "डरावनी टीचर" },
+    "speed": 70,
+    "range": 300,
+    "halfAngle": 28
+  }
+}

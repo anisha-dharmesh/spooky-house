@@ -1,0 +1,211 @@
+{
+ "id": "lh_bathroom",
+ "name": "Bathroom",
+ "location": "little_house",
+ "floor": "Ground",
+ "unlockLevel": 1,
+ "note": "",
+ "tileSize": 40,
+ "size": {
+  "w": 8,
+  "h": 7,
+  "px_w": 320,
+  "px_h": 280
+ },
+ "ground": "tile",
+ "outdoor": false,
+ "safeZone": false,
+ "doors": [
+  {
+   "side": "E",
+   "to": "lh_hall",
+   "x": 7,
+   "y": 2,
+   "w": 1,
+   "h": 2
+  }
+ ],
+ "spawn": {
+  "x": 6,
+  "y": 3
+ },
+ "items": [
+  {
+   "uid": "bathtub_1",
+   "sprite": "bathtub",
+   "name": "Big white bathtub",
+   "x": 0,
+   "y": 2,
+   "w": 4,
+   "h": 2,
+   "rotation": -90,
+   "anchor": "W",
+   "tags": [
+    "solid",
+    "prank"
+   ]
+  },
+  {
+   "uid": "shower_1",
+   "sprite": "shower",
+   "name": "Shower",
+   "x": 6,
+   "y": 0,
+   "w": 2,
+   "h": 2,
+   "rotation": 0,
+   "anchor": "NE",
+   "tags": [
+    "prank"
+   ]
+  },
+  {
+   "uid": "wash_basin_1",
+   "sprite": "wash_basin",
+   "name": "Wash basin",
+   "x": 3,
+   "y": 0,
+   "w": 2,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "N",
+   "tags": [
+    "solid"
+   ]
+  },
+  {
+   "uid": "mirror_1",
+   "sprite": "mirror",
+   "name": "Mirror",
+   "x": 1,
+   "y": 0,
+   "w": 2,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "N",
+   "tags": [
+    "decor"
+   ]
+  },
+  {
+   "uid": "toilet_1",
+   "sprite": "toilet",
+   "name": "Toilet",
+   "x": 3,
+   "y": 5,
+   "w": 1,
+   "h": 2,
+   "rotation": 180,
+   "anchor": "S",
+   "tags": [
+    "solid"
+   ]
+  },
+  {
+   "uid": "towel_1",
+   "sprite": "towel",
+   "name": "Towel",
+   "x": 5,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "pickup",
+    "prank"
+   ]
+  },
+  {
+   "uid": "soap_1",
+   "sprite": "soap",
+   "name": "Soap",
+   "x": 3,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "on:wash_basin",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "onTopOf": "wash_basin_1"
+  },
+  {
+   "uid": "toothbrush_1",
+   "sprite": "toothbrush",
+   "name": "Toothbrush",
+   "x": 4,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "on:wash_basin",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "onTopOf": "wash_basin_1"
+  },
+  {
+   "uid": "cobweb_1",
+   "sprite": "cobweb",
+   "name": "Cobweb",
+   "x": 0,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "NW",
+   "tags": [
+    "decor"
+   ]
+  }
+ ],
+ "colliders": [
+  {
+   "uid": "bathtub_1",
+   "x": 0,
+   "y": 2,
+   "w": 4,
+   "h": 2
+  },
+  {
+   "uid": "wash_basin_1",
+   "x": 3,
+   "y": 0,
+   "w": 2,
+   "h": 1
+  },
+  {
+   "uid": "toilet_1",
+   "x": 3,
+   "y": 5,
+   "w": 1,
+   "h": 2
+  }
+ ],
+ "hideSpots": [],
+ "pickups": [
+  "towel_1",
+  "soap_1",
+  "toothbrush_1"
+ ],
+ "prankTargets": [
+  "bathtub_1",
+  "shower_1",
+  "towel_1",
+  "soap_1",
+  "toothbrush_1"
+ ],
+ "climbables": [],
+ "navigation": [],
+ "images": {
+  "svg": "rooms/little_house/lh_bathroom.svg",
+  "png": "rooms/little_house/lh_bathroom.png",
+  "floorOnly": "rooms/little_house/lh_bathroom_floor.png",
+  "preview": "preview/lh_bathroom_labelled.png",
+  "wallBorderPx": 14
+ }
+}

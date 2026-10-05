@@ -1,0 +1,264 @@
+{
+ "id": "pl_queen_room",
+ "name": "Queen's room",
+ "location": "palace",
+ "floor": "Floor 1",
+ "unlockLevel": 82,
+ "note": "The queen's things: jewellery to steal.",
+ "tileSize": 40,
+ "size": {
+  "w": 14,
+  "h": 10,
+  "px_w": 560,
+  "px_h": 400
+ },
+ "ground": "carpet",
+ "outdoor": false,
+ "safeZone": false,
+ "doors": [
+  {
+   "side": "E",
+   "to": "pl_throne_room",
+   "x": 13,
+   "y": 4,
+   "w": 1,
+   "h": 2
+  },
+  {
+   "side": "S",
+   "to": "pl_royal_dining",
+   "x": 6,
+   "y": 9,
+   "w": 2,
+   "h": 1
+  }
+ ],
+ "spawn": {
+  "x": 12,
+  "y": 5
+ },
+ "items": [
+  {
+   "uid": "rug_1",
+   "sprite": "rug",
+   "name": "Rug",
+   "x": 5,
+   "y": 3,
+   "w": 4,
+   "h": 3,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": []
+  },
+  {
+   "uid": "royal_bed_1",
+   "sprite": "royal_bed",
+   "name": "Royal bed",
+   "x": 0,
+   "y": 2,
+   "w": 5,
+   "h": 5,
+   "rotation": -90,
+   "anchor": "W",
+   "tags": [
+    "solid",
+    "hide"
+   ]
+  },
+  {
+   "uid": "dressing_table_1",
+   "sprite": "dressing_table",
+   "name": "Dressing table",
+   "x": 5,
+   "y": 0,
+   "w": 3,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "N",
+   "tags": [
+    "solid"
+   ]
+  },
+  {
+   "uid": "mirror_1",
+   "sprite": "mirror",
+   "name": "Mirror",
+   "x": 8,
+   "y": 0,
+   "w": 2,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "N",
+   "tags": [
+    "decor"
+   ]
+  },
+  {
+   "uid": "wardrobe_small_1",
+   "sprite": "wardrobe_small",
+   "name": "Small wardrobe",
+   "x": 13,
+   "y": 2,
+   "w": 1,
+   "h": 2,
+   "rotation": 90,
+   "anchor": "E",
+   "tags": [
+    "solid"
+   ]
+  },
+  {
+   "uid": "chandelier_1",
+   "sprite": "chandelier",
+   "name": "Chandelier",
+   "x": 6,
+   "y": 2,
+   "w": 3,
+   "h": 3,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "decor",
+    "prank"
+   ]
+  },
+  {
+   "uid": "painting_1",
+   "sprite": "painting",
+   "name": "Royal painting",
+   "x": 4,
+   "y": 9,
+   "w": 2,
+   "h": 1,
+   "rotation": 180,
+   "anchor": "S",
+   "tags": [
+    "decor",
+    "prank"
+   ]
+  },
+  {
+   "uid": "jewellery_box_1",
+   "sprite": "jewellery_box",
+   "name": "Jewellery box",
+   "x": 5,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "on:dressing_table",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "onTopOf": "dressing_table_1"
+  },
+  {
+   "uid": "necklace_1",
+   "sprite": "necklace",
+   "name": "Necklace",
+   "x": 6,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "on:dressing_table",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "onTopOf": "dressing_table_1"
+  },
+  {
+   "uid": "earrings_1",
+   "sprite": "earrings",
+   "name": "Earrings",
+   "x": 7,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "on:dressing_table",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "onTopOf": "dressing_table_1"
+  },
+  {
+   "uid": "cobweb_1",
+   "sprite": "cobweb",
+   "name": "Cobweb",
+   "x": 0,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "NW",
+   "tags": [
+    "decor"
+   ]
+  },
+  {
+   "uid": "cobweb_2",
+   "sprite": "cobweb",
+   "name": "Cobweb",
+   "x": 13,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rotation": 90,
+   "anchor": "NE",
+   "tags": [
+    "decor"
+   ]
+  }
+ ],
+ "colliders": [
+  {
+   "uid": "royal_bed_1",
+   "x": 0,
+   "y": 2,
+   "w": 5,
+   "h": 5
+  },
+  {
+   "uid": "dressing_table_1",
+   "x": 5,
+   "y": 0,
+   "w": 3,
+   "h": 1
+  },
+  {
+   "uid": "wardrobe_small_1",
+   "x": 13,
+   "y": 2,
+   "w": 1,
+   "h": 2
+  }
+ ],
+ "hideSpots": [
+  "royal_bed_1"
+ ],
+ "pickups": [
+  "jewellery_box_1",
+  "necklace_1",
+  "earrings_1"
+ ],
+ "prankTargets": [
+  "chandelier_1",
+  "painting_1",
+  "jewellery_box_1",
+  "necklace_1",
+  "earrings_1"
+ ],
+ "climbables": [],
+ "navigation": [],
+ "images": {
+  "svg": "rooms/palace/pl_queen_room.svg",
+  "png": "rooms/palace/pl_queen_room.png",
+  "floorOnly": "rooms/palace/pl_queen_room_floor.png",
+  "preview": "preview/pl_queen_room_labelled.png",
+  "wallBorderPx": 14
+ }
+}

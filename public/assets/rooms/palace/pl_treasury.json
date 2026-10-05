@@ -1,0 +1,242 @@
+{
+ "id": "pl_treasury",
+ "name": "Treasury",
+ "location": "palace",
+ "floor": "Basement",
+ "unlockLevel": 88,
+ "note": "Steal-and-escape finale room.",
+ "tileSize": 40,
+ "size": {
+  "w": 11,
+  "h": 9,
+  "px_w": 440,
+  "px_h": 360
+ },
+ "ground": "stone",
+ "outdoor": false,
+ "safeZone": false,
+ "doors": [
+  {
+   "side": "S",
+   "to": "pl_throne_room",
+   "x": 4,
+   "y": 8,
+   "w": 2,
+   "h": 1
+  }
+ ],
+ "spawn": {
+  "x": 5,
+  "y": 7
+ },
+ "items": [
+  {
+   "uid": "treasure_chest_1",
+   "sprite": "treasure_chest",
+   "name": "Treasure chest",
+   "x": 4,
+   "y": 0,
+   "w": 2,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "N",
+   "tags": [
+    "solid",
+    "prank"
+   ]
+  },
+  {
+   "uid": "treasure_chest_2",
+   "sprite": "treasure_chest",
+   "name": "Treasure chest",
+   "x": 6,
+   "y": 0,
+   "w": 2,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "N",
+   "tags": [
+    "solid",
+    "prank"
+   ]
+  },
+  {
+   "uid": "treasure_chest_3",
+   "sprite": "treasure_chest",
+   "name": "Treasure chest",
+   "x": 0,
+   "y": 3,
+   "w": 1,
+   "h": 2,
+   "rotation": -90,
+   "anchor": "W",
+   "tags": [
+    "solid",
+    "prank"
+   ]
+  },
+  {
+   "uid": "gold_pile_1",
+   "sprite": "gold_pile",
+   "name": "Pile of gold",
+   "x": 5,
+   "y": 4,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "pickup",
+    "prank"
+   ]
+  },
+  {
+   "uid": "gold_pile_2",
+   "sprite": "gold_pile",
+   "name": "Pile of gold",
+   "x": 3,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "pickup",
+    "prank"
+   ]
+  },
+  {
+   "uid": "gold_pile_3",
+   "sprite": "gold_pile",
+   "name": "Pile of gold",
+   "x": 7,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "pickup",
+    "prank"
+   ]
+  },
+  {
+   "uid": "crown_cushion_1",
+   "sprite": "crown_cushion",
+   "name": "Crown on cushion",
+   "x": 2,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "pickup",
+    "prank"
+   ]
+  },
+  {
+   "uid": "necklace_1",
+   "sprite": "necklace",
+   "name": "Necklace",
+   "x": 7,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "pickup",
+    "prank"
+   ]
+  },
+  {
+   "uid": "pillar_1",
+   "sprite": "pillar",
+   "name": "Pillar",
+   "x": 10,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "NE",
+   "tags": [
+    "solid",
+    "hide"
+   ]
+  },
+  {
+   "uid": "cobweb_1",
+   "sprite": "cobweb",
+   "name": "Cobweb",
+   "x": 0,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "NW",
+   "tags": [
+    "decor"
+   ]
+  }
+ ],
+ "colliders": [
+  {
+   "uid": "treasure_chest_1",
+   "x": 4,
+   "y": 0,
+   "w": 2,
+   "h": 1
+  },
+  {
+   "uid": "treasure_chest_2",
+   "x": 6,
+   "y": 0,
+   "w": 2,
+   "h": 1
+  },
+  {
+   "uid": "treasure_chest_3",
+   "x": 0,
+   "y": 3,
+   "w": 1,
+   "h": 2
+  },
+  {
+   "uid": "pillar_1",
+   "x": 10,
+   "y": 0,
+   "w": 1,
+   "h": 1
+  }
+ ],
+ "hideSpots": [
+  "pillar_1"
+ ],
+ "pickups": [
+  "gold_pile_1",
+  "gold_pile_2",
+  "gold_pile_3",
+  "crown_cushion_1",
+  "necklace_1"
+ ],
+ "prankTargets": [
+  "treasure_chest_1",
+  "treasure_chest_2",
+  "treasure_chest_3",
+  "gold_pile_1",
+  "gold_pile_2",
+  "gold_pile_3",
+  "crown_cushion_1",
+  "necklace_1"
+ ],
+ "climbables": [],
+ "navigation": [],
+ "images": {
+  "svg": "rooms/palace/pl_treasury.svg",
+  "png": "rooms/palace/pl_treasury.png",
+  "floorOnly": "rooms/palace/pl_treasury_floor.png",
+  "preview": "preview/pl_treasury_labelled.png",
+  "wallBorderPx": 14
+ }
+}
