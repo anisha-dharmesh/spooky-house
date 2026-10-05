@@ -318,26 +318,6 @@
   "kind": "object",
   "source": "claude-design-batch1"
  },
- "anisha": {
-  "height": 1.235,
-  "foot": [
-   0.8,
-   0.8
-  ],
-  "tris": 2040,
-  "kind": "character",
-  "source": "claude-design-batch1"
- },
- "scary_teacher": {
-  "height": 1.7,
-  "foot": [
-   0.8,
-   0.8
-  ],
-  "tris": 2396,
-  "kind": "character",
-  "source": "claude-design-batch1"
- },
  "shoes": {
   "height": 0.146,
   "foot": [
@@ -346,6 +326,2871 @@
   ],
   "tris": 696,
   "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "tv_small": {
+  "height": 1.58,
+  "foot": [
+   3,
+   1
+  ],
+  "tris": 792,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "armchair": {
+  "height": 1.06,
+  "foot": [
+   1.4,
+   1.2
+  ],
+  "tris": 384,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "side_table": {
+  "height": 0.55,
+  "foot": [
+   0.7,
+   0.7
+  ],
+  "tris": 108,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "coffee_table": {
+  "height": 0.58,
+  "foot": [
+   1.6,
+   0.9
+  ],
+  "tris": 316,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "kitchen_island": {
+  "height": 0.95,
+  "foot": [
+   2.5,
+   1
+  ],
+  "tris": 840,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "fridge_blue": {
+  "height": 2,
+  "foot": [
+   1.1,
+   1
+  ],
+  "tris": 468,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "fridge_small": {
+  "height": 1.39,
+  "foot": [
+   0.7,
+   0.7
+  ],
+  "tris": 168,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "cabinet_small": {
+  "height": 1.24,
+  "foot": [
+   1,
+   0.6
+  ],
+  "tris": 396,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "storage_drum": {
+  "height": 0.782,
+  "foot": [
+   0.7,
+   0.7
+  ],
+  "tris": 360,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "jar_glass": {
+  "height": 0.45,
+  "foot": [
+   0.4,
+   0.4
+  ],
+  "tris": 320,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "table_lamp": {
+  "height": 0.51,
+  "foot": [
+   0.4,
+   0.4
+  ],
+  "tris": 352,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "bed_single": {
+  "height": 1.15,
+  "foot": [
+   2,
+   4
+  ],
+  "tris": 1224,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "wardrobe_small": {
+  "height": 2.15,
+  "foot": [
+   2,
+   1
+  ],
+  "tris": 420,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "dog_bed": {
+  "height": 1.18,
+  "foot": [
+   2,
+   2
+  ],
+  "tris": 1212,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "cat_basket": {
+  "height": 0.87,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 648,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "parrot_cage": {
+  "height": 1.491,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 1432,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "pet_bowl": {
+  "height": 0.14,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 424,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "pet_toys": {
+  "height": 0.26,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 1280,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "soft_toy": {
+  "height": 0.645,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 2508,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "cushion": {
+  "height": 0.165,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 288,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "bean_bag": {
+  "height": 1.224,
+  "foot": [
+   2,
+   2
+  ],
+  "tris": 576,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "fairy_lights": {
+  "height": 0.258,
+  "foot": [
+   4,
+   1
+  ],
+  "tris": 1672,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "toothbrush": {
+  "height": 0.04,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 72,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "bathtub": {
+  "height": 1.006,
+  "foot": [
+   2,
+   4
+  ],
+  "tris": 1644,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "toilet": {
+  "height": 0.89,
+  "foot": [
+   1,
+   2
+  ],
+  "tris": 688,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "wash_basin": {
+  "height": 0.967,
+  "foot": [
+   2,
+   1
+  ],
+  "tris": 644,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "soap": {
+  "height": 0.068,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 96,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "shower": {
+  "height": 2.25,
+  "foot": [
+   2,
+   2
+  ],
+  "tris": 500,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "towel": {
+  "height": 0.14,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 108,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "mirror": {
+  "height": 1.2,
+  "foot": [
+   2,
+   1
+  ],
+  "tris": 72,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "plant_pot": {
+  "height": 0.892,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 2176,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "big_plant_pot": {
+  "height": 2.268,
+  "foot": [
+   2,
+   2
+  ],
+  "tris": 2024,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "bunk_bed": {
+  "height": 1.95,
+  "foot": [
+   2,
+   4
+  ],
+  "tris": 960,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "bed_double": {
+  "height": 1.65,
+  "foot": [
+   4,
+   5
+  ],
+  "tris": 960,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "drawer_unit": {
+  "height": 0.92,
+  "foot": [
+   2,
+   1
+  ],
+  "tris": 1416,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "trophy": {
+  "height": 0.56,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 1052,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "medal": {
+  "height": 0.025,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 196,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "watch": {
+  "height": 0.068,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 472,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "thali": {
+  "height": 0.1,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 816,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "glass": {
+  "height": 0.26,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 132,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "bowl": {
+  "height": 0.2,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 560,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "mirror_wall": {
+  "height": 1.78,
+  "foot": [
+   4,
+   1
+  ],
+  "tris": 648,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "toothpaste": {
+  "height": 0.06,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 140,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "slime_bucket": {
+  "height": 0.56,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 280,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "inverter": {
+  "height": 0.95,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 936,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "baby_stroller": {
+  "height": 1.114,
+  "foot": [
+   2,
+   2
+  ],
+  "tris": 672,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "box_cardboard": {
+  "height": 0.71,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 84,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "box_stack": {
+  "height": 1.1,
+  "foot": [
+   2,
+   2
+  ],
+  "tris": 228,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "jbl_speaker": {
+  "height": 1.24,
+  "foot": [
+   2,
+   1
+  ],
+  "tris": 612,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "disco_light": {
+  "height": 1.45,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 976,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "game_controller": {
+  "height": 0.077,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 1224,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "colored_paper": {
+  "height": 0.065,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 72,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "scissors": {
+  "height": 0.032,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 792,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "glue": {
+  "height": 0.22,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 144,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "pen_holder": {
+  "height": 0.32,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 256,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "idol": {
+  "height": 0.62,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 896,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "puja_thali": {
+  "height": 0.267,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 1616,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "diya": {
+  "height": 0.151,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 556,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "matchbox": {
+  "height": 0.047,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 96,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "treadmill": {
+  "height": 1.5,
+  "foot": [
+   2,
+   4
+  ],
+  "tris": 408,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "dumbbell": {
+  "height": 0.228,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 192,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "exercise_bike": {
+  "height": 1.362,
+  "foot": [
+   2,
+   2
+  ],
+  "tris": 396,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "yoga_mat": {
+  "height": 0.42,
+  "foot": [
+   2,
+   4
+  ],
+  "tris": 200,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "music_player": {
+  "height": 0.417,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 552,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "climbing_wall": {
+  "height": 3.1,
+  "foot": [
+   6,
+   1
+  ],
+  "tris": 716,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "safety_harness": {
+  "height": 0.24,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 672,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "sponge_mat": {
+  "height": 0.28,
+  "foot": [
+   4,
+   3
+  ],
+  "tris": 576,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "solar_panel": {
+  "height": 0.943,
+  "foot": [
+   3,
+   2
+  ],
+  "tris": 444,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "water_tank": {
+  "height": 1.74,
+  "foot": [
+   2,
+   2
+  ],
+  "tris": 496,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "game_tv_play": {
+  "height": 1.98,
+  "foot": [
+   4,
+   1
+  ],
+  "tris": 420,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "desk": {
+  "height": 0.79,
+  "foot": [
+   3,
+   2
+  ],
+  "tris": 852,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "office_chair": {
+  "height": 1.049,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 1204,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "dressing_table": {
+  "height": 1.98,
+  "foot": [
+   3,
+   1
+  ],
+  "tris": 764,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "plate": {
+  "height": 0.04,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 384,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "jewellery_box": {
+  "height": 0.301,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 912,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "bookshelf": {
+  "height": 2.16,
+  "foot": [
+   4,
+   1
+  ],
+  "tris": 1572,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "shampoo": {
+  "height": 0.34,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 284,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "computer": {
+  "height": 0.88,
+  "foot": [
+   2,
+   1
+  ],
+  "tris": 568,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "book_big": {
+  "height": 0.112,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 120,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "pencil": {
+  "height": 0.168,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 72,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "eraser": {
+  "height": 0.036,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 60,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "dustbin": {
+  "height": 0.8,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 592,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "slide_chute": {
+  "height": 2.21,
+  "foot": [
+   2,
+   6
+  ],
+  "tris": 300,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "cobweb": {
+  "height": 0.903,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 444,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated",
+  "mount_y": 1,
+  "wall": true,
+  "min_z": -0.03
+ },
+ "lantern_floor": {
+  "height": 1.66,
+  "foot": [
+   0.5,
+   0.5
+  ],
+  "tris": 452,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "lantern_hex": {
+  "height": 2.11,
+  "foot": [
+   0.9,
+   0.9
+  ],
+  "tris": 420,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "urn_purple": {
+  "height": 0.68,
+  "foot": [
+   0.6,
+   0.6
+  ],
+  "tris": 1828,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "tree": {
+  "height": 2.922,
+  "foot": [
+   2,
+   2
+  ],
+  "tris": 592,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "tree_dead": {
+  "height": 2.919,
+  "foot": [
+   2,
+   2
+  ],
+  "tris": 216,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "palm_tree": {
+  "height": 4.311,
+  "foot": [
+   4,
+   3.5
+  ],
+  "tris": 2190,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "flower_bed": {
+  "height": 0.775,
+  "foot": [
+   3,
+   1
+  ],
+  "tris": 1656,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "hedge": {
+  "height": 1.268,
+  "foot": [
+   4,
+   1
+  ],
+  "tris": 2124,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "garden_hat": {
+  "height": 0.17,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 800,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "watering_can": {
+  "height": 0.598,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 312,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "gravestone": {
+  "height": 1.098,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 560,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "street_lamp": {
+  "height": 2.92,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 496,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "bench": {
+  "height": 1.259,
+  "foot": [
+   3,
+   1
+  ],
+  "tris": 528,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "fountain": {
+  "height": 2.04,
+  "foot": [
+   3,
+   3
+  ],
+  "tris": 1080,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "gazebo": {
+  "height": 4.03,
+  "foot": [
+   4.6,
+   4
+  ],
+  "tris": 1532,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "garden_arch": {
+  "height": 2.381,
+  "foot": [
+   2.1,
+   1
+  ],
+  "tris": 2852,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "planter_box": {
+  "height": 0.689,
+  "foot": [
+   2,
+   1
+  ],
+  "tris": 1548,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "pot_flowers": {
+  "height": 0.645,
+  "foot": [
+   0.5,
+   0.5
+  ],
+  "tris": 2036,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "swing": {
+  "height": 2.378,
+  "foot": [
+   4,
+   2
+  ],
+  "tris": 352,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "slide_play": {
+  "height": 2.101,
+  "foot": [
+   2,
+   4
+  ],
+  "tris": 576,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "see_saw": {
+  "height": 1.224,
+  "foot": [
+   4,
+   1
+  ],
+  "tris": 704,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "monkey_bars": {
+  "height": 2.143,
+  "foot": [
+   5,
+   2
+  ],
+  "tris": 528,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "merry_go_round": {
+  "height": 1.48,
+  "foot": [
+   3,
+   3
+  ],
+  "tris": 984,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "sand_pit": {
+  "height": 0.643,
+  "foot": [
+   5,
+   4
+  ],
+  "tris": 948,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "bucket_spade": {
+  "height": 0.35,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 412,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "sand_castle": {
+  "height": 1.75,
+  "foot": [
+   2,
+   2
+  ],
+  "tris": 524,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "play_fort": {
+  "height": 3.842,
+  "foot": [
+   4,
+   4
+  ],
+  "tris": 756,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "jungle_gym": {
+  "height": 2.243,
+  "foot": [
+   3,
+   3
+  ],
+  "tris": 508,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "play_hut": {
+  "height": 2.39,
+  "foot": [
+   2,
+   2
+  ],
+  "tris": 312,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "rock": {
+  "height": 0.918,
+  "foot": [
+   1.9,
+   1.3
+  ],
+  "tris": 624,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "sand_pile": {
+  "height": 0.59,
+  "foot": [
+   1.5,
+   1.1
+  ],
+  "tris": 480,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "fence_wood": {
+  "height": 0.95,
+  "foot": [
+   2,
+   0.2
+  ],
+  "tris": 504,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "pool": {
+  "height": 0.094,
+  "foot": [
+   8,
+   5
+  ],
+  "tris": 456,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "pool_ladder": {
+  "height": 1.072,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 324,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "lounger": {
+  "height": 1.332,
+  "foot": [
+   1,
+   3
+  ],
+  "tris": 344,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "beach_umbrella": {
+  "height": 2.53,
+  "foot": [
+   2,
+   2
+  ],
+  "tris": 376,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "lifeguard_chair": {
+  "height": 2.766,
+  "foot": [
+   2,
+   2
+  ],
+  "tris": 624,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "changing_bench": {
+  "height": 1.25,
+  "foot": [
+   4,
+   1
+  ],
+  "tris": 300,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "float_ring": {
+  "height": 0.19,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 864,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "towel_stack": {
+  "height": 0.352,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 204,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "towel_rack": {
+  "height": 1.45,
+  "foot": [
+   2,
+   1
+  ],
+  "tris": 420,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "water_slide_tower": {
+  "height": 4.75,
+  "foot": [
+   5,
+   7.8
+  ],
+  "tris": 720,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "slide_spiral": {
+  "height": 3.75,
+  "foot": [
+   3,
+   3
+  ],
+  "tris": 1356,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "swan_float": {
+  "height": 1.4,
+  "foot": [
+   1.2,
+   1.4
+  ],
+  "tris": 1456,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "snack_stall": {
+  "height": 2.7,
+  "foot": [
+   3,
+   2
+  ],
+  "tris": 564,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "globe": {
+  "height": 0.891,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 1016,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "student_desk": {
+  "height": 0.86,
+  "foot": [
+   2,
+   1
+  ],
+  "tris": 240,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "student_chair": {
+  "height": 0.889,
+  "foot": [
+   0.6,
+   0.6
+  ],
+  "tris": 156,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "blackboard": {
+  "height": 2,
+  "foot": [
+   6,
+   1
+  ],
+  "tris": 240,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "teacher_desk": {
+  "height": 0.97,
+  "foot": [
+   3,
+   2
+  ],
+  "tris": 1372,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "school_bag": {
+  "height": 0.567,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 288,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "reading_table": {
+  "height": 0.94,
+  "foot": [
+   4,
+   2
+  ],
+  "tris": 588,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "lab_bench": {
+  "height": 1.224,
+  "foot": [
+   6,
+   2
+  ],
+  "tris": 700,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "microscope": {
+  "height": 0.526,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 372,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "flask": {
+  "height": 0.41,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 176,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "canteen_counter": {
+  "height": 1.244,
+  "foot": [
+   6,
+   1
+  ],
+  "tris": 684,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "lunch_tray": {
+  "height": 0.145,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 252,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "school_bell": {
+  "height": 0.519,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 584,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "lockers": {
+  "height": 2.08,
+  "foot": [
+   4,
+   1
+  ],
+  "tris": 924,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "notice_board": {
+  "height": 2,
+  "foot": [
+   3,
+   1
+  ],
+  "tris": 1080,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "skeleton_model": {
+  "height": 1.65,
+  "foot": [
+   1,
+   2
+  ],
+  "tris": 1264,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "water_cooler": {
+  "height": 1.45,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 220,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "first_aid_box": {
+  "height": 0.29,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 144,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "school_cabinet": {
+  "height": 1.45,
+  "foot": [
+   1,
+   0.7
+  ],
+  "tris": 576,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "glass_cabinet": {
+  "height": 1.7,
+  "foot": [
+   1,
+   0.5
+  ],
+  "tris": 168,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "reception_desk": {
+  "height": 1.29,
+  "foot": [
+   5,
+   2
+  ],
+  "tris": 600,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "waiting_chairs": {
+  "height": 0.899,
+  "foot": [
+   4,
+   1
+  ],
+  "tris": 516,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "hospital_bed": {
+  "height": 0.872,
+  "foot": [
+   2,
+   4
+  ],
+  "tris": 696,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "curtain_screen": {
+  "height": 1.9,
+  "foot": [
+   3,
+   1
+  ],
+  "tris": 504,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "drip_stand": {
+  "height": 1.83,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 456,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "medicine_shelf": {
+  "height": 2.06,
+  "foot": [
+   4,
+   1
+  ],
+  "tris": 2352,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "wheelchair": {
+  "height": 0.995,
+  "foot": [
+   2,
+   2
+  ],
+  "tris": 1196,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "xray_machine": {
+  "height": 2.6,
+  "foot": [
+   3,
+   3
+  ],
+  "tris": 1064,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "xray_lightbox": {
+  "height": 1.1,
+  "foot": [
+   2,
+   1
+  ],
+  "tris": 372,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated",
+  "mount_y": 1.2,
+  "wall": true,
+  "min_z": -0.04
+ },
+ "stethoscope": {
+  "height": 0.037,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 298,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "weighing_scale": {
+  "height": 1.38,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 192,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "eye_chart": {
+  "height": 1.13,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 372,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated",
+  "mount_y": 1.1,
+  "wall": true,
+  "min_z": -0.025
+ },
+ "stretcher": {
+  "height": 0.922,
+  "foot": [
+   0.9,
+   2
+  ],
+  "tris": 472,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "medicine_bottle": {
+  "height": 0.25,
+  "foot": [
+   0.2,
+   0.2
+  ],
+  "tris": 132,
+  "kind": "item",
+  "limit": 1500,
+  "source": "generated"
+ },
+ "syringe": {
+  "height": 0.143,
+  "foot": [
+   0.3,
+   0.5
+  ],
+  "tris": 136,
+  "kind": "item",
+  "limit": 1500,
+  "source": "generated"
+ },
+ "throne": {
+  "height": 2.617,
+  "foot": [
+   2,
+   2
+  ],
+  "tris": 2232,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "royal_carpet": {
+  "height": 0.045,
+  "foot": [
+   3,
+   8
+  ],
+  "tris": 348,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "chandelier": {
+  "height": 2.5,
+  "foot": [
+   3,
+   3
+  ],
+  "tris": 3280,
+  "kind": "object",
+  "limit": 4000,
+  "source": "generated",
+  "mount_y": 2,
+  "wall": false,
+  "min_z": -1.385
+ },
+ "crown_cushion": {
+  "height": 0.37,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 2586,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "royal_bed": {
+  "height": 2.182,
+  "foot": [
+   5,
+   5
+  ],
+  "tris": 2024,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "necklace": {
+  "height": 0.084,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 920,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "earrings": {
+  "height": 0.173,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 1200,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "armour_stand": {
+  "height": 1.72,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 1088,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "treasure_chest": {
+  "height": 1.588,
+  "foot": [
+   2,
+   1
+  ],
+  "tris": 712,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "gold_pile": {
+  "height": 0.531,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 1264,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "painting": {
+  "height": 1.2,
+  "foot": [
+   2,
+   1
+  ],
+  "tris": 528,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated",
+  "mount_y": 1,
+  "wall": true,
+  "min_z": -0.045
+ },
+ "pillar": {
+  "height": 3.3,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 562,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "royal_table": {
+  "height": 1.436,
+  "foot": [
+   6,
+   2
+  ],
+  "tris": 3588,
+  "kind": "object",
+  "limit": 4000,
+  "source": "generated"
+ },
+ "goblet": {
+  "height": 0.41,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 944,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "sword": {
+  "height": 0.16,
+  "foot": [
+   0.5,
+   1.4
+  ],
+  "tris": 572,
+  "kind": "item",
+  "limit": 1500,
+  "source": "generated"
+ },
+ "gold_lamp": {
+  "height": 1.7,
+  "foot": [
+   0.6,
+   0.6
+  ],
+  "tris": 496,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "gem": {
+  "height": 0.17,
+  "foot": [
+   0.3,
+   0.3
+  ],
+  "tris": 42,
+  "kind": "item",
+  "limit": 1500,
+  "source": "generated"
+ },
+ "scooty": {
+  "height": 1.41,
+  "foot": [
+   2,
+   3
+  ],
+  "tris": 1556,
+  "kind": "object",
+  "limit": 6000,
+  "source": "generated"
+ },
+ "bullet_bike": {
+  "height": 1.42,
+  "foot": [
+   2,
+   4
+  ],
+  "tris": 2932,
+  "kind": "object",
+  "limit": 6000,
+  "source": "generated"
+ },
+ "bicycle_big": {
+  "height": 1.11,
+  "foot": [
+   2,
+   4
+  ],
+  "tris": 1392,
+  "kind": "object",
+  "limit": 6000,
+  "source": "generated"
+ },
+ "school_bus": {
+  "height": 2.6,
+  "foot": [
+   2.7,
+   8.5
+  ],
+  "tris": 2976,
+  "kind": "vehicle",
+  "limit": 6000,
+  "source": "generated"
+ },
+ "ambulance": {
+  "height": 2.64,
+  "foot": [
+   2.2,
+   5.6
+  ],
+  "tris": 2316,
+  "kind": "vehicle",
+  "limit": 6000,
+  "source": "generated"
+ },
+ "car_parked": {
+  "height": 1.38,
+  "foot": [
+   2,
+   3
+  ],
+  "tris": 2484,
+  "kind": "object",
+  "limit": 6000,
+  "source": "generated"
+ },
+ "toy_car": {
+  "height": 0.31,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 848,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "bus_stop": {
+  "height": 2.115,
+  "foot": [
+   3,
+   1
+  ],
+  "tris": 436,
+  "kind": "object",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "cake_slice": {
+  "height": 0.33,
+  "foot": [
+   0.5,
+   0.5
+  ],
+  "tris": 496,
+  "kind": "item",
+  "limit": 1500,
+  "source": "generated"
+ },
+ "chocolate_bar": {
+  "height": 0.12,
+  "foot": [
+   0.5,
+   0.5
+  ],
+  "tris": 348,
+  "kind": "item",
+  "limit": 1500,
+  "source": "generated"
+ },
+ "plum_bowl": {
+  "height": 0.275,
+  "foot": [
+   0.5,
+   0.5
+  ],
+  "tris": 864,
+  "kind": "item",
+  "limit": 1500,
+  "source": "generated"
+ },
+ "toffee_box": {
+  "height": 0.22,
+  "foot": [
+   0.5,
+   0.5
+  ],
+  "tris": 300,
+  "kind": "item",
+  "limit": 1500,
+  "source": "generated"
+ },
+ "stapler": {
+  "height": 0.14,
+  "foot": [
+   0.5,
+   0.5
+  ],
+  "tris": 144,
+  "kind": "item",
+  "limit": 1500,
+  "source": "generated"
+ },
+ "kitchen_knife": {
+  "height": 0.042,
+  "foot": [
+   0.5,
+   0.7
+  ],
+  "tris": 120,
+  "kind": "item",
+  "limit": 1500,
+  "source": "generated"
+ },
+ "sauce_bottle": {
+  "height": 0.4,
+  "foot": [
+   0.5,
+   0.5
+  ],
+  "tris": 196,
+  "kind": "item",
+  "limit": 1500,
+  "source": "generated"
+ },
+ "milk_bottle": {
+  "height": 0.43,
+  "foot": [
+   0.5,
+   0.5
+  ],
+  "tris": 196,
+  "kind": "item",
+  "limit": 1500,
+  "source": "generated"
+ },
+ "hammer": {
+  "height": 0.08,
+  "foot": [
+   0.5,
+   0.8
+  ],
+  "tris": 192,
+  "kind": "item",
+  "limit": 1500,
+  "source": "generated"
+ },
+ "milk_carton": {
+  "height": 0.44,
+  "foot": [
+   0.5,
+   0.5
+  ],
+  "tris": 264,
+  "kind": "item",
+  "limit": 1500,
+  "source": "generated"
+ },
+ "torch": {
+  "height": 0.237,
+  "foot": [
+   0.5,
+   0.6
+  ],
+  "tris": 184,
+  "kind": "item",
+  "limit": 1500,
+  "source": "generated"
+ },
+ "wrench": {
+  "height": 0.03,
+  "foot": [
+   0.5,
+   0.7
+  ],
+  "tris": 124,
+  "kind": "item",
+  "limit": 1500,
+  "source": "generated"
+ },
+ "key": {
+  "height": 0.046,
+  "foot": [
+   0.5,
+   0.6
+  ],
+  "tris": 212,
+  "kind": "item",
+  "limit": 1500,
+  "source": "generated"
+ },
+ "pliers": {
+  "height": 0.044,
+  "foot": [
+   0.5,
+   0.5
+  ],
+  "tris": 312,
+  "kind": "item",
+  "limit": 1500,
+  "source": "generated"
+ },
+ "star_wand": {
+  "height": 0.89,
+  "foot": [
+   0.5,
+   0.5
+  ],
+  "tris": 292,
+  "kind": "item",
+  "limit": 1500,
+  "source": "generated"
+ },
+ "tomato": {
+  "height": 0.254,
+  "foot": [
+   0.5,
+   0.5
+  ],
+  "tris": 448,
+  "kind": "item",
+  "limit": 1500,
+  "source": "generated"
+ },
+ "melon_bowl": {
+  "height": 0.345,
+  "foot": [
+   0.5,
+   0.5
+  ],
+  "tris": 448,
+  "kind": "item",
+  "limit": 1500,
+  "source": "generated"
+ },
+ "oil_bottle": {
+  "height": 0.43,
+  "foot": [
+   0.5,
+   0.5
+  ],
+  "tris": 176,
+  "kind": "item",
+  "limit": 1500,
+  "source": "generated"
+ },
+ "soda_bottle": {
+  "height": 0.56,
+  "foot": [
+   0.5,
+   0.5
+  ],
+  "tris": 188,
+  "kind": "item",
+  "limit": 1500,
+  "source": "generated"
+ },
+ "juice_carton": {
+  "height": 0.576,
+  "foot": [
+   0.5,
+   0.5
+  ],
+  "tris": 284,
+  "kind": "item",
+  "limit": 1500,
+  "source": "generated"
+ },
+ "fruit_crate": {
+  "height": 0.365,
+  "foot": [
+   0.6,
+   0.5
+  ],
+  "tris": 720,
+  "kind": "item",
+  "limit": 1500,
+  "source": "generated"
+ },
+ "red_bucket": {
+  "height": 0.562,
+  "foot": [
+   0.6,
+   0.6
+  ],
+  "tris": 292,
+  "kind": "item",
+  "limit": 1500,
+  "source": "generated"
+ },
+ "black_bucket": {
+  "height": 0.49,
+  "foot": [
+   0.5,
+   0.5
+  ],
+  "tris": 204,
+  "kind": "item",
+  "limit": 1500,
+  "source": "generated"
+ },
+ "paint_tube": {
+  "height": 0.167,
+  "foot": [
+   0.5,
+   0.5
+  ],
+  "tris": 148,
+  "kind": "item",
+  "limit": 1500,
+  "source": "generated"
+ },
+ "paint_can": {
+  "height": 0.409,
+  "foot": [
+   0.5,
+   0.5
+  ],
+  "tris": 240,
+  "kind": "item",
+  "limit": 1500,
+  "source": "generated"
+ },
+ "spray_bottle": {
+  "height": 0.3,
+  "foot": [
+   0.5,
+   0.5
+  ],
+  "tris": 188,
+  "kind": "item",
+  "limit": 1500,
+  "source": "generated"
+ },
+ "tissue_box": {
+  "height": 0.14,
+  "foot": [
+   0.5,
+   0.5
+  ],
+  "tris": 108,
+  "kind": "item",
+  "limit": 1500,
+  "source": "generated"
+ },
+ "battery": {
+  "height": 0.16,
+  "foot": [
+   0.5,
+   0.5
+  ],
+  "tris": 136,
+  "kind": "item",
+  "limit": 1500,
+  "source": "generated"
+ },
+ "shovel": {
+  "height": 0.078,
+  "foot": [
+   0.5,
+   1.2
+  ],
+  "tris": 120,
+  "kind": "item",
+  "limit": 1500,
+  "source": "generated"
+ },
+ "rope_coil": {
+  "height": 0.333,
+  "foot": [
+   0.9,
+   0.5
+  ],
+  "tris": 900,
+  "kind": "item",
+  "limit": 1500,
+  "source": "generated"
+ },
+ "laptop": {
+  "height": 0.257,
+  "foot": [
+   0.5,
+   0.5
+  ],
+  "tris": 132,
+  "kind": "item",
+  "limit": 1500,
+  "source": "generated"
+ },
+ "onion": {
+  "height": 0.36,
+  "foot": [
+   0.5,
+   0.5
+  ],
+  "tris": 420,
+  "kind": "item",
+  "limit": 1500,
+  "source": "generated"
+ },
+ "eye_drops": {
+  "height": 0.21,
+  "foot": [
+   0.5,
+   0.5
+  ],
+  "tris": 172,
+  "kind": "item",
+  "limit": 1500,
+  "source": "generated"
+ },
+ "bouncy_ball": {
+  "height": 0.339,
+  "foot": [
+   0.5,
+   0.5
+  ],
+  "tris": 760,
+  "kind": "item",
+  "limit": 1500,
+  "source": "generated"
+ },
+ "plum": {
+  "height": 0.32,
+  "foot": [
+   0.5,
+   0.5
+  ],
+  "tris": 592,
+  "kind": "item",
+  "limit": 1500,
+  "source": "generated"
+ },
+ "cake_whole": {
+  "height": 0.45,
+  "foot": [
+   0.7,
+   0.7
+  ],
+  "tris": 832,
+  "kind": "item",
+  "limit": 1500,
+  "source": "generated"
+ },
+ "flower_single": {
+  "height": 0.505,
+  "foot": [
+   0.5,
+   0.5
+  ],
+  "tris": 758,
+  "kind": "item",
+  "limit": 1500,
+  "source": "generated"
+ },
+ "pasta_packet": {
+  "height": 0.076,
+  "foot": [
+   0.5,
+   0.5
+  ],
+  "tris": 144,
+  "kind": "item",
+  "limit": 1500,
+  "source": "generated"
+ },
+ "tree_pine": {
+  "height": 2.62,
+  "foot": [
+   2,
+   2
+  ],
+  "tris": 328,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "bush_round": {
+  "height": 0.973,
+  "foot": [
+   1.4,
+   1.4
+  ],
+  "tris": 736,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "bin_blue": {
+  "height": 0.96,
+  "foot": [
+   0.8,
+   0.8
+  ],
+  "tris": 372,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "traffic_cone": {
+  "height": 0.61,
+  "foot": [
+   0.4,
+   0.4
+  ],
+  "tris": 176,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "bollard": {
+  "height": 0.7,
+  "foot": [
+   0.3,
+   0.3
+  ],
+  "tris": 312,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "street_lamp_simple": {
+  "height": 3.205,
+  "foot": [
+   1.5,
+   0.5
+  ],
+  "tris": 160,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "road_straight": {
+  "height": 0.145,
+  "foot": [
+   4,
+   4
+  ],
+  "tris": 168,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "road_corner": {
+  "height": 0.14,
+  "foot": [
+   4,
+   4
+  ],
+  "tris": 204,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "road_junction": {
+  "height": 0.14,
+  "foot": [
+   4,
+   4
+  ],
+  "tris": 324,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "pavement": {
+  "height": 0.112,
+  "foot": [
+   4,
+   4
+  ],
+  "tris": 96,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "grass_tile": {
+  "height": 0.245,
+  "foot": [
+   4,
+   4
+  ],
+  "tris": 436,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "anisha": {
+  "height": 1.144,
+  "foot": [
+   0.8,
+   0.8
+  ],
+  "tris": 4220,
+  "kind": "character",
+  "limit": 8000,
+  "source": "generated"
+ },
+ "granny": {
+  "height": 1.56,
+  "foot": [
+   0.9,
+   0.9
+  ],
+  "tris": 4432,
+  "kind": "character",
+  "limit": 8000,
+  "source": "generated"
+ },
+ "scary_teacher": {
+  "height": 1.654,
+  "foot": [
+   0.8,
+   0.8
+  ],
+  "tris": 4288,
+  "kind": "character",
+  "limit": 8000,
+  "source": "generated"
+ },
+ "labubu": {
+  "height": 1.709,
+  "foot": [
+   0.9,
+   0.9
+  ],
+  "tris": 4698,
+  "kind": "character",
+  "limit": 8000,
+  "source": "generated"
+ },
+ "kabla": {
+  "height": 1.494,
+  "foot": [
+   0.8,
+   0.8
+  ],
+  "tris": 3856,
+  "kind": "character",
+  "limit": 8000,
+  "source": "generated"
+ },
+ "rani": {
+  "height": 1.101,
+  "foot": [
+   0.8,
+   0.8
+  ],
+  "tris": 3846,
+  "kind": "character",
+  "limit": 8000,
+  "source": "generated"
+ },
+ "kamala": {
+  "height": 1.101,
+  "foot": [
+   0.8,
+   0.8
+  ],
+  "tris": 3872,
+  "kind": "character",
+  "limit": 8000,
+  "source": "generated"
+ },
+ "parrot": {
+  "height": 0.665,
+  "foot": [
+   0.6,
+   0.6
+  ],
+  "tris": 2054,
+  "kind": "character",
+  "limit": 8000,
+  "source": "generated"
+ },
+ "dog": {
+  "height": 0.794,
+  "foot": [
+   0.8,
+   1.2
+  ],
+  "tris": 2544,
+  "kind": "character",
+  "limit": 8000,
+  "source": "generated"
+ },
+ "cat": {
+  "height": 0.705,
+  "foot": [
+   0.6,
+   0.9
+  ],
+  "tris": 2380,
+  "kind": "character",
+  "limit": 8000,
+  "source": "generated"
+ },
+ "pet_parrot": {
+  "height": 0.665,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 2054,
+  "kind": "character",
+  "limit": 8000,
+  "source": "generated"
+ },
+ "pet_dog": {
+  "height": 0.794,
+  "foot": [
+   1,
+   2
+  ],
+  "tris": 2544,
+  "kind": "character",
+  "limit": 8000,
+  "source": "generated"
+ },
+ "pet_cat": {
+  "height": 0.705,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 2380,
+  "kind": "character",
+  "limit": 8000,
+  "source": "generated"
+ },
+ "little_house": {
+  "height": 8.45,
+  "foot": [
+   14,
+   15.2
+  ],
+  "tris": 5764,
+  "kind": "building",
+  "limit": 12000,
+  "source": "generated"
+ },
+ "granny_house": {
+  "height": 20.69,
+  "foot": [
+   23.5,
+   18.2
+  ],
+  "tris": 8048,
+  "kind": "building",
+  "limit": 20000,
+  "source": "generated"
+ },
+ "school": {
+  "height": 16.832,
+  "foot": [
+   24,
+   21.3
+  ],
+  "tris": 3188,
+  "kind": "building",
+  "limit": 15000,
+  "source": "generated"
+ },
+ "hospital": {
+  "height": 14.2,
+  "foot": [
+   34,
+   15.4
+  ],
+  "tris": 2032,
+  "kind": "building",
+  "limit": 15000,
+  "source": "generated"
+ },
+ "palace": {
+  "height": 19.02,
+  "foot": [
+   30,
+   19.2
+  ],
+  "tris": 5544,
+  "kind": "building",
+  "limit": 20000,
+  "source": "generated"
+ },
+ "greenhouse": {
+  "height": 4.59,
+  "foot": [
+   8.6,
+   5.6
+  ],
+  "tris": 1416,
+  "kind": "building",
+  "limit": 20000,
+  "source": "generated"
+ },
+ "watch_tower": {
+  "height": 7.761,
+  "foot": [
+   3.4,
+   3.4
+  ],
+  "tris": 884,
+  "kind": "building",
+  "limit": 20000,
+  "source": "generated"
+ },
+ "beach_shack": {
+  "height": 4.2,
+  "foot": [
+   5,
+   4
+  ],
+  "tris": 612,
+  "kind": "building",
+  "limit": 20000,
   "source": "generated"
  }
 }

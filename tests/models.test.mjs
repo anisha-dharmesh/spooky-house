@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { allModels } from '../scripts/make-models.mjs';
+import { allModels, MAX_TRIS } from '../scripts/make-models.mjs';
 import { RECIPES } from '../scripts/models/recipes.mjs';
 
 const EPS = 0.021; // a model may not stick out of its footprint by more than 2 cm
@@ -17,7 +17,7 @@ describe('generated 3D models (recipes in scripts/models/recipes.mjs)', () => {
       });
 
       it('is low-poly', () => {
-        expect(model.triangles()).toBeLessThanOrEqual(RECIPES[id].maxTris ?? 3000);
+        expect(model.triangles()).toBeLessThanOrEqual(RECIPES[id].maxTris ?? MAX_TRIS[kind] ?? 3000);
       });
 
       it('has every triangle facing outward', () => {

@@ -17,6 +17,16 @@ func _ready() -> void:
 	if "--gallery" in args:
 		add_child(Gallery.new())
 		return
+	if "--sheet" in args:
+		var ids := String(args[args.find("--sheet") + 1]).split(",")
+		var cols := int(args[args.find("--cols") + 1]) if "--cols" in args else 0
+		var sheet := Sheet.new()
+		var yaw := float(args[args.find("--yaw") + 1]) if "--yaw" in args else 0.0
+		var anim := String(args[args.find("--anim") + 1]) if "--anim" in args else ""
+		var anim_time := float(args[args.find("--time") + 1]) if "--time" in args else 0.0
+		sheet.setup(Array(ids), cols, "--real" in args, "--grey" in args, yaw, anim, anim_time)
+		add_child(sheet)
+		return
 	if "--selftest" in args:
 		_selftest()
 		return

@@ -1,6 +1,6 @@
 class_name Gallery
 extends Node3D
-## Shows every generated model in rows with its name: `godot --path godot -- --gallery`.
+## Shows every small model in rows with its name: `godot --path godot -- --gallery` (buildings and vehicles: use `--sheet`).
 ## Handy for checking the models and for showing them to Anisha.
 
 var _cam: Camera3D
@@ -23,7 +23,11 @@ func _ready() -> void:
 	add_child(sun)
 
 	var index := ModelLibrary.model_index()
-	var ids: Array = index.keys()
+	var ids: Array = []
+	for id in index.keys():
+		# buildings and vehicles are too big for one picture of everything: look at them with `--sheet` instead
+		if not ["building", "vehicle"].has(String(index[id].kind)):
+			ids.append(id)
 	ids.sort_custom(func(a: String, b: String) -> bool:
 		var ka: String = index[a].kind
 		var kb: String = index[b].kind
@@ -34,7 +38,7 @@ func _ready() -> void:
 	var z := 0.0
 	var row_depth := 0.0
 	var max_w := 0.0
-	const ROW_W := 30.0
+	const ROW_W := 46.0
 	for id in ids:
 		var foot: Array = index[id].foot
 		var w := maxf(float(foot[0]), 1.2) + 0.8

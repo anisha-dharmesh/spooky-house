@@ -11,6 +11,16 @@ export const MATERIALS = {
   glow: { c: [0.95, 0.95, 0.95], r: 0.6, e: [0.9, 0.9, 0.85] },
 };
 
+/** "#rrggbb" (as seen in a picture, sRGB) -> glTF linear colour. */
+export function hex(h) {
+  const n = parseInt(h.replace('#', ''), 16);
+  const lin = (v) => {
+    v /= 255;
+    return v <= 0.04045 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4;
+  };
+  return [lin((n >> 16) & 255), lin((n >> 8) & 255), lin(n & 255)];
+}
+
 // ---------- tiny vector / quaternion maths ----------
 
 export function quatFromEuler(rx = 0, ry = 0, rz = 0) {
@@ -99,7 +109,15 @@ export class Model {
     this.name = name;
     this.nodes = [];
     this.animations = [];
+    this.materials = {}; // this model's own colours, by name: { c: linear rgb, r: roughness, e: emissive, a: alpha }
+    this.skeleton = null; // set by Rig (characters): the joints, in order
     this.root = this.node('root');
+  }
+
+  /** Defines a colour from a picture. `mat('wood', '#b9824a')`, then use 'wood' in add(). Options: r (roughness), e (glow colour), a (alpha). */
+  mat(name, color, opts = {}) {
+    this.materials[name] = { c: hex(color), r: opts.r ?? 0.8, ...(opts.e ? { e: hex(opts.e) } : {}), ...(opts.a !== undefined ? { a: opts.a } : {}) };
+    return name;
   }
 
   node(name, parent = null, opts = {}) {
@@ -109,8 +127,9 @@ export class Model {
     return n;
   }
 
-  /** Adds a piece of geometry to a node, with a material name from MATERIALS. */
+  /** Adds a piece of geometry to a node. `mat` is a name from MATERIALS or mat(), or a "#rrggbb" colour used directly. */
   add(node, geom, mat, xf) {
+    if (typeof mat === 'string' && mat.startsWith('#') && !this.materials[mat]) this.mat(mat, mat);
     const g = xf ? transform(geom, xf) : geom;
     const list = node.prims.get(mat) ?? [];
     list.push(g);
@@ -156,6 +175,14 @@ export class Model {
       for (const c of node.children) walk(c, origin, qq);
     };
     walk(this.root, [0, 0, 0], [0, 0, 0, 1]);
+    // the root can be scaled (a model that was shrunk to fit its footprint): scale about the origin, then keep its move
+    if (this.root.s) {
+      const t = this.root.t ?? [0, 0, 0];
+      for (let k = 0; k < 3; k++) {
+        min[k] = t[k] + (min[k] - t[k]) * this.root.s[k];
+        max[k] = t[k] + (max[k] - t[k]) * this.root.s[k];
+      }
+    }
     return { min, max };
   }
 
@@ -189,48 +216,123 @@ export class Model {
       return { min, max };
     };
 
-    const matNames = Object.keys(MATERIALS);
+    const all = { ...MATERIALS, ...this.materials };
+    const matNames = Object.keys(all);
     const materials = matNames.map((n) => {
-      const m = MATERIALS[n];
+      const m = all[n];
       return {
         name: n,
-        pbrMetallicRoughness: { baseColorFactor: [...m.c, 1], metallicFactor: 0, roughnessFactor: m.r ?? 0.9 },
+        pbrMetallicRoughness: { baseColorFactor: [...m.c, m.a ?? 1], metallicFactor: 0, roughnessFactor: m.r ?? 0.9 },
         ...(m.e ? { emissiveFactor: m.e } : {}),
+        ...(m.a !== undefined && m.a < 1 ? { alphaMode: 'BLEND' } : {}),
       };
     });
 
     const meshes = [];
     const nodeIndex = new Map(this.nodes.map((n, i) => [n, i]));
+    const skeleton = this.skeleton;
+    const emitPrimitive = (g, mat, extraAttrs = () => ({})) => {
+      const vcount = g.pos.length / 3;
+      const pv = pushBytes(f32(g.pos), 34962);
+      const nv = pushBytes(f32(g.nor), 34962);
+      const big = vcount > 65535;
+      const iv = pushBytes(Buffer.from((big ? new Uint32Array(g.idx) : new Uint16Array(g.idx)).buffer), 34963);
+      const { min, max } = minMax(g.pos, 3);
+      return {
+        attributes: {
+          POSITION: accessor(pv, 5126, vcount, 'VEC3', { min, max }),
+          NORMAL: accessor(nv, 5126, vcount, 'VEC3'),
+          ...extraAttrs(vcount),
+        },
+        indices: accessor(iv, big ? 5125 : 5123, g.idx.length, 'SCALAR'),
+        material: matNames.indexOf(mat),
+      };
+    };
+
     const gltfNodes = this.nodes.map((n) => {
       const out = { name: n.name };
       if (n.children.length) out.children = n.children.map((c) => nodeIndex.get(c));
       if (n.t) out.translation = n.t;
       if (n.r) out.rotation = n.r;
       if (n.s) out.scale = n.s;
-      if (n.prims.size) {
+      if (n.prims.size && !skeleton) {
         const primitives = [];
-        for (const [mat, list] of n.prims) {
-          const g = merge(list);
-          const vcount = g.pos.length / 3;
-          const pv = pushBytes(f32(g.pos), 34962);
-          const nv = pushBytes(f32(g.nor), 34962);
-          const big = vcount > 65535;
-          const iv = pushBytes(Buffer.from((big ? new Uint32Array(g.idx) : new Uint16Array(g.idx)).buffer), 34963);
-          const { min, max } = minMax(g.pos, 3);
-          primitives.push({
-            attributes: {
-              POSITION: accessor(pv, 5126, vcount, 'VEC3', { min, max }),
-              NORMAL: accessor(nv, 5126, vcount, 'VEC3'),
-            },
-            indices: accessor(iv, big ? 5125 : 5123, g.idx.length, 'SCALAR'),
-            material: matNames.indexOf(mat),
-          });
-        }
+        for (const [mat, list] of n.prims) primitives.push(emitPrimitive(merge(list), mat));
         meshes.push({ name: n.name, primitives });
         out.mesh = meshes.length - 1;
       }
       return out;
     });
+
+    const sceneNodes = [0];
+    let skins;
+    if (skeleton) {
+      // Rigid skinning: every piece of geometry follows exactly one bone. Rest pose has no rotations, so a bone's
+      // world position is the sum of the translations above it, and its inverse bind matrix is just the opposite move.
+      const world = new Map();
+      const parent = new Map();
+      const walk = (n, base) => {
+        const t = n.t ?? [0, 0, 0];
+        const w = [base[0] + t[0], base[1] + t[1], base[2] + t[2]];
+        world.set(n, w);
+        for (const c of n.children) {
+          parent.set(c, n);
+          walk(c, w);
+        }
+      };
+      walk(this.root, [0, 0, 0]);
+      const jointIdx = new Map(skeleton.joints.map((j, i) => [j, i]));
+      const boneOf = (n) => {
+        while (n && !jointIdx.has(n)) n = parent.get(n);
+        return n ?? skeleton.joints[0];
+      };
+      const byMat = new Map();
+      for (const n of this.nodes) {
+        if (!n.prims.size) continue;
+        const w = world.get(n);
+        const bone = jointIdx.get(boneOf(n));
+        for (const [mat, list] of n.prims) {
+          const entry = byMat.get(mat) ?? { parts: [], bones: [] };
+          for (const g of list) {
+            const moved = { pos: g.pos.slice(), nor: g.nor, idx: g.idx };
+            for (let i = 0; i < moved.pos.length; i += 3) {
+              moved.pos[i] += w[0];
+              moved.pos[i + 1] += w[1];
+              moved.pos[i + 2] += w[2];
+            }
+            entry.parts.push(moved);
+            entry.bones.push([bone, g.pos.length / 3]);
+          }
+          byMat.set(mat, entry);
+        }
+      }
+      const primitives = [];
+      for (const [mat, { parts, bones }] of byMat) {
+        const joints = [];
+        const weights = [];
+        for (const [bone, count] of bones)
+          for (let k = 0; k < count; k++) {
+            joints.push(bone, 0, 0, 0);
+            weights.push(1, 0, 0, 0);
+          }
+        primitives.push(
+          emitPrimitive(merge(parts), mat, () => ({
+            JOINTS_0: accessor(pushBytes(Buffer.from(new Uint8Array(joints))), 5121, joints.length / 4, 'VEC4'),
+            WEIGHTS_0: accessor(pushBytes(f32(weights)), 5126, weights.length / 4, 'VEC4'),
+          })),
+        );
+      }
+      meshes.push({ name: this.name, primitives });
+      const ibm = [];
+      for (const j of skeleton.joints) {
+        const w = world.get(j);
+        ibm.push(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -w[0], -w[1], -w[2], 1);
+      }
+      const ibmAcc = accessor(pushBytes(f32(ibm)), 5126, skeleton.joints.length, 'MAT4');
+      skins = [{ joints: skeleton.joints.map((j) => nodeIndex.get(j)), inverseBindMatrices: ibmAcc, skeleton: nodeIndex.get(skeleton.joints[0]) }];
+      gltfNodes.push({ name: 'body', mesh: meshes.length - 1, skin: 0 });
+      sceneNodes.push(gltfNodes.length - 1);
+    }
 
     const animations = this.animations.map((a) => {
       const samplers = [];
@@ -252,13 +354,14 @@ export class Model {
     const json = {
       asset: { version: '2.0', generator: "Anisha's Spooky House model generator" },
       scene: 0,
-      scenes: [{ nodes: [0] }],
+      scenes: [{ nodes: sceneNodes }],
       nodes: gltfNodes,
       meshes,
       materials,
       accessors,
       bufferViews,
       buffers: [{ byteLength: bin.length }],
+      ...(skins ? { skins } : {}),
       ...(animations.length ? { animations } : {}),
     };
     return { json, bin };

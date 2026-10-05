@@ -279,7 +279,8 @@ func _build_props() -> void:
 		var base := 0.0
 		if s.host != "" and tops.has(s.host):
 			base = tops[s.host]
-		var made := ModelLibrary.make(s, base, _pickup_uid(s.uid))
+		var in_granny := _is_spooky(String(world.room_by_id(s.room).get("location", "")))
+		var made := ModelLibrary.make(s, base, _pickup_uid(s.uid), in_granny)
 		tops[s.uid] = made.top
 		var node: Node3D = made.node
 		add_child(node)

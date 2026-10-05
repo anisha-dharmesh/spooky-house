@@ -49,23 +49,28 @@ Adding a task or a room: see [../docs/ADDING_TASKS.md](../docs/ADDING_TASKS.md).
 
 ## 3D models
 
-Level 1's kitchen and hall use real low-poly models in **real colours**: 31 objects plus Anisha and the scary teacher, made by
-Claude Design, and her shoes, made by a small script. They are in `assets/models/`. `MODELS.md` there lists everything, and the
-pictures are in [../docs/art/3d-batch1/](../docs/art/3d-batch1/). The characters are skinned and animated (Anisha: `idle`, `walk`,
-`sneak`, `pickup`, `hide`; the teacher: `idle`, `walk`, `look_around`, `caught_you`).
+**Every object of the art pack has a 3D model**, in the colours of the reference pictures (`docs/art/reference/`): 184 objects,
+10 characters (Anisha, Granny, the scary teacher, Labubu, Kabla, Rani, Kamala, parrot, dog, cat; rigged and animated), vehicles,
+40 small game items, street pieces and 8 buildings. They are in `assets/models/`; `MODELS.md` there lists every one, and the
+pictures are in [../docs/art/3d-batch1/](../docs/art/3d-batch1/) and [../docs/art/3d-batch2/](../docs/art/3d-batch2/).
+Batch 1 (Level 1 objects) was made by Claude Design; the rest is generated from recipes in `scripts/models/sets/`.
 
 ```bash
-npm run models                    # refreshes index.json (sizes, mount heights) and rebuilds the generated models
-godot --path godot -- --gallery   # shows all of them in rows with their names
+npm run models                                   # rebuilds every generated model, index.json and MODELS.md
+godot --path godot -- --gallery                  # shows all of them in rows with their names
+godot --path godot -- --sheet sofa,bed_single    # a few models close up (add --yaw 40, --anim walk, --grey)
+node scripts/sheet.mjs --out look.png sofa       # the same as a picture file
 ```
 
-To replace a model, overwrite its file: the game picks up `assets/models/<object id>.glb` automatically. Wall and ceiling pieces
-(clock, frames, bulb) are modelled at floor level and raised by the `mount` height in `batch1.manifest.json`; `npm run models`
-copies that into `index.json`. Rules for models (1 unit = 1 metre, origin at the centre of the base, front faces +Z, under 3,000
-triangles, 8,000 for characters) are in [../docs/3D_MODEL_BRIEF.md](../docs/3D_MODEL_BRIEF.md), and `npm test` checks every file.
+**Granny's house stays black, grey and white**: models placed in her rooms are shown grey (`ModelLibrary.greyscale`), so one model
+file works everywhere. Things Anisha can pick up for a task keep their colours. To replace a model, overwrite its file or change
+its recipe: the game picks up `assets/models/<object id>.glb` automatically. Wall and ceiling pieces (clock, frames, bulb,
+chandelier, X-ray light box) are modelled at floor level and raised by the `mount` height in `index.json`. Rules for models
+(1 unit = 1 metre, origin at the centre of the base, front faces +Z, triangle limits) are in
+[../docs/3D_MODEL_BRIEF.md](../docs/3D_MODEL_BRIEF.md), and `npm test` checks every file.
 
-Objects with no model yet are grey boxes sized from the room files. Stairs and the lift are solid, since they are big blocks now
-but do not take you anywhere yet.
+Stairs and the lift are solid, since they are big blocks now but do not take you anywhere yet. The building models are for the town map
+(not placed in the game yet).
 
 ## Checks
 
@@ -92,5 +97,5 @@ are easier. We should decide the target before setting up exports.
 
 Stairs and lift between floors (the models are there but are decoration for now), the rest of the town (playground, school,
 hospital, palace; there is only a short street between the two houses), an arrow pointing to where the task is, sound, models for
-the other 150 objects, the other baddies (Labubu, Kabla), and only two tasks exist (task 2, the lemon in the tea, is a stand-in from
+the town map that uses the building models, the other baddies in play (Labubu, Kabla and Granny have models and animations but no behaviour yet), and only two tasks exist (task 2, the lemon in the tea, is a stand-in from
 the approved suggestions until Anisha picks hers). Anisha's look is a stand-in until she decides.

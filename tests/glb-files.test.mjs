@@ -10,16 +10,30 @@ const items = Object.fromEntries(JSON.parse(fs.readFileSync('godot/data/pack-ite
 const index = JSON.parse(fs.readFileSync(path.join(DIR, 'index.json'), 'utf8'));
 const files = fs.readdirSync(DIR).filter((f) => f.endsWith('.glb')).sort();
 
+// Characters and the animations the game plays for them (docs/3D_MODEL_BRIEF.md).
+const PERSON = ['idle', 'walk'];
+const BADDIE = ['idle', 'walk', 'look_around', 'caught_you'];
 const CHARACTERS = {
   anisha: ['idle', 'walk', 'sneak', 'pickup', 'hide'],
-  scary_teacher: ['idle', 'walk', 'look_around', 'caught_you'],
+  scary_teacher: BADDIE,
+  granny: BADDIE,
+  labubu: BADDIE,
+  kabla: BADDIE,
+  rani: [...PERSON, 'look_around'],
+  kamala: [...PERSON, 'look_around'],
+  parrot: PERSON,
+  dog: PERSON,
+  cat: PERSON,
+  pet_parrot: PERSON,
+  pet_dog: PERSON,
+  pet_cat: PERSON,
 };
-const EXTRAS = ['shoes', ...Object.keys(CHARACTERS)];
 
 describe('model files', () => {
-  it('has a model for every Level 1 object, Anisha, the teacher and her shoes', () => {
-    for (const id of ['fridge', 'counter', 'gas_stove', 'sink', 'table_dining', 'chair', 'sofa', 'tv_big', 'cupboard_big', 'piano', 'cement_bag', 'skates', 'anisha', 'scary_teacher', 'shoes'])
-      expect(files).toContain(id + '.glb');
+  it('has a model for every object of the art pack, Anisha, the baddies and the pets', () => {
+    for (const id of Object.keys(items)) expect(files, id).toContain(id + '.glb');
+    for (const id of Object.keys(CHARACTERS)) expect(files, id).toContain(id + '.glb');
+    expect(files).toContain('shoes.glb');
   });
 
   it('lists every file in index.json', () => {
@@ -32,16 +46,17 @@ describe('model files', () => {
       const info = modelInfo(readGlb(path.join(DIR, f)).json);
       const isCharacter = id in CHARACTERS;
 
+
       it('stands on the floor', () => {
         expect(info.min[1]).toBeGreaterThan(-0.02);
       });
 
       it('is low-poly', () => {
-        expect(info.triangles).toBeLessThanOrEqual(isCharacter ? 8000 : 3000);
+        expect(info.triangles).toBeLessThanOrEqual(index[id].limit ?? (isCharacter ? 8000 : 3000));
       });
 
       it('stays inside its footprint', () => {
-        if (EXTRAS.includes(id)) return;
+        if (index[id].kind !== 'object') return; // extras, items, vehicles and buildings report the space they take
         const it = items[id];
         expect(it, `${id} is not an object in the art pack`).toBeDefined();
         expect(Math.max(-info.min[0], info.max[0]) * 2).toBeLessThanOrEqual(it.w + 0.05);

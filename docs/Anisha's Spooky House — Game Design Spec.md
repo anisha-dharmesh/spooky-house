@@ -294,6 +294,11 @@ Rule of thumb for difficulty: number of items needed, number of rooms crossed, b
 > palace, swimming pool, streets) is **not** spooky: normal and bright. The dark look below (night sky, fog, cobwebs, bats,
 > black, grey and white only) applies to Granny's house. Whether town objects may use real colours is still to confirm with
 > Anisha.
+>
+> **Update, Oct 5, 2026 (Dharmesh):** the 3D models are built from the concept pictures in `docs/art/reference/` and use their
+> **real colours** everywhere in the town. **Granny's house stays black, grey and white**: the game shows everything placed
+> in her rooms in grey. Anisha's look and the other characters (Granny, scary teacher, Labubu, Kabla, Rani, Kamala, parrot, dog,
+> cat) now follow the picture; Anisha still has to approve them.
 
 Spooky, not cute: Anisha rejected the first colourful version.
 

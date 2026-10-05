@@ -39,6 +39,23 @@ static func load_model(id: String) -> Node3D:
 	return scene.instantiate() as Node3D
 
 
+## Replaces every colour in a model with its grey. Granny's house stays black, grey and white, so the props in it
+## are shown this way; the models themselves keep the colours of the pictures for the rest of the town.
+static func greyscale(node: Node) -> void:
+	for mi in node.find_children("*", "MeshInstance3D", true, false):
+		var m: MeshInstance3D = mi
+		for s in m.mesh.get_surface_count():
+			var src := m.mesh.surface_get_material(s)
+			if src is BaseMaterial3D:
+				var copy: BaseMaterial3D = src.duplicate()
+				var l := copy.albedo_color.get_luminance()
+				copy.albedo_color = Color(l, l, l, copy.albedo_color.a)
+				if copy.emission_enabled:
+					var le := copy.emission.get_luminance()
+					copy.emission = Color(le, le, le)
+				m.set_surface_override_material(s, copy)
+
+
 static func find_animation_player(node: Node) -> AnimationPlayer:
 	var found := node.find_children("*", "AnimationPlayer", true, false)
 	if found.size() > 0:
@@ -128,7 +145,8 @@ static func _material(tone: float, glow: bool = false) -> StandardMaterial3D:
 
 ## Builds the node for one object. `rect` is its footprint on the floor, `base` the height it sits at
 ## (it sits on top of another object when `base` is above 0). Returns {node, top} where top is the new height.
-static func make(sprite: Dictionary, base: float, interactive: bool = false) -> Dictionary:
+## `grey`: show it in black, grey and white (Granny's house). Things Anisha can pick up for a task keep their colours so she can find them.
+static func make(sprite: Dictionary, base: float, interactive: bool = false, grey: bool = false) -> Dictionary:
 	var frame: String = sprite.frame
 	var tags: Array = sprite.tags
 	var rect: Rect2 = sprite.rect
@@ -140,6 +158,12 @@ static func make(sprite: Dictionary, base: float, interactive: bool = false) -> 
 	if ResourceLoader.exists(path):
 		var scene: PackedScene = load(path)
 		var model: Node3D = scene.instantiate()
+		if grey and not interactive:
+			greyscale(model)
+		# pets and anything else with an idle animation just plays it (a sitting dog, a bobbing parrot)
+		var ap := find_animation_player(model)
+		if ap != null and ap.has_animation("idle"):
+			ap.play("idle")
 		# wall and ceiling pieces are modelled at floor level and carry their mount height in the index
 		var mount_y := float(model_index().get(frame, {}).get("mount_y", 0.0))
 		model.position = Vector3(center.x, base + mount_y, center.y)
