@@ -201,6 +201,10 @@ static func build(level: Dictionary, rooms: Dictionary) -> WorldData:
 				world.targets.append({"id": it.uid, "rect": rect, "label": it.name, "kind": "item"})
 		for c in room.colliders:
 			world.solids.append(Rect2(ox + c.x * T, oy + c.y * T, c.w * T, c.h * T))
+		# stairs and lifts are big solid models (they don't take you anywhere yet), so they block the way too
+		for it in room.items:
+			if it.tags.has("stairs") or it.tags.has("lift"):
+				world.solids.append(Rect2(ox + it.x * T, oy + it.y * T, it.w * T, it.h * T))
 		for uid in room.hideSpots:
 			if by_uid.has(uid):
 				var it2: Dictionary = by_uid[uid]

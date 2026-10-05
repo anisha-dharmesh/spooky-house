@@ -1,45 +1,45 @@
-# Generated models
+# Models
 
-Made by `npm run models` (scripts/make-models.mjs). Rules: docs/3D_MODEL_BRIEF.md. Do not edit the .glb files by hand: edit the recipe and run it again.
+Written by `npm run models`. Rules: docs/3D_MODEL_BRIEF.md. Pictures of batch 1: docs/art/3d-batch1/.
 
 ## Made (34)
 
-| id | Name | Footprint (m) | Height (m) | Triangles | Animations |
-| --- | --- | --- | --- | --- | --- |
-| `fridge` | Fridge | 2 × 2 | 1.98 | 168 | - |
-| `counter` | Kitchen counter | 2 × 1 | 0.9 | 168 | - |
-| `gas_stove` | Gas stove | 3 × 1 | 0.938 | 592 | - |
-| `sink` | Sink | 2 × 1 | 1.174 | 596 | - |
-| `table_dining` | Dining table | 5 × 3 | 0.784 | 900 | - |
-| `chair` | Chair | 1 × 1 | 0.96 | 204 | - |
-| `spice_rack` | Spice jars | 2 × 1 | 1.3 | 1032 | - |
-| `cement_bag` | Cement bag | 1 × 1 | 0.204 | 156 | - |
-| `hanging_bulb` | Hanging bulb | 1 × 1 | 2.395 | 256 | - |
-| `knife` | Knife | 1 × 1 | 0.024 | 24 | - |
-| `chilli` | Chilli | 1 × 1 | 0.098 | 152 | - |
-| `lemon` | Lemon | 1 × 1 | 0.17 | 228 | - |
-| `salt_jar` | Salt jar | 1 × 1 | 0.18 | 168 | - |
-| `sugar_jar` | Sugar jar | 1 × 1 | 0.177 | 228 | - |
-| `tea_cup` | Tea cup | 1 × 1 | 0.092 | 212 | - |
-| `maggi_packet` | Maggi packet | 1 × 1 | 0.042 | 180 | - |
-| `cashew_bowl` | Cashew bowl | 1 × 1 | 0.156 | 768 | - |
-| `rug` | Rug | 4 × 3 | 0.026 | 144 | - |
-| `front_door_mat` | Doormat | 2 × 1 | 0.038 | 192 | - |
-| `sofa` | Sofa | 4 × 2 | 0.963 | 992 | - |
-| `tv_big` | Big TV | 5 × 1 | 1.515 | 72 | - |
-| `alexa` | Alexa speaker | 1 × 1 | 0.891 | 328 | - |
-| `cupboard_big` | Big cupboard | 2 × 4 | 2 | 384 | - |
-| `piano` | Piano | 3 × 2 | 1.2 | 216 | - |
-| `wall_clock` | Wall clock | 1 × 1 | 2.07 | 216 | - |
-| `photo_frame` | Photo frame | 1 × 1 | 1.8 | 252 | - |
-| `stairs` | Zigzag stairs | 2 × 3 | 0.85 | 96 | - |
-| `lift` | Lift | 2 × 2 | 2.2 | 108 | - |
-| `lamp_floor` | Floor lamp | 1 × 1 | 1.6 | 248 | - |
-| `tv_remote` | TV remote | 1 × 1 | 0.025 | 168 | - |
-| `skates` | Skates | 1 × 1 | 0.235 | 752 | - |
-| `shoes` | shoes | 1.4 × 1 | 0.146 | 696 | - |
-| `anisha` | anisha | 0.8 × 0.8 | 1.196 | 1972 | idle, walk, sneak, pickup, hide |
-| `scary_teacher` | scary_teacher | 1 × 1 | 1.794 | 1904 | idle, walk, sneak, pickup, hide, look_around, caught_you |
+| id | Name | Footprint (m) | Height (m) | Triangles | Animations | Made by |
+| --- | --- | --- | --- | --- | --- | --- |
+| `fridge` | Fridge | 2 × 2 | 2.3 | 84 | - | Claude Design |
+| `counter` | Kitchen counter | 2 × 1 | 0.92 | 72 | - | Claude Design |
+| `gas_stove` | Gas stove | 3 × 1 | 1.02 | 460 | - | Claude Design |
+| `sink` | Sink | 2 × 1 | 1.39 | 212 | - | Claude Design |
+| `spice_rack` | Spice jars | 2 × 1 | 0.9 | 1020 | - | Claude Design |
+| `table_dining` | Dining table | 5 × 3 | 0.94 | 72 | - | Claude Design |
+| `chair` | Chair | 1 × 1 | 1.25 | 84 | - | Claude Design |
+| `knife` | Knife | 1 × 1 | 0.085 | 24 | - | Claude Design |
+| `chilli` | Chilli | 1 × 1 | 0.18 | 548 | - | Claude Design |
+| `lemon` | Lemon | 1 × 1 | 0.398 | 496 | - | Claude Design |
+| `salt_jar` | Salt jar | 1 × 1 | 0.56 | 256 | - | Claude Design |
+| `sugar_jar` | Sugar jar | 1 × 1 | 0.6 | 256 | - | Claude Design |
+| `tea_cup` | Tea cup | 1 × 1 | 0.25 | 336 | - | Claude Design |
+| `maggi_packet` | Maggi packet | 1 × 1 | 0.112 | 36 | - | Claude Design |
+| `cashew_bowl` | Cashew bowl | 1 × 1 | 0.212 | 808 | - | Claude Design |
+| `cement_bag` | Cement bag | 1 × 1 | 0.43 | 60 | - | Claude Design |
+| `hanging_bulb` | Hanging bulb | 1 × 1 | 1.44 | 352 | - | Claude Design |
+| `sofa` | Sofa | 4 × 2 | 1.25 | 224 | - | Claude Design |
+| `tv_big` | Big TV | 5 × 1 | 2.8 | 108 | - | Claude Design |
+| `alexa` | Alexa speaker | 1 × 1 | 0.415 | 448 | - | Claude Design |
+| `tv_remote` | TV remote | 1 × 1 | 0.056 | 96 | - | Claude Design |
+| `cupboard_big` | Big cupboard | 2 × 4 | 2.68 | 120 | - | Claude Design |
+| `piano` | Piano | 3 × 2 | 1.45 | 324 | - | Claude Design |
+| `skates` | Skates | 1 × 1 | 0.42 | 232 | - | Claude Design |
+| `rug` | Rug | 4 × 3 | 0.036 | 72 | - | Claude Design |
+| `wall_clock` | Wall clock | 1 × 1 | 0.88 | 296 | - | Claude Design |
+| `photo_frame` | Photo frame | 1 × 1 | 0.6 | 132 | - | Claude Design |
+| `stairs` | Zigzag stairs | 2 × 3 | 2.78 | 288 | - | Claude Design |
+| `lift` | Lift | 2 × 2 | 2.9 | 108 | - | Claude Design |
+| `front_door_mat` | Doormat | 2 × 1 | 0.04 | 24 | - | Claude Design |
+| `lamp_floor` | Floor lamp | 1 × 1 | 1.8 | 280 | - | Claude Design |
+| `anisha` | Anisha (stand-in) | 0.8 × 0.8 | 1.235 | 2040 | idle, walk, sneak, pickup, hide | Claude Design |
+| `scary_teacher` | Scary teacher | 0.8 × 0.8 | 1.7 | 2396 | idle, walk, look_around, caught_you | Claude Design |
+| `shoes` | shoes | 1.4 × 1 | 0.146 | 696 | - | generated |
 
 ## Still a plain grey box in the game (153)
 

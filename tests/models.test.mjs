@@ -4,7 +4,7 @@ import { RECIPES } from '../scripts/models/recipes.mjs';
 
 const EPS = 0.021; // a model may not stick out of its footprint by more than 2 cm
 
-describe('generated 3D models', () => {
+describe('generated 3D models (recipes in scripts/models/recipes.mjs)', () => {
   for (const { id, model, foot, kind } of allModels()) {
     describe(id, () => {
       const b = model.bounds();
@@ -50,11 +50,6 @@ describe('generated 3D models', () => {
         for (const acc of json.accessors) expect(json.bufferViews[acc.bufferView]).toBeDefined();
         for (const mesh of json.meshes)
           for (const prim of mesh.primitives) expect(json.accessors[prim.attributes.POSITION].count).toBeGreaterThan(0);
-        if (kind === 'character') {
-          const names = json.animations.map((a) => a.name);
-          const wanted = id === 'anisha' ? ['idle', 'walk', 'sneak', 'pickup', 'hide'] : ['idle', 'walk', 'look_around', 'caught_you'];
-          for (const w of wanted) expect(names).toContain(w);
-        }
       });
     });
   }

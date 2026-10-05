@@ -46,22 +46,23 @@ Levels, baddie kinds, text and room layouts are plain JSON in `data/`. Adding a 
 
 ## 3D models
 
-Level 1's kitchen and hall now use **generated low-poly models**: 31 objects plus shoes, Anisha and the scary teacher
-(the two characters have idle / walk / sneak / pickup / hide, and look_around / caught_you for the teacher).
-They live in `assets/models/` (`MODELS.md` lists what exists and what is still a plain grey box) and are made by a script,
-not by hand:
+Level 1's kitchen and hall use real low-poly models in **real colours**: 31 objects plus Anisha and the scary teacher, made by
+Claude Design, and her shoes, made by a small script. They are in `assets/models/`. `MODELS.md` there lists everything, and the
+pictures are in [../docs/art/3d-batch1/](../docs/art/3d-batch1/). The characters are skinned and animated (Anisha: `idle`, `walk`,
+`sneak`, `pickup`, `hide`; the teacher: `idle`, `walk`, `look_around`, `caught_you`).
 
 ```bash
-npm run models        # rebuilds every .glb from scripts/models/recipes.mjs
+npm run models                    # refreshes index.json (sizes, mount heights) and rebuilds the generated models
 godot --path godot -- --gallery   # shows all of them in rows with their names
 ```
 
-To change a model, edit its recipe in `scripts/models/recipes.mjs` and run `npm run models`. To replace one with a model made
-elsewhere (Blender, a 3D artist), just overwrite its file: the game picks up `assets/models/<object id>.glb` automatically.
-Rules for models (1 unit = 1 metre, origin at the centre of the base, front faces +Z, under 3,000 triangles) are in
-[../docs/3D_MODEL_BRIEF.md](../docs/3D_MODEL_BRIEF.md); `npm test` checks them for the generated ones.
+To replace a model, overwrite its file: the game picks up `assets/models/<object id>.glb` automatically. Wall and ceiling pieces
+(clock, frames, bulb) are modelled at floor level and raised by the `mount` height in `batch1.manifest.json`; `npm run models`
+copies that into `index.json`. Rules for models (1 unit = 1 metre, origin at the centre of the base, front faces +Z, under 3,000
+triangles, 8,000 for characters) are in [../docs/3D_MODEL_BRIEF.md](../docs/3D_MODEL_BRIEF.md), and `npm test` checks every file.
 
-Objects with no model yet are grey boxes sized from the room files, and the characters fall back to capsules.
+Objects with no model yet are grey boxes sized from the room files. Stairs and the lift are solid, since they are big blocks now
+but do not take you anywhere yet.
 
 ## Checks
 

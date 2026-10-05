@@ -8,7 +8,8 @@ extends RefCounted
 ## with its origin at the centre of the base.
 
 const MODEL_DIR := "res://assets/models/"
-const LOOPING := ["idle", "walk", "sneak", "look_around", "caught_you"]
+# pickup and caught_you play once; the rest loop (glTF has no loop flag, so it is set here)
+const LOOPING := ["idle", "walk", "sneak", "look_around"]
 
 static var _index: Dictionary = {}
 static var _index_loaded := false
@@ -139,7 +140,9 @@ static func make(sprite: Dictionary, base: float, interactive: bool = false) -> 
 	if ResourceLoader.exists(path):
 		var scene: PackedScene = load(path)
 		var model: Node3D = scene.instantiate()
-		model.position = Vector3(center.x, base, center.y)
+		# wall and ceiling pieces are modelled at floor level and carry their mount height in the index
+		var mount_y := float(model_index().get(frame, {}).get("mount_y", 0.0))
+		model.position = Vector3(center.x, base + mount_y, center.y)
 		model.rotation_degrees.y = -float(sprite.angle)
 		return {"node": model, "top": base + h}
 	var size := rect.size - Vector2(0.08, 0.08)

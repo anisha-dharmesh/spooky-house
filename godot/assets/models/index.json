@@ -1,282 +1,342 @@
 {
  "fridge": {
-  "height": 1.98,
+  "height": 2.3,
   "foot": [
    2,
    2
   ],
-  "tris": 168,
-  "kind": "object"
+  "tris": 84,
+  "kind": "object",
+  "source": "claude-design-batch1"
  },
  "counter": {
+  "height": 0.92,
+  "foot": [
+   2,
+   1
+  ],
+  "tris": 72,
+  "kind": "object",
+  "source": "claude-design-batch1"
+ },
+ "gas_stove": {
+  "height": 1.02,
+  "foot": [
+   3,
+   1
+  ],
+  "tris": 460,
+  "kind": "object",
+  "source": "claude-design-batch1"
+ },
+ "sink": {
+  "height": 1.39,
+  "foot": [
+   2,
+   1
+  ],
+  "tris": 212,
+  "kind": "object",
+  "source": "claude-design-batch1"
+ },
+ "spice_rack": {
   "height": 0.9,
   "foot": [
    2,
    1
   ],
-  "tris": 168,
-  "kind": "object"
- },
- "gas_stove": {
-  "height": 0.938,
-  "foot": [
-   3,
-   1
-  ],
-  "tris": 592,
-  "kind": "object"
- },
- "sink": {
-  "height": 1.174,
-  "foot": [
-   2,
-   1
-  ],
-  "tris": 596,
-  "kind": "object"
+  "tris": 1020,
+  "kind": "object",
+  "source": "claude-design-batch1"
  },
  "table_dining": {
-  "height": 0.784,
+  "height": 0.94,
   "foot": [
    5,
    3
   ],
-  "tris": 900,
-  "kind": "object"
+  "tris": 72,
+  "kind": "object",
+  "source": "claude-design-batch1"
  },
  "chair": {
-  "height": 0.96,
+  "height": 1.25,
   "foot": [
    1,
    1
   ],
-  "tris": 204,
-  "kind": "object"
- },
- "spice_rack": {
-  "height": 1.3,
-  "foot": [
-   2,
-   1
-  ],
-  "tris": 1032,
-  "kind": "object"
- },
- "cement_bag": {
-  "height": 0.204,
-  "foot": [
-   1,
-   1
-  ],
-  "tris": 156,
-  "kind": "object"
- },
- "hanging_bulb": {
-  "height": 2.395,
-  "foot": [
-   1,
-   1
-  ],
-  "tris": 256,
-  "kind": "object"
+  "tris": 84,
+  "kind": "object",
+  "source": "claude-design-batch1"
  },
  "knife": {
-  "height": 0.024,
+  "height": 0.085,
   "foot": [
    1,
    1
   ],
   "tris": 24,
-  "kind": "object"
+  "kind": "object",
+  "source": "claude-design-batch1"
  },
  "chilli": {
-  "height": 0.098,
-  "foot": [
-   1,
-   1
-  ],
-  "tris": 152,
-  "kind": "object"
- },
- "lemon": {
-  "height": 0.17,
-  "foot": [
-   1,
-   1
-  ],
-  "tris": 228,
-  "kind": "object"
- },
- "salt_jar": {
   "height": 0.18,
   "foot": [
    1,
    1
   ],
-  "tris": 168,
-  "kind": "object"
+  "tris": 548,
+  "kind": "object",
+  "source": "claude-design-batch1"
+ },
+ "lemon": {
+  "height": 0.398,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 496,
+  "kind": "object",
+  "source": "claude-design-batch1"
+ },
+ "salt_jar": {
+  "height": 0.56,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 256,
+  "kind": "object",
+  "source": "claude-design-batch1"
  },
  "sugar_jar": {
-  "height": 0.177,
+  "height": 0.6,
   "foot": [
    1,
    1
   ],
-  "tris": 228,
-  "kind": "object"
+  "tris": 256,
+  "kind": "object",
+  "source": "claude-design-batch1"
  },
  "tea_cup": {
-  "height": 0.092,
+  "height": 0.25,
   "foot": [
    1,
    1
   ],
-  "tris": 212,
-  "kind": "object"
+  "tris": 336,
+  "kind": "object",
+  "source": "claude-design-batch1"
  },
  "maggi_packet": {
-  "height": 0.042,
+  "height": 0.112,
   "foot": [
    1,
    1
   ],
-  "tris": 180,
-  "kind": "object"
+  "tris": 36,
+  "kind": "object",
+  "source": "claude-design-batch1"
  },
  "cashew_bowl": {
-  "height": 0.156,
+  "height": 0.212,
   "foot": [
    1,
    1
   ],
-  "tris": 768,
-  "kind": "object"
+  "tris": 808,
+  "kind": "object",
+  "source": "claude-design-batch1"
  },
- "rug": {
-  "height": 0.026,
+ "cement_bag": {
+  "height": 0.43,
   "foot": [
-   4,
-   3
-  ],
-  "tris": 144,
-  "kind": "object"
- },
- "front_door_mat": {
-  "height": 0.038,
-  "foot": [
-   2,
+   1,
    1
   ],
-  "tris": 192,
-  "kind": "object"
+  "tris": 60,
+  "kind": "object",
+  "source": "claude-design-batch1"
+ },
+ "hanging_bulb": {
+  "height": 1.44,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 352,
+  "kind": "object",
+  "source": "claude-design-batch1",
+  "mount_y": 1.9,
+  "wall": false,
+  "min_z": -0.136
  },
  "sofa": {
-  "height": 0.963,
+  "height": 1.25,
   "foot": [
    4,
    2
   ],
-  "tris": 992,
-  "kind": "object"
+  "tris": 224,
+  "kind": "object",
+  "source": "claude-design-batch1"
  },
  "tv_big": {
-  "height": 1.515,
+  "height": 2.8,
   "foot": [
    5,
    1
   ],
-  "tris": 72,
-  "kind": "object"
+  "tris": 108,
+  "kind": "object",
+  "source": "claude-design-batch1"
  },
  "alexa": {
-  "height": 0.891,
+  "height": 0.415,
   "foot": [
    1,
    1
   ],
-  "tris": 328,
-  "kind": "object"
+  "tris": 448,
+  "kind": "object",
+  "source": "claude-design-batch1"
+ },
+ "tv_remote": {
+  "height": 0.056,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 96,
+  "kind": "object",
+  "source": "claude-design-batch1"
  },
  "cupboard_big": {
-  "height": 2,
+  "height": 2.68,
   "foot": [
    2,
    4
   ],
-  "tris": 384,
-  "kind": "object"
+  "tris": 120,
+  "kind": "object",
+  "source": "claude-design-batch1"
  },
  "piano": {
-  "height": 1.2,
+  "height": 1.45,
   "foot": [
    3,
    2
   ],
-  "tris": 216,
-  "kind": "object"
+  "tris": 324,
+  "kind": "object",
+  "source": "claude-design-batch1"
+ },
+ "skates": {
+  "height": 0.42,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 232,
+  "kind": "object",
+  "source": "claude-design-batch1"
+ },
+ "rug": {
+  "height": 0.036,
+  "foot": [
+   4,
+   3
+  ],
+  "tris": 72,
+  "kind": "object",
+  "source": "claude-design-batch1"
  },
  "wall_clock": {
-  "height": 2.07,
+  "height": 0.88,
   "foot": [
    1,
    1
   ],
-  "tris": 216,
-  "kind": "object"
+  "tris": 296,
+  "kind": "object",
+  "source": "claude-design-batch1",
+  "mount_y": 2.1,
+  "wall": true,
+  "min_z": -0.45
  },
  "photo_frame": {
-  "height": 1.8,
+  "height": 0.6,
   "foot": [
    1,
    1
   ],
-  "tris": 252,
-  "kind": "object"
+  "tris": 132,
+  "kind": "object",
+  "source": "claude-design-batch1",
+  "mount_y": 1.5,
+  "wall": true,
+  "min_z": -0.47
  },
  "stairs": {
-  "height": 0.85,
+  "height": 2.78,
   "foot": [
    2,
    3
   ],
-  "tris": 96,
-  "kind": "object"
+  "tris": 288,
+  "kind": "object",
+  "source": "claude-design-batch1"
  },
  "lift": {
-  "height": 2.2,
+  "height": 2.9,
   "foot": [
    2,
    2
   ],
   "tris": 108,
-  "kind": "object"
+  "kind": "object",
+  "source": "claude-design-batch1"
+ },
+ "front_door_mat": {
+  "height": 0.04,
+  "foot": [
+   2,
+   1
+  ],
+  "tris": 24,
+  "kind": "object",
+  "source": "claude-design-batch1"
  },
  "lamp_floor": {
-  "height": 1.6,
+  "height": 1.8,
   "foot": [
    1,
    1
   ],
-  "tris": 248,
-  "kind": "object"
+  "tris": 280,
+  "kind": "object",
+  "source": "claude-design-batch1"
  },
- "tv_remote": {
-  "height": 0.025,
+ "anisha": {
+  "height": 1.235,
   "foot": [
-   1,
-   1
+   0.8,
+   0.8
   ],
-  "tris": 168,
-  "kind": "object"
+  "tris": 2040,
+  "kind": "character",
+  "source": "claude-design-batch1"
  },
- "skates": {
-  "height": 0.235,
+ "scary_teacher": {
+  "height": 1.7,
   "foot": [
-   1,
-   1
+   0.8,
+   0.8
   ],
-  "tris": 752,
-  "kind": "object"
+  "tris": 2396,
+  "kind": "character",
+  "source": "claude-design-batch1"
  },
  "shoes": {
   "height": 0.146,
@@ -285,24 +345,7 @@
    1
   ],
   "tris": 696,
-  "kind": "extra"
- },
- "anisha": {
-  "height": 1.196,
-  "foot": [
-   0.8,
-   0.8
-  ],
-  "tris": 1972,
-  "kind": "character"
- },
- "scary_teacher": {
-  "height": 1.794,
-  "foot": [
-   1,
-   1
-  ],
-  "tris": 1904,
-  "kind": "character"
+  "kind": "extra",
+  "source": "generated"
  }
 }
