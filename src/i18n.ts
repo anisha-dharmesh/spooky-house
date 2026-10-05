@@ -7,7 +7,7 @@ export const UI: Record<string, { en: string; hi: string }> = {
   tagline: { en: "Sneak in. Pull a prank. Don't get caught.", hi: 'चुपके से जाओ। शरारत करो। पकड़े मत जाना।' },
   play: { en: 'Play', hi: 'खेलो' },
   continue: { en: 'Continue · Level {n}', hi: 'जारी रखो · लेवल {n}' },
-  spookyTown: { en: 'Spooky Town', hi: 'डरावना शहर' },
+  spookyTown: { en: 'Town', hi: 'शहर' },
   levelOf: { en: 'Level {n} of {total}', hi: 'लेवल {n} / {total}' },
   level: { en: 'Level {n}', hi: 'लेवल {n}' },
   startLevel: { en: 'Start level', hi: 'लेवल शुरू करो' },

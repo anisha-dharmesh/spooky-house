@@ -14,7 +14,7 @@ A spooky stealth-prank game: the player (Anisha herself) sneaks around a dark to
 
 **Genre in one line:** top-down or side-view stealth with fetch-and-use prank tasks, safe zones, hiding spots and a pet-distraction helper.
 
-**Tone:** spooky, not cute. Pranks are cartoon mischief (sticky, sour, spicy, messy, broken things). No gore, no injury shown; a baddie who "falls" just lands on a sponge mat or bum and looks cross.
+**Tone:** spooky, not cute, inside Granny's house (the rest of the town is normal; see Visual and audio style). Pranks are cartoon mischief (sticky, sour, spicy, messy, broken things). No gore, no injury shown; a baddie who "falls" just lands on a sponge mat or bum and looks cross.
 
 ## Characters
 
@@ -279,6 +279,11 @@ Rule of thumb for difficulty: number of items needed, number of rooms crossed, b
 59. Put stickers on her glasses.
 
 ## Visual and audio style
+
+> **Update, Oct 5, 2026: only Granny's house is spooky.** The rest of the town (my little house, park, school, hospital,
+> palace, swimming pool, streets) is **not** spooky: normal and bright. The dark look below (night sky, fog, cobwebs, bats,
+> black, grey and white only) applies to Granny's house. Whether town objects may use real colours is still to confirm with
+> Anisha.
 
 Spooky, not cute: Anisha rejected the first colourful version.
 

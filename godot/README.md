@@ -51,13 +51,24 @@ npm run godot:data
 
 Adding a level is the same as for the web version: see [../docs/ADDING_LEVELS.md](../docs/ADDING_LEVELS.md).
 
-## Real 3D models
+## 3D models
 
-Put a glTF file named after the object in `assets/models/`, for example `fridge.glb` for the "fridge" object
-(object names are in the room files and the labelled pictures in `docs/art/preview/`). It replaces the grey box
-automatically, with no code change. Build models so that **1 unit = 1 metre**, the object fills its footprint
-(a 4 × 2 tile sofa is 4 m × 2 m), and the origin is the centre of the base. The characters (Anisha, the baddies) are
-capsules for now and will need a small change in `ModelLibrary.make_person` once their models exist.
+Level 1's kitchen and hall now use **generated low-poly models**: 31 objects plus shoes, Anisha and the scary teacher
+(the two characters have idle / walk / sneak / pickup / hide, and look_around / caught_you for the teacher).
+They live in `assets/models/` (`MODELS.md` lists what exists and what is still a plain grey box) and are made by a script,
+not by hand:
+
+```bash
+npm run models        # rebuilds every .glb from scripts/models/recipes.mjs
+godot --path godot -- --gallery   # shows all of them in rows with their names
+```
+
+To change a model, edit its recipe in `scripts/models/recipes.mjs` and run `npm run models`. To replace one with a model made
+elsewhere (Blender, a 3D artist), just overwrite its file: the game picks up `assets/models/<object id>.glb` automatically.
+Rules for models (1 unit = 1 metre, origin at the centre of the base, front faces +Z, under 3,000 triangles) are in
+[../docs/3D_MODEL_BRIEF.md](../docs/3D_MODEL_BRIEF.md); `npm test` checks them for the generated ones.
+
+Objects with no model yet are grey boxes sized from the room files, and the characters fall back to capsules.
 
 ## Checks
 
@@ -80,4 +91,4 @@ are easier. We should decide the target before setting up exports.
 
 ## Not built yet (compared with the web version)
 
-Level map screen, stairs and lift between floors, sound, real models, the other baddies (Labubu, Kabla), and only Level 1 exists.
+Level map screen, stairs and lift between floors (the models are there but are decoration for now), sound, models for the other 150 objects, the other baddies (Labubu, Kabla), and only Level 1 exists. Anisha's look is a stand-in until she decides.

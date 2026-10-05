@@ -8,6 +8,71 @@ extends RefCounted
 ## with its origin at the centre of the base.
 
 const MODEL_DIR := "res://assets/models/"
+const LOOPING := ["idle", "walk", "sneak", "look_around", "caught_you"]
+
+static var _index: Dictionary = {}
+static var _index_loaded := false
+
+
+## Heights and sizes of the generated models (made by `npm run models`).
+static func model_index() -> Dictionary:
+	if not _index_loaded:
+		_index_loaded = true
+		var f := FileAccess.open(MODEL_DIR + "index.json", FileAccess.READ)
+		if f != null:
+			var parsed: Variant = JSON.parse_string(f.get_as_text())
+			if parsed is Dictionary:
+				_index = parsed
+	return _index
+
+
+static func has_model(id: String) -> bool:
+	return ResourceLoader.exists(MODEL_DIR + id + ".glb")
+
+
+## Loads a model by name, or returns null when there isn't one.
+static func load_model(id: String) -> Node3D:
+	if not has_model(id):
+		return null
+	var scene: PackedScene = load(MODEL_DIR + id + ".glb")
+	return scene.instantiate() as Node3D
+
+
+static func find_animation_player(node: Node) -> AnimationPlayer:
+	var found := node.find_children("*", "AnimationPlayer", true, false)
+	if found.size() > 0:
+		var ap: AnimationPlayer = found[0]
+		for anim_name in ap.get_animation_list():
+			if anim_name in LOOPING:
+				ap.get_animation(anim_name).loop_mode = Animation.LOOP_LINEAR
+		return ap
+	return null
+
+
+## A character (Anisha, a baddie). Uses `<model_id>.glb` when it exists, otherwise a capsule.
+## Returns {node, anim (AnimationPlayer or null), fade (Array of materials whose alpha can be changed)}.
+static func make_character(model_id: String, tone: float, height: float, radius: float, eyes: bool) -> Dictionary:
+	var model := load_model(model_id) if model_id != "" else null
+	if model == null:
+		var cap := make_person(tone, height, radius, eyes)
+		var mat: StandardMaterial3D = cap.get_child(0).material_override
+		mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+		return {"node": cap, "anim": null, "fade": [mat]}
+	# the model faces +Z; the game's characters face +X when unrotated, so turn it a quarter
+	var holder := Node3D.new()
+	model.rotation.y = PI / 2.0
+	holder.add_child(model)
+	var fade: Array = []
+	for mi in model.find_children("*", "MeshInstance3D", true, false):
+		var m: MeshInstance3D = mi
+		for s in m.mesh.get_surface_count():
+			var src := m.mesh.surface_get_material(s)
+			if src is BaseMaterial3D:
+				var copy: BaseMaterial3D = src.duplicate()
+				copy.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+				m.set_surface_override_material(s, copy)
+				fade.append(copy)
+	return {"node": holder, "anim": find_animation_player(model), "fade": fade}
 
 # height in metres. Items not listed are sized from their tags (see _height_for).
 const HEIGHTS := {
@@ -25,6 +90,9 @@ const HEIGHTS := {
 
 
 static func _height_for(frame: String, tags: Array) -> float:
+	var idx := model_index()
+	if idx.has(frame):
+		return float(idx[frame].height)
 	if HEIGHTS.has(frame):
 		return HEIGHTS[frame]
 	if tags.has("hide"):

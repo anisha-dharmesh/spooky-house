@@ -19,7 +19,10 @@ var cam_mode := 0        # 0 = dollhouse, 1 = third person
 var yaw := 0.0
 
 var _player: Node3D
-var _player_mat: StandardMaterial3D
+var _player_fade: Array = []   # materials whose alpha shows sneaking / hiding
+var _player_anim: AnimationPlayer
+var _baddie_anims: Array = []
+var _prev_player := Vector2.ZERO
 var _you_label: Label3D
 var _baddies: Array[Node3D] = []
 var _bubbles: Array[Label3D] = []
@@ -56,28 +59,44 @@ func setup(p_level: Dictionary) -> void:
 
 # ---------- building ----------
 
+## Only Granny's house is spooky. Every other location gets a normal, bright daytime mood.
+const SPOOKY_LOCATIONS := ["granny_house"]
+
+
+func _is_spooky() -> bool:
+	var first: Dictionary = GameData.room(level.rooms[0])
+	return SPOOKY_LOCATIONS.has(first.get("location", ""))
+
+
 func _build_environment() -> void:
+	var spooky := _is_spooky()
 	var env := Environment.new()
 	env.background_mode = Environment.BG_COLOR
-	env.background_color = Color(0.03, 0.03, 0.035)
 	env.ambient_light_source = Environment.AMBIENT_SOURCE_COLOR
-	env.ambient_light_color = Color(0.62, 0.62, 0.66)
-	env.ambient_light_energy = 0.55
-	env.fog_enabled = true
-	env.fog_light_color = Color(0.05, 0.05, 0.06)
-	env.fog_density = 0.012
+	if spooky:
+		env.background_color = Color(0.03, 0.03, 0.035)
+		env.ambient_light_color = Color(0.62, 0.62, 0.66)
+		env.ambient_light_energy = 0.55
+		env.fog_enabled = true
+		env.fog_light_color = Color(0.05, 0.05, 0.06)
+		env.fog_density = 0.012
+	else:
+		env.background_color = Color(0.62, 0.66, 0.72)
+		env.ambient_light_color = Color(0.9, 0.9, 0.92)
+		env.ambient_light_energy = 0.9
 	var we := WorldEnvironment.new()
 	we.environment = env
 	add_child(we)
 	var sun := DirectionalLight3D.new()
 	sun.rotation_degrees = Vector3(-62, -25, 0)
-	sun.light_energy = 0.55
-	sun.light_color = Color(0.85, 0.87, 1.0)
+	sun.light_energy = 0.55 if spooky else 1.0
+	sun.light_color = Color(0.85, 0.87, 1.0) if spooky else Color(1.0, 0.97, 0.9)
 	sun.shadow_enabled = true
 	add_child(sun)
+	# the light that follows Anisha is only needed in the dark
 	_light = OmniLight3D.new()
 	_light.omni_range = 7.0
-	_light.light_energy = 1.1
+	_light.light_energy = 1.1 if spooky else 0.0
 	_light.light_color = Color(1, 0.98, 0.92)
 	add_child(_light)
 
@@ -212,16 +231,20 @@ func _build_extras_and_exits() -> void:
 		var node := Node3D.new()
 		var c := (t.rect as Rect2).get_center()
 		node.position = Vector3(c.x, 0, c.y)
-		for dz in [-0.2, 0.2]:
-			var shoe := MeshInstance3D.new()
-			var cm := CapsuleMesh.new()
-			cm.radius = 0.12
-			cm.height = 0.5
-			shoe.mesh = cm
-			shoe.material_override = ModelLibrary._material(0.75, true)
-			shoe.rotation_degrees = Vector3(0, 0, 90)
-			shoe.position = Vector3(0, 0.12, dz)
-			node.add_child(shoe)
+		var model := ModelLibrary.load_model("shoes")
+		if model != null:
+			node.add_child(model)
+		else:
+			for dz in [-0.2, 0.2]:
+				var shoe := MeshInstance3D.new()
+				var cm := CapsuleMesh.new()
+				cm.radius = 0.12
+				cm.height = 0.5
+				shoe.mesh = cm
+				shoe.material_override = ModelLibrary._material(0.75, true)
+				shoe.rotation_degrees = Vector3(0, 0, 90)
+				shoe.position = Vector3(0, 0.12, dz)
+				node.add_child(shoe)
 		var label := Label3D.new()
 		label.text = GameData.L(t.label)
 		label.font = UIKit.body_font()
@@ -254,10 +277,12 @@ func _build_extras_and_exits() -> void:
 
 
 func _build_characters() -> void:
-	_player = ModelLibrary.make_person(0.82, 1.2, GameLogic.PLAYER_RADIUS * 0.8, false)
-	_player_mat = _player.get_child(0).material_override
-	_player_mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+	var anisha := ModelLibrary.make_character("anisha", 0.82, 1.2, GameLogic.PLAYER_RADIUS * 0.8, false)
+	_player = anisha.node
+	_player_fade = anisha.fade
+	_player_anim = anisha.anim
 	add_child(_player)
+	_prev_player = logic.player_pos
 	_you_label = Label3D.new()
 	_you_label.text = GameData.t("you")
 	_you_label.font = UIKit.body_font()
@@ -278,7 +303,10 @@ func _build_characters() -> void:
 	_cone_mat.cull_mode = BaseMaterial3D.CULL_DISABLED
 	_cone_mat.no_depth_test = false
 	for b in logic.baddies:
-		var node := ModelLibrary.make_person(0.28, 1.5, GameLogic.BADDIE_RADIUS * 0.85, true)
+		var kind: Dictionary = GameData.baddie_kinds.get(b.kind, {})
+		var made := ModelLibrary.make_character(String(kind.get("model", "")), 0.28, 1.5, GameLogic.BADDIE_RADIUS * 0.85, true)
+		var node: Node3D = made.node
+		_baddie_anims.append(made.anim)
 		var name_label := Label3D.new()
 		name_label.text = GameData.L(b.name)
 		name_label.font = UIKit.body_font()
@@ -372,13 +400,17 @@ func _sync_visuals() -> void:
 	var p := logic.player_pos
 	_player.position = Vector3(p.x, 0, p.y)
 	_player.rotation.y = -logic.player_facing
-	_player_mat.albedo_color.a = 0.22 if logic.is_hiding() else (0.7 if logic.sneaking else 1.0)
+	var alpha := 0.22 if logic.is_hiding() else (0.7 if logic.sneaking else 1.0)
+	for mat in _player_fade:
+		mat.albedo_color.a = alpha
+	_animate_player()
 	_light.position = Vector3(p.x, 2.4, p.y)
 	for i in logic.baddies.size():
 		var b: Dictionary = logic.baddies[i]
 		_baddies[i].position = Vector3(b.pos.x, 0, b.pos.y)
 		_baddies[i].rotation.y = -b.facing
 		_bubbles[i].visible = b.distracted_left > 0.0
+		_animate_baddie(i, b)
 		_draw_cone(i, b)
 	# bob the things that can be picked up
 	for uid in _pickup_nodes:
@@ -389,6 +421,34 @@ func _sync_visuals() -> void:
 	var target_h := WALL_H_DOLLHOUSE if cam_mode == 0 else WALL_H_THIRD
 	if absf(_wall_h - target_h) > 0.01:
 		_apply_wall_height(lerpf(_wall_h, target_h, 0.15))
+
+
+func _play(ap: AnimationPlayer, anim_name: String) -> void:
+	if ap != null and ap.has_animation(anim_name) and ap.current_animation != anim_name:
+		ap.play(anim_name, 0.2)
+
+
+func _animate_player() -> void:
+	var moved := logic.player_pos.distance_to(_prev_player)
+	_prev_player = logic.player_pos
+	if logic.is_hiding():
+		_play(_player_anim, "hide")
+	elif moved > 0.002:
+		_play(_player_anim, "sneak" if logic.sneaking else "walk")
+	else:
+		_play(_player_anim, "idle")
+
+
+func _animate_baddie(i: int, b: Dictionary) -> void:
+	var ap: AnimationPlayer = _baddie_anims[i]
+	if logic.result == "caught" and b.kind == logic.caught_by:
+		_play(ap, "caught_you")
+	elif b.distracted_left > 0.0:
+		_play(ap, "look_around")
+	elif b.wait_left > 0.0:
+		_play(ap, "idle")
+	else:
+		_play(ap, "walk")
 
 
 func _draw_cone(i: int, b: Dictionary) -> void:

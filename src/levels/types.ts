@@ -11,6 +11,7 @@ export interface BaddieKind {
   speed: number; // px per second
   range: number; // sight distance in px
   halfAngle: number; // half the width of the sight cone, in degrees
+  model?: string; // 3D model name (the 3D version only), e.g. "scary_teacher"
 }
 
 /** A spot inside a room, measured in tiles from the room's top-left corner (decimals are fine). */

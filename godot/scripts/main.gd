@@ -15,6 +15,9 @@ func _ready() -> void:
 	_ui_layer = CanvasLayer.new()
 	add_child(_ui_layer)
 	var args := OS.get_cmdline_user_args()
+	if "--gallery" in args:
+		add_child(Gallery.new())
+		return
 	if "--selftest" in args:
 		_selftest()
 		return

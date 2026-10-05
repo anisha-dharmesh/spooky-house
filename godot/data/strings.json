@@ -20,8 +20,8 @@
   "hi": "जारी रखो · लेवल {n}"
  },
  "spookyTown": {
-  "en": "Spooky Town",
-  "hi": "डरावना शहर"
+  "en": "Town",
+  "hi": "शहर"
  },
  "levelOf": {
   "en": "Level {n} of {total}",
