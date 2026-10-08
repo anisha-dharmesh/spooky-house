@@ -1,0 +1,116 @@
+{
+ "id": "hs_reception",
+ "name": "Reception",
+ "location": "hospital",
+ "floor": "Ground",
+ "unlockLevel": 40,
+ "screen": [
+  1600,
+  900
+ ],
+ "camera": {
+  "view": "fixed room view",
+  "pxPerTileBack": 78.57,
+  "floorBackY": 415.7,
+  "perspective": 0.4,
+  "depthShown": 0.9,
+  "wallHeightTiles": 4.4,
+  "formula": "x = 800 + (u - W/2)*pxPerTileBack*k ; y = floorBackY + t*(900-floorBackY) ; t = v/D*depthShown ; k = 1 + perspective*t ; sprite scale = pxPerTileBack*k/64"
+ },
+ "background": "rooms/hospital/hs_reception_bg.png",
+ "full": "rooms/hospital/hs_reception.png",
+ "drawOrder": [
+  {
+   "uid": "reception_desk_1",
+   "sprite": "reception_desk",
+   "kind": "floor",
+   "x": 503.0,
+   "y": 512.6,
+   "scale": 1.3259,
+   "z": 2
+  },
+  {
+   "uid": "waiting_chairs_1",
+   "sprite": "waiting_chairs",
+   "kind": "floor",
+   "x": 800.0,
+   "y": 851.6,
+   "scale": 1.6696,
+   "z": 9
+  },
+  {
+   "uid": "waiting_chairs_2",
+   "sprite": "waiting_chairs",
+   "kind": "side-wall",
+   "matrix": [
+    -0.3438,
+    0.7567,
+    0,
+    1.5714,
+    140.0,
+    500.7143
+   ],
+   "z": 8.5
+  },
+  {
+   "uid": "wheelchair_1",
+   "sprite": "wheelchair",
+   "kind": "floor",
+   "x": 1309.1,
+   "y": 512.6,
+   "scale": 1.3259,
+   "z": 2
+  },
+  {
+   "uid": "water_cooler_1",
+   "sprite": "water_cooler",
+   "kind": "floor",
+   "x": 1494.6,
+   "y": 851.6,
+   "scale": 1.6696,
+   "z": 9
+  },
+  {
+   "uid": "notice_board_1",
+   "sprite": "notice_board",
+   "kind": "side-wall",
+   "matrix": [
+    -0.3438,
+    -0.7567,
+    0,
+    1.5469,
+    1526.0,
+    498.7179
+   ],
+   "z": 7.5
+  },
+  {
+   "uid": "plant_pot_1",
+   "sprite": "plant_pot",
+   "kind": "floor",
+   "x": 268.9,
+   "y": 464.1,
+   "scale": 1.2768,
+   "z": 1
+  },
+  {
+   "uid": "wall_clock_1",
+   "sprite": "wall_clock",
+   "kind": "wall",
+   "x": 754.4,
+   "y": 438.4,
+   "scale": 1.4266,
+   "z": -0.5
+  },
+  {
+   "uid": "stretcher_1",
+   "sprite": "stretcher",
+   "kind": "floor",
+   "x": 548.6,
+   "y": 754.7,
+   "scale": 1.5714,
+   "z": 7
+  }
+ ],
+ "characters": []
+}

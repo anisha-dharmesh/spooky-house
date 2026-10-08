@@ -1,0 +1,151 @@
+{
+ "id": "hs_doctor_room",
+ "name": "Doctor's room",
+ "location": "hospital",
+ "floor": "Ground",
+ "unlockLevel": 41,
+ "screen": [
+  1600,
+  900
+ ],
+ "camera": {
+  "view": "fixed room view",
+  "pxPerTileBack": 92,
+  "floorBackY": 474.8,
+  "perspective": 0.4,
+  "depthShown": 0.9,
+  "wallHeightTiles": 4.4,
+  "formula": "x = 800 + (u - W/2)*pxPerTileBack*k ; y = floorBackY + t*(900-floorBackY) ; t = v/D*depthShown ; k = 1 + perspective*t ; sprite scale = pxPerTileBack*k/64"
+ },
+ "background": "rooms/hospital/hs_doctor_room_bg.png",
+ "full": "rooms/hospital/hs_doctor_room.png",
+ "drawOrder": [
+  {
+   "uid": "desk_1",
+   "sprite": "desk",
+   "kind": "floor",
+   "x": 800.0,
+   "y": 559.8,
+   "scale": 1.5525,
+   "z": 2
+  },
+  {
+   "uid": "office_chair_1",
+   "sprite": "office_chair",
+   "kind": "floor",
+   "x": 800.0,
+   "y": 687.4,
+   "scale": 1.725,
+   "z": 5
+  },
+  {
+   "uid": "hospital_bed_1",
+   "sprite": "hospital_bed",
+   "kind": "side-wall",
+   "matrix": [
+    -0.3162,
+    0.6644,
+    0,
+    1.6675,
+    233.28,
+    385.585
+   ],
+   "z": 4.5
+  },
+  {
+   "uid": "curtain_screen_1",
+   "sprite": "curtain_screen",
+   "kind": "floor",
+   "x": 1153.3,
+   "y": 772.4,
+   "scale": 1.84,
+   "z": 7
+  },
+  {
+   "uid": "eye_chart_1",
+   "sprite": "eye_chart",
+   "kind": "side-wall",
+   "matrix": [
+    -0.3163,
+    -0.6644,
+    0,
+    1.7537,
+    1427.44,
+    384.782
+   ],
+   "z": 5.5
+  },
+  {
+   "uid": "weighing_scale_1",
+   "sprite": "weighing_scale",
+   "kind": "floor",
+   "x": 1425.6,
+   "y": 857.5,
+   "scale": 1.955,
+   "z": 9
+  },
+  {
+   "uid": "medical_trolley_1",
+   "sprite": "medical_trolley",
+   "kind": "floor",
+   "x": 1147.8,
+   "y": 559.8,
+   "scale": 1.5525,
+   "z": 2
+  },
+  {
+   "uid": "cobweb_1",
+   "sprite": "cobweb",
+   "kind": "wall",
+   "x": 339.1,
+   "y": 301.8,
+   "scale": 1.4404,
+   "z": -0.5
+  },
+  {
+   "uid": "cobweb_2",
+   "sprite": "cobweb",
+   "kind": "side-wall",
+   "matrix": [
+    -0.3163,
+    -0.6644,
+    0,
+    1.4663,
+    1326.24,
+    310.872
+   ],
+   "z": 0.5
+  },
+  {
+   "uid": "stethoscope_1",
+   "sprite": "stethoscope",
+   "kind": "on-top",
+   "on": "desk_1",
+   "x": 800.0,
+   "y": 453.0,
+   "scale": 1.3455,
+   "z": 2.01
+  },
+  {
+   "uid": "first_aid_box_1",
+   "sprite": "first_aid_box",
+   "kind": "on-top",
+   "on": "desk_1",
+   "x": 899.4,
+   "y": 453.6,
+   "scale": 1.3973,
+   "z": 2.01
+  },
+  {
+   "uid": "medicine_bottles_1",
+   "sprite": "medicine_bottles",
+   "kind": "on-top",
+   "on": "desk_1",
+   "x": 700.6,
+   "y": 453.6,
+   "scale": 1.3973,
+   "z": 2.01
+  }
+ ],
+ "characters": []
+}

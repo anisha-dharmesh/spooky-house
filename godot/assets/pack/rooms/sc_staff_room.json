@@ -1,0 +1,141 @@
+{
+ "id": "sc_staff_room",
+ "name": "Staff room (scary teacher's desk)",
+ "location": "school",
+ "floor": "Floor 1",
+ "unlockLevel": 26,
+ "screen": [
+  1600,
+  900
+ ],
+ "camera": {
+  "view": "fixed room view",
+  "pxPerTileBack": 91.67,
+  "floorBackY": 473.3,
+  "perspective": 0.4,
+  "depthShown": 0.9,
+  "wallHeightTiles": 4.4,
+  "formula": "x = 800 + (u - W/2)*pxPerTileBack*k ; y = floorBackY + t*(900-floorBackY) ; t = v/D*depthShown ; k = 1 + perspective*t ; sprite scale = pxPerTileBack*k/64"
+ },
+ "background": "rooms/school/sc_staff_room_bg.png",
+ "full": "rooms/school/sc_staff_room.png",
+ "drawOrder": [
+  {
+   "uid": "teacher_desk_1",
+   "sprite": "teacher_desk",
+   "kind": "floor",
+   "x": 745.0,
+   "y": 686.7,
+   "scale": 1.7188,
+   "z": 5
+  },
+  {
+   "uid": "teacher_desk_2",
+   "sprite": "teacher_desk",
+   "kind": "floor",
+   "x": 376.5,
+   "y": 814.7,
+   "scale": 1.8906,
+   "z": 8
+  },
+  {
+   "uid": "office_chair_1",
+   "sprite": "office_chair",
+   "kind": "floor",
+   "x": 1047.5,
+   "y": 558.7,
+   "scale": 1.5469,
+   "z": 2
+  },
+  {
+   "uid": "office_chair_2",
+   "sprite": "office_chair",
+   "kind": "floor",
+   "x": 415.0,
+   "y": 686.7,
+   "scale": 1.7188,
+   "z": 5
+  },
+  {
+   "uid": "bookshelf_1",
+   "sprite": "bookshelf",
+   "kind": "floor",
+   "x": 800.0,
+   "y": 516.0,
+   "scale": 1.4896,
+   "z": 1
+  },
+  {
+   "uid": "school_bag_1",
+   "sprite": "school_bag",
+   "kind": "floor",
+   "x": 1093.3,
+   "y": 772.0,
+   "scale": 1.8333,
+   "z": 7
+  },
+  {
+   "uid": "wall_clock_1",
+   "sprite": "wall_clock",
+   "kind": "wall",
+   "x": 1305.2,
+   "y": 301.0,
+   "scale": 1.4352,
+   "z": -0.5
+  },
+  {
+   "uid": "cupboard_big_1",
+   "sprite": "cupboard_big",
+   "kind": "side-wall",
+   "matrix": [
+    -0.3438,
+    0.6667,
+    0,
+    1.6042,
+    206.0,
+    173.6667
+   ],
+   "z": 3.5
+  },
+  {
+   "uid": "cobweb_1",
+   "sprite": "cobweb",
+   "kind": "wall",
+   "x": 294.8,
+   "y": 301.0,
+   "scale": 1.4352,
+   "z": -0.5
+  },
+  {
+   "uid": "tea_cup_1",
+   "sprite": "tea_cup",
+   "kind": "on-top",
+   "on": "teacher_desk_1",
+   "x": 635.0,
+   "y": 556.7,
+   "scale": 1.5469,
+   "z": 5.01
+  },
+  {
+   "uid": "computer_1",
+   "sprite": "computer",
+   "kind": "on-top",
+   "on": "teacher_desk_2",
+   "x": 272.0,
+   "y": 671.1,
+   "scale": 1.65,
+   "z": 8.01
+  },
+  {
+   "uid": "chocolate_bar_1",
+   "sprite": "chocolate_bar",
+   "kind": "on-top",
+   "on": "teacher_desk_1",
+   "x": 853.2,
+   "y": 556.1,
+   "scale": 1.4953,
+   "z": 5.01
+  }
+ ],
+ "characters": []
+}

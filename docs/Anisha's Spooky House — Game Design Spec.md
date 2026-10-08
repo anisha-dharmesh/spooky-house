@@ -35,6 +35,11 @@ Each baddie is introduced on its own, with a few calm levels before the next new
 
 ## World map
 
+> **Update, Oct 6, 2026: the game is 2D (Dharmesh).** **Outdoors is a top-down street** (three-quarter view). **Inside a
+> house is a side-on cut-away** (like a doll's house, as in the first reference picture: floors stacked, rooms side by side,
+> stairs and a lift). Walking through a door fades to the other screen; the street is not shown inside a house. Being caught
+> still sends her back to her room. Details and how it works: `docs/2D_VERSION.md`.
+
 > **Update, Oct 5, 2026: one continuous game, not level by level** (Dharmesh's idea). The player no longer leaves and
 > re-enters for each level. The whole world is one map she can walk around freely; she does **tasks in order** (the old
 > "levels" are now tasks) and **some doors are locked** until a task opens them. A locked door is shut and says LOCKED. She

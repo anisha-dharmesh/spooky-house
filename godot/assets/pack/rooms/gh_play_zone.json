@@ -1,0 +1,152 @@
+{
+ "id": "gh_play_zone",
+ "name": "Play zone",
+ "location": "granny_house",
+ "floor": "Roof",
+ "unlockLevel": 33,
+ "screen": [
+  1600,
+  900
+ ],
+ "camera": {
+  "view": "fixed room view",
+  "pxPerTileBack": 92,
+  "floorBackY": 474.8,
+  "perspective": 0.4,
+  "depthShown": 0.9,
+  "wallHeightTiles": 4.4,
+  "formula": "x = 800 + (u - W/2)*pxPerTileBack*k ; y = floorBackY + t*(900-floorBackY) ; t = v/D*depthShown ; k = 1 + perspective*t ; sprite scale = pxPerTileBack*k/64"
+ },
+ "background": "rooms/granny_house/gh_play_zone_bg.png",
+ "full": "rooms/granny_house/gh_play_zone.png",
+ "drawOrder": [
+  {
+   "uid": "rug_1",
+   "sprite": "rug",
+   "kind": "floor-quad",
+   "quad": [
+    [
+     549.3,
+     570.5
+    ],
+    [
+     950.4,
+     570.5
+    ],
+    [
+     969.0,
+     714.0
+    ],
+    [
+     518.2,
+     714.0
+    ]
+   ]
+  },
+  {
+   "uid": "game_tv_play_1",
+   "sprite": "game_tv_play",
+   "kind": "floor",
+   "x": 751.9,
+   "y": 522.6,
+   "scale": 1.5022,
+   "z": 1
+  },
+  {
+   "uid": "game_controller_1",
+   "sprite": "game_controller",
+   "kind": "floor",
+   "x": 591.2,
+   "y": 618.3,
+   "scale": 1.6316,
+   "z": 3
+  },
+  {
+   "uid": "game_controller_2",
+   "sprite": "game_controller",
+   "kind": "floor",
+   "x": 904.4,
+   "y": 618.3,
+   "scale": 1.6316,
+   "z": 3
+  },
+  {
+   "uid": "bean_bag_1",
+   "sprite": "bean_bag",
+   "kind": "floor",
+   "x": 507.9,
+   "y": 761.8,
+   "scale": 1.8256,
+   "z": 6
+  },
+  {
+   "uid": "bean_bag_2",
+   "sprite": "bean_bag",
+   "kind": "floor",
+   "x": 858.4,
+   "y": 761.8,
+   "scale": 1.8256,
+   "z": 6
+  },
+  {
+   "uid": "stairs_1",
+   "sprite": "stairs",
+   "kind": "floor",
+   "x": 237.0,
+   "y": 857.5,
+   "scale": 1.955,
+   "z": 8
+  },
+  {
+   "uid": "bouncy_ball_1",
+   "sprite": "bouncy_ball",
+   "kind": "floor",
+   "x": 1100.8,
+   "y": 570.5,
+   "scale": 1.5669,
+   "z": 2
+  },
+  {
+   "uid": "balloon_1",
+   "sprite": "balloon",
+   "kind": "floor",
+   "x": 1162.9,
+   "y": 809.6,
+   "scale": 1.8903,
+   "z": 7
+  },
+  {
+   "uid": "rocket_toy_1",
+   "sprite": "rocket_toy",
+   "kind": "floor",
+   "x": 382.3,
+   "y": 618.3,
+   "scale": 1.6316,
+   "z": 3
+  },
+  {
+   "uid": "cobweb_1",
+   "sprite": "cobweb",
+   "kind": "wall",
+   "x": 339.0,
+   "y": 302.0,
+   "scale": 1.4407,
+   "z": -0.5
+  },
+  {
+   "uid": "cobweb_2",
+   "sprite": "cobweb",
+   "kind": "side-wall",
+   "matrix": [
+    -0.3558,
+    -0.7474,
+    0,
+    1.4698,
+    1328.77,
+    315.681
+   ],
+   "z": 0.5
+  }
+ ],
+ "characters": []
+}

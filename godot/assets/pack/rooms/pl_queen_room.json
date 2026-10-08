@@ -1,0 +1,175 @@
+{
+ "id": "pl_queen_room",
+ "name": "Queen's room",
+ "location": "palace",
+ "floor": "Floor 1",
+ "unlockLevel": 82,
+ "screen": [
+  1600,
+  900
+ ],
+ "camera": {
+  "view": "fixed room view",
+  "pxPerTileBack": 78.57,
+  "floorBackY": 415.7,
+  "perspective": 0.4,
+  "depthShown": 0.9,
+  "wallHeightTiles": 4.4,
+  "formula": "x = 800 + (u - W/2)*pxPerTileBack*k ; y = floorBackY + t*(900-floorBackY) ; t = v/D*depthShown ; k = 1 + perspective*t ; sprite scale = pxPerTileBack*k/64"
+ },
+ "background": "rooms/palace/pl_queen_room_bg.png",
+ "full": "rooms/palace/pl_queen_room.png",
+ "drawOrder": [
+  {
+   "uid": "rug_1",
+   "sprite": "rug",
+   "kind": "floor-quad",
+   "quad": [
+    [
+     625.9,
+     546.5
+    ],
+    [
+     974.1,
+     546.5
+    ],
+    [
+     991.1,
+     677.2
+    ],
+    [
+     608.9,
+     677.2
+    ]
+   ]
+  },
+  {
+   "uid": "royal_bed_1",
+   "sprite": "royal_bed",
+   "kind": "side-wall",
+   "matrix": [
+    -0.3094,
+    0.681,
+    0,
+    1.4266,
+    210.4,
+    217.5732
+   ],
+   "z": 6.5
+  },
+  {
+   "uid": "dressing_table_1",
+   "sprite": "dressing_table",
+   "kind": "floor",
+   "x": 759.3,
+   "y": 459.3,
+   "scale": 1.2719,
+   "z": 1
+  },
+  {
+   "uid": "mirror_1",
+   "sprite": "mirror",
+   "kind": "wall",
+   "x": 957.4,
+   "y": 268.3,
+   "scale": 1.2299,
+   "z": -0.5
+  },
+  {
+   "uid": "wardrobe_small_1",
+   "sprite": "wardrobe_small",
+   "kind": "side-wall",
+   "matrix": [
+    -0.3094,
+    -0.681,
+    0,
+    1.3603,
+    1429.2,
+    386.017
+   ],
+   "z": 3.5
+  },
+  {
+   "uid": "chandelier_1",
+   "sprite": "chandelier",
+   "kind": "ceiling",
+   "x": 844.2,
+   "y": 527.9,
+   "scale": 1.3824,
+   "z": 99
+  },
+  {
+   "uid": "royal_lamp_1",
+   "sprite": "royal_lamp",
+   "kind": "floor",
+   "x": 1104.7,
+   "y": 546.5,
+   "scale": 1.3603,
+   "z": 3
+  },
+  {
+   "uid": "cobweb_1",
+   "sprite": "cobweb",
+   "kind": "wall",
+   "x": 288.4,
+   "y": 268.3,
+   "scale": 1.2299,
+   "z": -0.5
+  },
+  {
+   "uid": "cobweb_2",
+   "sprite": "cobweb",
+   "kind": "side-wall",
+   "matrix": [
+    -0.3094,
+    -0.681,
+    0,
+    1.2498,
+    1369.8,
+    283.3314
+   ],
+   "z": 0.5
+  },
+  {
+   "uid": "jewellery_box_1",
+   "sprite": "jewellery_box",
+   "kind": "on-top",
+   "on": "dressing_table_1",
+   "x": 677.9,
+   "y": 335.7,
+   "scale": 1.1447,
+   "z": 1.01
+  },
+  {
+   "uid": "necklace_1",
+   "sprite": "necklace",
+   "kind": "on-top",
+   "on": "dressing_table_1",
+   "x": 759.3,
+   "y": 335.7,
+   "scale": 1.1447,
+   "z": 1.01
+  },
+  {
+   "uid": "earrings_1",
+   "sprite": "earrings",
+   "kind": "on-top",
+   "on": "dressing_table_1",
+   "x": 840.7,
+   "y": 335.7,
+   "scale": 1.1447,
+   "z": 1.01
+  },
+  {
+   "uid": "crown_1",
+   "sprite": "crown",
+   "kind": "on-top",
+   "on": "royal_bed_1",
+   "x": 240.4,
+   "y": 313.6,
+   "scale": 1.3436,
+   "z": 7.01
+  }
+ ],
+ "characters": []
+}

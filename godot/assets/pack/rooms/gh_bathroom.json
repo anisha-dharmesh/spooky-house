@@ -1,0 +1,155 @@
+{
+ "id": "gh_bathroom",
+ "name": "Bathroom",
+ "location": "granny_house",
+ "floor": "Floor 1",
+ "unlockLevel": 38,
+ "screen": [
+  1600,
+  900
+ ],
+ "camera": {
+  "view": "fixed room view",
+  "pxPerTileBack": 92,
+  "floorBackY": 474.8,
+  "perspective": 0.4,
+  "depthShown": 0.9,
+  "wallHeightTiles": 4.4,
+  "formula": "x = 800 + (u - W/2)*pxPerTileBack*k ; y = floorBackY + t*(900-floorBackY) ; t = v/D*depthShown ; k = 1 + perspective*t ; sprite scale = pxPerTileBack*k/64"
+ },
+ "background": "rooms/granny_house/gh_bathroom_bg.png",
+ "full": "rooms/granny_house/gh_bathroom.png",
+ "drawOrder": [
+  {
+   "uid": "bathtub_1",
+   "sprite": "bathtub",
+   "kind": "side-wall",
+   "matrix": [
+    -0.2911,
+    -0.7474,
+    0,
+    1.6962,
+    1307.15,
+    510.425
+   ],
+   "z": 4.5
+  },
+  {
+   "uid": "shower_1",
+   "sprite": "shower",
+   "kind": "floor",
+   "x": 449.0,
+   "y": 570.5,
+   "scale": 1.5669,
+   "z": 2
+  },
+  {
+   "uid": "toilet_1",
+   "sprite": "toilet",
+   "kind": "floor",
+   "x": 800.0,
+   "y": 857.5,
+   "scale": 1.955,
+   "z": 8
+  },
+  {
+   "uid": "wash_basin_1",
+   "sprite": "wash_basin",
+   "kind": "floor",
+   "x": 751.9,
+   "y": 522.6,
+   "scale": 1.5022,
+   "z": 1
+  },
+  {
+   "uid": "mirror_1",
+   "sprite": "mirror",
+   "kind": "wall",
+   "x": 938.3,
+   "y": 302.0,
+   "scale": 1.4407,
+   "z": -0.5
+  },
+  {
+   "uid": "toothpaste_1",
+   "sprite": "toothpaste",
+   "kind": "floor",
+   "x": 558.0,
+   "y": 809.6,
+   "scale": 1.8903,
+   "z": 7
+  },
+  {
+   "uid": "towel_1",
+   "sprite": "towel",
+   "kind": "floor",
+   "x": 1042.0,
+   "y": 809.6,
+   "scale": 1.8903,
+   "z": 7
+  },
+  {
+   "uid": "slime_bucket_1",
+   "sprite": "slime_bucket",
+   "kind": "floor",
+   "x": 1201.1,
+   "y": 570.5,
+   "scale": 1.5669,
+   "z": 2
+  },
+  {
+   "uid": "spray_bottle_1",
+   "sprite": "spray_bottle",
+   "kind": "floor",
+   "x": 316.1,
+   "y": 809.6,
+   "scale": 1.8903,
+   "z": 7
+  },
+  {
+   "uid": "cobweb_1",
+   "sprite": "cobweb",
+   "kind": "side-wall",
+   "matrix": [
+    -0.2911,
+    -0.7474,
+    0,
+    1.4698,
+    1232.63,
+    315.681
+   ],
+   "z": 0.5
+  },
+  {
+   "uid": "soap_1",
+   "sprite": "soap",
+   "kind": "on-top",
+   "on": "wash_basin_1",
+   "x": 703.9,
+   "y": 409.1,
+   "scale": 1.352,
+   "z": 1.01
+  },
+  {
+   "uid": "shampoo_1",
+   "sprite": "shampoo",
+   "kind": "on-top",
+   "on": "wash_basin_1",
+   "x": 800.0,
+   "y": 409.1,
+   "scale": 1.352,
+   "z": 1.01
+  },
+  {
+   "uid": "rubber_duck_1",
+   "sprite": "rubber_duck",
+   "kind": "on-top",
+   "on": "bathtub_1",
+   "x": 1337.2,
+   "y": 585.7,
+   "scale": 1.5266,
+   "z": 5.01
+  }
+ ],
+ "characters": []
+}

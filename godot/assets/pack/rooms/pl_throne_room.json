@@ -1,0 +1,176 @@
+{
+ "id": "pl_throne_room",
+ "name": "Throne room",
+ "location": "palace",
+ "floor": "Ground",
+ "unlockLevel": 80,
+ "screen": [
+  1600,
+  900
+ ],
+ "camera": {
+  "view": "fixed room view",
+  "pxPerTileBack": 57.89,
+  "floorBackY": 324.7,
+  "perspective": 0.4,
+  "depthShown": 0.9,
+  "wallHeightTiles": 4.4,
+  "formula": "x = 800 + (u - W/2)*pxPerTileBack*k ; y = floorBackY + t*(900-floorBackY) ; t = v/D*depthShown ; k = 1 + perspective*t ; sprite scale = pxPerTileBack*k/64"
+ },
+ "background": "rooms/palace/pl_throne_room_bg.png",
+ "full": "rooms/palace/pl_throne_room.png",
+ "drawOrder": [
+  {
+   "uid": "royal_carpet_1",
+   "sprite": "royal_carpet",
+   "kind": "floor-quad",
+   "quad": [
+    [
+     707.9,
+     411.0
+    ],
+    [
+     892.1,
+     411.0
+    ],
+    [
+     912.9,
+     756.2
+    ],
+    [
+     687.1,
+     756.2
+    ]
+   ]
+  },
+  {
+   "uid": "throne_1",
+   "sprite": "throne",
+   "kind": "floor",
+   "x": 769.3,
+   "y": 411.0,
+   "scale": 0.9589,
+   "z": 2
+  },
+  {
+   "uid": "throne_2",
+   "sprite": "throne",
+   "kind": "floor",
+   "x": 892.1,
+   "y": 411.0,
+   "scale": 0.9589,
+   "z": 2
+  },
+  {
+   "uid": "chandelier_1",
+   "sprite": "chandelier",
+   "kind": "ceiling",
+   "x": 800.0,
+   "y": 531.3,
+   "scale": 1.0539,
+   "z": 99
+  },
+  {
+   "uid": "pillar_1",
+   "sprite": "pillar",
+   "kind": "floor",
+   "x": 263.3,
+   "y": 367.9,
+   "scale": 0.9317,
+   "z": 1
+  },
+  {
+   "uid": "pillar_2",
+   "sprite": "pillar",
+   "kind": "floor",
+   "x": 1336.7,
+   "y": 367.9,
+   "scale": 0.9317,
+   "z": 1
+  },
+  {
+   "uid": "pillar_3",
+   "sprite": "pillar",
+   "kind": "floor",
+   "x": 91.4,
+   "y": 842.5,
+   "scale": 1.2303,
+   "z": 12
+  },
+  {
+   "uid": "pillar_4",
+   "sprite": "pillar",
+   "kind": "floor",
+   "x": 1508.6,
+   "y": 842.5,
+   "scale": 1.2303,
+   "z": 12
+  },
+  {
+   "uid": "armour_stand_1",
+   "sprite": "armour_stand",
+   "kind": "side-wall",
+   "matrix": [
+    -0.2578,
+    0.6741,
+    0,
+    1.0267,
+    184.0,
+    333.0395
+   ],
+   "z": 4.5
+  },
+  {
+   "uid": "armour_stand_2",
+   "sprite": "armour_stand",
+   "kind": "side-wall",
+   "matrix": [
+    -0.2578,
+    -0.6741,
+    0,
+    1.0267,
+    1432.5,
+    376.1842
+   ],
+   "z": 4.5
+  },
+  {
+   "uid": "painting_1",
+   "sprite": "painting",
+   "kind": "wall",
+   "x": 655.0,
+   "y": 216.7,
+   "scale": 0.906,
+   "z": -0.5
+  },
+  {
+   "uid": "royal_lamp_1",
+   "sprite": "royal_lamp",
+   "kind": "floor",
+   "x": 533.7,
+   "y": 540.5,
+   "scale": 1.0403,
+   "z": 5
+  },
+  {
+   "uid": "royal_lamp_2",
+   "sprite": "royal_lamp",
+   "kind": "floor",
+   "x": 1066.3,
+   "y": 540.5,
+   "scale": 1.0403,
+   "z": 5
+  },
+  {
+   "uid": "crown_cushion_1",
+   "sprite": "crown_cushion",
+   "kind": "on-top",
+   "on": "throne_1",
+   "x": 740.4,
+   "y": 303.7,
+   "scale": 0.8386,
+   "z": 2.01
+  }
+ ],
+ "characters": []
+}

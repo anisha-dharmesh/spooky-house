@@ -84,6 +84,10 @@ Baddies belong to the world, not to a level. The task says who is around and whe
 list go away, and one that was already there carries on from the nearest point of its new route. They start at the first point
 when a task starts and again after she is caught.
 
+In the 2D houses only how far along the room a point is matters, so a baddie can have a second list written for them:
+`"side": [ { "room": "gh_hall", "x": 3.0, "wait": 1.0 }, { "room": "gh_hall", "x": 7.5, "wait": 1.0 } ]` (x counted in the room;
+it walks back and forth). Without it the top-down points are used, from their x only.
+
 He walks the points in a loop (at least 2) in straight lines, so keep points on open floor and every walk between two points
 clear of walls and furniture (the checker tells you if not). `speed`, `range` (sight distance, in pixels) and `halfAngle`
 (half the width of the sight cone, in degrees) override the defaults for that kind in `godot/data/baddies.json`.

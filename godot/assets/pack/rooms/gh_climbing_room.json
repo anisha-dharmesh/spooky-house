@@ -1,0 +1,126 @@
+{
+ "id": "gh_climbing_room",
+ "name": "Mountain climbing room",
+ "location": "granny_house",
+ "floor": "Floor 3",
+ "unlockLevel": 95,
+ "screen": [
+  1600,
+  900
+ ],
+ "camera": {
+  "view": "fixed room view",
+  "pxPerTileBack": 91.67,
+  "floorBackY": 473.3,
+  "perspective": 0.4,
+  "depthShown": 0.9,
+  "wallHeightTiles": 4.4,
+  "formula": "x = 800 + (u - W/2)*pxPerTileBack*k ; y = floorBackY + t*(900-floorBackY) ; t = v/D*depthShown ; k = 1 + perspective*t ; sprite scale = pxPerTileBack*k/64"
+ },
+ "background": "rooms/granny_house/gh_climbing_room_bg.png",
+ "full": "rooms/granny_house/gh_climbing_room.png",
+ "drawOrder": [
+  {
+   "uid": "sponge_mat_1",
+   "sprite": "sponge_mat",
+   "kind": "floor-quad",
+   "quad": [
+    [
+     594.7,
+     601.3
+    ],
+    [
+     1005.3,
+     601.3
+    ],
+    [
+     1027.3,
+     729.3
+    ],
+    [
+     572.7,
+     729.3
+    ]
+   ]
+  },
+  {
+   "uid": "sponge_mat_2",
+   "sprite": "sponge_mat",
+   "kind": "floor-quad",
+   "quad": [
+    [
+     433.3,
+     473.3
+    ],
+    [
+     800.0,
+     473.3
+    ],
+    [
+     800.0,
+     601.3
+    ],
+    [
+     389.3,
+     601.3
+    ]
+   ]
+  },
+  {
+   "uid": "climbing_wall_1",
+   "sprite": "climbing_wall",
+   "kind": "wall",
+   "x": 800.0,
+   "y": 447.9,
+   "scale": 1.4352,
+   "z": -0.5
+  },
+  {
+   "uid": "climbing_wall_2",
+   "sprite": "climbing_wall",
+   "kind": "side-wall",
+   "matrix": [
+    -0.3438,
+    -0.6667,
+    0,
+    1.6615,
+    1504.0,
+    212.4208
+   ],
+   "z": 6.5
+  },
+  {
+   "uid": "safety_harness_1",
+   "sprite": "safety_harness",
+   "kind": "floor",
+   "x": 1065.8,
+   "y": 644.0,
+   "scale": 1.6615,
+   "z": 4
+  },
+  {
+   "uid": "cobweb_1",
+   "sprite": "cobweb",
+   "kind": "wall",
+   "x": 294.8,
+   "y": 301.0,
+   "scale": 1.4352,
+   "z": -0.5
+  },
+  {
+   "uid": "cobweb_2",
+   "sprite": "cobweb",
+   "kind": "side-wall",
+   "matrix": [
+    -0.3438,
+    -0.6667,
+    0,
+    1.4609,
+    1372.0,
+    310.3
+   ],
+   "z": 0.5
+  }
+ ],
+ "characters": []
+}

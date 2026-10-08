@@ -1,0 +1,366 @@
+{
+ "floorHeight": 3.4,
+ "start": {
+  "place": "lh",
+  "room": "lh_fluffy_room",
+  "x": 6.5
+ },
+ "lockedAtStart": [
+  "gh_bedroom",
+  "gh_dining_room"
+ ],
+ "houses": {
+  "lh": {
+   "name": "My little house",
+   "location": "little_house",
+   "sprite": "little_house",
+   "floors": [
+    {
+     "index": 0,
+     "rooms": [
+      "lh_bathroom",
+      "lh_hall",
+      "lh_animal_room"
+     ]
+    },
+    {
+     "index": 1,
+     "x0": 14.5,
+     "rooms": [
+      "lh_fluffy_room"
+     ]
+    }
+   ],
+   "door": {
+    "room": "lh_hall",
+    "x": 6.0
+   },
+   "lift": {
+    "stops": [
+     {
+      "floor": 0,
+      "room": "lh_hall",
+      "side": "W",
+      "v": 0.5,
+      "label": "G"
+     },
+     {
+      "floor": 1,
+      "room": "lh_fluffy_room",
+      "side": "W",
+      "v": 2.0,
+      "label": "1"
+     }
+    ]
+   }
+  },
+  "gh": {
+   "name": "Granny's big house",
+   "location": "granny_house",
+   "sprite": "granny_house",
+   "floors": [
+    {
+     "index": -1,
+     "x0": 0.0,
+     "rooms": [
+      "gh_store_room"
+     ]
+    },
+    {
+     "index": 0,
+     "rooms": [
+      "gh_kitchen",
+      "gh_hall"
+     ]
+    },
+    {
+     "index": 1,
+     "x0": 3.0,
+     "rooms": [
+      "gh_bedroom",
+      "gh_dining_room"
+     ]
+    }
+   ],
+   "door": {
+    "room": "gh_hall",
+    "x": 11.0
+   },
+   "lift": {
+    "stops": [
+     {
+      "floor": -1,
+      "room": "gh_store_room",
+      "side": "W",
+      "v": 2.0,
+      "label": "B"
+     },
+     {
+      "floor": 0,
+      "room": "gh_hall",
+      "side": "W",
+      "v": 2.0,
+      "label": "G"
+     },
+     {
+      "floor": 1,
+      "room": "gh_dining_room",
+      "side": "W",
+      "v": 0.0,
+      "label": "1"
+     }
+    ]
+   }
+  }
+ },
+ "street": {
+  "name": "Street",
+  "size": [
+   76,
+   30
+  ],
+  "houses": [
+   {
+    "house": "gh",
+    "sprite": "granny_house",
+    "pos": [
+     20,
+     12.0
+    ],
+    "door": [
+     0.0,
+     4.9
+    ],
+    "bodies": [
+     [
+      -7.6,
+      -8.0,
+      15.2,
+      11.4
+     ]
+    ]
+   },
+   {
+    "house": "lh",
+    "sprite": "little_house",
+    "pos": [
+     56,
+     10.5
+    ],
+    "door": [
+     0.0,
+     3.6
+    ],
+    "bodies": [
+     [
+      -4.6,
+      -4.2,
+      9.2,
+      7.2
+     ]
+    ]
+   }
+  ],
+  "spawn": [
+   38,
+   19.5
+  ],
+  "props": [
+   {
+    "sprite": "tree",
+    "pos": [
+     4,
+     13.5
+    ],
+    "body": [
+     -0.4,
+     -0.4,
+     0.8,
+     0.8
+    ]
+   },
+   {
+    "sprite": "tree",
+    "pos": [
+     36,
+     9.0
+    ],
+    "body": [
+     -0.4,
+     -0.4,
+     0.8,
+     0.8
+    ]
+   },
+   {
+    "sprite": "tree_pine",
+    "pos": [
+     41,
+     15.5
+    ],
+    "body": [
+     -0.4,
+     -0.4,
+     0.8,
+     0.8
+    ]
+   },
+   {
+    "sprite": "tree",
+    "pos": [
+     70,
+     14.0
+    ],
+    "body": [
+     -0.4,
+     -0.4,
+     0.8,
+     0.8
+    ]
+   },
+   {
+    "sprite": "tree",
+    "pos": [
+     66,
+     6.5
+    ],
+    "body": [
+     -0.4,
+     -0.4,
+     0.8,
+     0.8
+    ]
+   },
+   {
+    "sprite": "bush_round",
+    "pos": [
+     32,
+     17.8
+    ],
+    "body": [
+     -0.6,
+     -0.5,
+     1.2,
+     1.0
+    ]
+   },
+   {
+    "sprite": "bush_round",
+    "pos": [
+     47,
+     17.8
+    ],
+    "body": [
+     -0.6,
+     -0.5,
+     1.2,
+     1.0
+    ]
+   },
+   {
+    "sprite": "street_lamp",
+    "pos": [
+     30,
+     20.2
+    ],
+    "body": [
+     -0.2,
+     -0.2,
+     0.4,
+     0.4
+    ]
+   },
+   {
+    "sprite": "street_lamp",
+    "pos": [
+     46,
+     20.2
+    ],
+    "body": [
+     -0.2,
+     -0.2,
+     0.4,
+     0.4
+    ]
+   },
+   {
+    "sprite": "street_lamp",
+    "pos": [
+     8,
+     20.2
+    ],
+    "body": [
+     -0.2,
+     -0.2,
+     0.4,
+     0.4
+    ]
+   },
+   {
+    "sprite": "street_lamp",
+    "pos": [
+     68,
+     20.2
+    ],
+    "body": [
+     -0.2,
+     -0.2,
+     0.4,
+     0.4
+    ]
+   },
+   {
+    "sprite": "bin_blue",
+    "pos": [
+     36.5,
+     20.4
+    ],
+    "body": [
+     -0.3,
+     -0.3,
+     0.6,
+     0.6
+    ]
+   },
+   {
+    "sprite": "bench",
+    "pos": [
+     42,
+     20.3
+    ],
+    "body": [
+     -1.4,
+     -0.4,
+     2.8,
+     0.8
+    ]
+   },
+   {
+    "sprite": "car_parked",
+    "pos": [
+     14,
+     23.4
+    ],
+    "body": [
+     -0.9,
+     -1.5,
+     1.8,
+     3.0
+    ]
+   },
+   {
+    "sprite": "traffic_cone",
+    "pos": [
+     26,
+     22.0
+    ],
+    "body": [
+     -0.2,
+     -0.2,
+     0.4,
+     0.4
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,180 @@
+{
+ "id": "gh_dining_room",
+ "name": "Dining room",
+ "location": "granny_house",
+ "floor": "Floor 1",
+ "unlockLevel": 12,
+ "screen": [
+  1600,
+  900
+ ],
+ "camera": {
+  "view": "fixed room view",
+  "pxPerTileBack": 91.67,
+  "floorBackY": 473.3,
+  "perspective": 0.4,
+  "depthShown": 0.9,
+  "wallHeightTiles": 4.4,
+  "formula": "x = 800 + (u - W/2)*pxPerTileBack*k ; y = floorBackY + t*(900-floorBackY) ; t = v/D*depthShown ; k = 1 + perspective*t ; sprite scale = pxPerTileBack*k/64"
+ },
+ "background": "rooms/granny_house/gh_dining_room_bg.png",
+ "full": "rooms/granny_house/gh_dining_room.png",
+ "drawOrder": [
+  {
+   "uid": "table_dining_1",
+   "sprite": "table_dining",
+   "kind": "floor",
+   "x": 743.2,
+   "y": 729.3,
+   "scale": 1.776,
+   "z": 6
+  },
+  {
+   "uid": "chair_1",
+   "sprite": "chair",
+   "kind": "floor",
+   "x": 552.5,
+   "y": 558.7,
+   "scale": 1.5469,
+   "z": 2
+  },
+  {
+   "uid": "chair_2",
+   "sprite": "chair",
+   "kind": "floor",
+   "x": 1047.5,
+   "y": 558.7,
+   "scale": 1.5469,
+   "z": 2
+  },
+  {
+   "uid": "chair_3",
+   "sprite": "chair",
+   "kind": "floor",
+   "x": 497.5,
+   "y": 814.7,
+   "scale": 1.8906,
+   "z": 8
+  },
+  {
+   "uid": "chair_4",
+   "sprite": "chair",
+   "kind": "floor",
+   "x": 1210.7,
+   "y": 772.0,
+   "scale": 1.8333,
+   "z": 7
+  },
+  {
+   "uid": "wardrobe_small_1",
+   "sprite": "wardrobe_small",
+   "kind": "floor",
+   "x": 800.0,
+   "y": 516.0,
+   "scale": 1.4896,
+   "z": 1
+  },
+  {
+   "uid": "photo_frame_1",
+   "sprite": "photo_frame",
+   "kind": "wall",
+   "x": 662.2,
+   "y": 301.0,
+   "scale": 1.4352,
+   "z": -0.5
+  },
+  {
+   "uid": "lift_1",
+   "sprite": "lift",
+   "kind": "floor",
+   "x": 305.0,
+   "y": 558.7,
+   "scale": 1.5469,
+   "z": 2
+  },
+  {
+   "uid": "hanging_bulb_1",
+   "sprite": "hanging_bulb",
+   "kind": "ceiling",
+   "x": 1237.2,
+   "y": 432.3,
+   "scale": 1.5182,
+   "z": 99
+  },
+  {
+   "uid": "cobweb_1",
+   "sprite": "cobweb",
+   "kind": "side-wall",
+   "matrix": [
+    -0.3438,
+    -0.6667,
+    0,
+    1.4609,
+    1372.0,
+    310.3
+   ],
+   "z": 0.5
+  },
+  {
+   "uid": "plate_1",
+   "sprite": "plate",
+   "kind": "on-top",
+   "on": "table_dining_1",
+   "x": 534.2,
+   "y": 606.6,
+   "scale": 1.4953,
+   "z": 6.01
+  },
+  {
+   "uid": "thali_1",
+   "sprite": "thali",
+   "kind": "on-top",
+   "on": "table_dining_1",
+   "x": 635.0,
+   "y": 607.2,
+   "scale": 1.5469,
+   "z": 6.01
+  },
+  {
+   "uid": "glass_1",
+   "sprite": "glass",
+   "kind": "on-top",
+   "on": "table_dining_1",
+   "x": 743.2,
+   "y": 607.9,
+   "scale": 1.5984,
+   "z": 6.01
+  },
+  {
+   "uid": "bowl_1",
+   "sprite": "bowl",
+   "kind": "on-top",
+   "on": "table_dining_1",
+   "x": 515.8,
+   "y": 607.9,
+   "scale": 1.5984,
+   "z": 6.01
+  },
+  {
+   "uid": "candelabra_1",
+   "sprite": "candelabra",
+   "kind": "on-top",
+   "on": "table_dining_1",
+   "x": 853.2,
+   "y": 606.6,
+   "scale": 1.4953,
+   "z": 6.01
+  },
+  {
+   "uid": "cake_1",
+   "sprite": "cake",
+   "kind": "on-top",
+   "on": "table_dining_1",
+   "x": 965.0,
+   "y": 607.2,
+   "scale": 1.5469,
+   "z": 6.01
+  }
+ ],
+ "characters": []
+}

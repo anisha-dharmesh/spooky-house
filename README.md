@@ -1,16 +1,24 @@
 # Anisha's Spooky House
 
 A stealth-prank game, designed by Anisha (age 8). Sneak around Granny's spooky house, pull pranks on the baddies, and don't
-get caught. Built in **3D with Godot 4.7** (GDScript).
+get caught. A **2D game in Godot 4.7** (GDScript), made to play in a browser (phone Safari included).
 
-The game is in [godot/](godot/README.md): how to run it, the controls, and where everything is.
+## How it looks
+
+**One room on the screen at a time**, seen from the front (back wall, two side walls, floor). Anisha walks anywhere on the
+floor. A **mini map** (top right) shows the house, where she is, and which room the task wants next.
+
+The first room built is **Granny's kitchen** (task 1: grab the cement). See [docs/2D_VERSION.md](docs/2D_VERSION.md).
 
 ## Quick start
 
 ```bash
 brew install --cask godot     # once
 godot --path godot            # play
-godot --path godot -- --gallery   # look at all the 3D models
+godot --path godot -- --room gh_kitchen                   # start in the kitchen
+godot --path godot -- --room gh_kitchen --touch           # with the phone buttons
+godot --path godot -- --shot out.png [--grab|--hide|--caught]   # save a picture of the screen
+godot --headless --path godot -- --selftest               # check the rules of the room
 ```
 
 ## Folders
@@ -18,28 +26,9 @@ godot --path godot -- --gallery   # look at all the 3D models
 | Folder | What |
 | --- | --- |
 | `godot/` | The game |
-| `godot/data/` | The world, the tasks, baddies, text (English and Hindi) and the room layouts |
-| `godot/assets/models/` | The 3D models (generated; see `MODELS.md` there) |
-| `scripts/` | Tools that build the 3D models (`npm run models`) |
-| `tests/` | Checks for the generated models (`npm test`) |
-| `docs/` | The game design spec, how to add tasks, how to get 3D models, and the art pack notes and pictures |
-
-## Checks
-
-```bash
-npm install     # once
-npm run check   # model checks, then Godot's world and task check, a bot that does each task, rules tests, and a controls test
-```
-
-## Adding tasks and making models
-
-- Tasks and rooms: [docs/ADDING_TASKS.md](docs/ADDING_TASKS.md). The game is one continuous world; add rooms from the art pack to
-  `godot/data/world.json` and a task to `godot/data/tasks.json`. No code needed.
-- 3D models: [docs/3D_MODEL_BRIEF.md](docs/3D_MODEL_BRIEF.md). The rules every model follows and how to make more.
-
-## History
-
-A first 2D version (Phaser, in the browser) was built and later removed in favour of the 3D game. It is still in the git
-history: commit `fff3950`.
+| `godot/scripts/room/` | The room: rules (`room_game`), drawing (`room_view`, `room_backdrop`), screen buttons and cards (`room_ui`), mini map (`mini_map`) |
+| `godot/data/` | Tasks, baddies, text (English and Hindi), the rooms (`rooms/`) and the house layout (`places.json`) |
+| `godot/assets/pack/` | The colourful art: item pictures, characters, room backgrounds and layouts (from the Claude Design pack) |
+| `docs/` | The game design spec, how to add tasks, the 2D notes and the art pack |
 
 Hindi text was written by Claude and should be checked by a Hindi speaker.

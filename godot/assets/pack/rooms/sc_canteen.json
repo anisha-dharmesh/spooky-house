@@ -1,0 +1,179 @@
+{
+ "id": "sc_canteen",
+ "name": "Canteen",
+ "location": "school",
+ "floor": "Ground",
+ "unlockLevel": 29,
+ "screen": [
+  1600,
+  900
+ ],
+ "camera": {
+  "view": "fixed room view",
+  "pxPerTileBack": 78.57,
+  "floorBackY": 415.7,
+  "perspective": 0.4,
+  "depthShown": 0.9,
+  "wallHeightTiles": 4.4,
+  "formula": "x = 800 + (u - W/2)*pxPerTileBack*k ; y = floorBackY + t*(900-floorBackY) ; t = v/D*depthShown ; k = 1 + perspective*t ; sprite scale = pxPerTileBack*k/64"
+ },
+ "background": "rooms/school/sc_canteen_bg.png",
+ "full": "rooms/school/sc_canteen.png",
+ "drawOrder": [
+  {
+   "uid": "canteen_counter_1",
+   "sprite": "canteen_counter",
+   "kind": "floor",
+   "x": 800.0,
+   "y": 464.1,
+   "scale": 1.2768,
+   "z": 1
+  },
+  {
+   "uid": "table_dining_1",
+   "sprite": "table_dining",
+   "kind": "floor",
+   "x": 751.3,
+   "y": 706.3,
+   "scale": 1.5223,
+   "z": 6
+  },
+  {
+   "uid": "table_dining_2",
+   "sprite": "table_dining",
+   "kind": "floor",
+   "x": 532.9,
+   "y": 851.6,
+   "scale": 1.6696,
+   "z": 9
+  },
+  {
+   "uid": "chair_1",
+   "sprite": "chair",
+   "kind": "floor",
+   "x": 1119.0,
+   "y": 609.4,
+   "scale": 1.4241,
+   "z": 4
+  },
+  {
+   "uid": "chair_2",
+   "sprite": "chair",
+   "kind": "floor",
+   "x": 955.6,
+   "y": 803.1,
+   "scale": 1.6205,
+   "z": 8
+  },
+  {
+   "uid": "chair_3",
+   "sprite": "chair",
+   "kind": "floor",
+   "x": 1152.0,
+   "y": 754.7,
+   "scale": 1.5714,
+   "z": 7
+  },
+  {
+   "uid": "water_cooler_1",
+   "sprite": "water_cooler",
+   "kind": "floor",
+   "x": 1494.6,
+   "y": 851.6,
+   "scale": 1.6696,
+   "z": 9
+  },
+  {
+   "uid": "dustbin_1",
+   "sprite": "dustbin",
+   "kind": "floor",
+   "x": 105.4,
+   "y": 851.6,
+   "scale": 1.6696,
+   "z": 9
+  },
+  {
+   "uid": "cafeteria_table_1",
+   "sprite": "cafeteria_table",
+   "kind": "floor",
+   "x": 800.0,
+   "y": 561.0,
+   "scale": 1.375,
+   "z": 3
+  },
+  {
+   "uid": "cobweb_1",
+   "sprite": "cobweb",
+   "kind": "wall",
+   "x": 288.3,
+   "y": 268.6,
+   "scale": 1.2301,
+   "z": -0.5
+  },
+  {
+   "uid": "cobweb_2",
+   "sprite": "cobweb",
+   "kind": "side-wall",
+   "matrix": [
+    -0.3438,
+    -0.7567,
+    0,
+    1.2522,
+    1372.0,
+    287.8286
+   ],
+   "z": 0.5
+  },
+  {
+   "uid": "lunch_tray_1",
+   "sprite": "lunch_tray",
+   "kind": "on-top",
+   "on": "table_dining_1",
+   "x": 564.3,
+   "y": 601.6,
+   "scale": 1.3259,
+   "z": 6.01
+  },
+  {
+   "uid": "lunch_tray_2",
+   "sprite": "lunch_tray",
+   "kind": "on-top",
+   "on": "table_dining_2",
+   "x": 333.3,
+   "y": 736.8,
+   "scale": 1.4585,
+   "z": 9.01
+  },
+  {
+   "uid": "juice_bottle_1",
+   "sprite": "juice_bottle",
+   "kind": "on-top",
+   "on": "cafeteria_table_1",
+   "x": 757.6,
+   "y": 476.3,
+   "scale": 1.1933,
+   "z": 3.01
+  },
+  {
+   "uid": "milk_carton_1",
+   "sprite": "milk_carton",
+   "kind": "on-top",
+   "on": "cafeteria_table_1",
+   "x": 844.0,
+   "y": 476.9,
+   "scale": 1.2375,
+   "z": 3.01
+  },
+  {
+   "uid": "apple_1",
+   "sprite": "apple",
+   "kind": "on-top",
+   "on": "canteen_counter_1",
+   "x": 677.4,
+   "y": 367.6,
+   "scale": 1.1491,
+   "z": 1.01
+  }
+ ],
+ "characters": []
+}

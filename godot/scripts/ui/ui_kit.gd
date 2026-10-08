@@ -1,14 +1,27 @@
 class_name UIKit
 extends RefCounted
-## Fonts, colours and small helpers so every screen looks the same (black, grey and white only).
+## Fonts, colours and small helpers so every screen looks the same: warm paper cards with dark plum outlines, a pumpkin
+## accent, and soft shadows (cosy-spooky, readable on a phone).
 
-const WHITE := Color("f2f2ef")
-const LIGHT := Color("d4d4cf")
-const DIM := Color("a3a39e")
-const MUTED := Color("6a6a66")
-const BG := Color("0a0a0b")
-const CHIP := Color("1c1c1e")
-const BORDER := Color("3a3a3d")
+const INK := Color("33243a")          # dark plum: text and outlines
+const PAPER := Color("fff3da")        # cards
+const PAPER_DARK := Color("f1dcb4")   # slots, wells
+const PUMPKIN := Color("ff8a3d")      # the main accent
+const PUMPKIN_DARK := Color("c9560f")
+const GRAPE := Color("7a5cff")
+const MINT := Color("4fc596")
+const BERRY := Color("ff5d73")
+const SUN := Color("ffd45c")
+const NIGHT := Color("1d1428")        # behind everything
+
+# names the title screen already uses
+const WHITE := PAPER
+const LIGHT := Color("e9d9bd")
+const DIM := Color("b9a98f")
+const MUTED := Color("8a7a8f")
+const BG := NIGHT
+const CHIP := Color("2d2040")
+const BORDER := Color("5b4670")
 
 static var _body: Font
 static var _title: Font
@@ -43,7 +56,16 @@ static func box(fill: Color, border: Color = Color(0, 0, 0, 0), radius: int = 16
 	return s
 
 
-static func label(text: String, size: int, color: Color = WHITE, title: bool = false) -> Label:
+## A paper card with a plum outline and a soft drop shadow.
+static func card(fill: Color = PAPER, radius: int = 24, border_w: int = 3) -> StyleBoxFlat:
+	var s := box(fill, INK, radius, border_w)
+	s.shadow_color = Color(0, 0, 0, 0.35)
+	s.shadow_size = 10
+	s.shadow_offset = Vector2(0, 5)
+	return s
+
+
+static func label(text: String, size: int, color: Color = INK, title: bool = false) -> Label:
 	var l := Label.new()
 	l.text = text
 	l.add_theme_font_override("font", title_font() if title else body_font())
@@ -53,57 +75,31 @@ static func label(text: String, size: int, color: Color = WHITE, title: bool = f
 	return l
 
 
-## kind: "primary" (white), "ghost" (outlined), "dark" (dark chip).
-static func button(text: String, kind: String, size: int, callback: Callable) -> Button:
+## kind: "primary" (pumpkin), "ghost" (paper), "dark" (plum). `radius` makes round buttons when it is half the size.
+static func button(text: String, kind: String, size: int, callback: Callable, radius: int = 18) -> Button:
 	var b := Button.new()
 	b.text = text
 	b.focus_mode = Control.FOCUS_NONE
 	b.add_theme_font_override("font", body_font())
 	b.add_theme_font_size_override("font_size", size)
-	var fg := BG if kind == "primary" else WHITE
-	for c in ["font_color", "font_hover_color", "font_pressed_color", "font_focus_color"]:
-		b.add_theme_color_override(c, fg)
-	var radius := 14 if kind != "dark" else 26
-	var normal: StyleBoxFlat
-	var hover: StyleBoxFlat
+	var fill := PUMPKIN
+	var fg := INK
 	match kind:
-		"primary":
-			normal = box(WHITE, Color(0, 0, 0, 0), radius)
-			hover = box(Color.WHITE, Color(0, 0, 0, 0), radius)
 		"ghost":
-			normal = box(Color(0, 0, 0, 0.01), Color("8a8a85"), radius, 3)
-			hover = box(CHIP, WHITE, radius, 3)
-		_:
-			normal = box(Color(0.04, 0.04, 0.043, 0.88), BORDER, radius)
-			hover = box(Color(0.11, 0.11, 0.12, 0.95), BORDER, radius)
+			fill = PAPER
+		"dark":
+			fill = INK
+			fg = PAPER
+	for c in ["font_color", "font_hover_color", "font_pressed_color", "font_focus_color", "font_disabled_color"]:
+		b.add_theme_color_override(c, fg)
+	var normal := card(fill, radius)
+	var hover := card(fill.lightened(0.12), radius)
+	var pressed := box(fill.darkened(0.12), INK, radius, 3)
+	pressed.content_margin_top = 14
 	b.add_theme_stylebox_override("normal", normal)
 	b.add_theme_stylebox_override("hover", hover)
-	b.add_theme_stylebox_override("pressed", hover)
+	b.add_theme_stylebox_override("pressed", pressed)
 	b.add_theme_stylebox_override("focus", normal)
+	b.add_theme_stylebox_override("disabled", card(PAPER_DARK, radius))
 	b.pressed.connect(callback)
 	return b
-
-
-## A row of three stars. `earned` is an Array of bool.
-class StarRow extends Control:
-	var earned: Array = [true, false, false]
-	var star_r := 38.0
-
-	func _init() -> void:
-		custom_minimum_size = Vector2(3 * 2.6 * star_r, 2.5 * star_r)
-		mouse_filter = Control.MOUSE_FILTER_IGNORE
-
-	func _draw() -> void:
-		for i in 3:
-			var c := Vector2(star_r * 1.3 + i * star_r * 2.6, star_r * 1.25)
-			var pts := PackedVector2Array()
-			for k in 10:
-				var a := -PI / 2.0 + k * PI / 5.0
-				var r := star_r if k % 2 == 0 else star_r * 0.45
-				pts.append(c + Vector2(cos(a), sin(a)) * r)
-			if earned[i]:
-				for k in 10: # a fan of triangles keeps the points sharp
-					draw_colored_polygon(PackedVector2Array([c, pts[k], pts[(k + 1) % 10]]), UIKit.WHITE)
-			else:
-				pts.append(pts[0])
-				draw_polyline(pts, Color("5a5a5d"), 3.0, true)

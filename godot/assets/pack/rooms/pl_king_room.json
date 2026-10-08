@@ -1,0 +1,155 @@
+{
+ "id": "pl_king_room",
+ "name": "King's room",
+ "location": "palace",
+ "floor": "Floor 1",
+ "unlockLevel": 85,
+ "screen": [
+  1600,
+  900
+ ],
+ "camera": {
+  "view": "fixed room view",
+  "pxPerTileBack": 78.57,
+  "floorBackY": 415.7,
+  "perspective": 0.4,
+  "depthShown": 0.9,
+  "wallHeightTiles": 4.4,
+  "formula": "x = 800 + (u - W/2)*pxPerTileBack*k ; y = floorBackY + t*(900-floorBackY) ; t = v/D*depthShown ; k = 1 + perspective*t ; sprite scale = pxPerTileBack*k/64"
+ },
+ "background": "rooms/palace/pl_king_room_bg.png",
+ "full": "rooms/palace/pl_king_room.png",
+ "drawOrder": [
+  {
+   "uid": "rug_1",
+   "sprite": "rug",
+   "kind": "floor-quad",
+   "quad": [
+    [
+     625.9,
+     546.5
+    ],
+    [
+     974.1,
+     546.5
+    ],
+    [
+     991.1,
+     677.2
+    ],
+    [
+     608.9,
+     677.2
+    ]
+   ]
+  },
+  {
+   "uid": "royal_bed_1",
+   "sprite": "royal_bed",
+   "kind": "side-wall",
+   "matrix": [
+    -0.3094,
+    -0.681,
+    0,
+    1.4266,
+    1488.6,
+    435.5018
+   ],
+   "z": 6.5
+  },
+  {
+   "uid": "desk_1",
+   "sprite": "desk",
+   "kind": "floor",
+   "x": 757.9,
+   "y": 502.9,
+   "scale": 1.3161,
+   "z": 2
+  },
+  {
+   "uid": "armour_stand_1",
+   "sprite": "armour_stand",
+   "kind": "floor",
+   "x": 270.9,
+   "y": 459.3,
+   "scale": 1.2719,
+   "z": 1
+  },
+  {
+   "uid": "treasure_chest_1",
+   "sprite": "treasure_chest",
+   "kind": "floor",
+   "x": 800.0,
+   "y": 851.6,
+   "scale": 1.6696,
+   "z": 10
+  },
+  {
+   "uid": "painting_1",
+   "sprite": "painting",
+   "kind": "wall",
+   "x": 957.4,
+   "y": 268.3,
+   "scale": 1.2299,
+   "z": -0.5
+  },
+  {
+   "uid": "bookshelf_1",
+   "sprite": "bookshelf",
+   "kind": "side-wall",
+   "matrix": [
+    -0.3094,
+    0.681,
+    0,
+    1.5813,
+    131.2,
+    392.6036
+   ],
+   "z": 9.5
+  },
+  {
+   "uid": "chandelier_1",
+   "sprite": "chandelier",
+   "kind": "ceiling",
+   "x": 663.0,
+   "y": 570.2,
+   "scale": 1.4266,
+   "z": 99
+  },
+  {
+   "uid": "cobweb_1",
+   "sprite": "cobweb",
+   "kind": "side-wall",
+   "matrix": [
+    -0.3094,
+    -0.681,
+    0,
+    1.2498,
+    1369.8,
+    283.3314
+   ],
+   "z": 0.5
+  },
+  {
+   "uid": "goblet_1",
+   "sprite": "goblet",
+   "kind": "on-top",
+   "on": "desk_1",
+   "x": 677.9,
+   "y": 412.4,
+   "scale": 1.1447,
+   "z": 2.01
+  },
+  {
+   "uid": "scepter_1",
+   "sprite": "scepter",
+   "kind": "on-top",
+   "on": "desk_1",
+   "x": 757.9,
+   "y": 412.9,
+   "scale": 1.1845,
+   "z": 2.01
+  }
+ ],
+ "characters": []
+}

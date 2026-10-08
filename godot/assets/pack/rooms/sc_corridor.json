@@ -1,0 +1,97 @@
+{
+ "id": "sc_corridor",
+ "name": "Corridor",
+ "location": "school",
+ "floor": "Ground",
+ "unlockLevel": 25,
+ "screen": [
+  1600,
+  900
+ ],
+ "camera": {
+  "view": "fixed room view",
+  "pxPerTileBack": 55.0,
+  "floorBackY": 312.0,
+  "perspective": 0.4,
+  "depthShown": 0.9,
+  "wallHeightTiles": 4.4,
+  "formula": "x = 800 + (u - W/2)*pxPerTileBack*k ; y = floorBackY + t*(900-floorBackY) ; t = v/D*depthShown ; k = 1 + perspective*t ; sprite scale = pxPerTileBack*k/64"
+ },
+ "background": "rooms/school/sc_corridor_bg.png",
+ "full": "rooms/school/sc_corridor.png",
+ "drawOrder": [
+  {
+   "uid": "lockers_1",
+   "sprite": "lockers",
+   "kind": "floor",
+   "x": 626.5,
+   "y": 387.6,
+   "scale": 0.9036,
+   "z": 1
+  },
+  {
+   "uid": "lockers_2",
+   "sprite": "lockers",
+   "kind": "floor",
+   "x": 800.0,
+   "y": 841.2,
+   "scale": 1.1688,
+   "z": 7
+  },
+  {
+   "uid": "lockers_3",
+   "sprite": "lockers",
+   "kind": "floor",
+   "x": 500.8,
+   "y": 841.2,
+   "scale": 1.1688,
+   "z": 7
+  },
+  {
+   "uid": "notice_board_1",
+   "sprite": "notice_board",
+   "kind": "wall",
+   "x": 937.9,
+   "y": 211.0,
+   "scale": 0.8616,
+   "z": -0.5
+  },
+  {
+   "uid": "water_cooler_1",
+   "sprite": "water_cooler",
+   "kind": "floor",
+   "x": 765.4,
+   "y": 690.0,
+   "scale": 1.0804,
+   "z": 5
+  },
+  {
+   "uid": "school_bell_1",
+   "sprite": "school_bell",
+   "kind": "wall",
+   "x": 1323.8,
+   "y": 211.0,
+   "scale": 0.8616,
+   "z": -0.5
+  },
+  {
+   "uid": "dustbin_1",
+   "sprite": "dustbin",
+   "kind": "floor",
+   "x": 89.4,
+   "y": 841.2,
+   "scale": 1.1688,
+   "z": 7
+  },
+  {
+   "uid": "cobweb_1",
+   "sprite": "cobweb",
+   "kind": "wall",
+   "x": 276.2,
+   "y": 211.0,
+   "scale": 0.8616,
+   "z": -0.5
+  }
+ ],
+ "characters": []
+}

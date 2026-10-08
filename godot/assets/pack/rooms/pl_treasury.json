@@ -1,0 +1,138 @@
+{
+ "id": "pl_treasury",
+ "name": "Treasury",
+ "location": "palace",
+ "floor": "Basement",
+ "unlockLevel": 88,
+ "screen": [
+  1600,
+  900
+ ],
+ "camera": {
+  "view": "fixed room view",
+  "pxPerTileBack": 92,
+  "floorBackY": 474.8,
+  "perspective": 0.4,
+  "depthShown": 0.9,
+  "wallHeightTiles": 4.4,
+  "formula": "x = 800 + (u - W/2)*pxPerTileBack*k ; y = floorBackY + t*(900-floorBackY) ; t = v/D*depthShown ; k = 1 + perspective*t ; sprite scale = pxPerTileBack*k/64"
+ },
+ "background": "rooms/palace/pl_treasury_bg.png",
+ "full": "rooms/palace/pl_treasury.png",
+ "drawOrder": [
+  {
+   "uid": "treasure_chest_1",
+   "sprite": "treasure_chest",
+   "kind": "floor",
+   "x": 752.2,
+   "y": 517.3,
+   "scale": 1.495,
+   "z": 1
+  },
+  {
+   "uid": "treasure_chest_2",
+   "sprite": "treasure_chest",
+   "kind": "floor",
+   "x": 943.5,
+   "y": 517.3,
+   "scale": 1.495,
+   "z": 1
+  },
+  {
+   "uid": "treasure_chest_3",
+   "sprite": "treasure_chest",
+   "kind": "side-wall",
+   "matrix": [
+    -0.3162,
+    0.6644,
+    0,
+    1.6675,
+    233.28,
+    452.285
+   ],
+   "z": 4.5
+  },
+  {
+   "uid": "gold_pile_1",
+   "sprite": "gold_pile",
+   "kind": "floor",
+   "x": 800.0,
+   "y": 687.4,
+   "scale": 1.725,
+   "z": 5
+  },
+  {
+   "uid": "gold_pile_2",
+   "sprite": "gold_pile",
+   "kind": "floor",
+   "x": 586.6,
+   "y": 644.9,
+   "scale": 1.6675,
+   "z": 4
+  },
+  {
+   "uid": "gold_pile_3",
+   "sprite": "gold_pile",
+   "kind": "floor",
+   "x": 1013.4,
+   "y": 644.9,
+   "scale": 1.6675,
+   "z": 4
+  },
+  {
+   "uid": "crown_cushion_1",
+   "sprite": "crown_cushion",
+   "kind": "floor",
+   "x": 446.7,
+   "y": 772.4,
+   "scale": 1.84,
+   "z": 7
+  },
+  {
+   "uid": "necklace_1",
+   "sprite": "necklace",
+   "kind": "floor",
+   "x": 1035.5,
+   "y": 772.4,
+   "scale": 1.84,
+   "z": 7
+  },
+  {
+   "uid": "pillar_1",
+   "sprite": "pillar",
+   "kind": "floor",
+   "x": 1278.4,
+   "y": 517.3,
+   "scale": 1.495,
+   "z": 1
+  },
+  {
+   "uid": "crown_1",
+   "sprite": "crown",
+   "kind": "floor",
+   "x": 800.0,
+   "y": 602.4,
+   "scale": 1.61,
+   "z": 3
+  },
+  {
+   "uid": "scepter_1",
+   "sprite": "scepter",
+   "kind": "floor",
+   "x": 1271.0,
+   "y": 772.4,
+   "scale": 1.84,
+   "z": 7
+  },
+  {
+   "uid": "cobweb_1",
+   "sprite": "cobweb",
+   "kind": "wall",
+   "x": 339.1,
+   "y": 301.8,
+   "scale": 1.4404,
+   "z": -0.5
+  }
+ ],
+ "characters": []
+}

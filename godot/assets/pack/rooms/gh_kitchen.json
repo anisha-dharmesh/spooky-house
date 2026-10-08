@@ -1,0 +1,304 @@
+{
+ "id": "gh_kitchen",
+ "name": "Kitchen",
+ "location": "granny_house",
+ "floor": "Ground",
+ "unlockLevel": 1,
+ "screen": [
+  1600,
+  900
+ ],
+ "camera": {
+  "view": "fixed room view",
+  "pxPerTileBack": 78.57,
+  "floorBackY": 415.7,
+  "perspective": 0.4,
+  "depthShown": 0.9,
+  "wallHeightTiles": 4.4,
+  "formula": "x = 800 + (u - W/2)*pxPerTileBack*k ; y = floorBackY + t*(900-floorBackY) ; t = v/D*depthShown ; k = 1 + perspective*t ; sprite scale = pxPerTileBack*k/64"
+ },
+ "background": "rooms/granny_house/gh_kitchen_bg.png",
+ "full": "rooms/granny_house/gh_kitchen.png",
+ "drawOrder": [
+  {
+   "uid": "fridge_1",
+   "sprite": "fridge",
+   "kind": "floor",
+   "x": 290.9,
+   "y": 512.6,
+   "scale": 1.3259,
+   "z": 2
+  },
+  {
+   "uid": "counter_1",
+   "sprite": "counter",
+   "kind": "floor",
+   "x": 800.0,
+   "y": 464.1,
+   "scale": 1.2768,
+   "z": 1
+  },
+  {
+   "uid": "gas_stove_1",
+   "sprite": "gas_stove",
+   "kind": "floor",
+   "x": 595.7,
+   "y": 464.1,
+   "scale": 1.2768,
+   "z": 1
+  },
+  {
+   "uid": "counter_2",
+   "sprite": "counter",
+   "kind": "floor",
+   "x": 963.4,
+   "y": 464.1,
+   "scale": 1.2768,
+   "z": 1
+  },
+  {
+   "uid": "sink_1",
+   "sprite": "sink",
+   "kind": "floor",
+   "x": 1126.9,
+   "y": 464.1,
+   "scale": 1.2768,
+   "z": 1
+  },
+  {
+   "uid": "counter_3",
+   "sprite": "counter",
+   "kind": "floor",
+   "x": 1290.3,
+   "y": 464.1,
+   "scale": 1.2768,
+   "z": 1
+  },
+  {
+   "uid": "spice_rack_1",
+   "sprite": "spice_rack",
+   "kind": "side-wall",
+   "matrix": [
+    -0.3437,
+    0.7567,
+    0,
+    1.4241,
+    184.0,
+    404.3482
+   ],
+   "z": 4.5
+  },
+  {
+   "uid": "table_dining_1",
+   "sprite": "table_dining",
+   "kind": "floor",
+   "x": 848.7,
+   "y": 706.3,
+   "scale": 1.5223,
+   "z": 6
+  },
+  {
+   "uid": "chair_1",
+   "sprite": "chair",
+   "kind": "floor",
+   "x": 481.0,
+   "y": 609.4,
+   "scale": 1.4241,
+   "z": 4
+  },
+  {
+   "uid": "chair_2",
+   "sprite": "chair",
+   "kind": "floor",
+   "x": 1252.6,
+   "y": 754.7,
+   "scale": 1.5714,
+   "z": 7
+  },
+  {
+   "uid": "cement_bag_1",
+   "sprite": "cement_bag",
+   "kind": "floor",
+   "x": 105.4,
+   "y": 851.6,
+   "scale": 1.6696,
+   "z": 9
+  },
+  {
+   "uid": "hanging_bulb_1",
+   "sprite": "hanging_bulb",
+   "kind": "ceiling",
+   "x": 646.8,
+   "y": 668.5,
+   "scale": 1.596,
+   "z": 99
+  },
+  {
+   "uid": "knife_1",
+   "sprite": "knife",
+   "kind": "on-top",
+   "on": "counter_1",
+   "x": 759.1,
+   "y": 371.3,
+   "scale": 1.1491,
+   "z": 1.01
+  },
+  {
+   "uid": "chilli_1",
+   "sprite": "chilli",
+   "kind": "on-top",
+   "on": "counter_2",
+   "x": 922.6,
+   "y": 371.3,
+   "scale": 1.1491,
+   "z": 1.01
+  },
+  {
+   "uid": "lemon_1",
+   "sprite": "lemon",
+   "kind": "on-top",
+   "on": "counter_3",
+   "x": 1331.1,
+   "y": 371.3,
+   "scale": 1.1491,
+   "z": 1.01
+  },
+  {
+   "uid": "salt_jar_1",
+   "sprite": "salt_jar",
+   "kind": "on-top",
+   "on": "table_dining_1",
+   "x": 653.9,
+   "y": 602.2,
+   "scale": 1.3701,
+   "z": 6.01
+  },
+  {
+   "uid": "sugar_jar_1",
+   "sprite": "sugar_jar",
+   "kind": "on-top",
+   "on": "table_dining_1",
+   "x": 936.7,
+   "y": 601.1,
+   "scale": 1.2817,
+   "z": 6.01
+  },
+  {
+   "uid": "tea_cup_1",
+   "sprite": "tea_cup",
+   "kind": "on-top",
+   "on": "table_dining_1",
+   "x": 1035.7,
+   "y": 601.6,
+   "scale": 1.3259,
+   "z": 6.01
+  },
+  {
+   "uid": "maggi_packet_1",
+   "sprite": "maggi_packet",
+   "kind": "on-top",
+   "on": "counter_1",
+   "x": 840.9,
+   "y": 371.3,
+   "scale": 1.1491,
+   "z": 1.01
+  },
+  {
+   "uid": "cashew_bowl_1",
+   "sprite": "cashew_bowl",
+   "kind": "on-top",
+   "on": "table_dining_1",
+   "x": 754.4,
+   "y": 601.1,
+   "scale": 1.2817,
+   "z": 6.01
+  },
+  {
+   "uid": "plum_1",
+   "sprite": "plum",
+   "kind": "on-top",
+   "on": "table_dining_1",
+   "x": 847.1,
+   "y": 601.6,
+   "scale": 1.3259,
+   "z": 6.01
+  },
+  {
+   "uid": "cake_1",
+   "sprite": "cake",
+   "kind": "on-top",
+   "on": "counter_2",
+   "x": 1004.3,
+   "y": 371.3,
+   "scale": 1.1491,
+   "z": 1.01
+  },
+  {
+   "uid": "chocolate_bar_1",
+   "sprite": "chocolate_bar",
+   "kind": "on-top",
+   "on": "table_dining_1",
+   "x": 946.1,
+   "y": 602.2,
+   "scale": 1.3701,
+   "z": 6.01
+  },
+  {
+   "uid": "honey_jar_1",
+   "sprite": "honey_jar",
+   "kind": "on-top",
+   "on": "counter_3",
+   "x": 1249.4,
+   "y": 371.3,
+   "scale": 1.1491,
+   "z": 1.01
+  },
+  {
+   "uid": "ketchup_bottle_1",
+   "sprite": "ketchup_bottle",
+   "kind": "on-top",
+   "on": "gas_stove_1",
+   "x": 677.4,
+   "y": 371.3,
+   "scale": 1.1491,
+   "z": 1.01
+  },
+  {
+   "uid": "onion_1",
+   "sprite": "onion",
+   "kind": "on-top",
+   "on": "sink_1",
+   "x": 1086.0,
+   "y": 371.3,
+   "scale": 1.1491,
+   "z": 1.01
+  },
+  {
+   "uid": "milk_carton_1",
+   "sprite": "milk_carton",
+   "kind": "on-top",
+   "on": "table_dining_1",
+   "x": 658.6,
+   "y": 601.6,
+   "scale": 1.3259,
+   "z": 6.01
+  },
+  {
+   "uid": "apple_1",
+   "sprite": "apple",
+   "kind": "on-top",
+   "on": "table_dining_1",
+   "x": 751.3,
+   "y": 602.2,
+   "scale": 1.3701,
+   "z": 6.01
+  }
+ ],
+ "characters": [
+  {
+   "id": "anisha",
+   "x_tiles": 2.6,
+   "y_tiles": 8.0
+  }
+ ]
+}

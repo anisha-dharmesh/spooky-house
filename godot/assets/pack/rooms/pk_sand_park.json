@@ -1,0 +1,166 @@
+{
+ "id": "pk_sand_park",
+ "name": "Sand Park",
+ "location": "park",
+ "floor": "Outside",
+ "unlockLevel": 65,
+ "screen": [
+  1600,
+  900
+ ],
+ "camera": {
+  "view": "fixed room view",
+  "pxPerTileBack": 55.0,
+  "floorBackY": 312.0,
+  "perspective": 0.4,
+  "depthShown": 0.9,
+  "wallHeightTiles": 4.4,
+  "formula": "x = 800 + (u - W/2)*pxPerTileBack*k ; y = floorBackY + t*(900-floorBackY) ; t = v/D*depthShown ; k = 1 + perspective*t ; sprite scale = pxPerTileBack*k/64"
+ },
+ "background": "rooms/park/pk_sand_park_bg.png",
+ "full": "rooms/park/pk_sand_park.png",
+ "drawOrder": [
+  {
+   "uid": "sand_pit_1",
+   "sprite": "sand_pit",
+   "kind": "floor-quad",
+   "quad": [
+    [
+     613.8,
+     501.0
+    ],
+    [
+     924.1,
+     501.0
+    ],
+    [
+     935.5,
+     652.2
+    ],
+    [
+     596.8,
+     652.2
+    ]
+   ]
+  },
+  {
+   "uid": "slide_play_1",
+   "sprite": "slide_play",
+   "kind": "floor",
+   "x": 800.0,
+   "y": 463.2,
+   "scale": 0.9478,
+   "z": 4
+  },
+  {
+   "uid": "monkey_bars_1",
+   "sprite": "monkey_bars",
+   "kind": "floor",
+   "x": 762.6,
+   "y": 841.2,
+   "scale": 1.1688,
+   "z": 14
+  },
+  {
+   "uid": "swing_1",
+   "sprite": "swing",
+   "kind": "floor",
+   "x": 626.5,
+   "y": 387.6,
+   "scale": 0.9036,
+   "z": 2
+  },
+  {
+   "uid": "see_saw_1",
+   "sprite": "see_saw",
+   "kind": "side-wall",
+   "matrix": [
+    -0.221,
+    -0.5906,
+    0,
+    1.0141,
+    1477.2857,
+    560.9344
+   ],
+   "z": 8.5
+  },
+  {
+   "uid": "bench_1",
+   "sprite": "bench",
+   "kind": "side-wall",
+   "matrix": [
+    -0.221,
+    0.5906,
+    0,
+    0.9588,
+    207.5714,
+    329.5183
+   ],
+   "z": 5.5
+  },
+  {
+   "uid": "tree_dead_1",
+   "sprite": "tree_dead",
+   "kind": "floor",
+   "x": 126.8,
+   "y": 841.2,
+   "scale": 1.1688,
+   "z": 14
+  },
+  {
+   "uid": "street_lamp_1",
+   "sprite": "street_lamp",
+   "kind": "floor",
+   "x": 1335.9,
+   "y": 349.8,
+   "scale": 0.8815,
+   "z": 1
+  },
+  {
+   "uid": "play_tower_1",
+   "sprite": "play_tower",
+   "kind": "floor",
+   "x": 977.7,
+   "y": 425.4,
+   "scale": 0.9257,
+   "z": 3
+  },
+  {
+   "uid": "rock_1",
+   "sprite": "rock",
+   "kind": "floor",
+   "x": 520.7,
+   "y": 501.0,
+   "scale": 0.9699,
+   "z": 5
+  },
+  {
+   "uid": "rock_2",
+   "sprite": "rock",
+   "kind": "floor",
+   "x": 1017.2,
+   "y": 501.0,
+   "scale": 0.9699,
+   "z": 5
+  },
+  {
+   "uid": "tiki_hut_1",
+   "sprite": "tiki_hut",
+   "kind": "floor",
+   "x": 482.5,
+   "y": 727.8,
+   "scale": 1.1025,
+   "z": 11
+  },
+  {
+   "uid": "sand_pile_1",
+   "sprite": "sand_pile",
+   "kind": "floor",
+   "x": 1042.0,
+   "y": 690.0,
+   "scale": 1.0804,
+   "z": 10
+  }
+ ],
+ "characters": []
+}

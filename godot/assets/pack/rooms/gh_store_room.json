@@ -1,0 +1,167 @@
+{
+ "id": "gh_store_room",
+ "name": "Store room",
+ "location": "granny_house",
+ "floor": "Ground",
+ "unlockLevel": 5,
+ "screen": [
+  1600,
+  900
+ ],
+ "camera": {
+  "view": "fixed room view",
+  "pxPerTileBack": 92,
+  "floorBackY": 474.8,
+  "perspective": 0.4,
+  "depthShown": 0.9,
+  "wallHeightTiles": 4.4,
+  "formula": "x = 800 + (u - W/2)*pxPerTileBack*k ; y = floorBackY + t*(900-floorBackY) ; t = v/D*depthShown ; k = 1 + perspective*t ; sprite scale = pxPerTileBack*k/64"
+ },
+ "background": "rooms/granny_house/gh_store_room_bg.png",
+ "full": "rooms/granny_house/gh_store_room.png",
+ "drawOrder": [
+  {
+   "uid": "baby_stroller_1",
+   "sprite": "baby_stroller",
+   "kind": "floor",
+   "x": 449.0,
+   "y": 570.5,
+   "scale": 1.5669,
+   "z": 2
+  },
+  {
+   "uid": "big_plant_pot_1",
+   "sprite": "big_plant_pot",
+   "kind": "floor",
+   "x": 1237.9,
+   "y": 857.5,
+   "scale": 1.955,
+   "z": 8
+  },
+  {
+   "uid": "big_plant_pot_2",
+   "sprite": "big_plant_pot",
+   "kind": "floor",
+   "x": 362.1,
+   "y": 857.5,
+   "scale": 1.955,
+   "z": 8
+  },
+  {
+   "uid": "box_stack_1",
+   "sprite": "box_stack",
+   "kind": "floor",
+   "x": 1151.0,
+   "y": 570.5,
+   "scale": 1.5669,
+   "z": 2
+  },
+  {
+   "uid": "box_cardboard_1",
+   "sprite": "box_cardboard",
+   "kind": "side-wall",
+   "matrix": [
+    -0.2911,
+    -0.7474,
+    0,
+    1.6639,
+    1288.52,
+    546.3388
+   ],
+   "z": 3.5
+  },
+  {
+   "uid": "box_cardboard_2",
+   "sprite": "box_cardboard",
+   "kind": "side-wall",
+   "matrix": [
+    -0.2911,
+    -0.7474,
+    0,
+    1.7286,
+    1307.15,
+    589.5163
+   ],
+   "z": 4.5
+  },
+  {
+   "uid": "inverter_1",
+   "sprite": "inverter",
+   "kind": "side-wall",
+   "matrix": [
+    -0.2911,
+    0.7474,
+    0,
+    1.6639,
+    330.11,
+    384.027
+   ],
+   "z": 3.5
+  },
+  {
+   "uid": "cement_bag_1",
+   "sprite": "cement_bag",
+   "kind": "floor",
+   "x": 800.0,
+   "y": 714.0,
+   "scale": 1.7609,
+   "z": 5
+  },
+  {
+   "uid": "hanging_bulb_1",
+   "sprite": "hanging_bulb",
+   "kind": "ceiling",
+   "x": 578.7,
+   "y": 570.4,
+   "scale": 1.7286,
+   "z": 99
+  },
+  {
+   "uid": "toolbox_1",
+   "sprite": "toolbox",
+   "kind": "floor",
+   "x": 1017.1,
+   "y": 666.1,
+   "scale": 1.6962,
+   "z": 4
+  },
+  {
+   "uid": "paint_can_1",
+   "sprite": "paint_can",
+   "kind": "floor",
+   "x": 679.0,
+   "y": 809.6,
+   "scale": 1.8903,
+   "z": 7
+  },
+  {
+   "uid": "trunk_1",
+   "sprite": "trunk",
+   "kind": "floor",
+   "x": 975.3,
+   "y": 761.8,
+   "scale": 1.8256,
+   "z": 6
+  },
+  {
+   "uid": "red_bucket_1",
+   "sprite": "red_bucket",
+   "kind": "floor",
+   "x": 925.1,
+   "y": 857.5,
+   "scale": 1.955,
+   "z": 8
+  },
+  {
+   "uid": "hammer_1",
+   "sprite": "hammer",
+   "kind": "on-top",
+   "on": "trunk_1",
+   "x": 916.8,
+   "y": 676.4,
+   "scale": 1.6431,
+   "z": 6.01
+  }
+ ],
+ "characters": []
+}

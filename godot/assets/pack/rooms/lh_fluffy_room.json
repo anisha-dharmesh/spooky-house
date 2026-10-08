@@ -1,0 +1,153 @@
+{
+ "id": "lh_fluffy_room",
+ "name": "Fluffy room",
+ "location": "little_house",
+ "floor": "Ground",
+ "unlockLevel": 1,
+ "screen": [
+  1600,
+  900
+ ],
+ "camera": {
+  "view": "fixed room view",
+  "pxPerTileBack": 92,
+  "floorBackY": 474.8,
+  "perspective": 0.4,
+  "depthShown": 0.9,
+  "wallHeightTiles": 4.4,
+  "formula": "x = 800 + (u - W/2)*pxPerTileBack*k ; y = floorBackY + t*(900-floorBackY) ; t = v/D*depthShown ; k = 1 + perspective*t ; sprite scale = pxPerTileBack*k/64"
+ },
+ "background": "rooms/little_house/lh_fluffy_room_bg.png",
+ "full": "rooms/little_house/lh_fluffy_room.png",
+ "drawOrder": [
+  {
+   "uid": "rug_1",
+   "sprite": "rug",
+   "kind": "floor-quad",
+   "quad": [
+    [
+     559.6,
+     522.6
+    ],
+    [
+     944.2,
+     522.6
+    ],
+    [
+     962.8,
+     666.1
+    ],
+    [
+     528.6,
+     666.1
+    ]
+   ]
+  },
+  {
+   "uid": "bed_single_1",
+   "sprite": "bed_single",
+   "kind": "side-wall",
+   "matrix": [
+    -0.2911,
+    0.7474,
+    0,
+    1.6962,
+    330.11,
+    397.7925
+   ],
+   "z": 4.5
+  },
+  {
+   "uid": "bean_bag_1",
+   "sprite": "bean_bag",
+   "kind": "floor",
+   "x": 1151.0,
+   "y": 570.5,
+   "scale": 1.5669,
+   "z": 2
+  },
+  {
+   "uid": "fairy_lights_1",
+   "sprite": "fairy_lights",
+   "kind": "wall",
+   "x": 753.9,
+   "y": 302.0,
+   "scale": 1.4407,
+   "z": -0.5
+  },
+  {
+   "uid": "soft_toy_1",
+   "sprite": "soft_toy",
+   "kind": "floor",
+   "x": 904.4,
+   "y": 618.3,
+   "scale": 1.6316,
+   "z": 3
+  },
+  {
+   "uid": "soft_toy_2",
+   "sprite": "soft_toy",
+   "kind": "floor",
+   "x": 1125.7,
+   "y": 666.1,
+   "scale": 1.6962,
+   "z": 4
+  },
+  {
+   "uid": "cushion_1",
+   "sprite": "cushion",
+   "kind": "floor",
+   "x": 437.1,
+   "y": 809.6,
+   "scale": 1.8903,
+   "z": 7
+  },
+  {
+   "uid": "cushion_2",
+   "sprite": "cushion",
+   "kind": "floor",
+   "x": 1033.7,
+   "y": 761.8,
+   "scale": 1.8256,
+   "z": 6
+  },
+  {
+   "uid": "balloon_1",
+   "sprite": "balloon",
+   "kind": "floor",
+   "x": 398.9,
+   "y": 570.5,
+   "scale": 1.5669,
+   "z": 2
+  },
+  {
+   "uid": "side_table_1",
+   "sprite": "side_table",
+   "kind": "floor",
+   "x": 1050.2,
+   "y": 857.5,
+   "scale": 1.955,
+   "z": 8
+  },
+  {
+   "uid": "cobweb_1",
+   "sprite": "cobweb",
+   "kind": "wall",
+   "x": 431.2,
+   "y": 302.0,
+   "scale": 1.4407,
+   "z": -0.5
+  },
+  {
+   "uid": "soft_toy_3",
+   "sprite": "soft_toy",
+   "kind": "on-top",
+   "on": "bed_single_1",
+   "x": 360.1,
+   "y": 477.9,
+   "scale": 1.5266,
+   "z": 5.01
+  }
+ ],
+ "characters": []
+}

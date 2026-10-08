@@ -4,19 +4,16 @@ extends Node
 
 signal language_changed
 
-const OPPOSITE := {"N": "S", "S": "N", "E": "W", "W": "E"}
-
-var world_def: Dictionary = {}
+var places_def: Dictionary = {}
 var tasks: Array = []
 var baddie_kinds: Dictionary = {}
 var strings: Dictionary = {}
 var lang := "en"
 var _rooms: Dictionary = {}
-var _world_rooms: Dictionary = {}
 
 
 func _ready() -> void:
-	world_def = _load_json("res://data/world.json")
+	places_def = _load_json("res://data/places.json")
 	tasks = _load_json("res://data/tasks.json").get("tasks", [])
 	baddie_kinds = _load_json("res://data/baddies.json")
 	strings = _load_json("res://data/strings.json")
@@ -41,51 +38,9 @@ func get_task(id: int) -> Dictionary:
 ## A room straight from the art pack's files.
 func room(id: String) -> Dictionary:
 	if not _rooms.has(id):
-		_rooms[id] = _load_json("res://data/rooms/%s.json" % id)
+		var path := "res://data/rooms/%s.json" % id
+		_rooms[id] = _load_json(path) if FileAccess.file_exists(path) else {}
 	return _rooms[id]
-
-
-## Every room of the world by id. Streets are made up here (the pack has none): a street is a long outdoor room,
-## and the doors of the houses that open "to town" are pointed at it.
-func world_rooms() -> Dictionary:
-	if not _world_rooms.is_empty():
-		return _world_rooms
-	var street_of := {}   # house room id -> street id
-	for st in world_def.get("streets", []):
-		for link in st.doors:
-			street_of[link.to] = st.id
-	for id in world_def.get("rooms", []):
-		if street_of.values().has(id):
-			continue
-		var r: Dictionary = room(id).duplicate(true)
-		if r.is_empty():
-			continue
-		for d in r.doors:
-			if d.to == "town" and street_of.has(id):
-				d.to = street_of[id]
-		_world_rooms[id] = r
-	for st in world_def.get("streets", []):
-		_world_rooms[st.id] = _make_street(st)
-	return _world_rooms
-
-
-func _make_street(st: Dictionary) -> Dictionary:
-	var doors: Array = []
-	for link in st.doors:
-		var house := room(link.to)
-		var src := {}
-		for d in house.doors:
-			if d.to == "town":
-				src = d
-		if src.is_empty():
-			continue
-		# only houses whose front door is on their south side are supported: the street runs along their front
-		doors.append({"side": OPPOSITE[src.side], "to": link.to, "x": link.x, "y": 0, "w": src.w, "h": 1})
-	return {
-		"id": st.id, "name": st.name, "location": st.get("location", "town"), "floor": "Outside",
-		"size": {"w": st.w, "h": st.h}, "ground": st.get("ground", "road"), "outdoor": true, "safeZone": false,
-		"doors": doors, "items": [], "colliders": [], "hideSpots": [],
-	}
 
 
 func set_lang(l: String) -> void:
@@ -120,3 +75,8 @@ func L(text: Variant, vars: Dictionary = {}) -> String:
 	if s == "":
 		s = text.get("en", "")
 	return _fill(s, vars)
+
+
+## Does the art pack's room file exist for this room (so the room can be played)?
+func has_room(id: String) -> bool:
+	return FileAccess.file_exists("res://data/rooms/%s.json" % id) and FileAccess.file_exists("res://assets/pack/rooms/%s.json" % id)

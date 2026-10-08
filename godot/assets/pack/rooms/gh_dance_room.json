@@ -1,0 +1,93 @@
+{
+ "id": "gh_dance_room",
+ "name": "Dance room",
+ "location": "granny_house",
+ "floor": "Floor 3",
+ "unlockLevel": 15,
+ "screen": [
+  1600,
+  900
+ ],
+ "camera": {
+  "view": "fixed room view",
+  "pxPerTileBack": 91.67,
+  "floorBackY": 473.3,
+  "perspective": 0.4,
+  "depthShown": 0.9,
+  "wallHeightTiles": 4.4,
+  "formula": "x = 800 + (u - W/2)*pxPerTileBack*k ; y = floorBackY + t*(900-floorBackY) ; t = v/D*depthShown ; k = 1 + perspective*t ; sprite scale = pxPerTileBack*k/64"
+ },
+ "background": "rooms/granny_house/gh_dance_room_bg.png",
+ "full": "rooms/granny_house/gh_dance_room.png",
+ "drawOrder": [
+  {
+   "uid": "jbl_speaker_1",
+   "sprite": "jbl_speaker",
+   "kind": "floor",
+   "x": 800.0,
+   "y": 516.0,
+   "scale": 1.4896,
+   "z": 1
+  },
+  {
+   "uid": "mirror_wall_1",
+   "sprite": "mirror_wall",
+   "kind": "side-wall",
+   "matrix": [
+    -0.3438,
+    0.6667,
+    0,
+    1.6615,
+    206.0,
+    231.6917
+   ],
+   "z": 5.5
+  },
+  {
+   "uid": "disco_light_1",
+   "sprite": "disco_light",
+   "kind": "ceiling",
+   "x": 745.9,
+   "y": 531.5,
+   "scale": 1.6901,
+   "z": 99
+  },
+  {
+   "uid": "disco_light_2",
+   "sprite": "disco_light",
+   "kind": "ceiling",
+   "x": 538.8,
+   "y": 493.3,
+   "scale": 1.6328,
+   "z": 99
+  },
+  {
+   "uid": "stairs_1",
+   "sprite": "stairs",
+   "kind": "floor",
+   "x": 1423.3,
+   "y": 857.3,
+   "scale": 1.9479,
+   "z": 9
+  },
+  {
+   "uid": "lift_1",
+   "sprite": "lift",
+   "kind": "floor",
+   "x": 1295.0,
+   "y": 558.7,
+   "scale": 1.5469,
+   "z": 2
+  },
+  {
+   "uid": "cobweb_1",
+   "sprite": "cobweb",
+   "kind": "wall",
+   "x": 294.8,
+   "y": 301.0,
+   "scale": 1.4352,
+   "z": -0.5
+  }
+ ],
+ "characters": []
+}

@@ -89,7 +89,7 @@
    "rotation": 0,
    "anchor": "N",
    "tags": [
-    "solid",
+	"solid",
     "prank"
    ]
   },
@@ -104,7 +104,7 @@
    "rotation": 0,
    "anchor": "C",
    "tags": [
-    "solid",
+	"solid",
     "prank"
    ]
   },
@@ -119,7 +119,7 @@
    "rotation": 90,
    "anchor": "E",
    "tags": [
-    "solid",
+	"solid",
     "hide"
    ]
   },
@@ -232,7 +232,7 @@
    "rotation": 0,
    "anchor": "on:rug",
    "tags": [
-    "pickup",
+	"pickup",
     "prank"
    ],
    "onTopOf": "rug_1"

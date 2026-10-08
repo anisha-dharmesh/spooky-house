@@ -1,0 +1,118 @@
+{
+ "id": "hs_pharmacy",
+ "name": "Pharmacy",
+ "location": "hospital",
+ "floor": "Ground",
+ "unlockLevel": 45,
+ "screen": [
+  1600,
+  900
+ ],
+ "camera": {
+  "view": "fixed room view",
+  "pxPerTileBack": 92,
+  "floorBackY": 474.8,
+  "perspective": 0.4,
+  "depthShown": 0.9,
+  "wallHeightTiles": 4.4,
+  "formula": "x = 800 + (u - W/2)*pxPerTileBack*k ; y = floorBackY + t*(900-floorBackY) ; t = v/D*depthShown ; k = 1 + perspective*t ; sprite scale = pxPerTileBack*k/64"
+ },
+ "background": "rooms/hospital/hs_pharmacy_bg.png",
+ "full": "rooms/hospital/hs_pharmacy.png",
+ "drawOrder": [
+  {
+   "uid": "medicine_shelf_1",
+   "sprite": "medicine_shelf",
+   "kind": "floor",
+   "x": 751.9,
+   "y": 522.6,
+   "scale": 1.5022,
+   "z": 1
+  },
+  {
+   "uid": "medicine_shelf_2",
+   "sprite": "medicine_shelf",
+   "kind": "side-wall",
+   "matrix": [
+    -0.2911,
+    0.7474,
+    0,
+    1.6962,
+    348.74,
+    282.1075
+   ],
+   "z": 5.5
+  },
+  {
+   "uid": "counter_1",
+   "sprite": "counter",
+   "kind": "floor",
+   "x": 745.7,
+   "y": 666.1,
+   "scale": 1.6962,
+   "z": 4
+  },
+  {
+   "uid": "counter_2",
+   "sprite": "counter",
+   "kind": "floor",
+   "x": 624.7,
+   "y": 761.8,
+   "scale": 1.8256,
+   "z": 6
+  },
+  {
+   "uid": "box_stack_1",
+   "sprite": "box_stack",
+   "kind": "floor",
+   "x": 1237.9,
+   "y": 857.5,
+   "scale": 1.955,
+   "z": 8
+  },
+  {
+   "uid": "cobweb_1",
+   "sprite": "cobweb",
+   "kind": "wall",
+   "x": 431.2,
+   "y": 302.0,
+   "scale": 1.4407,
+   "z": -0.5
+  },
+  {
+   "uid": "cobweb_2",
+   "sprite": "cobweb",
+   "kind": "side-wall",
+   "matrix": [
+    -0.2911,
+    -0.7474,
+    0,
+    1.4698,
+    1232.63,
+    315.681
+   ],
+   "z": 0.5
+  },
+  {
+   "uid": "first_aid_box_1",
+   "sprite": "first_aid_box",
+   "kind": "on-top",
+   "on": "counter_1",
+   "x": 691.4,
+   "y": 542.8,
+   "scale": 1.5266,
+   "z": 4.01
+  },
+  {
+   "uid": "medicine_bottles_1",
+   "sprite": "medicine_bottles",
+   "kind": "on-top",
+   "on": "counter_2",
+   "x": 683.2,
+   "y": 629.1,
+   "scale": 1.6431,
+   "z": 6.01
+  }
+ ],
+ "characters": []
+}

@@ -1,0 +1,179 @@
+{
+ "id": "pl_royal_dining",
+ "name": "Royal dining hall",
+ "location": "palace",
+ "floor": "Ground",
+ "unlockLevel": 84,
+ "screen": [
+  1600,
+  900
+ ],
+ "camera": {
+  "view": "fixed room view",
+  "pxPerTileBack": 68.75,
+  "floorBackY": 372.5,
+  "perspective": 0.4,
+  "depthShown": 0.9,
+  "wallHeightTiles": 4.4,
+  "formula": "x = 800 + (u - W/2)*pxPerTileBack*k ; y = floorBackY + t*(900-floorBackY) ; t = v/D*depthShown ; k = 1 + perspective*t ; sprite scale = pxPerTileBack*k/64"
+ },
+ "background": "rooms/palace/pl_royal_dining_bg.png",
+ "full": "rooms/palace/pl_royal_dining.png",
+ "drawOrder": [
+  {
+   "uid": "royal_table_1",
+   "sprite": "royal_table",
+   "kind": "floor",
+   "x": 800.0,
+   "y": 657.4,
+   "scale": 1.3062,
+   "z": 6
+  },
+  {
+   "uid": "chair_1",
+   "sprite": "chair",
+   "kind": "floor",
+   "x": 533.4,
+   "y": 514.9,
+   "scale": 1.1902,
+   "z": 3
+  },
+  {
+   "uid": "chair_2",
+   "sprite": "chair",
+   "kind": "floor",
+   "x": 1066.6,
+   "y": 514.9,
+   "scale": 1.1902,
+   "z": 3
+  },
+  {
+   "uid": "chair_3",
+   "sprite": "chair",
+   "kind": "floor",
+   "x": 490.1,
+   "y": 752.3,
+   "scale": 1.3836,
+   "z": 8
+  },
+  {
+   "uid": "chair_4",
+   "sprite": "chair",
+   "kind": "floor",
+   "x": 1109.9,
+   "y": 752.3,
+   "scale": 1.3836,
+   "z": 8
+  },
+  {
+   "uid": "chandelier_1",
+   "sprite": "chandelier",
+   "kind": "ceiling",
+   "x": 755.1,
+   "y": 735.1,
+   "scale": 1.4029,
+   "z": 99
+  },
+  {
+   "uid": "painting_1",
+   "sprite": "painting",
+   "kind": "wall",
+   "x": 662.3,
+   "y": 244.0,
+   "scale": 1.0762,
+   "z": -0.5
+  },
+  {
+   "uid": "pillar_1",
+   "sprite": "pillar",
+   "kind": "floor",
+   "x": 98.8,
+   "y": 847.2,
+   "scale": 1.4609,
+   "z": 10
+  },
+  {
+   "uid": "pillar_2",
+   "sprite": "pillar",
+   "kind": "floor",
+   "x": 1501.2,
+   "y": 847.2,
+   "scale": 1.4609,
+   "z": 10
+  },
+  {
+   "uid": "cobweb_1",
+   "sprite": "cobweb",
+   "kind": "wall",
+   "x": 283.4,
+   "y": 244.0,
+   "scale": 1.0762,
+   "z": -0.5
+  },
+  {
+   "uid": "cobweb_2",
+   "sprite": "cobweb",
+   "kind": "side-wall",
+   "matrix": [
+    -0.3094,
+    -0.7418,
+    0,
+    1.0936,
+    1369.8,
+    266.0025
+   ],
+   "z": 0.5
+  },
+  {
+   "uid": "goblet_1",
+   "sprite": "goblet",
+   "kind": "on-top",
+   "on": "royal_table_1",
+   "x": 591.0,
+   "y": 558.6,
+   "scale": 1.1756,
+   "z": 6.01
+  },
+  {
+   "uid": "goblet_2",
+   "sprite": "goblet",
+   "kind": "on-top",
+   "on": "royal_table_1",
+   "x": 921.7,
+   "y": 558.2,
+   "scale": 1.1408,
+   "z": 6.01
+  },
+  {
+   "uid": "plate_1",
+   "sprite": "plate",
+   "kind": "on-top",
+   "on": "royal_table_1",
+   "x": 1009.0,
+   "y": 558.6,
+   "scale": 1.1756,
+   "z": 6.01
+  },
+  {
+   "uid": "cake_1",
+   "sprite": "cake",
+   "kind": "on-top",
+   "on": "royal_table_1",
+   "x": 759.4,
+   "y": 558.2,
+   "scale": 1.1408,
+   "z": 6.01
+  },
+  {
+   "uid": "candelabra_1",
+   "sprite": "candelabra",
+   "kind": "on-top",
+   "on": "royal_table_1",
+   "x": 841.8,
+   "y": 558.6,
+   "scale": 1.1756,
+   "z": 6.01
+  }
+ ],
+ "characters": []
+}

@@ -1,0 +1,179 @@
+{
+ "id": "pk_playground",
+ "name": "Playground",
+ "location": "park",
+ "floor": "Outside",
+ "unlockLevel": 5,
+ "screen": [
+  1600,
+  900
+ ],
+ "camera": {
+  "view": "fixed room view",
+  "pxPerTileBack": 55.0,
+  "floorBackY": 312.0,
+  "perspective": 0.4,
+  "depthShown": 0.9,
+  "wallHeightTiles": 4.4,
+  "formula": "x = 800 + (u - W/2)*pxPerTileBack*k ; y = floorBackY + t*(900-floorBackY) ; t = v/D*depthShown ; k = 1 + perspective*t ; sprite scale = pxPerTileBack*k/64"
+ },
+ "background": "rooms/park/pk_playground_bg.png",
+ "full": "rooms/park/pk_playground.png",
+ "drawOrder": [
+  {
+   "uid": "swing_1",
+   "sprite": "swing",
+   "kind": "floor",
+   "x": 800.0,
+   "y": 387.6,
+   "scale": 0.9036,
+   "z": 2
+  },
+  {
+   "uid": "slide_play_1",
+   "sprite": "slide_play",
+   "kind": "side-wall",
+   "matrix": [
+    -0.221,
+    0.5906,
+    0,
+    0.9699,
+    193.4286,
+    269.2268
+   ],
+   "z": 5.5
+  },
+  {
+   "uid": "see_saw_1",
+   "sprite": "see_saw",
+   "kind": "floor",
+   "x": 800.0,
+   "y": 841.2,
+   "scale": 1.1688,
+   "z": 14
+  },
+  {
+   "uid": "monkey_bars_1",
+   "sprite": "monkey_bars",
+   "kind": "floor",
+   "x": 766.8,
+   "y": 614.4,
+   "scale": 1.0362,
+   "z": 8
+  },
+  {
+   "uid": "merry_go_round_1",
+   "sprite": "merry_go_round",
+   "kind": "floor",
+   "x": 476.1,
+   "y": 765.6,
+   "scale": 1.1246,
+   "z": 12
+  },
+  {
+   "uid": "bench_1",
+   "sprite": "bench",
+   "kind": "floor",
+   "x": 538.2,
+   "y": 841.2,
+   "scale": 1.1688,
+   "z": 14
+  },
+  {
+   "uid": "street_lamp_1",
+   "sprite": "street_lamp",
+   "kind": "floor",
+   "x": 1335.9,
+   "y": 349.8,
+   "scale": 0.8815,
+   "z": 1
+  },
+  {
+   "uid": "street_lamp_2",
+   "sprite": "street_lamp",
+   "kind": "floor",
+   "x": 89.4,
+   "y": 841.2,
+   "scale": 1.1688,
+   "z": 14
+  },
+  {
+   "uid": "dustbin_1",
+   "sprite": "dustbin",
+   "kind": "floor",
+   "x": 1510.6,
+   "y": 841.2,
+   "scale": 1.1688,
+   "z": 14
+  },
+  {
+   "uid": "tree_dead_1",
+   "sprite": "tree_dead",
+   "kind": "floor",
+   "x": 279.5,
+   "y": 387.6,
+   "scale": 0.9036,
+   "z": 2
+  },
+  {
+   "uid": "jungle_gym_1",
+   "sprite": "jungle_gym",
+   "kind": "floor",
+   "x": 1048.3,
+   "y": 501.0,
+   "scale": 0.9699,
+   "z": 5
+  },
+  {
+   "uid": "spring_rider_1",
+   "sprite": "spring_rider",
+   "kind": "floor",
+   "x": 501.6,
+   "y": 614.4,
+   "scale": 1.0362,
+   "z": 8
+  },
+  {
+   "uid": "sandbox_1",
+   "sprite": "sandbox",
+   "kind": "floor",
+   "x": 1047.0,
+   "y": 727.8,
+   "scale": 1.1025,
+   "z": 11
+  },
+  {
+   "uid": "hopscotch_1",
+   "sprite": "hopscotch",
+   "kind": "floor-quad",
+   "quad": [
+    [
+     517.9,
+     349.8
+    ],
+    [
+     630.8,
+     349.8
+    ],
+    [
+     613.8,
+     501.0
+    ],
+    [
+     489.6,
+     501.0
+    ]
+   ]
+  },
+  {
+   "uid": "bouncy_ball_1",
+   "sprite": "bouncy_ball",
+   "kind": "floor",
+   "x": 764.7,
+   "y": 727.8,
+   "scale": 1.1025,
+   "z": 11
+  }
+ ],
+ "characters": []
+}

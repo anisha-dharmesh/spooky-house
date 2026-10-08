@@ -1,0 +1,161 @@
+{
+ "id": "sp_pool_deck",
+ "name": "Pool deck",
+ "location": "swimming_pool",
+ "floor": "Outside",
+ "unlockLevel": 50,
+ "screen": [
+  1600,
+  900
+ ],
+ "camera": {
+  "view": "fixed room view",
+  "pxPerTileBack": 55.0,
+  "floorBackY": 312.0,
+  "perspective": 0.4,
+  "depthShown": 0.9,
+  "wallHeightTiles": 4.4,
+  "formula": "x = 800 + (u - W/2)*pxPerTileBack*k ; y = floorBackY + t*(900-floorBackY) ; t = v/D*depthShown ; k = 1 + perspective*t ; sprite scale = pxPerTileBack*k/64"
+ },
+ "background": "rooms/swimming_pool/sp_pool_deck_bg.png",
+ "full": "rooms/swimming_pool/sp_pool_deck.png",
+ "drawOrder": [
+  {
+   "uid": "pool_1",
+   "sprite": "pool",
+   "kind": "floor-quad",
+   "quad": [
+    [
+     555.6,
+     474.8
+    ],
+    [
+     1044.4,
+     474.8
+    ],
+    [
+     1074.8,
+     678.4
+    ],
+    [
+     525.2,
+     678.4
+    ]
+   ]
+  },
+  {
+   "uid": "slide_chute_1",
+   "sprite": "slide_chute",
+   "kind": "floor",
+   "x": 1377.2,
+   "y": 556.2,
+   "scale": 1.0022,
+   "z": 6
+  },
+  {
+   "uid": "lounger_1",
+   "sprite": "lounger",
+   "kind": "floor",
+   "x": 762.6,
+   "y": 841.2,
+   "scale": 1.1688,
+   "z": 13
+  },
+  {
+   "uid": "lounger_2",
+   "sprite": "lounger",
+   "kind": "floor",
+   "x": 837.4,
+   "y": 841.2,
+   "scale": 1.1688,
+   "z": 13
+  },
+  {
+   "uid": "lounger_3",
+   "sprite": "lounger",
+   "kind": "floor",
+   "x": 687.8,
+   "y": 841.2,
+   "scale": 1.1688,
+   "z": 13
+  },
+  {
+   "uid": "beach_umbrella_1",
+   "sprite": "beach_umbrella",
+   "kind": "floor",
+   "x": 126.8,
+   "y": 841.2,
+   "scale": 1.1688,
+   "z": 13
+  },
+  {
+   "uid": "lifeguard_chair_1",
+   "sprite": "lifeguard_chair",
+   "kind": "floor",
+   "x": 277.6,
+   "y": 393.4,
+   "scale": 0.907,
+   "z": 2
+  },
+  {
+   "uid": "towel_stack_1",
+   "sprite": "towel_stack",
+   "kind": "floor",
+   "x": 455.6,
+   "y": 515.5,
+   "scale": 0.9784,
+   "z": 5
+  },
+  {
+   "uid": "towel_rack_1",
+   "sprite": "towel_rack",
+   "kind": "side-wall",
+   "matrix": [
+    -0.238,
+    0.6361,
+    0,
+    1.0498,
+    143.3846,
+    470.9827
+   ],
+   "z": 8.5
+  },
+  {
+   "uid": "water_slide_1",
+   "sprite": "water_slide",
+   "kind": "floor",
+   "x": 1266.4,
+   "y": 759.8,
+   "scale": 1.1212,
+   "z": 11
+  },
+  {
+   "uid": "diving_board_1",
+   "sprite": "diving_board",
+   "kind": "floor",
+   "x": 369.5,
+   "y": 759.8,
+   "scale": 1.1212,
+   "z": 11
+  },
+  {
+   "uid": "cabana_1",
+   "sprite": "cabana",
+   "kind": "floor",
+   "x": 1008.5,
+   "y": 434.1,
+   "scale": 0.9308,
+   "z": 3
+  },
+  {
+   "uid": "kickboard_1",
+   "sprite": "kickboard",
+   "kind": "floor",
+   "x": 651.1,
+   "y": 434.1,
+   "scale": 0.9308,
+   "z": 3
+  }
+ ],
+ "characters": []
+}

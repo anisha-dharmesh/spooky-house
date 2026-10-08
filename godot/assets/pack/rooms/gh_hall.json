@@ -1,0 +1,214 @@
+{
+ "id": "gh_hall",
+ "name": "Hall",
+ "location": "granny_house",
+ "floor": "Ground",
+ "unlockLevel": 1,
+ "screen": [
+  1600,
+  900
+ ],
+ "camera": {
+  "view": "fixed room view",
+  "pxPerTileBack": 68.75,
+  "floorBackY": 372.5,
+  "perspective": 0.4,
+  "depthShown": 0.9,
+  "wallHeightTiles": 4.4,
+  "formula": "x = 800 + (u - W/2)*pxPerTileBack*k ; y = floorBackY + t*(900-floorBackY) ; t = v/D*depthShown ; k = 1 + perspective*t ; sprite scale = pxPerTileBack*k/64"
+ },
+ "background": "rooms/granny_house/gh_hall_bg.png",
+ "full": "rooms/granny_house/gh_hall.png",
+ "drawOrder": [
+  {
+   "uid": "rug_1",
+   "sprite": "rug",
+   "kind": "floor-quad",
+   "quad": [
+    [
+     647.6,
+     514.9
+    ],
+    [
+     952.4,
+     514.9
+    ],
+    [
+     967.2,
+     657.4
+    ],
+    [
+     632.8,
+     657.4
+    ]
+   ]
+  },
+  {
+   "uid": "front_door_mat_1",
+   "sprite": "front_door_mat",
+   "kind": "floor-quad",
+   "quad": [
+    [
+     431.5,
+     467.5
+    ],
+    [
+     578.9,
+     467.5
+    ],
+    [
+     571.5,
+     514.9
+    ],
+    [
+     419.1,
+     514.9
+    ]
+   ]
+  },
+  {
+   "uid": "sofa_1",
+   "sprite": "sofa",
+   "kind": "floor",
+   "x": 800.0,
+   "y": 847.2,
+   "scale": 1.4609,
+   "z": 10
+  },
+  {
+   "uid": "tv_big_1",
+   "sprite": "tv_big",
+   "kind": "floor",
+   "x": 764.4,
+   "y": 420.0,
+   "scale": 1.1129,
+   "z": 1
+  },
+  {
+   "uid": "alexa_1",
+   "sprite": "alexa",
+   "kind": "floor",
+   "x": 1075.3,
+   "y": 562.4,
+   "scale": 1.2289,
+   "z": 4
+  },
+  {
+   "uid": "cupboard_big_1",
+   "sprite": "cupboard_big",
+   "kind": "side-wall",
+   "matrix": [
+    -0.3094,
+    -0.7418,
+    0,
+    1.2676,
+    1468.8,
+    353.1313
+   ],
+   "z": 5.5
+  },
+  {
+   "uid": "piano_1",
+   "sprite": "piano",
+   "kind": "floor",
+   "x": 1279.0,
+   "y": 467.5,
+   "scale": 1.1516,
+   "z": 2
+  },
+  {
+   "uid": "wall_clock_1",
+   "sprite": "wall_clock",
+   "kind": "wall",
+   "x": 283.4,
+   "y": 244.0,
+   "scale": 1.0762,
+   "z": -0.5
+  },
+  {
+   "uid": "photo_frame_1",
+   "sprite": "photo_frame",
+   "kind": "wall",
+   "x": 972.2,
+   "y": 244.0,
+   "scale": 1.0762,
+   "z": -0.5
+  },
+  {
+   "uid": "photo_frame_2",
+   "sprite": "photo_frame",
+   "kind": "wall",
+   "x": 558.9,
+   "y": 244.0,
+   "scale": 1.0762,
+   "z": -0.5
+  },
+  {
+   "uid": "stairs_1",
+   "sprite": "stairs",
+   "kind": "floor",
+   "x": 541.8,
+   "y": 704.8,
+   "scale": 1.3449,
+   "z": 7
+  },
+  {
+   "uid": "lift_1",
+   "sprite": "lift",
+   "kind": "side-wall",
+   "matrix": [
+    -0.3094,
+    0.7418,
+    0,
+    1.1902,
+    210.4,
+    169.8914
+   ],
+   "z": 3.5
+  },
+  {
+   "uid": "lamp_floor_1",
+   "sprite": "lamp_floor",
+   "kind": "floor",
+   "x": 98.8,
+   "y": 847.2,
+   "scale": 1.4609,
+   "z": 10
+  },
+  {
+   "uid": "grandfather_clock_1",
+   "sprite": "grandfather_clock",
+   "kind": "floor",
+   "x": 1009.0,
+   "y": 657.4,
+   "scale": 1.3062,
+   "z": 6
+  },
+  {
+   "uid": "vase_1",
+   "sprite": "vase",
+   "kind": "floor",
+   "x": 761.9,
+   "y": 514.9,
+   "scale": 1.1902,
+   "z": 3
+  },
+  {
+   "uid": "skates_1",
+   "sprite": "skates",
+   "kind": "on-top",
+   "on": "piano_1",
+   "x": 1334.2,
+   "y": 355.1,
+   "scale": 1.0016,
+   "z": 2.01
+  }
+ ],
+ "characters": [
+  {
+   "id": "scary_teacher",
+   "x_tiles": 3.2,
+   "y_tiles": 6.6
+  }
+ ]
+}

@@ -1,0 +1,118 @@
+{
+ "id": "lh_animal_room",
+ "name": "Animal room",
+ "location": "little_house",
+ "floor": "Ground",
+ "unlockLevel": 1,
+ "screen": [
+  1600,
+  900
+ ],
+ "camera": {
+  "view": "fixed room view",
+  "pxPerTileBack": 92,
+  "floorBackY": 474.8,
+  "perspective": 0.4,
+  "depthShown": 0.9,
+  "wallHeightTiles": 4.4,
+  "formula": "x = 800 + (u - W/2)*pxPerTileBack*k ; y = floorBackY + t*(900-floorBackY) ; t = v/D*depthShown ; k = 1 + perspective*t ; sprite scale = pxPerTileBack*k/64"
+ },
+ "background": "rooms/little_house/lh_animal_room_bg.png",
+ "full": "rooms/little_house/lh_animal_room.png",
+ "drawOrder": [
+  {
+   "uid": "parrot_cage_1",
+   "sprite": "parrot_cage",
+   "kind": "floor",
+   "x": 1184.6,
+   "y": 522.6,
+   "scale": 1.5022,
+   "z": 1
+  },
+  {
+   "uid": "dog_bed_1",
+   "sprite": "dog_bed",
+   "kind": "floor",
+   "x": 1237.9,
+   "y": 857.5,
+   "scale": 1.955,
+   "z": 8
+  },
+  {
+   "uid": "cat_basket_1",
+   "sprite": "cat_basket",
+   "kind": "floor",
+   "x": 415.4,
+   "y": 522.6,
+   "scale": 1.5022,
+   "z": 1
+  },
+  {
+   "uid": "pet_bowl_1",
+   "sprite": "pet_bowl",
+   "kind": "floor",
+   "x": 800.0,
+   "y": 666.1,
+   "scale": 1.6962,
+   "z": 4
+  },
+  {
+   "uid": "pet_bowl_2",
+   "sprite": "pet_bowl",
+   "kind": "floor",
+   "x": 599.4,
+   "y": 570.5,
+   "scale": 1.5669,
+   "z": 2
+  },
+  {
+   "uid": "pet_toys_1",
+   "sprite": "pet_toys",
+   "kind": "floor",
+   "x": 1008.8,
+   "y": 618.3,
+   "scale": 1.6316,
+   "z": 3
+  },
+  {
+   "uid": "playpen_1",
+   "sprite": "playpen",
+   "kind": "floor",
+   "x": 860.5,
+   "y": 809.6,
+   "scale": 1.8903,
+   "z": 7
+  },
+  {
+   "uid": "pet_parrot_1",
+   "sprite": "pet_parrot",
+   "kind": "on-top",
+   "on": "parrot_cage_1",
+   "x": 1184.6,
+   "y": 387.4,
+   "scale": 1.352,
+   "z": 1.01
+  },
+  {
+   "uid": "pet_dog_1",
+   "sprite": "pet_dog",
+   "kind": "on-top",
+   "on": "dog_bed_1",
+   "x": 1162.9,
+   "y": 779.4,
+   "scale": 1.7013,
+   "z": 8.01
+  },
+  {
+   "uid": "pet_cat_1",
+   "sprite": "pet_cat",
+   "kind": "on-top",
+   "on": "cat_basket_1",
+   "x": 415.4,
+   "y": 469.6,
+   "scale": 1.352,
+   "z": 1.01
+  }
+ ],
+ "characters": []
+}

@@ -1,0 +1,234 @@
+{
+ "id": "pk_garden",
+ "name": "Granny's garden",
+ "location": "park",
+ "floor": "Outside",
+ "unlockLevel": 10,
+ "screen": [
+  1600,
+  900
+ ],
+ "camera": {
+  "view": "fixed room view",
+  "pxPerTileBack": 57.89,
+  "floorBackY": 324.7,
+  "perspective": 0.4,
+  "depthShown": 0.9,
+  "wallHeightTiles": 4.4,
+  "formula": "x = 800 + (u - W/2)*pxPerTileBack*k ; y = floorBackY + t*(900-floorBackY) ; t = v/D*depthShown ; k = 1 + perspective*t ; sprite scale = pxPerTileBack*k/64"
+ },
+ "background": "rooms/park/pk_garden_bg.png",
+ "full": "rooms/park/pk_garden.png",
+ "drawOrder": [
+  {
+   "uid": "flower_bed_1",
+   "sprite": "flower_bed",
+   "kind": "floor",
+   "x": 800.0,
+   "y": 364.6,
+   "scale": 0.9297,
+   "z": 1
+  },
+  {
+   "uid": "flower_bed_2",
+   "sprite": "flower_bed",
+   "kind": "floor",
+   "x": 621.5,
+   "y": 364.6,
+   "scale": 0.9297,
+   "z": 1
+  },
+  {
+   "uid": "flower_bed_3",
+   "sprite": "flower_bed",
+   "kind": "floor",
+   "x": 800.0,
+   "y": 842.5,
+   "scale": 1.2303,
+   "z": 13
+  },
+  {
+   "uid": "hedge_1",
+   "sprite": "hedge",
+   "kind": "side-wall",
+   "matrix": [
+    -0.238,
+    0.6223,
+    0,
+    1.1301,
+    143.3846,
+    501.8128
+   ],
+   "z": 10.5
+  },
+  {
+   "uid": "hedge_2",
+   "sprite": "hedge",
+   "kind": "side-wall",
+   "matrix": [
+    -0.238,
+    -0.6223,
+    0,
+    1.1301,
+    1517.5385,
+    661.1164
+   ],
+   "z": 10.5
+  },
+  {
+   "uid": "fountain_1",
+   "sprite": "fountain",
+   "kind": "floor",
+   "x": 800.0,
+   "y": 643.3,
+   "scale": 1.105,
+   "z": 8
+  },
+  {
+   "uid": "tree_1",
+   "sprite": "tree",
+   "kind": "floor",
+   "x": 280.6,
+   "y": 404.4,
+   "scale": 0.9547,
+   "z": 2
+  },
+  {
+   "uid": "tree_dead_1",
+   "sprite": "tree_dead",
+   "kind": "floor",
+   "x": 1319.4,
+   "y": 404.4,
+   "scale": 0.9547,
+   "z": 2
+  },
+  {
+   "uid": "tree_2",
+   "sprite": "tree",
+   "kind": "floor",
+   "x": 130.7,
+   "y": 842.5,
+   "scale": 1.2303,
+   "z": 13
+  },
+  {
+   "uid": "bench_1",
+   "sprite": "bench",
+   "kind": "floor",
+   "x": 536.4,
+   "y": 523.9,
+   "scale": 1.0299,
+   "z": 5
+  },
+  {
+   "uid": "watering_can_1",
+   "sprite": "watering_can",
+   "kind": "floor",
+   "x": 1063.6,
+   "y": 523.9,
+   "scale": 1.0299,
+   "z": 5
+  },
+  {
+   "uid": "gravestone_1",
+   "sprite": "gravestone",
+   "kind": "floor",
+   "x": 1508.6,
+   "y": 842.5,
+   "scale": 1.2303,
+   "z": 13
+  },
+  {
+   "uid": "gravestone_2",
+   "sprite": "gravestone",
+   "kind": "floor",
+   "x": 642.5,
+   "y": 842.5,
+   "scale": 1.2303,
+   "z": 13
+  },
+  {
+   "uid": "street_lamp_1",
+   "sprite": "street_lamp",
+   "kind": "floor",
+   "x": 510.7,
+   "y": 683.2,
+   "scale": 1.1301,
+   "z": 9
+  },
+  {
+   "uid": "flower_arch_1",
+   "sprite": "flower_arch",
+   "kind": "floor",
+   "x": 978.5,
+   "y": 364.6,
+   "scale": 0.9297,
+   "z": 1
+  },
+  {
+   "uid": "planter_box_1",
+   "sprite": "planter_box",
+   "kind": "floor",
+   "x": 1053.1,
+   "y": 683.2,
+   "scale": 1.1301,
+   "z": 9
+  },
+  {
+   "uid": "gazebo_1",
+   "sprite": "gazebo",
+   "kind": "floor",
+   "x": 767.0,
+   "y": 523.9,
+   "scale": 1.0299,
+   "z": 5
+  },
+  {
+   "uid": "wheelbarrow_1",
+   "sprite": "wheelbarrow",
+   "kind": "floor",
+   "x": 763.0,
+   "y": 723.0,
+   "scale": 1.1551,
+   "z": 10
+  },
+  {
+   "uid": "garden_lamp_1",
+   "sprite": "garden_lamp",
+   "kind": "floor",
+   "x": 454.4,
+   "y": 603.5,
+   "scale": 1.08,
+   "z": 7
+  },
+  {
+   "uid": "potted_flowers_1",
+   "sprite": "potted_flowers",
+   "kind": "floor",
+   "x": 1145.6,
+   "y": 603.5,
+   "scale": 1.08,
+   "z": 7
+  },
+  {
+   "uid": "potted_flowers_2",
+   "sprite": "potted_flowers",
+   "kind": "floor",
+   "x": 592.6,
+   "y": 603.5,
+   "scale": 1.08,
+   "z": 7
+  },
+  {
+   "uid": "garden_hat_1",
+   "sprite": "garden_hat",
+   "kind": "on-top",
+   "on": "bench_1",
+   "x": 470.4,
+   "y": 460.8,
+   "scale": 0.9269,
+   "z": 5.01
+  }
+ ],
+ "characters": []
+}

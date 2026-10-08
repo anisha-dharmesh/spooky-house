@@ -1,0 +1,84 @@
+{
+ "id": "gh_exercise_room",
+ "name": "Exercise room",
+ "location": "granny_house",
+ "floor": "Floor 2",
+ "unlockLevel": 36,
+ "screen": [
+  1600,
+  900
+ ],
+ "camera": {
+  "view": "fixed room view",
+  "pxPerTileBack": 92,
+  "floorBackY": 474.8,
+  "perspective": 0.4,
+  "depthShown": 0.9,
+  "wallHeightTiles": 4.4,
+  "formula": "x = 800 + (u - W/2)*pxPerTileBack*k ; y = floorBackY + t*(900-floorBackY) ; t = v/D*depthShown ; k = 1 + perspective*t ; sprite scale = pxPerTileBack*k/64"
+ },
+ "background": "rooms/granny_house/gh_exercise_room_bg.png",
+ "full": "rooms/granny_house/gh_exercise_room.png",
+ "drawOrder": [
+  {
+   "uid": "treadmill_1",
+   "sprite": "treadmill",
+   "kind": "side-wall",
+   "matrix": [
+    -0.3162,
+    0.6644,
+    0,
+    1.6675,
+    233.28,
+    352.235
+   ],
+   "z": 4.5
+  },
+  {
+   "uid": "exercise_bike_1",
+   "sprite": "exercise_bike",
+   "kind": "floor",
+   "x": 1247.1,
+   "y": 559.8,
+   "scale": 1.5525,
+   "z": 2
+  },
+  {
+   "uid": "dumbbell_1",
+   "sprite": "dumbbell",
+   "kind": "floor",
+   "x": 800.0,
+   "y": 687.4,
+   "scale": 1.725,
+   "z": 5
+  },
+  {
+   "uid": "dumbbell_2",
+   "sprite": "dumbbell",
+   "kind": "floor",
+   "x": 501.9,
+   "y": 559.8,
+   "scale": 1.5525,
+   "z": 2
+  },
+  {
+   "uid": "mirror_wall_1",
+   "sprite": "mirror_wall",
+   "kind": "wall",
+   "x": 477.4,
+   "y": 366.3,
+   "scale": 1.4404,
+   "z": -0.5
+  },
+  {
+   "uid": "music_player_1",
+   "sprite": "music_player",
+   "kind": "floor",
+   "x": 1425.6,
+   "y": 857.5,
+   "scale": 1.955,
+   "z": 9
+  }
+ ],
+ "characters": []
+}

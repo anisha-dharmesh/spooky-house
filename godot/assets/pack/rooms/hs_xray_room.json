@@ -1,0 +1,70 @@
+{
+ "id": "hs_xray_room",
+ "name": "X-ray room",
+ "location": "hospital",
+ "floor": "Ground",
+ "unlockLevel": 47,
+ "screen": [
+  1600,
+  900
+ ],
+ "camera": {
+  "view": "fixed room view",
+  "pxPerTileBack": 92,
+  "floorBackY": 474.8,
+  "perspective": 0.4,
+  "depthShown": 0.9,
+  "wallHeightTiles": 4.4,
+  "formula": "x = 800 + (u - W/2)*pxPerTileBack*k ; y = floorBackY + t*(900-floorBackY) ; t = v/D*depthShown ; k = 1 + perspective*t ; sprite scale = pxPerTileBack*k/64"
+ },
+ "background": "rooms/hospital/hs_xray_room_bg.png",
+ "full": "rooms/hospital/hs_xray_room.png",
+ "drawOrder": [
+  {
+   "uid": "xray_machine_1",
+   "sprite": "xray_machine",
+   "kind": "floor",
+   "x": 912.7,
+   "y": 714.0,
+   "scale": 1.7609,
+   "z": 5
+  },
+  {
+   "uid": "xray_lightbox_1",
+   "sprite": "xray_lightbox",
+   "kind": "wall",
+   "x": 753.9,
+   "y": 302.0,
+   "scale": 1.4407,
+   "z": -0.5
+  },
+  {
+   "uid": "skeleton_model_1",
+   "sprite": "skeleton_model",
+   "kind": "floor",
+   "x": 1201.1,
+   "y": 570.5,
+   "scale": 1.5669,
+   "z": 2
+  },
+  {
+   "uid": "curtain_screen_1",
+   "sprite": "curtain_screen",
+   "kind": "floor",
+   "x": 800.0,
+   "y": 857.5,
+   "scale": 1.955,
+   "z": 8
+  },
+  {
+   "uid": "cobweb_1",
+   "sprite": "cobweb",
+   "kind": "wall",
+   "x": 431.2,
+   "y": 302.0,
+   "scale": 1.4407,
+   "z": -0.5
+  }
+ ],
+ "characters": []
+}

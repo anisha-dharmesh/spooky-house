@@ -1,0 +1,152 @@
+{
+ "id": "lh_hall",
+ "name": "Hall",
+ "location": "little_house",
+ "floor": "Ground",
+ "unlockLevel": 1,
+ "screen": [
+  1600,
+  900
+ ],
+ "camera": {
+  "view": "fixed room view",
+  "pxPerTileBack": 91.67,
+  "floorBackY": 473.3,
+  "perspective": 0.4,
+  "depthShown": 0.9,
+  "wallHeightTiles": 4.4,
+  "formula": "x = 800 + (u - W/2)*pxPerTileBack*k ; y = floorBackY + t*(900-floorBackY) ; t = v/D*depthShown ; k = 1 + perspective*t ; sprite scale = pxPerTileBack*k/64"
+ },
+ "background": "rooms/little_house/lh_hall_bg.png",
+ "full": "rooms/little_house/lh_hall.png",
+ "drawOrder": [
+  {
+   "uid": "rug_1",
+   "sprite": "rug",
+   "kind": "floor-quad",
+   "quad": [
+    [
+     118.0,
+     729.3
+    ],
+    [
+     572.7,
+     729.3
+    ],
+    [
+     550.7,
+     857.3
+    ],
+    [
+     52.0,
+     857.3
+    ]
+   ]
+  },
+  {
+   "uid": "front_door_mat_1",
+   "sprite": "front_door_mat",
+   "kind": "floor-quad",
+   "quad": [
+    [
+     418.7,
+     516.0
+    ],
+    [
+     609.3,
+     516.0
+    ],
+    [
+     602.0,
+     558.7
+    ],
+    [
+     404.0,
+     558.7
+    ]
+   ]
+  },
+  {
+   "uid": "sofa_1",
+   "sprite": "sofa",
+   "kind": "floor",
+   "x": 426.0,
+   "y": 857.3,
+   "scale": 1.9479,
+   "z": 9
+  },
+  {
+   "uid": "tv_small_1",
+   "sprite": "tv_small",
+   "kind": "floor",
+   "x": 561.7,
+   "y": 516.0,
+   "scale": 1.4896,
+   "z": 1
+  },
+  {
+   "uid": "wall_clock_1",
+   "sprite": "wall_clock",
+   "kind": "wall",
+   "x": 294.8,
+   "y": 301.0,
+   "scale": 1.4352,
+   "z": -0.5
+  },
+  {
+   "uid": "photo_frame_1",
+   "sprite": "photo_frame",
+   "kind": "wall",
+   "x": 937.8,
+   "y": 301.0,
+   "scale": 1.4352,
+   "z": -0.5
+  },
+  {
+   "uid": "photo_frame_2",
+   "sprite": "photo_frame",
+   "kind": "wall",
+   "x": 1029.6,
+   "y": 301.0,
+   "scale": 1.4352,
+   "z": -0.5
+  },
+  {
+   "uid": "lamp_floor_1",
+   "sprite": "lamp_floor",
+   "kind": "floor",
+   "x": 1485.7,
+   "y": 857.3,
+   "scale": 1.9479,
+   "z": 9
+  },
+  {
+   "uid": "plant_pot_1",
+   "sprite": "plant_pot",
+   "kind": "floor",
+   "x": 1324.3,
+   "y": 516.0,
+   "scale": 1.4896,
+   "z": 1
+  },
+  {
+   "uid": "armchair_1",
+   "sprite": "armchair",
+   "kind": "floor",
+   "x": 1163.0,
+   "y": 814.7,
+   "scale": 1.8906,
+   "z": 8
+  },
+  {
+   "uid": "side_table_1",
+   "sprite": "side_table",
+   "kind": "floor",
+   "x": 635.0,
+   "y": 686.7,
+   "scale": 1.7188,
+   "z": 5
+  }
+ ],
+ "characters": []
+}

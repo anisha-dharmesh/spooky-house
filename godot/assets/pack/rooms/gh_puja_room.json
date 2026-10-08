@@ -1,0 +1,134 @@
+{
+ "id": "gh_puja_room",
+ "name": "Puja room",
+ "location": "granny_house",
+ "floor": "Floor 2",
+ "unlockLevel": 27,
+ "screen": [
+  1600,
+  900
+ ],
+ "camera": {
+  "view": "fixed room view",
+  "pxPerTileBack": 92,
+  "floorBackY": 474.8,
+  "perspective": 0.4,
+  "depthShown": 0.9,
+  "wallHeightTiles": 4.4,
+  "formula": "x = 800 + (u - W/2)*pxPerTileBack*k ; y = floorBackY + t*(900-floorBackY) ; t = v/D*depthShown ; k = 1 + perspective*t ; sprite scale = pxPerTileBack*k/64"
+ },
+ "background": "rooms/granny_house/gh_puja_room_bg.png",
+ "full": "rooms/granny_house/gh_puja_room.png",
+ "drawOrder": [
+  {
+   "uid": "rug_1",
+   "sprite": "rug",
+   "kind": "floor-quad",
+   "quad": [
+    [
+     800.0,
+     584.1
+    ],
+    [
+     1205.9,
+     584.1
+    ],
+    [
+     1262.6,
+     748.1
+    ],
+    [
+     800.0,
+     748.1
+    ]
+   ]
+  },
+  {
+   "uid": "idol_1",
+   "sprite": "idol",
+   "kind": "floor",
+   "x": 751.6,
+   "y": 529.5,
+   "scale": 1.5114,
+   "z": 1
+  },
+  {
+   "uid": "idol_2",
+   "sprite": "idol",
+   "kind": "floor",
+   "x": 848.4,
+   "y": 529.5,
+   "scale": 1.5114,
+   "z": 1
+  },
+  {
+   "uid": "idol_3",
+   "sprite": "idol",
+   "kind": "floor",
+   "x": 654.9,
+   "y": 529.5,
+   "scale": 1.5114,
+   "z": 1
+  },
+  {
+   "uid": "puja_thali_1",
+   "sprite": "puja_thali",
+   "kind": "floor",
+   "x": 853.1,
+   "y": 638.8,
+   "scale": 1.6593,
+   "z": 3
+  },
+  {
+   "uid": "diya_1",
+   "sprite": "diya",
+   "kind": "floor",
+   "x": 1065.5,
+   "y": 638.8,
+   "scale": 1.6593,
+   "z": 3
+  },
+  {
+   "uid": "diya_2",
+   "sprite": "diya",
+   "kind": "floor",
+   "x": 619.4,
+   "y": 802.8,
+   "scale": 1.8811,
+   "z": 6
+  },
+  {
+   "uid": "matchbox_1",
+   "sprite": "matchbox",
+   "kind": "floor",
+   "x": 973.5,
+   "y": 748.1,
+   "scale": 1.8071,
+   "z": 5
+  },
+  {
+   "uid": "cobweb_1",
+   "sprite": "cobweb",
+   "kind": "wall",
+   "x": 477.2,
+   "y": 302.3,
+   "scale": 1.4412,
+   "z": -0.5
+  },
+  {
+   "uid": "cobweb_2",
+   "sprite": "cobweb",
+   "kind": "side-wall",
+   "matrix": [
+    -0.2957,
+    -0.8542,
+    0,
+    1.4745,
+    1186.9257,
+    321.864
+   ],
+   "z": 0.5
+  }
+ ],
+ "characters": []
+}

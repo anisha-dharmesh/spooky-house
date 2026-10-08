@@ -1,0 +1,114 @@
+{
+ "id": "sc_science_lab",
+ "name": "Science lab",
+ "location": "school",
+ "floor": "Floor 1",
+ "unlockLevel": 31,
+ "screen": [
+  1600,
+  900
+ ],
+ "camera": {
+  "view": "fixed room view",
+  "pxPerTileBack": 78.57,
+  "floorBackY": 415.7,
+  "perspective": 0.4,
+  "depthShown": 0.9,
+  "wallHeightTiles": 4.4,
+  "formula": "x = 800 + (u - W/2)*pxPerTileBack*k ; y = floorBackY + t*(900-floorBackY) ; t = v/D*depthShown ; k = 1 + perspective*t ; sprite scale = pxPerTileBack*k/64"
+ },
+ "background": "rooms/school/sc_science_lab_bg.png",
+ "full": "rooms/school/sc_science_lab.png",
+ "drawOrder": [
+  {
+   "uid": "lab_bench_1",
+   "sprite": "lab_bench",
+   "kind": "floor",
+   "x": 800.0,
+   "y": 706.3,
+   "scale": 1.5223,
+   "z": 6
+  },
+  {
+   "uid": "lab_bench_2",
+   "sprite": "lab_bench",
+   "kind": "floor",
+   "x": 479.4,
+   "y": 851.6,
+   "scale": 1.6696,
+   "z": 9
+  },
+  {
+   "uid": "skeleton_model_1",
+   "sprite": "skeleton_model",
+   "kind": "floor",
+   "x": 1351.6,
+   "y": 512.6,
+   "scale": 1.3259,
+   "z": 2
+  },
+  {
+   "uid": "blackboard_1",
+   "sprite": "blackboard",
+   "kind": "wall",
+   "x": 485.1,
+   "y": 323.7,
+   "scale": 1.2301,
+   "z": -0.5
+  },
+  {
+   "uid": "first_aid_box_1",
+   "sprite": "first_aid_box",
+   "kind": "side-wall",
+   "matrix": [
+    -0.3438,
+    0.7567,
+    0,
+    1.4487,
+    162.0,
+    516.7143
+   ],
+   "z": 4.5
+  },
+  {
+   "uid": "sink_1",
+   "sprite": "sink",
+   "kind": "floor",
+   "x": 906.9,
+   "y": 851.6,
+   "scale": 1.6696,
+   "z": 9
+  },
+  {
+   "uid": "microscope_1",
+   "sprite": "microscope",
+   "kind": "on-top",
+   "on": "lab_bench_1",
+   "x": 564.3,
+   "y": 590.7,
+   "scale": 1.3259,
+   "z": 6.01
+  },
+  {
+   "uid": "flask_1",
+   "sprite": "flask",
+   "kind": "on-top",
+   "on": "lab_bench_2",
+   "x": 333.3,
+   "y": 724.8,
+   "scale": 1.4585,
+   "z": 9.01
+  },
+  {
+   "uid": "flask_2",
+   "sprite": "flask",
+   "kind": "on-top",
+   "on": "lab_bench_1",
+   "x": 653.9,
+   "y": 591.2,
+   "scale": 1.3701,
+   "z": 6.01
+  }
+ ],
+ "characters": []
+}

@@ -1,0 +1,107 @@
+{
+ "id": "gh_yoga_room",
+ "name": "Yoga room",
+ "location": "granny_house",
+ "floor": "Floor 3",
+ "unlockLevel": 37,
+ "screen": [
+  1600,
+  900
+ ],
+ "camera": {
+  "view": "fixed room view",
+  "pxPerTileBack": 92,
+  "floorBackY": 474.8,
+  "perspective": 0.4,
+  "depthShown": 0.9,
+  "wallHeightTiles": 4.4,
+  "formula": "x = 800 + (u - W/2)*pxPerTileBack*k ; y = floorBackY + t*(900-floorBackY) ; t = v/D*depthShown ; k = 1 + perspective*t ; sprite scale = pxPerTileBack*k/64"
+ },
+ "background": "rooms/granny_house/gh_yoga_room_bg.png",
+ "full": "rooms/granny_house/gh_yoga_room.png",
+ "drawOrder": [
+  {
+   "uid": "yoga_mat_1",
+   "sprite": "yoga_mat",
+   "kind": "floor-quad",
+   "quad": [
+    [
+     950.4,
+     570.5
+    ],
+    [
+     1151.0,
+     570.5
+    ],
+    [
+     1208.9,
+     761.8
+    ],
+    [
+     975.3,
+     761.8
+    ]
+   ]
+  },
+  {
+   "uid": "yoga_mat_2",
+   "sprite": "yoga_mat",
+   "kind": "floor-quad",
+   "quad": [
+    [
+     367.4,
+     522.6
+    ],
+    [
+     559.6,
+     522.6
+    ],
+    [
+     518.2,
+     714.0
+    ],
+    [
+     292.8,
+     714.0
+    ]
+   ]
+  },
+  {
+   "uid": "music_player_1",
+   "sprite": "music_player",
+   "kind": "floor",
+   "x": 1184.6,
+   "y": 522.6,
+   "scale": 1.5022,
+   "z": 1
+  },
+  {
+   "uid": "plant_pot_1",
+   "sprite": "plant_pot",
+   "kind": "floor",
+   "x": 415.4,
+   "y": 522.6,
+   "scale": 1.5022,
+   "z": 1
+  },
+  {
+   "uid": "plant_pot_2",
+   "sprite": "plant_pot",
+   "kind": "floor",
+   "x": 1300.5,
+   "y": 857.5,
+   "scale": 1.955,
+   "z": 8
+  },
+  {
+   "uid": "diya_1",
+   "sprite": "diya",
+   "kind": "floor",
+   "x": 1008.8,
+   "y": 618.3,
+   "scale": 1.6316,
+   "z": 3
+  }
+ ],
+ "characters": []
+}

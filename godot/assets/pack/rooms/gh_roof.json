@@ -1,0 +1,102 @@
+{
+ "id": "gh_roof",
+ "name": "Roof",
+ "location": "granny_house",
+ "floor": "Roof",
+ "unlockLevel": 33,
+ "screen": [
+  1600,
+  900
+ ],
+ "camera": {
+  "view": "fixed room view",
+  "pxPerTileBack": 64.71,
+  "floorBackY": 354.7,
+  "perspective": 0.4,
+  "depthShown": 0.9,
+  "wallHeightTiles": 4.4,
+  "formula": "x = 800 + (u - W/2)*pxPerTileBack*k ; y = floorBackY + t*(900-floorBackY) ; t = v/D*depthShown ; k = 1 + perspective*t ; sprite scale = pxPerTileBack*k/64"
+ },
+ "background": "rooms/granny_house/gh_roof_bg.png",
+ "full": "rooms/granny_house/gh_roof.png",
+ "drawOrder": [
+  {
+   "uid": "solar_panel_1",
+   "sprite": "solar_panel",
+   "kind": "floor",
+   "x": 800.0,
+   "y": 452.9,
+   "scale": 1.0838,
+   "z": 2
+  },
+  {
+   "uid": "solar_panel_2",
+   "sprite": "solar_panel",
+   "kind": "floor",
+   "x": 591.9,
+   "y": 452.9,
+   "scale": 1.0838,
+   "z": 2
+  },
+  {
+   "uid": "solar_panel_3",
+   "sprite": "solar_panel",
+   "kind": "floor",
+   "x": 1008.1,
+   "y": 452.9,
+   "scale": 1.0838,
+   "z": 2
+  },
+  {
+   "uid": "water_tank_1",
+   "sprite": "water_tank",
+   "kind": "floor",
+   "x": 1320.2,
+   "y": 452.9,
+   "scale": 1.0838,
+   "z": 2
+  },
+  {
+   "uid": "slide_chute_1",
+   "sprite": "slide_chute",
+   "kind": "side-wall",
+   "matrix": [
+    -0.3094,
+    -0.7668,
+    0,
+    1.193,
+    1468.8,
+    338.9809
+   ],
+   "z": 5.5
+  },
+  {
+   "uid": "lift_1",
+   "sprite": "lift",
+   "kind": "floor",
+   "x": 279.8,
+   "y": 452.9,
+   "scale": 1.0838,
+   "z": 2
+  },
+  {
+   "uid": "dustbin_1",
+   "sprite": "dustbin",
+   "kind": "floor",
+   "x": 96.0,
+   "y": 845.5,
+   "scale": 1.375,
+   "z": 10
+  },
+  {
+   "uid": "rocket_toy_1",
+   "sprite": "rocket_toy",
+   "kind": "floor",
+   "x": 800.0,
+   "y": 600.1,
+   "scale": 1.193,
+   "z": 5
+  }
+ ],
+ "characters": []
+}

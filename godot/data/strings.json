@@ -270,5 +270,77 @@
  "allDone": {
   "en": "All tasks done!",
   "hi": "सारे काम पूरे!"
+ },
+ "goUp": {
+  "en": "Up the stairs",
+  "hi": "सीढ़ियाँ चढ़ो"
+ },
+ "goDown": {
+  "en": "Down the stairs",
+  "hi": "सीढ़ियाँ उतरो"
+ },
+ "goOutside": {
+  "en": "Go outside",
+  "hi": "बाहर जाओ"
+ },
+ "keysHelp2d": {
+  "en": "A D / arrows walk · W stairs up, door · S stairs down · Shift sneak · E use · H hide · C pet · V zoom",
+  "hi": "A D / तीर चलो · W ऊपर, दरवाज़ा · S नीचे · Shift चुपके · E उठाओ · H छुपो · C पालतू · V ज़ूम"
+ },
+ "doorSoon": {
+  "en": "{room} is coming soon",
+  "hi": "{room} जल्द आ रहा है"
+ },
+ "gotIt": {
+  "en": "Got the {item}!",
+  "hi": "{item} मिल गया!"
+ },
+ "handsFull": {
+  "en": "Your hands are full",
+  "hi": "तुम्हारे हाथ भरे हैं"
+ },
+ "nextGoal": {
+  "en": "Next: sneak to the {room}",
+  "hi": "अब चुपके से {room} जाओ"
+ },
+ "sliceDone": {
+  "en": "Nice! Now sneak to the {room}.",
+  "hi": "वाह! अब चुपके से {room} जाओ।"
+ },
+ "keysRoom": {
+  "en": "Arrows or WASD to walk · tap the floor to go there · Space to grab · Shift to sneak",
+  "hi": "तीर या WASD से चलो · ज़मीन पर टैप करो · Space से उठाओ · Shift से चुपके"
+ },
+ "houseOf": {
+  "en": "Granny's house",
+  "hi": "दादी का घर"
+ },
+ "youAreHere": {
+  "en": "You are here",
+  "hi": "तुम यहाँ हो"
+ },
+ "hiding": {
+  "en": "Hiding… shh!",
+  "hi": "छुपी हुई… श्श!"
+ },
+ "stepOut": {
+  "en": "Step out",
+  "hi": "बाहर निकलो"
+ },
+ "floorWord": {
+  "en": "Floor {f}",
+  "hi": "मंज़िल {f}"
+ },
+ "liftWord": {
+  "en": "LIFT",
+  "hi": "लिफ़्ट"
+ },
+ "outside": {
+  "en": "Outside",
+  "hi": "बाहर"
+ },
+ "allSteps": {
+  "en": "Tap to see all steps",
+  "hi": "सारे कदम देखने के लिए छुओ"
  }
 }

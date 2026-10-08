@@ -1,0 +1,133 @@
+{
+ "id": "gh_study",
+ "name": "Study",
+ "location": "granny_house",
+ "floor": "Floor 3",
+ "unlockLevel": 24,
+ "screen": [
+  1600,
+  900
+ ],
+ "camera": {
+  "view": "fixed room view",
+  "pxPerTileBack": 92,
+  "floorBackY": 474.8,
+  "perspective": 0.4,
+  "depthShown": 0.9,
+  "wallHeightTiles": 4.4,
+  "formula": "x = 800 + (u - W/2)*pxPerTileBack*k ; y = floorBackY + t*(900-floorBackY) ; t = v/D*depthShown ; k = 1 + perspective*t ; sprite scale = pxPerTileBack*k/64"
+ },
+ "background": "rooms/granny_house/gh_study_bg.png",
+ "full": "rooms/granny_house/gh_study.png",
+ "drawOrder": [
+  {
+   "uid": "bookshelf_1",
+   "sprite": "bookshelf",
+   "kind": "floor",
+   "x": 751.9,
+   "y": 522.6,
+   "scale": 1.5022,
+   "z": 1
+  },
+  {
+   "uid": "bookshelf_2",
+   "sprite": "bookshelf",
+   "kind": "floor",
+   "x": 739.5,
+   "y": 809.6,
+   "scale": 1.8903,
+   "z": 7
+  },
+  {
+   "uid": "desk_1",
+   "sprite": "desk",
+   "kind": "floor",
+   "x": 591.2,
+   "y": 618.3,
+   "scale": 1.6316,
+   "z": 3
+  },
+  {
+   "uid": "office_chair_1",
+   "sprite": "office_chair",
+   "kind": "floor",
+   "x": 1100.8,
+   "y": 570.5,
+   "scale": 1.5669,
+   "z": 2
+  },
+  {
+   "uid": "lamp_floor_1",
+   "sprite": "lamp_floor",
+   "kind": "floor",
+   "x": 299.5,
+   "y": 857.5,
+   "scale": 1.955,
+   "z": 8
+  },
+  {
+   "uid": "cobweb_1",
+   "sprite": "cobweb",
+   "kind": "wall",
+   "x": 431.2,
+   "y": 302.0,
+   "scale": 1.4407,
+   "z": -0.5
+  },
+  {
+   "uid": "cobweb_2",
+   "sprite": "cobweb",
+   "kind": "side-wall",
+   "matrix": [
+    -0.2911,
+    -0.7474,
+    0,
+    1.4698,
+    1232.63,
+    315.681
+   ],
+   "z": 0.5
+  },
+  {
+   "uid": "book_big_1",
+   "sprite": "book_big",
+   "kind": "on-top",
+   "on": "desk_1",
+   "x": 499.2,
+   "y": 506.0,
+   "scale": 1.4102,
+   "z": 3.01
+  },
+  {
+   "uid": "pencil_1",
+   "sprite": "pencil",
+   "kind": "on-top",
+   "on": "desk_1",
+   "x": 591.2,
+   "y": 506.7,
+   "scale": 1.4684,
+   "z": 3.01
+  },
+  {
+   "uid": "pen_holder_1",
+   "sprite": "pen_holder",
+   "kind": "on-top",
+   "on": "desk_1",
+   "x": 599.4,
+   "y": 506.0,
+   "scale": 1.4102,
+   "z": 3.01
+  },
+  {
+   "uid": "lantern_1",
+   "sprite": "lantern",
+   "kind": "on-top",
+   "on": "desk_1",
+   "x": 695.6,
+   "y": 506.7,
+   "scale": 1.4684,
+   "z": 3.01
+  }
+ ],
+ "characters": []
+}

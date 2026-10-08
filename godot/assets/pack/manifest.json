@@ -1,0 +1,5304 @@
+{
+ "game": "Anisha's House (colourful, fixed room view)",
+ "screen": [
+  1600,
+  900
+ ],
+ "tile_px": 64,
+ "items": [
+  {
+   "id": "sofa",
+   "name": "Sofa",
+   "footprint_tiles": [
+    4,
+    2
+   ],
+   "sprite_px": [
+    256,
+    120
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/sofa.svg",
+   "png": "sprites/png/sofa.png"
+  },
+  {
+   "id": "tv_big",
+   "name": "Big TV",
+   "footprint_tiles": [
+    5,
+    1
+   ],
+   "sprite_px": [
+    320,
+    190
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "prank"
+   ],
+   "svg": "sprites/svg/tv_big.svg",
+   "png": "sprites/png/tv_big.png"
+  },
+  {
+   "id": "tv_small",
+   "name": "TV",
+   "footprint_tiles": [
+    3,
+    1
+   ],
+   "sprite_px": [
+    192,
+    110
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/tv_small.svg",
+   "png": "sprites/png/tv_small.png"
+  },
+  {
+   "id": "tv_remote",
+   "name": "TV remote",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/tv_remote.svg",
+   "png": "sprites/png/tv_remote.png"
+  },
+  {
+   "id": "alexa",
+   "name": "Alexa speaker",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "prank"
+   ],
+   "svg": "sprites/svg/alexa.svg",
+   "png": "sprites/png/alexa.png"
+  },
+  {
+   "id": "wall_clock",
+   "name": "Wall clock",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "wall",
+   "tags": [
+    "prank"
+   ],
+   "svg": "sprites/svg/wall_clock.svg",
+   "png": "sprites/png/wall_clock.png"
+  },
+  {
+   "id": "photo_frame",
+   "name": "Photo frame",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "wall",
+   "tags": [
+    "prank"
+   ],
+   "svg": "sprites/svg/photo_frame.svg",
+   "png": "sprites/png/photo_frame.png"
+  },
+  {
+   "id": "rug",
+   "name": "Rug",
+   "footprint_tiles": [
+    4,
+    3
+   ],
+   "sprite_px": [
+    256,
+    94
+   ],
+   "mount": "floor-layer",
+   "tags": [],
+   "svg": "sprites/svg/rug.svg",
+   "png": "sprites/png/rug.png"
+  },
+  {
+   "id": "lamp_floor",
+   "name": "Floor lamp",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    180
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/lamp_floor.svg",
+   "png": "sprites/png/lamp_floor.png"
+  },
+  {
+   "id": "hanging_bulb",
+   "name": "Hanging bulb",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    110
+   ],
+   "mount": "ceiling",
+   "tags": [
+    "decor"
+   ],
+   "svg": "sprites/svg/hanging_bulb.svg",
+   "png": "sprites/png/hanging_bulb.png"
+  },
+  {
+   "id": "plant_pot",
+   "name": "Plant pot",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    80
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/plant_pot.svg",
+   "png": "sprites/png/plant_pot.png"
+  },
+  {
+   "id": "big_plant_pot",
+   "name": "Big plant pot",
+   "footprint_tiles": [
+    2,
+    2
+   ],
+   "sprite_px": [
+    128,
+    170
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "svg": "sprites/svg/big_plant_pot.svg",
+   "png": "sprites/png/big_plant_pot.png"
+  },
+  {
+   "id": "cupboard_big",
+   "name": "Big cupboard",
+   "footprint_tiles": [
+    2,
+    4
+   ],
+   "sprite_px": [
+    128,
+    240
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "svg": "sprites/svg/cupboard_big.svg",
+   "png": "sprites/png/cupboard_big.png"
+  },
+  {
+   "id": "wardrobe_small",
+   "name": "Small wardrobe",
+   "footprint_tiles": [
+    2,
+    1
+   ],
+   "sprite_px": [
+    128,
+    150
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/wardrobe_small.svg",
+   "png": "sprites/png/wardrobe_small.png"
+  },
+  {
+   "id": "piano",
+   "name": "Piano",
+   "footprint_tiles": [
+    3,
+    2
+   ],
+   "sprite_px": [
+    192,
+    150
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/piano.svg",
+   "png": "sprites/png/piano.png"
+  },
+  {
+   "id": "skates",
+   "name": "Skates",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup"
+   ],
+   "svg": "sprites/svg/skates.svg",
+   "png": "sprites/png/skates.png"
+  },
+  {
+   "id": "bunk_bed",
+   "name": "Bunk bed (3 high)",
+   "footprint_tiles": [
+    2,
+    4
+   ],
+   "sprite_px": [
+    128,
+    260
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "svg": "sprites/svg/bunk_bed.svg",
+   "png": "sprites/png/bunk_bed.png"
+  },
+  {
+   "id": "bed_single",
+   "name": "Single bed",
+   "footprint_tiles": [
+    2,
+    4
+   ],
+   "sprite_px": [
+    128,
+    130
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "svg": "sprites/svg/bed_single.svg",
+   "png": "sprites/png/bed_single.png"
+  },
+  {
+   "id": "bed_double",
+   "name": "Double bed",
+   "footprint_tiles": [
+    4,
+    5
+   ],
+   "sprite_px": [
+    256,
+    150
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "svg": "sprites/svg/bed_double.svg",
+   "png": "sprites/png/bed_double.png"
+  },
+  {
+   "id": "drawer_unit",
+   "name": "Drawer unit",
+   "footprint_tiles": [
+    2,
+    1
+   ],
+   "sprite_px": [
+    128,
+    84
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "svg": "sprites/svg/drawer_unit.svg",
+   "png": "sprites/png/drawer_unit.png"
+  },
+  {
+   "id": "trophy",
+   "name": "Trophy",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/trophy.svg",
+   "png": "sprites/png/trophy.png"
+  },
+  {
+   "id": "medal",
+   "name": "Medal",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/medal.svg",
+   "png": "sprites/png/medal.png"
+  },
+  {
+   "id": "watch",
+   "name": "Watch",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/watch.svg",
+   "png": "sprites/png/watch.png"
+  },
+  {
+   "id": "dressing_table",
+   "name": "Dressing table",
+   "footprint_tiles": [
+    3,
+    1
+   ],
+   "sprite_px": [
+    192,
+    150
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/dressing_table.svg",
+   "png": "sprites/png/dressing_table.png"
+  },
+  {
+   "id": "table_dining",
+   "name": "Dining table",
+   "footprint_tiles": [
+    5,
+    3
+   ],
+   "sprite_px": [
+    320,
+    110
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/table_dining.svg",
+   "png": "sprites/png/table_dining.png"
+  },
+  {
+   "id": "chair",
+   "name": "Chair",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    110
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "prank"
+   ],
+   "svg": "sprites/svg/chair.svg",
+   "png": "sprites/png/chair.png"
+  },
+  {
+   "id": "plate",
+   "name": "Plate",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup"
+   ],
+   "svg": "sprites/svg/plate.svg",
+   "png": "sprites/png/plate.png"
+  },
+  {
+   "id": "thali",
+   "name": "Thali",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/thali.svg",
+   "png": "sprites/png/thali.png"
+  },
+  {
+   "id": "glass",
+   "name": "Glass",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/glass.svg",
+   "png": "sprites/png/glass.png"
+  },
+  {
+   "id": "bowl",
+   "name": "Bowl",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/bowl.svg",
+   "png": "sprites/png/bowl.png"
+  },
+  {
+   "id": "fridge",
+   "name": "Fridge",
+   "footprint_tiles": [
+    2,
+    2
+   ],
+   "sprite_px": [
+    128,
+    220
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "prank"
+   ],
+   "svg": "sprites/svg/fridge.svg",
+   "png": "sprites/png/fridge.png"
+  },
+  {
+   "id": "gas_stove",
+   "name": "Gas stove",
+   "footprint_tiles": [
+    3,
+    1
+   ],
+   "sprite_px": [
+    192,
+    116
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/gas_stove.svg",
+   "png": "sprites/png/gas_stove.png"
+  },
+  {
+   "id": "sink",
+   "name": "Sink",
+   "footprint_tiles": [
+    2,
+    1
+   ],
+   "sprite_px": [
+    128,
+    116
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "prank"
+   ],
+   "svg": "sprites/svg/sink.svg",
+   "png": "sprites/png/sink.png"
+  },
+  {
+   "id": "counter",
+   "name": "Kitchen counter",
+   "footprint_tiles": [
+    2,
+    1
+   ],
+   "sprite_px": [
+    128,
+    116
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/counter.svg",
+   "png": "sprites/png/counter.png"
+  },
+  {
+   "id": "knife",
+   "name": "Knife",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup"
+   ],
+   "svg": "sprites/svg/knife.svg",
+   "png": "sprites/png/knife.png"
+  },
+  {
+   "id": "spice_rack",
+   "name": "Spice jars",
+   "footprint_tiles": [
+    2,
+    1
+   ],
+   "sprite_px": [
+    128,
+    110
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/spice_rack.svg",
+   "png": "sprites/png/spice_rack.png"
+  },
+  {
+   "id": "chilli",
+   "name": "Chilli",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/chilli.svg",
+   "png": "sprites/png/chilli.png"
+  },
+  {
+   "id": "lemon",
+   "name": "Lemon",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/lemon.svg",
+   "png": "sprites/png/lemon.png"
+  },
+  {
+   "id": "salt_jar",
+   "name": "Salt jar",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/salt_jar.svg",
+   "png": "sprites/png/salt_jar.png"
+  },
+  {
+   "id": "sugar_jar",
+   "name": "Sugar jar",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/sugar_jar.svg",
+   "png": "sprites/png/sugar_jar.png"
+  },
+  {
+   "id": "tea_cup",
+   "name": "Tea cup",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/tea_cup.svg",
+   "png": "sprites/png/tea_cup.png"
+  },
+  {
+   "id": "maggi_packet",
+   "name": "Maggi packet",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/maggi_packet.svg",
+   "png": "sprites/png/maggi_packet.png"
+  },
+  {
+   "id": "cashew_bowl",
+   "name": "Cashew bowl",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/cashew_bowl.svg",
+   "png": "sprites/png/cashew_bowl.png"
+  },
+  {
+   "id": "cement_bag",
+   "name": "Cement bag",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    72
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/cement_bag.svg",
+   "png": "sprites/png/cement_bag.png"
+  },
+  {
+   "id": "bathtub",
+   "name": "Big white bathtub",
+   "footprint_tiles": [
+    2,
+    4
+   ],
+   "sprite_px": [
+    128,
+    120
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "prank"
+   ],
+   "svg": "sprites/svg/bathtub.svg",
+   "png": "sprites/png/bathtub.png"
+  },
+  {
+   "id": "shower",
+   "name": "Shower",
+   "footprint_tiles": [
+    2,
+    2
+   ],
+   "sprite_px": [
+    128,
+    200
+   ],
+   "mount": "floor",
+   "tags": [
+    "prank"
+   ],
+   "svg": "sprites/svg/shower.svg",
+   "png": "sprites/png/shower.png"
+  },
+  {
+   "id": "toilet",
+   "name": "Toilet",
+   "footprint_tiles": [
+    1,
+    2
+   ],
+   "sprite_px": [
+    64,
+    110
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/toilet.svg",
+   "png": "sprites/png/toilet.png"
+  },
+  {
+   "id": "wash_basin",
+   "name": "Wash basin",
+   "footprint_tiles": [
+    2,
+    1
+   ],
+   "sprite_px": [
+    128,
+    120
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/wash_basin.svg",
+   "png": "sprites/png/wash_basin.png"
+  },
+  {
+   "id": "mirror",
+   "name": "Mirror",
+   "footprint_tiles": [
+    2,
+    1
+   ],
+   "sprite_px": [
+    128,
+    96
+   ],
+   "mount": "wall",
+   "tags": [
+    "decor"
+   ],
+   "svg": "sprites/svg/mirror.svg",
+   "png": "sprites/png/mirror.png"
+  },
+  {
+   "id": "mirror_wall",
+   "name": "Mirror wall",
+   "footprint_tiles": [
+    4,
+    1
+   ],
+   "sprite_px": [
+    256,
+    120
+   ],
+   "mount": "wall",
+   "tags": [
+    "decor"
+   ],
+   "svg": "sprites/svg/mirror_wall.svg",
+   "png": "sprites/png/mirror_wall.png"
+  },
+  {
+   "id": "soap",
+   "name": "Soap",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/soap.svg",
+   "png": "sprites/png/soap.png"
+  },
+  {
+   "id": "shampoo",
+   "name": "Shampoo",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/shampoo.svg",
+   "png": "sprites/png/shampoo.png"
+  },
+  {
+   "id": "toothpaste",
+   "name": "Toothpaste",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/toothpaste.svg",
+   "png": "sprites/png/toothpaste.png"
+  },
+  {
+   "id": "toothbrush",
+   "name": "Toothbrush",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/toothbrush.svg",
+   "png": "sprites/png/toothbrush.png"
+  },
+  {
+   "id": "towel",
+   "name": "Towel",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/towel.svg",
+   "png": "sprites/png/towel.png"
+  },
+  {
+   "id": "slime_bucket",
+   "name": "Slime bucket",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/slime_bucket.svg",
+   "png": "sprites/png/slime_bucket.png"
+  },
+  {
+   "id": "inverter",
+   "name": "Inverter (light switch box)",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "wall",
+   "tags": [
+    "solid",
+    "prank"
+   ],
+   "svg": "sprites/svg/inverter.svg",
+   "png": "sprites/png/inverter.png"
+  },
+  {
+   "id": "baby_stroller",
+   "name": "Baby stroller",
+   "footprint_tiles": [
+    2,
+    2
+   ],
+   "sprite_px": [
+    128,
+    130
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/baby_stroller.svg",
+   "png": "sprites/png/baby_stroller.png"
+  },
+  {
+   "id": "box_cardboard",
+   "name": "Cardboard box",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    72
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "svg": "sprites/svg/box_cardboard.svg",
+   "png": "sprites/png/box_cardboard.png"
+  },
+  {
+   "id": "box_stack",
+   "name": "Stack of boxes",
+   "footprint_tiles": [
+    2,
+    2
+   ],
+   "sprite_px": [
+    128,
+    150
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "svg": "sprites/svg/box_stack.svg",
+   "png": "sprites/png/box_stack.png"
+  },
+  {
+   "id": "jbl_speaker",
+   "name": "JBL speaker",
+   "footprint_tiles": [
+    2,
+    1
+   ],
+   "sprite_px": [
+    128,
+    90
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "prank"
+   ],
+   "svg": "sprites/svg/jbl_speaker.svg",
+   "png": "sprites/png/jbl_speaker.png"
+  },
+  {
+   "id": "disco_light",
+   "name": "Disco light",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    100
+   ],
+   "mount": "ceiling",
+   "tags": [
+    "decor"
+   ],
+   "svg": "sprites/svg/disco_light.svg",
+   "png": "sprites/png/disco_light.png"
+  },
+  {
+   "id": "game_controller",
+   "name": "Game controller",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup"
+   ],
+   "svg": "sprites/svg/game_controller.svg",
+   "png": "sprites/png/game_controller.png"
+  },
+  {
+   "id": "bean_bag",
+   "name": "Bean bag",
+   "footprint_tiles": [
+    2,
+    2
+   ],
+   "sprite_px": [
+    128,
+    110
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "safe"
+   ],
+   "svg": "sprites/svg/bean_bag.svg",
+   "png": "sprites/png/bean_bag.png"
+  },
+  {
+   "id": "desk",
+   "name": "Desk",
+   "footprint_tiles": [
+    3,
+    2
+   ],
+   "sprite_px": [
+    192,
+    110
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/desk.svg",
+   "png": "sprites/png/desk.png"
+  },
+  {
+   "id": "office_chair",
+   "name": "Office chair",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    110
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/office_chair.svg",
+   "png": "sprites/png/office_chair.png"
+  },
+  {
+   "id": "computer",
+   "name": "Computer",
+   "footprint_tiles": [
+    2,
+    1
+   ],
+   "sprite_px": [
+    128,
+    110
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "prank"
+   ],
+   "svg": "sprites/svg/computer.svg",
+   "png": "sprites/png/computer.png"
+  },
+  {
+   "id": "bookshelf",
+   "name": "Bookshelf",
+   "footprint_tiles": [
+    4,
+    1
+   ],
+   "sprite_px": [
+    256,
+    180
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/bookshelf.svg",
+   "png": "sprites/png/bookshelf.png"
+  },
+  {
+   "id": "book_big",
+   "name": "Big instruction book",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/book_big.svg",
+   "png": "sprites/png/book_big.png"
+  },
+  {
+   "id": "colored_paper",
+   "name": "Coloured paper",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup"
+   ],
+   "svg": "sprites/svg/colored_paper.svg",
+   "png": "sprites/png/colored_paper.png"
+  },
+  {
+   "id": "scissors",
+   "name": "Scissors",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/scissors.svg",
+   "png": "sprites/png/scissors.png"
+  },
+  {
+   "id": "glue",
+   "name": "Glue bottle",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/glue.svg",
+   "png": "sprites/png/glue.png"
+  },
+  {
+   "id": "pencil",
+   "name": "Pencil",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/pencil.svg",
+   "png": "sprites/png/pencil.png"
+  },
+  {
+   "id": "eraser",
+   "name": "Eraser",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup"
+   ],
+   "svg": "sprites/svg/eraser.svg",
+   "png": "sprites/png/eraser.png"
+  },
+  {
+   "id": "pen_holder",
+   "name": "Pen holder",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup"
+   ],
+   "svg": "sprites/svg/pen_holder.svg",
+   "png": "sprites/png/pen_holder.png"
+  },
+  {
+   "id": "globe",
+   "name": "Globe",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    100
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/globe.svg",
+   "png": "sprites/png/globe.png"
+  },
+  {
+   "id": "notice_board",
+   "name": "Notice board",
+   "footprint_tiles": [
+    3,
+    1
+   ],
+   "sprite_px": [
+    192,
+    120
+   ],
+   "mount": "wall",
+   "tags": [
+    "decor"
+   ],
+   "svg": "sprites/svg/notice_board.svg",
+   "png": "sprites/png/notice_board.png"
+  },
+  {
+   "id": "idol",
+   "name": "Idol of the gods",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    100
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/idol.svg",
+   "png": "sprites/png/idol.png"
+  },
+  {
+   "id": "puja_thali",
+   "name": "Thali with diyas",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup"
+   ],
+   "svg": "sprites/svg/puja_thali.svg",
+   "png": "sprites/png/puja_thali.png"
+  },
+  {
+   "id": "diya",
+   "name": "Diya",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "decor"
+   ],
+   "svg": "sprites/svg/diya.svg",
+   "png": "sprites/png/diya.png"
+  },
+  {
+   "id": "matchbox",
+   "name": "Matchbox",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup"
+   ],
+   "svg": "sprites/svg/matchbox.svg",
+   "png": "sprites/png/matchbox.png"
+  },
+  {
+   "id": "treadmill",
+   "name": "Treadmill",
+   "footprint_tiles": [
+    2,
+    4
+   ],
+   "sprite_px": [
+    128,
+    150
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "prank"
+   ],
+   "svg": "sprites/svg/treadmill.svg",
+   "png": "sprites/png/treadmill.png"
+  },
+  {
+   "id": "dumbbell",
+   "name": "Dumbbell",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup"
+   ],
+   "svg": "sprites/svg/dumbbell.svg",
+   "png": "sprites/png/dumbbell.png"
+  },
+  {
+   "id": "exercise_bike",
+   "name": "Exercise bike",
+   "footprint_tiles": [
+    2,
+    2
+   ],
+   "sprite_px": [
+    128,
+    140
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/exercise_bike.svg",
+   "png": "sprites/png/exercise_bike.png"
+  },
+  {
+   "id": "yoga_mat",
+   "name": "Yoga mat",
+   "footprint_tiles": [
+    2,
+    4
+   ],
+   "sprite_px": [
+    128,
+    123
+   ],
+   "mount": "floor-layer",
+   "tags": [
+    "prank"
+   ],
+   "svg": "sprites/svg/yoga_mat.svg",
+   "png": "sprites/png/yoga_mat.png"
+  },
+  {
+   "id": "music_player",
+   "name": "Music player",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "prank"
+   ],
+   "svg": "sprites/svg/music_player.svg",
+   "png": "sprites/png/music_player.png"
+  },
+  {
+   "id": "climbing_wall",
+   "name": "Climbing wall",
+   "footprint_tiles": [
+    6,
+    1
+   ],
+   "sprite_px": [
+    384,
+    260
+   ],
+   "mount": "wall",
+   "tags": [
+    "solid",
+    "climb"
+   ],
+   "svg": "sprites/svg/climbing_wall.svg",
+   "png": "sprites/png/climbing_wall.png"
+  },
+  {
+   "id": "safety_harness",
+   "name": "Safety jacket",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup"
+   ],
+   "svg": "sprites/svg/safety_harness.svg",
+   "png": "sprites/png/safety_harness.png"
+  },
+  {
+   "id": "sponge_mat",
+   "name": "Sponge mat",
+   "footprint_tiles": [
+    4,
+    3
+   ],
+   "sprite_px": [
+    256,
+    94
+   ],
+   "mount": "floor-layer",
+   "tags": [
+    "safe"
+   ],
+   "svg": "sprites/svg/sponge_mat.svg",
+   "png": "sprites/png/sponge_mat.png"
+  },
+  {
+   "id": "solar_panel",
+   "name": "Solar panel",
+   "footprint_tiles": [
+    3,
+    2
+   ],
+   "sprite_px": [
+    192,
+    110
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "prank"
+   ],
+   "svg": "sprites/svg/solar_panel.svg",
+   "png": "sprites/png/solar_panel.png"
+  },
+  {
+   "id": "water_tank",
+   "name": "Water tank",
+   "footprint_tiles": [
+    2,
+    2
+   ],
+   "sprite_px": [
+    128,
+    150
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "prank"
+   ],
+   "svg": "sprites/svg/water_tank.svg",
+   "png": "sprites/png/water_tank.png"
+  },
+  {
+   "id": "slide_chute",
+   "name": "Slide (roof to pool)",
+   "footprint_tiles": [
+    2,
+    6
+   ],
+   "sprite_px": [
+    128,
+    260
+   ],
+   "mount": "floor",
+   "tags": [
+    "climb"
+   ],
+   "svg": "sprites/svg/slide_chute.svg",
+   "png": "sprites/png/slide_chute.png"
+  },
+  {
+   "id": "game_tv_play",
+   "name": "Play-zone TV",
+   "footprint_tiles": [
+    4,
+    1
+   ],
+   "sprite_px": [
+    256,
+    170
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/game_tv_play.svg",
+   "png": "sprites/png/game_tv_play.png"
+  },
+  {
+   "id": "cobweb",
+   "name": "Bunting",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "wall",
+   "tags": [
+    "decor"
+   ],
+   "svg": "sprites/svg/cobweb.svg",
+   "png": "sprites/png/cobweb.png"
+  },
+  {
+   "id": "parrot_cage",
+   "name": "Parrot cage",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    140
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/parrot_cage.svg",
+   "png": "sprites/png/parrot_cage.png"
+  },
+  {
+   "id": "dog_bed",
+   "name": "Dog bed",
+   "footprint_tiles": [
+    2,
+    2
+   ],
+   "sprite_px": [
+    128,
+    70
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/dog_bed.svg",
+   "png": "sprites/png/dog_bed.png"
+  },
+  {
+   "id": "cat_basket",
+   "name": "Cat basket",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/cat_basket.svg",
+   "png": "sprites/png/cat_basket.png"
+  },
+  {
+   "id": "pet_bowl",
+   "name": "Pet food bowl",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup"
+   ],
+   "svg": "sprites/svg/pet_bowl.svg",
+   "png": "sprites/png/pet_bowl.png"
+  },
+  {
+   "id": "pet_toys",
+   "name": "Pet toys",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup"
+   ],
+   "svg": "sprites/svg/pet_toys.svg",
+   "png": "sprites/png/pet_toys.png"
+  },
+  {
+   "id": "pet_parrot",
+   "name": "Parrot (pet helper)",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pet"
+   ],
+   "svg": "sprites/svg/pet_parrot.svg",
+   "png": "sprites/png/pet_parrot.png"
+  },
+  {
+   "id": "pet_dog",
+   "name": "Dog (pet helper)",
+   "footprint_tiles": [
+    1,
+    2
+   ],
+   "sprite_px": [
+    64,
+    100
+   ],
+   "mount": "floor",
+   "tags": [
+    "pet"
+   ],
+   "svg": "sprites/svg/pet_dog.svg",
+   "png": "sprites/png/pet_dog.png"
+  },
+  {
+   "id": "pet_cat",
+   "name": "Cat (pet helper)",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pet"
+   ],
+   "svg": "sprites/svg/pet_cat.svg",
+   "png": "sprites/png/pet_cat.png"
+  },
+  {
+   "id": "soft_toy",
+   "name": "Soft toy",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup"
+   ],
+   "svg": "sprites/svg/soft_toy.svg",
+   "png": "sprites/png/soft_toy.png"
+  },
+  {
+   "id": "cushion",
+   "name": "Cushion",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup"
+   ],
+   "svg": "sprites/svg/cushion.svg",
+   "png": "sprites/png/cushion.png"
+  },
+  {
+   "id": "fairy_lights",
+   "name": "Fairy lights",
+   "footprint_tiles": [
+    4,
+    1
+   ],
+   "sprite_px": [
+    256,
+    64
+   ],
+   "mount": "wall",
+   "tags": [
+    "decor"
+   ],
+   "svg": "sprites/svg/fairy_lights.svg",
+   "png": "sprites/png/fairy_lights.png"
+  },
+  {
+   "id": "scooty",
+   "name": "Granny's scooty",
+   "footprint_tiles": [
+    2,
+    3
+   ],
+   "sprite_px": [
+    128,
+    120
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "prank"
+   ],
+   "svg": "sprites/svg/scooty.svg",
+   "png": "sprites/png/scooty.png"
+  },
+  {
+   "id": "bullet_bike",
+   "name": "Bullet motorbike",
+   "footprint_tiles": [
+    2,
+    4
+   ],
+   "sprite_px": [
+    128,
+    130
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "prank"
+   ],
+   "svg": "sprites/svg/bullet_bike.svg",
+   "png": "sprites/png/bullet_bike.png"
+  },
+  {
+   "id": "bicycle_big",
+   "name": "Big bicycle",
+   "footprint_tiles": [
+    2,
+    4
+   ],
+   "sprite_px": [
+    128,
+    130
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "prank"
+   ],
+   "svg": "sprites/svg/bicycle_big.svg",
+   "png": "sprites/png/bicycle_big.png"
+  },
+  {
+   "id": "toy_car",
+   "name": "Toy car",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/toy_car.svg",
+   "png": "sprites/png/toy_car.png"
+  },
+  {
+   "id": "tree",
+   "name": "Tree",
+   "footprint_tiles": [
+    2,
+    2
+   ],
+   "sprite_px": [
+    128,
+    230
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/tree.svg",
+   "png": "sprites/png/tree.png"
+  },
+  {
+   "id": "tree_dead",
+   "name": "Palm tree",
+   "footprint_tiles": [
+    2,
+    2
+   ],
+   "sprite_px": [
+    128,
+    230
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "decor"
+   ],
+   "svg": "sprites/svg/tree_dead.svg",
+   "png": "sprites/png/tree_dead.png"
+  },
+  {
+   "id": "flower_bed",
+   "name": "Flower bed",
+   "footprint_tiles": [
+    3,
+    1
+   ],
+   "sprite_px": [
+    192,
+    80
+   ],
+   "mount": "floor",
+   "tags": [
+    "prank"
+   ],
+   "svg": "sprites/svg/flower_bed.svg",
+   "png": "sprites/png/flower_bed.png"
+  },
+  {
+   "id": "watering_can",
+   "name": "Watering can",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/watering_can.svg",
+   "png": "sprites/png/watering_can.png"
+  },
+  {
+   "id": "bench",
+   "name": "Bench",
+   "footprint_tiles": [
+    3,
+    1
+   ],
+   "sprite_px": [
+    192,
+    100
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/bench.svg",
+   "png": "sprites/png/bench.png"
+  },
+  {
+   "id": "fountain",
+   "name": "Fountain",
+   "footprint_tiles": [
+    3,
+    3
+   ],
+   "sprite_px": [
+    192,
+    190
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/fountain.svg",
+   "png": "sprites/png/fountain.png"
+  },
+  {
+   "id": "hedge",
+   "name": "Hedge",
+   "footprint_tiles": [
+    4,
+    1
+   ],
+   "sprite_px": [
+    256,
+    90
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "svg": "sprites/svg/hedge.svg",
+   "png": "sprites/png/hedge.png"
+  },
+  {
+   "id": "garden_hat",
+   "name": "Garden hat",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/garden_hat.svg",
+   "png": "sprites/png/garden_hat.png"
+  },
+  {
+   "id": "gravestone",
+   "name": "Garden gnome",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    80
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "decor"
+   ],
+   "svg": "sprites/svg/gravestone.svg",
+   "png": "sprites/png/gravestone.png"
+  },
+  {
+   "id": "swing",
+   "name": "Swing",
+   "footprint_tiles": [
+    4,
+    2
+   ],
+   "sprite_px": [
+    256,
+    170
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/swing.svg",
+   "png": "sprites/png/swing.png"
+  },
+  {
+   "id": "slide_play",
+   "name": "Slide",
+   "footprint_tiles": [
+    2,
+    4
+   ],
+   "sprite_px": [
+    128,
+    200
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "climb"
+   ],
+   "svg": "sprites/svg/slide_play.svg",
+   "png": "sprites/png/slide_play.png"
+  },
+  {
+   "id": "see_saw",
+   "name": "See-saw",
+   "footprint_tiles": [
+    4,
+    1
+   ],
+   "sprite_px": [
+    256,
+    90
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/see_saw.svg",
+   "png": "sprites/png/see_saw.png"
+  },
+  {
+   "id": "monkey_bars",
+   "name": "Monkey bars",
+   "footprint_tiles": [
+    5,
+    2
+   ],
+   "sprite_px": [
+    320,
+    180
+   ],
+   "mount": "floor",
+   "tags": [
+    "climb"
+   ],
+   "svg": "sprites/svg/monkey_bars.svg",
+   "png": "sprites/png/monkey_bars.png"
+  },
+  {
+   "id": "merry_go_round",
+   "name": "Merry-go-round",
+   "footprint_tiles": [
+    3,
+    3
+   ],
+   "sprite_px": [
+    192,
+    120
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/merry_go_round.svg",
+   "png": "sprites/png/merry_go_round.png"
+  },
+  {
+   "id": "street_lamp",
+   "name": "Street lamp",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    220
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "decor"
+   ],
+   "svg": "sprites/svg/street_lamp.svg",
+   "png": "sprites/png/street_lamp.png"
+  },
+  {
+   "id": "sand_pit",
+   "name": "Sand pit",
+   "footprint_tiles": [
+    5,
+    4
+   ],
+   "sprite_px": [
+    320,
+    123
+   ],
+   "mount": "floor-layer",
+   "tags": [
+    "prank"
+   ],
+   "svg": "sprites/svg/sand_pit.svg",
+   "png": "sprites/png/sand_pit.png"
+  },
+  {
+   "id": "bucket_spade",
+   "name": "Bucket and spade",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/bucket_spade.svg",
+   "png": "sprites/png/bucket_spade.png"
+  },
+  {
+   "id": "sand_castle",
+   "name": "Sand castle",
+   "footprint_tiles": [
+    2,
+    2
+   ],
+   "sprite_px": [
+    128,
+    110
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/sand_castle.svg",
+   "png": "sprites/png/sand_castle.png"
+  },
+  {
+   "id": "student_desk",
+   "name": "Student desk",
+   "footprint_tiles": [
+    2,
+    1
+   ],
+   "sprite_px": [
+    128,
+    100
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "svg": "sprites/svg/student_desk.svg",
+   "png": "sprites/png/student_desk.png"
+  },
+  {
+   "id": "blackboard",
+   "name": "Blackboard",
+   "footprint_tiles": [
+    6,
+    1
+   ],
+   "sprite_px": [
+    384,
+    160
+   ],
+   "mount": "wall",
+   "tags": [
+    "decor",
+    "prank"
+   ],
+   "svg": "sprites/svg/blackboard.svg",
+   "png": "sprites/png/blackboard.png"
+  },
+  {
+   "id": "teacher_desk",
+   "name": "Scary teacher's desk",
+   "footprint_tiles": [
+    3,
+    2
+   ],
+   "sprite_px": [
+    192,
+    120
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "svg": "sprites/svg/teacher_desk.svg",
+   "png": "sprites/png/teacher_desk.png"
+  },
+  {
+   "id": "school_bag",
+   "name": "School bag",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/school_bag.svg",
+   "png": "sprites/png/school_bag.png"
+  },
+  {
+   "id": "lockers",
+   "name": "Lockers",
+   "footprint_tiles": [
+    4,
+    1
+   ],
+   "sprite_px": [
+    256,
+    190
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "svg": "sprites/svg/lockers.svg",
+   "png": "sprites/png/lockers.png"
+  },
+  {
+   "id": "reading_table",
+   "name": "Reading table",
+   "footprint_tiles": [
+    4,
+    2
+   ],
+   "sprite_px": [
+    256,
+    110
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "svg": "sprites/svg/reading_table.svg",
+   "png": "sprites/png/reading_table.png"
+  },
+  {
+   "id": "lab_bench",
+   "name": "Science lab bench",
+   "footprint_tiles": [
+    6,
+    2
+   ],
+   "sprite_px": [
+    384,
+    120
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/lab_bench.svg",
+   "png": "sprites/png/lab_bench.png"
+  },
+  {
+   "id": "microscope",
+   "name": "Microscope",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    80
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup"
+   ],
+   "svg": "sprites/svg/microscope.svg",
+   "png": "sprites/png/microscope.png"
+  },
+  {
+   "id": "flask",
+   "name": "Flask",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/flask.svg",
+   "png": "sprites/png/flask.png"
+  },
+  {
+   "id": "skeleton_model",
+   "name": "Science model",
+   "footprint_tiles": [
+    1,
+    2
+   ],
+   "sprite_px": [
+    64,
+    170
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "decor"
+   ],
+   "svg": "sprites/svg/skeleton_model.svg",
+   "png": "sprites/png/skeleton_model.png"
+  },
+  {
+   "id": "canteen_counter",
+   "name": "Canteen counter",
+   "footprint_tiles": [
+    6,
+    1
+   ],
+   "sprite_px": [
+    384,
+    120
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/canteen_counter.svg",
+   "png": "sprites/png/canteen_counter.png"
+  },
+  {
+   "id": "lunch_tray",
+   "name": "Lunch tray",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/lunch_tray.svg",
+   "png": "sprites/png/lunch_tray.png"
+  },
+  {
+   "id": "water_cooler",
+   "name": "Water cooler",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    140
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "prank"
+   ],
+   "svg": "sprites/svg/water_cooler.svg",
+   "png": "sprites/png/water_cooler.png"
+  },
+  {
+   "id": "school_bell",
+   "name": "School bell",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "wall",
+   "tags": [
+    "prank"
+   ],
+   "svg": "sprites/svg/school_bell.svg",
+   "png": "sprites/png/school_bell.png"
+  },
+  {
+   "id": "throne",
+   "name": "Throne",
+   "footprint_tiles": [
+    2,
+    2
+   ],
+   "sprite_px": [
+    128,
+    170
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/throne.svg",
+   "png": "sprites/png/throne.png"
+  },
+  {
+   "id": "royal_carpet",
+   "name": "Royal carpet",
+   "footprint_tiles": [
+    3,
+    8
+   ],
+   "sprite_px": [
+    192,
+    238
+   ],
+   "mount": "floor-layer",
+   "tags": [],
+   "svg": "sprites/svg/royal_carpet.svg",
+   "png": "sprites/png/royal_carpet.png"
+  },
+  {
+   "id": "chandelier",
+   "name": "Chandelier",
+   "footprint_tiles": [
+    3,
+    3
+   ],
+   "sprite_px": [
+    192,
+    150
+   ],
+   "mount": "ceiling",
+   "tags": [
+    "decor",
+    "prank"
+   ],
+   "svg": "sprites/svg/chandelier.svg",
+   "png": "sprites/png/chandelier.png"
+  },
+  {
+   "id": "crown_cushion",
+   "name": "Crown on cushion",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/crown_cushion.svg",
+   "png": "sprites/png/crown_cushion.png"
+  },
+  {
+   "id": "royal_bed",
+   "name": "Royal bed",
+   "footprint_tiles": [
+    5,
+    5
+   ],
+   "sprite_px": [
+    320,
+    200
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "svg": "sprites/svg/royal_bed.svg",
+   "png": "sprites/png/royal_bed.png"
+  },
+  {
+   "id": "jewellery_box",
+   "name": "Jewellery box",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/jewellery_box.svg",
+   "png": "sprites/png/jewellery_box.png"
+  },
+  {
+   "id": "necklace",
+   "name": "Necklace",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/necklace.svg",
+   "png": "sprites/png/necklace.png"
+  },
+  {
+   "id": "earrings",
+   "name": "Earrings",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/earrings.svg",
+   "png": "sprites/png/earrings.png"
+  },
+  {
+   "id": "armour_stand",
+   "name": "Suit of armour",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    160
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "decor",
+    "hide"
+   ],
+   "svg": "sprites/svg/armour_stand.svg",
+   "png": "sprites/png/armour_stand.png"
+  },
+  {
+   "id": "treasure_chest",
+   "name": "Treasure chest",
+   "footprint_tiles": [
+    2,
+    1
+   ],
+   "sprite_px": [
+    128,
+    90
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "prank"
+   ],
+   "svg": "sprites/svg/treasure_chest.svg",
+   "png": "sprites/png/treasure_chest.png"
+  },
+  {
+   "id": "gold_pile",
+   "name": "Pile of gold",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/gold_pile.svg",
+   "png": "sprites/png/gold_pile.png"
+  },
+  {
+   "id": "painting",
+   "name": "Royal painting",
+   "footprint_tiles": [
+    2,
+    1
+   ],
+   "sprite_px": [
+    128,
+    110
+   ],
+   "mount": "wall",
+   "tags": [
+    "decor",
+    "prank"
+   ],
+   "svg": "sprites/svg/painting.svg",
+   "png": "sprites/png/painting.png"
+  },
+  {
+   "id": "pillar",
+   "name": "Pillar",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    250
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "svg": "sprites/svg/pillar.svg",
+   "png": "sprites/png/pillar.png"
+  },
+  {
+   "id": "royal_table",
+   "name": "Royal table",
+   "footprint_tiles": [
+    6,
+    2
+   ],
+   "sprite_px": [
+    384,
+    120
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/royal_table.svg",
+   "png": "sprites/png/royal_table.png"
+  },
+  {
+   "id": "goblet",
+   "name": "Goblet",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/goblet.svg",
+   "png": "sprites/png/goblet.png"
+  },
+  {
+   "id": "reception_desk",
+   "name": "Reception desk",
+   "footprint_tiles": [
+    5,
+    2
+   ],
+   "sprite_px": [
+    320,
+    120
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "svg": "sprites/svg/reception_desk.svg",
+   "png": "sprites/png/reception_desk.png"
+  },
+  {
+   "id": "waiting_chairs",
+   "name": "Waiting chairs",
+   "footprint_tiles": [
+    4,
+    1
+   ],
+   "sprite_px": [
+    256,
+    100
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/waiting_chairs.svg",
+   "png": "sprites/png/waiting_chairs.png"
+  },
+  {
+   "id": "hospital_bed",
+   "name": "Hospital bed",
+   "footprint_tiles": [
+    2,
+    4
+   ],
+   "sprite_px": [
+    128,
+    130
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "svg": "sprites/svg/hospital_bed.svg",
+   "png": "sprites/png/hospital_bed.png"
+  },
+  {
+   "id": "curtain_screen",
+   "name": "Curtain screen",
+   "footprint_tiles": [
+    3,
+    1
+   ],
+   "sprite_px": [
+    192,
+    190
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "svg": "sprites/svg/curtain_screen.svg",
+   "png": "sprites/png/curtain_screen.png"
+  },
+  {
+   "id": "drip_stand",
+   "name": "Drip stand",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    180
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/drip_stand.svg",
+   "png": "sprites/png/drip_stand.png"
+  },
+  {
+   "id": "medicine_shelf",
+   "name": "Medicine shelf",
+   "footprint_tiles": [
+    4,
+    1
+   ],
+   "sprite_px": [
+    256,
+    170
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "prank"
+   ],
+   "svg": "sprites/svg/medicine_shelf.svg",
+   "png": "sprites/png/medicine_shelf.png"
+  },
+  {
+   "id": "wheelchair",
+   "name": "Wheelchair",
+   "footprint_tiles": [
+    2,
+    2
+   ],
+   "sprite_px": [
+    128,
+    120
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "prank"
+   ],
+   "svg": "sprites/svg/wheelchair.svg",
+   "png": "sprites/png/wheelchair.png"
+  },
+  {
+   "id": "xray_machine",
+   "name": "X-ray machine",
+   "footprint_tiles": [
+    3,
+    3
+   ],
+   "sprite_px": [
+    192,
+    200
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/xray_machine.svg",
+   "png": "sprites/png/xray_machine.png"
+  },
+  {
+   "id": "xray_lightbox",
+   "name": "X-ray lightbox",
+   "footprint_tiles": [
+    2,
+    1
+   ],
+   "sprite_px": [
+    128,
+    110
+   ],
+   "mount": "wall",
+   "tags": [
+    "decor"
+   ],
+   "svg": "sprites/svg/xray_lightbox.svg",
+   "png": "sprites/png/xray_lightbox.png"
+  },
+  {
+   "id": "stethoscope",
+   "name": "Stethoscope",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/stethoscope.svg",
+   "png": "sprites/png/stethoscope.png"
+  },
+  {
+   "id": "first_aid_box",
+   "name": "First-aid box",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup"
+   ],
+   "svg": "sprites/svg/first_aid_box.svg",
+   "png": "sprites/png/first_aid_box.png"
+  },
+  {
+   "id": "weighing_scale",
+   "name": "Weighing scale",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    80
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "prank"
+   ],
+   "svg": "sprites/svg/weighing_scale.svg",
+   "png": "sprites/png/weighing_scale.png"
+  },
+  {
+   "id": "eye_chart",
+   "name": "Eye chart",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    120
+   ],
+   "mount": "wall",
+   "tags": [
+    "decor",
+    "prank"
+   ],
+   "svg": "sprites/svg/eye_chart.svg",
+   "png": "sprites/png/eye_chart.png"
+  },
+  {
+   "id": "pool",
+   "name": "Swimming pool",
+   "footprint_tiles": [
+    8,
+    5
+   ],
+   "sprite_px": [
+    512,
+    152
+   ],
+   "mount": "floor-layer",
+   "tags": [
+    "prank"
+   ],
+   "svg": "sprites/svg/pool.svg",
+   "png": "sprites/png/pool.png"
+  },
+  {
+   "id": "pool_ladder",
+   "name": "Pool ladder",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    100
+   ],
+   "mount": "floor",
+   "tags": [
+    "climb"
+   ],
+   "svg": "sprites/svg/pool_ladder.svg",
+   "png": "sprites/png/pool_ladder.png"
+  },
+  {
+   "id": "lounger",
+   "name": "Sun lounger",
+   "footprint_tiles": [
+    1,
+    3
+   ],
+   "sprite_px": [
+    64,
+    100
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/lounger.svg",
+   "png": "sprites/png/lounger.png"
+  },
+  {
+   "id": "beach_umbrella",
+   "name": "Umbrella",
+   "footprint_tiles": [
+    2,
+    2
+   ],
+   "sprite_px": [
+    128,
+    200
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "svg": "sprites/svg/beach_umbrella.svg",
+   "png": "sprites/png/beach_umbrella.png"
+  },
+  {
+   "id": "lifeguard_chair",
+   "name": "Lifeguard chair",
+   "footprint_tiles": [
+    2,
+    2
+   ],
+   "sprite_px": [
+    128,
+    210
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "safe"
+   ],
+   "svg": "sprites/svg/lifeguard_chair.svg",
+   "png": "sprites/png/lifeguard_chair.png"
+  },
+  {
+   "id": "changing_bench",
+   "name": "Changing bench",
+   "footprint_tiles": [
+    4,
+    1
+   ],
+   "sprite_px": [
+    256,
+    80
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/changing_bench.svg",
+   "png": "sprites/png/changing_bench.png"
+  },
+  {
+   "id": "float_ring",
+   "name": "Swim ring",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/float_ring.svg",
+   "png": "sprites/png/float_ring.png"
+  },
+  {
+   "id": "towel_stack",
+   "name": "Towel stack",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/towel_stack.svg",
+   "png": "sprites/png/towel_stack.png"
+  },
+  {
+   "id": "towel_rack",
+   "name": "Towel rack",
+   "footprint_tiles": [
+    2,
+    1
+   ],
+   "sprite_px": [
+    128,
+    120
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/towel_rack.svg",
+   "png": "sprites/png/towel_rack.png"
+  },
+  {
+   "id": "car_parked",
+   "name": "Parked car",
+   "footprint_tiles": [
+    2,
+    3
+   ],
+   "sprite_px": [
+    128,
+    110
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "svg": "sprites/svg/car_parked.svg",
+   "png": "sprites/png/car_parked.png"
+  },
+  {
+   "id": "bus_stop",
+   "name": "Bus stop",
+   "footprint_tiles": [
+    3,
+    1
+   ],
+   "sprite_px": [
+    192,
+    180
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "svg": "sprites/svg/bus_stop.svg",
+   "png": "sprites/png/bus_stop.png"
+  },
+  {
+   "id": "dustbin",
+   "name": "Dustbin",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    90
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "svg": "sprites/svg/dustbin.svg",
+   "png": "sprites/png/dustbin.png"
+  },
+  {
+   "id": "stairs",
+   "name": "Zigzag stairs",
+   "footprint_tiles": [
+    2,
+    3
+   ],
+   "sprite_px": [
+    128,
+    270
+   ],
+   "mount": "floor",
+   "tags": [
+    "stairs"
+   ],
+   "svg": "sprites/svg/stairs.svg",
+   "png": "sprites/png/stairs.png"
+  },
+  {
+   "id": "lift",
+   "name": "Lift",
+   "footprint_tiles": [
+    2,
+    2
+   ],
+   "sprite_px": [
+    128,
+    250
+   ],
+   "mount": "floor",
+   "tags": [
+    "lift"
+   ],
+   "svg": "sprites/svg/lift.svg",
+   "png": "sprites/png/lift.png"
+  },
+  {
+   "id": "front_door_mat",
+   "name": "Doormat",
+   "footprint_tiles": [
+    2,
+    1
+   ],
+   "sprite_px": [
+    128,
+    36
+   ],
+   "mount": "floor-layer",
+   "tags": [
+    "prank"
+   ],
+   "svg": "sprites/svg/front_door_mat.svg",
+   "png": "sprites/png/front_door_mat.png"
+  },
+  {
+   "id": "armchair",
+   "name": "Armchair",
+   "footprint_tiles": [
+    2,
+    2
+   ],
+   "sprite_px": [
+    128,
+    120
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "svg": "sprites/svg/armchair.svg",
+   "png": "sprites/png/armchair.png"
+  },
+  {
+   "id": "side_table",
+   "name": "Side table",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    90
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/side_table.svg",
+   "png": "sprites/png/side_table.png"
+  },
+  {
+   "id": "washing_machine",
+   "name": "Washing machine",
+   "footprint_tiles": [
+    2,
+    1
+   ],
+   "sprite_px": [
+    128,
+    130
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "prank"
+   ],
+   "svg": "sprites/svg/washing_machine.svg",
+   "png": "sprites/png/washing_machine.png"
+  },
+  {
+   "id": "playpen",
+   "name": "Playpen (pet / baby cage)",
+   "footprint_tiles": [
+    2,
+    2
+   ],
+   "sprite_px": [
+    128,
+    90
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/playpen.svg",
+   "png": "sprites/png/playpen.png"
+  },
+  {
+   "id": "grandfather_clock",
+   "name": "Grandfather clock",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    220
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "svg": "sprites/svg/grandfather_clock.svg",
+   "png": "sprites/png/grandfather_clock.png"
+  },
+  {
+   "id": "lantern",
+   "name": "Lantern",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    80
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "decor"
+   ],
+   "svg": "sprites/svg/lantern.svg",
+   "png": "sprites/png/lantern.png"
+  },
+  {
+   "id": "candelabra",
+   "name": "Candle stand",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    110
+   ],
+   "mount": "floor",
+   "tags": [
+    "decor"
+   ],
+   "svg": "sprites/svg/candelabra.svg",
+   "png": "sprites/png/candelabra.png"
+  },
+  {
+   "id": "vase",
+   "name": "Flower vase",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    90
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/vase.svg",
+   "png": "sprites/png/vase.png"
+  },
+  {
+   "id": "trunk",
+   "name": "Old trunk",
+   "footprint_tiles": [
+    2,
+    1
+   ],
+   "sprite_px": [
+    128,
+    80
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "svg": "sprites/svg/trunk.svg",
+   "png": "sprites/png/trunk.png"
+  },
+  {
+   "id": "jungle_gym",
+   "name": "Climbing frame",
+   "footprint_tiles": [
+    4,
+    2
+   ],
+   "sprite_px": [
+    256,
+    210
+   ],
+   "mount": "floor",
+   "tags": [
+    "climb",
+    "solid"
+   ],
+   "svg": "sprites/svg/jungle_gym.svg",
+   "png": "sprites/png/jungle_gym.png"
+  },
+  {
+   "id": "spring_rider",
+   "name": "Spring rider",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    110
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/spring_rider.svg",
+   "png": "sprites/png/spring_rider.png"
+  },
+  {
+   "id": "sandbox",
+   "name": "Sandbox",
+   "footprint_tiles": [
+    3,
+    2
+   ],
+   "sprite_px": [
+    192,
+    70
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "prank"
+   ],
+   "svg": "sprites/svg/sandbox.svg",
+   "png": "sprites/png/sandbox.png"
+  },
+  {
+   "id": "hopscotch",
+   "name": "Hopscotch",
+   "footprint_tiles": [
+    2,
+    4
+   ],
+   "sprite_px": [
+    128,
+    123
+   ],
+   "mount": "floor-layer",
+   "tags": [
+    "decor"
+   ],
+   "svg": "sprites/svg/hopscotch.svg",
+   "png": "sprites/png/hopscotch.png"
+  },
+  {
+   "id": "flower_arch",
+   "name": "Flower arch",
+   "footprint_tiles": [
+    3,
+    1
+   ],
+   "sprite_px": [
+    192,
+    230
+   ],
+   "mount": "floor",
+   "tags": [
+    "decor"
+   ],
+   "svg": "sprites/svg/flower_arch.svg",
+   "png": "sprites/png/flower_arch.png"
+  },
+  {
+   "id": "planter_box",
+   "name": "Planter box",
+   "footprint_tiles": [
+    2,
+    1
+   ],
+   "sprite_px": [
+    128,
+    90
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/planter_box.svg",
+   "png": "sprites/png/planter_box.png"
+  },
+  {
+   "id": "gazebo",
+   "name": "Gazebo",
+   "footprint_tiles": [
+    4,
+    4
+   ],
+   "sprite_px": [
+    256,
+    260
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "safe"
+   ],
+   "svg": "sprites/svg/gazebo.svg",
+   "png": "sprites/png/gazebo.png"
+  },
+  {
+   "id": "greenhouse",
+   "name": "Greenhouse",
+   "footprint_tiles": [
+    4,
+    3
+   ],
+   "sprite_px": [
+    256,
+    200
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "svg": "sprites/svg/greenhouse.svg",
+   "png": "sprites/png/greenhouse.png"
+  },
+  {
+   "id": "wheelbarrow",
+   "name": "Wheelbarrow",
+   "footprint_tiles": [
+    2,
+    1
+   ],
+   "sprite_px": [
+    128,
+    80
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/wheelbarrow.svg",
+   "png": "sprites/png/wheelbarrow.png"
+  },
+  {
+   "id": "garden_lamp",
+   "name": "Garden lamp",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    120
+   ],
+   "mount": "floor",
+   "tags": [
+    "decor"
+   ],
+   "svg": "sprites/svg/garden_lamp.svg",
+   "png": "sprites/png/garden_lamp.png"
+  },
+  {
+   "id": "potted_flowers",
+   "name": "Flower pot",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    70
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/potted_flowers.svg",
+   "png": "sprites/png/potted_flowers.png"
+  },
+  {
+   "id": "bush",
+   "name": "Bush",
+   "footprint_tiles": [
+    2,
+    1
+   ],
+   "sprite_px": [
+    128,
+    90
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "svg": "sprites/svg/bush.svg",
+   "png": "sprites/png/bush.png"
+  },
+  {
+   "id": "blossom_tree",
+   "name": "Blossom tree",
+   "footprint_tiles": [
+    2,
+    2
+   ],
+   "sprite_px": [
+    128,
+    230
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/blossom_tree.svg",
+   "png": "sprites/png/blossom_tree.png"
+  },
+  {
+   "id": "water_slide",
+   "name": "Water slide",
+   "footprint_tiles": [
+    3,
+    4
+   ],
+   "sprite_px": [
+    192,
+    280
+   ],
+   "mount": "floor",
+   "tags": [
+    "climb"
+   ],
+   "svg": "sprites/svg/water_slide.svg",
+   "png": "sprites/png/water_slide.png"
+  },
+  {
+   "id": "diving_board",
+   "name": "Diving board",
+   "footprint_tiles": [
+    2,
+    3
+   ],
+   "sprite_px": [
+    128,
+    120
+   ],
+   "mount": "floor",
+   "tags": [
+    "climb"
+   ],
+   "svg": "sprites/svg/diving_board.svg",
+   "png": "sprites/png/diving_board.png"
+  },
+  {
+   "id": "swan_float",
+   "name": "Swan float",
+   "footprint_tiles": [
+    2,
+    2
+   ],
+   "sprite_px": [
+    128,
+    110
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/swan_float.svg",
+   "png": "sprites/png/swan_float.png"
+  },
+  {
+   "id": "cabana",
+   "name": "Cabana",
+   "footprint_tiles": [
+    3,
+    3
+   ],
+   "sprite_px": [
+    192,
+    220
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "svg": "sprites/svg/cabana.svg",
+   "png": "sprites/png/cabana.png"
+  },
+  {
+   "id": "kickboard",
+   "name": "Kickboard",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup"
+   ],
+   "svg": "sprites/svg/kickboard.svg",
+   "png": "sprites/png/kickboard.png"
+  },
+  {
+   "id": "school_chair",
+   "name": "School chair",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    100
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/school_chair.svg",
+   "png": "sprites/png/school_chair.png"
+  },
+  {
+   "id": "cafeteria_table",
+   "name": "Cafeteria table",
+   "footprint_tiles": [
+    4,
+    2
+   ],
+   "sprite_px": [
+    256,
+    100
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "svg": "sprites/svg/cafeteria_table.svg",
+   "png": "sprites/png/cafeteria_table.png"
+  },
+  {
+   "id": "book_cart",
+   "name": "Library book cart",
+   "footprint_tiles": [
+    2,
+    1
+   ],
+   "sprite_px": [
+    128,
+    110
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/book_cart.svg",
+   "png": "sprites/png/book_cart.png"
+  },
+  {
+   "id": "play_tower",
+   "name": "Wooden play tower",
+   "footprint_tiles": [
+    4,
+    3
+   ],
+   "sprite_px": [
+    256,
+    260
+   ],
+   "mount": "floor",
+   "tags": [
+    "climb",
+    "solid",
+    "hide"
+   ],
+   "svg": "sprites/svg/play_tower.svg",
+   "png": "sprites/png/play_tower.png"
+  },
+  {
+   "id": "rock",
+   "name": "Rock",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "svg": "sprites/svg/rock.svg",
+   "png": "sprites/png/rock.png"
+  },
+  {
+   "id": "wooden_fence",
+   "name": "Wooden fence",
+   "footprint_tiles": [
+    3,
+    1
+   ],
+   "sprite_px": [
+    192,
+    90
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/wooden_fence.svg",
+   "png": "sprites/png/wooden_fence.png"
+  },
+  {
+   "id": "picket_fence",
+   "name": "Picket fence",
+   "footprint_tiles": [
+    3,
+    1
+   ],
+   "sprite_px": [
+    192,
+    80
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/picket_fence.svg",
+   "png": "sprites/png/picket_fence.png"
+  },
+  {
+   "id": "tiki_hut",
+   "name": "Beach hut",
+   "footprint_tiles": [
+    3,
+    3
+   ],
+   "sprite_px": [
+    192,
+    220
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "svg": "sprites/svg/tiki_hut.svg",
+   "png": "sprites/png/tiki_hut.png"
+  },
+  {
+   "id": "sand_pile",
+   "name": "Sand pile",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/sand_pile.svg",
+   "png": "sprites/png/sand_pile.png"
+  },
+  {
+   "id": "stretcher",
+   "name": "Stretcher",
+   "footprint_tiles": [
+    3,
+    1
+   ],
+   "sprite_px": [
+    192,
+    90
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "svg": "sprites/svg/stretcher.svg",
+   "png": "sprites/png/stretcher.png"
+  },
+  {
+   "id": "heart_monitor",
+   "name": "Heart monitor",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    150
+   ],
+   "mount": "floor",
+   "tags": [
+    "prank"
+   ],
+   "svg": "sprites/svg/heart_monitor.svg",
+   "png": "sprites/png/heart_monitor.png"
+  },
+  {
+   "id": "medicine_bottles",
+   "name": "Medicine bottles",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/medicine_bottles.svg",
+   "png": "sprites/png/medicine_bottles.png"
+  },
+  {
+   "id": "medical_trolley",
+   "name": "Doctor trolley",
+   "footprint_tiles": [
+    2,
+    1
+   ],
+   "sprite_px": [
+    128,
+    110
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "prank"
+   ],
+   "svg": "sprites/svg/medical_trolley.svg",
+   "png": "sprites/png/medical_trolley.png"
+  },
+  {
+   "id": "royal_lamp",
+   "name": "Golden lamp",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    200
+   ],
+   "mount": "floor",
+   "tags": [
+    "decor",
+    "prank"
+   ],
+   "svg": "sprites/svg/royal_lamp.svg",
+   "png": "sprites/png/royal_lamp.png"
+  },
+  {
+   "id": "scepter",
+   "name": "Royal sceptre",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/scepter.svg",
+   "png": "sprites/png/scepter.png"
+  },
+  {
+   "id": "crown",
+   "name": "Crown",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/crown.svg",
+   "png": "sprites/png/crown.png"
+  },
+  {
+   "id": "traffic_cone",
+   "name": "Traffic cone",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    70
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid"
+   ],
+   "svg": "sprites/svg/traffic_cone.svg",
+   "png": "sprites/png/traffic_cone.png"
+  },
+  {
+   "id": "road_tile",
+   "name": "Road tile",
+   "footprint_tiles": [
+    2,
+    2
+   ],
+   "sprite_px": [
+    128,
+    65
+   ],
+   "mount": "floor-layer",
+   "tags": [
+    "decor"
+   ],
+   "svg": "sprites/svg/road_tile.svg",
+   "png": "sprites/png/road_tile.png"
+  },
+  {
+   "id": "signpost",
+   "name": "Signpost",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    140
+   ],
+   "mount": "floor",
+   "tags": [
+    "decor"
+   ],
+   "svg": "sprites/svg/signpost.svg",
+   "png": "sprites/png/signpost.png"
+  },
+  {
+   "id": "mailbox",
+   "name": "Post box",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    110
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "prank"
+   ],
+   "svg": "sprites/svg/mailbox.svg",
+   "png": "sprites/png/mailbox.png"
+  },
+  {
+   "id": "cake",
+   "name": "Cake",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    70
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/cake.svg",
+   "png": "sprites/png/cake.png"
+  },
+  {
+   "id": "cupcake",
+   "name": "Cupcake",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/cupcake.svg",
+   "png": "sprites/png/cupcake.png"
+  },
+  {
+   "id": "apple",
+   "name": "Apple",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/apple.svg",
+   "png": "sprites/png/apple.png"
+  },
+  {
+   "id": "plum",
+   "name": "Plum",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/plum.svg",
+   "png": "sprites/png/plum.png"
+  },
+  {
+   "id": "chocolate_bar",
+   "name": "Chocolate bar",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/chocolate_bar.svg",
+   "png": "sprites/png/chocolate_bar.png"
+  },
+  {
+   "id": "juice_bottle",
+   "name": "Juice bottle",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/juice_bottle.svg",
+   "png": "sprites/png/juice_bottle.png"
+  },
+  {
+   "id": "milk_carton",
+   "name": "Milk carton",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/milk_carton.svg",
+   "png": "sprites/png/milk_carton.png"
+  },
+  {
+   "id": "ketchup_bottle",
+   "name": "Ketchup bottle",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/ketchup_bottle.svg",
+   "png": "sprites/png/ketchup_bottle.png"
+  },
+  {
+   "id": "honey_jar",
+   "name": "Honey jar",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/honey_jar.svg",
+   "png": "sprites/png/honey_jar.png"
+  },
+  {
+   "id": "onion",
+   "name": "Onion",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/onion.svg",
+   "png": "sprites/png/onion.png"
+  },
+  {
+   "id": "eye_drops",
+   "name": "Eye drops",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/eye_drops.svg",
+   "png": "sprites/png/eye_drops.png"
+  },
+  {
+   "id": "key",
+   "name": "Key",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/key.svg",
+   "png": "sprites/png/key.png"
+  },
+  {
+   "id": "magic_wand",
+   "name": "Magic wand",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/magic_wand.svg",
+   "png": "sprites/png/magic_wand.png"
+  },
+  {
+   "id": "toolbox",
+   "name": "Toolbox",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/toolbox.svg",
+   "png": "sprites/png/toolbox.png"
+  },
+  {
+   "id": "hammer",
+   "name": "Hammer",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/hammer.svg",
+   "png": "sprites/png/hammer.png"
+  },
+  {
+   "id": "paint_can",
+   "name": "Paint can",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/paint_can.svg",
+   "png": "sprites/png/paint_can.png"
+  },
+  {
+   "id": "spray_bottle",
+   "name": "Spray bottle",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/spray_bottle.svg",
+   "png": "sprites/png/spray_bottle.png"
+  },
+  {
+   "id": "red_bucket",
+   "name": "Bucket",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/red_bucket.svg",
+   "png": "sprites/png/red_bucket.png"
+  },
+  {
+   "id": "bouncy_ball",
+   "name": "Bouncy ball",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/bouncy_ball.svg",
+   "png": "sprites/png/bouncy_ball.png"
+  },
+  {
+   "id": "balloon",
+   "name": "Balloon",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    80
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/balloon.svg",
+   "png": "sprites/png/balloon.png"
+  },
+  {
+   "id": "whoopee_cushion",
+   "name": "Whoopee cushion",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/whoopee_cushion.svg",
+   "png": "sprites/png/whoopee_cushion.png"
+  },
+  {
+   "id": "rubber_duck",
+   "name": "Rubber duck",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/rubber_duck.svg",
+   "png": "sprites/png/rubber_duck.png"
+  },
+  {
+   "id": "toy_spider",
+   "name": "Toy spider",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    64
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/toy_spider.svg",
+   "png": "sprites/png/toy_spider.png"
+  },
+  {
+   "id": "rocket_toy",
+   "name": "Toy rocket",
+   "footprint_tiles": [
+    1,
+    1
+   ],
+   "sprite_px": [
+    64,
+    90
+   ],
+   "mount": "floor",
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "svg": "sprites/svg/rocket_toy.svg",
+   "png": "sprites/png/rocket_toy.png"
+  },
+  {
+   "id": "pink_car",
+   "name": "Pink car",
+   "footprint_tiles": [
+    3,
+    2
+   ],
+   "sprite_px": [
+    192,
+    120
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "svg": "sprites/svg/pink_car.svg",
+   "png": "sprites/png/pink_car.png"
+  },
+  {
+   "id": "school_bus",
+   "name": "School bus",
+   "footprint_tiles": [
+    5,
+    2
+   ],
+   "sprite_px": [
+    320,
+    170
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "svg": "sprites/svg/school_bus.svg",
+   "png": "sprites/png/school_bus.png"
+  },
+  {
+   "id": "ambulance",
+   "name": "Ambulance",
+   "footprint_tiles": [
+    4,
+    2
+   ],
+   "sprite_px": [
+    256,
+    150
+   ],
+   "mount": "floor",
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "svg": "sprites/svg/ambulance.svg",
+   "png": "sprites/png/ambulance.png"
+  },
+  {
+   "id": "bld_little_house",
+   "name": "My little house",
+   "footprint_tiles": [
+    6,
+    2
+   ],
+   "sprite_px": [
+    384,
+    330
+   ],
+   "mount": "floor",
+   "tags": [
+    "building"
+   ],
+   "svg": "sprites/svg/bld_little_house.svg",
+   "png": "sprites/png/bld_little_house.png"
+  },
+  {
+   "id": "bld_granny_house",
+   "name": "Granny's big house (outside)",
+   "footprint_tiles": [
+    8,
+    2
+   ],
+   "sprite_px": [
+    512,
+    470
+   ],
+   "mount": "floor",
+   "tags": [
+    "building"
+   ],
+   "svg": "sprites/svg/bld_granny_house.svg",
+   "png": "sprites/png/bld_granny_house.png"
+  },
+  {
+   "id": "bld_school",
+   "name": "School",
+   "footprint_tiles": [
+    9,
+    2
+   ],
+   "sprite_px": [
+    576,
+    380
+   ],
+   "mount": "floor",
+   "tags": [
+    "building"
+   ],
+   "svg": "sprites/svg/bld_school.svg",
+   "png": "sprites/png/bld_school.png"
+  },
+  {
+   "id": "bld_hospital",
+   "name": "Hospital",
+   "footprint_tiles": [
+    9,
+    2
+   ],
+   "sprite_px": [
+    576,
+    400
+   ],
+   "mount": "floor",
+   "tags": [
+    "building"
+   ],
+   "svg": "sprites/svg/bld_hospital.svg",
+   "png": "sprites/png/bld_hospital.png"
+  },
+  {
+   "id": "bld_palace",
+   "name": "Palace",
+   "footprint_tiles": [
+    12,
+    2
+   ],
+   "sprite_px": [
+    768,
+    480
+   ],
+   "mount": "floor",
+   "tags": [
+    "building"
+   ],
+   "svg": "sprites/svg/bld_palace.svg",
+   "png": "sprites/png/bld_palace.png"
+  },
+  {
+   "id": "bld_pool",
+   "name": "Swimming pool",
+   "footprint_tiles": [
+    8,
+    2
+   ],
+   "sprite_px": [
+    512,
+    300
+   ],
+   "mount": "floor",
+   "tags": [
+    "building"
+   ],
+   "svg": "sprites/svg/bld_pool.svg",
+   "png": "sprites/png/bld_pool.png"
+  },
+  {
+   "id": "bld_playground_gate",
+   "name": "Playground gate",
+   "footprint_tiles": [
+    6,
+    2
+   ],
+   "sprite_px": [
+    384,
+    260
+   ],
+   "mount": "floor",
+   "tags": [
+    "building"
+   ],
+   "svg": "sprites/svg/bld_playground_gate.svg",
+   "png": "sprites/png/bld_playground_gate.png"
+  },
+  {
+   "id": "bld_garden_gate",
+   "name": "Garden gate",
+   "footprint_tiles": [
+    6,
+    2
+   ],
+   "sprite_px": [
+    384,
+    260
+   ],
+   "mount": "floor",
+   "tags": [
+    "building"
+   ],
+   "svg": "sprites/svg/bld_garden_gate.svg",
+   "png": "sprites/png/bld_garden_gate.png"
+  },
+  {
+   "id": "bld_sand_park_gate",
+   "name": "Sand Park gate",
+   "footprint_tiles": [
+    6,
+    2
+   ],
+   "sprite_px": [
+    384,
+    260
+   ],
+   "mount": "floor",
+   "tags": [
+    "building"
+   ],
+   "svg": "sprites/svg/bld_sand_park_gate.svg",
+   "png": "sprites/png/bld_sand_park_gate.png"
+  }
+ ],
+ "rooms": [
+  {
+   "id": "lh_hall",
+   "name": "Hall",
+   "location": "little_house",
+   "floor": "Ground",
+   "unlock": 1,
+   "items": 11
+  },
+  {
+   "id": "lh_bathroom",
+   "name": "Bathroom",
+   "location": "little_house",
+   "floor": "Ground",
+   "unlock": 1,
+   "items": 11
+  },
+  {
+   "id": "lh_animal_room",
+   "name": "Animal room",
+   "location": "little_house",
+   "floor": "Ground",
+   "unlock": 1,
+   "items": 10
+  },
+  {
+   "id": "lh_fluffy_room",
+   "name": "Fluffy room",
+   "location": "little_house",
+   "floor": "Ground",
+   "unlock": 1,
+   "items": 12
+  },
+  {
+   "id": "gh_kitchen",
+   "name": "Kitchen",
+   "location": "granny_house",
+   "floor": "Ground",
+   "unlock": 1,
+   "items": 28
+  },
+  {
+   "id": "gh_hall",
+   "name": "Hall",
+   "location": "granny_house",
+   "floor": "Ground",
+   "unlock": 1,
+   "items": 16
+  },
+  {
+   "id": "gh_store_room",
+   "name": "Store room",
+   "location": "granny_house",
+   "floor": "Ground",
+   "unlock": 5,
+   "items": 14
+  },
+  {
+   "id": "gh_bedroom",
+   "name": "Bedroom",
+   "location": "granny_house",
+   "floor": "Floor 1",
+   "unlock": 7,
+   "items": 14
+  },
+  {
+   "id": "gh_dining_room",
+   "name": "Dining room",
+   "location": "granny_house",
+   "floor": "Floor 1",
+   "unlock": 12,
+   "items": 16
+  },
+  {
+   "id": "gh_bathroom",
+   "name": "Bathroom",
+   "location": "granny_house",
+   "floor": "Floor 1",
+   "unlock": 38,
+   "items": 13
+  },
+  {
+   "id": "gh_granny_room",
+   "name": "Granny's room",
+   "location": "granny_house",
+   "floor": "Floor 1",
+   "unlock": 30,
+   "items": 13
+  },
+  {
+   "id": "gh_craft_office",
+   "name": "Craft room / office",
+   "location": "granny_house",
+   "floor": "Floor 2",
+   "unlock": 20,
+   "items": 16
+  },
+  {
+   "id": "gh_puja_room",
+   "name": "Puja room",
+   "location": "granny_house",
+   "floor": "Floor 2",
+   "unlock": 27,
+   "items": 10
+  },
+  {
+   "id": "gh_exercise_room",
+   "name": "Exercise room",
+   "location": "granny_house",
+   "floor": "Floor 2",
+   "unlock": 36,
+   "items": 6
+  },
+  {
+   "id": "gh_dance_room",
+   "name": "Dance room",
+   "location": "granny_house",
+   "floor": "Floor 3",
+   "unlock": 15,
+   "items": 7
+  },
+  {
+   "id": "gh_study",
+   "name": "Study",
+   "location": "granny_house",
+   "floor": "Floor 3",
+   "unlock": 24,
+   "items": 11
+  },
+  {
+   "id": "gh_yoga_room",
+   "name": "Yoga room",
+   "location": "granny_house",
+   "floor": "Floor 3",
+   "unlock": 37,
+   "items": 6
+  },
+  {
+   "id": "gh_climbing_room",
+   "name": "Mountain climbing room",
+   "location": "granny_house",
+   "floor": "Floor 3",
+   "unlock": 95,
+   "items": 7
+  },
+  {
+   "id": "gh_play_zone",
+   "name": "Play zone",
+   "location": "granny_house",
+   "floor": "Roof",
+   "unlock": 33,
+   "items": 12
+  },
+  {
+   "id": "gh_roof",
+   "name": "Roof",
+   "location": "granny_house",
+   "floor": "Roof",
+   "unlock": 33,
+   "items": 8
+  },
+  {
+   "id": "pk_playground",
+   "name": "Playground",
+   "location": "park",
+   "floor": "Outside",
+   "unlock": 5,
+   "items": 15
+  },
+  {
+   "id": "pk_garden",
+   "name": "Granny's garden",
+   "location": "park",
+   "floor": "Outside",
+   "unlock": 10,
+   "items": 22
+  },
+  {
+   "id": "pk_sand_park",
+   "name": "Sand Park",
+   "location": "park",
+   "floor": "Outside",
+   "unlock": 65,
+   "items": 13
+  },
+  {
+   "id": "sp_pool_deck",
+   "name": "Pool deck",
+   "location": "swimming_pool",
+   "floor": "Outside",
+   "unlock": 50,
+   "items": 13
+  },
+  {
+   "id": "sp_changing_room",
+   "name": "Changing room",
+   "location": "swimming_pool",
+   "floor": "Outside",
+   "unlock": 52,
+   "items": 11
+  },
+  {
+   "id": "sc_classroom",
+   "name": "Classroom",
+   "location": "school",
+   "floor": "Ground",
+   "unlock": 25,
+   "items": 17
+  },
+  {
+   "id": "sc_corridor",
+   "name": "Corridor",
+   "location": "school",
+   "floor": "Ground",
+   "unlock": 25,
+   "items": 8
+  },
+  {
+   "id": "sc_staff_room",
+   "name": "Staff room (scary teacher's desk)",
+   "location": "school",
+   "floor": "Floor 1",
+   "unlock": 26,
+   "items": 12
+  },
+  {
+   "id": "sc_library",
+   "name": "Library",
+   "location": "school",
+   "floor": "Floor 1",
+   "unlock": 28,
+   "items": 13
+  },
+  {
+   "id": "sc_science_lab",
+   "name": "Science lab",
+   "location": "school",
+   "floor": "Floor 1",
+   "unlock": 31,
+   "items": 9
+  },
+  {
+   "id": "sc_canteen",
+   "name": "Canteen",
+   "location": "school",
+   "floor": "Ground",
+   "unlock": 29,
+   "items": 16
+  },
+  {
+   "id": "hs_reception",
+   "name": "Reception",
+   "location": "hospital",
+   "floor": "Ground",
+   "unlock": 40,
+   "items": 9
+  },
+  {
+   "id": "hs_doctor_room",
+   "name": "Doctor's room",
+   "location": "hospital",
+   "floor": "Ground",
+   "unlock": 41,
+   "items": 12
+  },
+  {
+   "id": "hs_ward",
+   "name": "Ward",
+   "location": "hospital",
+   "floor": "Floor 1",
+   "unlock": 43,
+   "items": 14
+  },
+  {
+   "id": "hs_pharmacy",
+   "name": "Pharmacy",
+   "location": "hospital",
+   "floor": "Ground",
+   "unlock": 45,
+   "items": 9
+  },
+  {
+   "id": "hs_xray_room",
+   "name": "X-ray room",
+   "location": "hospital",
+   "floor": "Ground",
+   "unlock": 47,
+   "items": 5
+  },
+  {
+   "id": "pl_throne_room",
+   "name": "Throne room",
+   "location": "palace",
+   "floor": "Ground",
+   "unlock": 80,
+   "items": 14
+  },
+  {
+   "id": "pl_queen_room",
+   "name": "Queen's room",
+   "location": "palace",
+   "floor": "Floor 1",
+   "unlock": 82,
+   "items": 13
+  },
+  {
+   "id": "pl_king_room",
+   "name": "King's room",
+   "location": "palace",
+   "floor": "Floor 1",
+   "unlock": 85,
+   "items": 11
+  },
+  {
+   "id": "pl_treasury",
+   "name": "Treasury",
+   "location": "palace",
+   "floor": "Basement",
+   "unlock": 88,
+   "items": 12
+  },
+  {
+   "id": "pl_royal_dining",
+   "name": "Royal dining hall",
+   "location": "palace",
+   "floor": "Ground",
+   "unlock": 84,
+   "items": 16
+  }
+ ],
+ "characters": [
+  "anisha",
+  "scary_teacher",
+  "granny",
+  "rani",
+  "kamala",
+  "kabla",
+  "labubu"
+ ]
+}

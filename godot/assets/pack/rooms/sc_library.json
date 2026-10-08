@@ -1,0 +1,158 @@
+{
+ "id": "sc_library",
+ "name": "Library",
+ "location": "school",
+ "floor": "Floor 1",
+ "unlockLevel": 28,
+ "screen": [
+  1600,
+  900
+ ],
+ "camera": {
+  "view": "fixed room view",
+  "pxPerTileBack": 78.57,
+  "floorBackY": 415.7,
+  "perspective": 0.4,
+  "depthShown": 0.9,
+  "wallHeightTiles": 4.4,
+  "formula": "x = 800 + (u - W/2)*pxPerTileBack*k ; y = floorBackY + t*(900-floorBackY) ; t = v/D*depthShown ; k = 1 + perspective*t ; sprite scale = pxPerTileBack*k/64"
+ },
+ "background": "rooms/school/sc_library_bg.png",
+ "full": "rooms/school/sc_library.png",
+ "drawOrder": [
+  {
+   "uid": "bookshelf_1",
+   "sprite": "bookshelf",
+   "kind": "floor",
+   "x": 800.0,
+   "y": 464.1,
+   "scale": 1.2768,
+   "z": 1
+  },
+  {
+   "uid": "bookshelf_2",
+   "sprite": "bookshelf",
+   "kind": "floor",
+   "x": 473.1,
+   "y": 464.1,
+   "scale": 1.2768,
+   "z": 1
+  },
+  {
+   "uid": "bookshelf_3",
+   "sprite": "bookshelf",
+   "kind": "side-wall",
+   "matrix": [
+    -0.3438,
+    0.7567,
+    0,
+    1.5714,
+    140.0,
+    375.0
+   ],
+   "z": 8.5
+  },
+  {
+   "uid": "bookshelf_4",
+   "sprite": "bookshelf",
+   "kind": "side-wall",
+   "matrix": [
+    -0.3438,
+    -0.7567,
+    0,
+    1.4241,
+    1482.0,
+    449.9464
+   ],
+   "z": 5.5
+  },
+  {
+   "uid": "reading_table_1",
+   "sprite": "reading_table",
+   "kind": "floor",
+   "x": 800.0,
+   "y": 657.9,
+   "scale": 1.4732,
+   "z": 5
+  },
+  {
+   "uid": "reading_table_2",
+   "sprite": "reading_table",
+   "kind": "floor",
+   "x": 1227.4,
+   "y": 851.6,
+   "scale": 1.6696,
+   "z": 9
+  },
+  {
+   "uid": "chair_1",
+   "sprite": "chair",
+   "kind": "floor",
+   "x": 1119.0,
+   "y": 609.4,
+   "scale": 1.4241,
+   "z": 4
+  },
+  {
+   "uid": "chair_2",
+   "sprite": "chair",
+   "kind": "floor",
+   "x": 548.6,
+   "y": 754.7,
+   "scale": 1.5714,
+   "z": 7
+  },
+  {
+   "uid": "globe_1",
+   "sprite": "globe",
+   "kind": "floor",
+   "x": 1494.6,
+   "y": 851.6,
+   "scale": 1.6696,
+   "z": 9
+  },
+  {
+   "uid": "book_cart_1",
+   "sprite": "book_cart",
+   "kind": "floor",
+   "x": 1189.7,
+   "y": 706.3,
+   "scale": 1.5223,
+   "z": 6
+  },
+  {
+   "uid": "cobweb_1",
+   "sprite": "cobweb",
+   "kind": "wall",
+   "x": 288.3,
+   "y": 268.6,
+   "scale": 1.2301,
+   "z": -0.5
+  },
+  {
+   "uid": "cobweb_2",
+   "sprite": "cobweb",
+   "kind": "side-wall",
+   "matrix": [
+    -0.3438,
+    -0.7567,
+    0,
+    1.2522,
+    1372.0,
+    287.8286
+   ],
+   "z": 0.5
+  },
+  {
+   "uid": "book_big_1",
+   "sprite": "book_big",
+   "kind": "on-top",
+   "on": "reading_table_1",
+   "x": 936.7,
+   "y": 556.6,
+   "scale": 1.2817,
+   "z": 5.01
+  }
+ ],
+ "characters": []
+}

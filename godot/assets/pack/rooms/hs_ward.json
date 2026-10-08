@@ -1,0 +1,161 @@
+{
+ "id": "hs_ward",
+ "name": "Ward",
+ "location": "hospital",
+ "floor": "Floor 1",
+ "unlockLevel": 43,
+ "screen": [
+  1600,
+  900
+ ],
+ "camera": {
+  "view": "fixed room view",
+  "pxPerTileBack": 68.75,
+  "floorBackY": 372.5,
+  "perspective": 0.4,
+  "depthShown": 0.9,
+  "wallHeightTiles": 4.4,
+  "formula": "x = 800 + (u - W/2)*pxPerTileBack*k ; y = floorBackY + t*(900-floorBackY) ; t = v/D*depthShown ; k = 1 + perspective*t ; sprite scale = pxPerTileBack*k/64"
+ },
+ "background": "rooms/hospital/hs_ward_bg.png",
+ "full": "rooms/hospital/hs_ward.png",
+ "drawOrder": [
+  {
+   "uid": "hospital_bed_1",
+   "sprite": "hospital_bed",
+   "kind": "floor",
+   "x": 800.0,
+   "y": 562.4,
+   "scale": 1.2289,
+   "z": 4
+  },
+  {
+   "uid": "hospital_bed_2",
+   "sprite": "hospital_bed",
+   "kind": "floor",
+   "x": 642.7,
+   "y": 562.4,
+   "scale": 1.2289,
+   "z": 4
+  },
+  {
+   "uid": "hospital_bed_3",
+   "sprite": "hospital_bed",
+   "kind": "floor",
+   "x": 957.3,
+   "y": 562.4,
+   "scale": 1.2289,
+   "z": 4
+  },
+  {
+   "uid": "hospital_bed_4",
+   "sprite": "hospital_bed",
+   "kind": "floor",
+   "x": 800.0,
+   "y": 847.2,
+   "scale": 1.4609,
+   "z": 10
+  },
+  {
+   "uid": "hospital_bed_5",
+   "sprite": "hospital_bed",
+   "kind": "floor",
+   "x": 613.0,
+   "y": 847.2,
+   "scale": 1.4609,
+   "z": 10
+  },
+  {
+   "uid": "curtain_screen_1",
+   "sprite": "curtain_screen",
+   "kind": "floor",
+   "x": 1092.6,
+   "y": 657.4,
+   "scale": 1.3062,
+   "z": 6
+  },
+  {
+   "uid": "drip_stand_1",
+   "sprite": "drip_stand",
+   "kind": "floor",
+   "x": 457.2,
+   "y": 514.9,
+   "scale": 1.1902,
+   "z": 3
+  },
+  {
+   "uid": "drip_stand_2",
+   "sprite": "drip_stand",
+   "kind": "floor",
+   "x": 1153.9,
+   "y": 562.4,
+   "scale": 1.2289,
+   "z": 4
+  },
+  {
+   "uid": "wheelchair_1",
+   "sprite": "wheelchair",
+   "kind": "side-wall",
+   "matrix": [
+    -0.3094,
+    -0.7418,
+    0,
+    1.2676,
+    1468.8,
+    505.2406
+   ],
+   "z": 5.5
+  },
+  {
+   "uid": "hanging_bulb_1",
+   "sprite": "hanging_bulb",
+   "kind": "ceiling",
+   "x": 407.1,
+   "y": 634.2,
+   "scale": 1.3643,
+   "z": 99
+  },
+  {
+   "uid": "heart_monitor_1",
+   "sprite": "heart_monitor",
+   "kind": "floor",
+   "x": 1109.9,
+   "y": 752.3,
+   "scale": 1.3836,
+   "z": 8
+  },
+  {
+   "uid": "heart_monitor_2",
+   "sprite": "heart_monitor",
+   "kind": "floor",
+   "x": 1131.7,
+   "y": 467.5,
+   "scale": 1.1516,
+   "z": 2
+  },
+  {
+   "uid": "cobweb_1",
+   "sprite": "cobweb",
+   "kind": "wall",
+   "x": 283.4,
+   "y": 244.0,
+   "scale": 1.0762,
+   "z": -0.5
+  },
+  {
+   "uid": "cobweb_2",
+   "sprite": "cobweb",
+   "kind": "side-wall",
+   "matrix": [
+    -0.3094,
+    -0.7418,
+    0,
+    1.0936,
+    1369.8,
+    266.0025
+   ],
+   "z": 0.5
+  }
+ ],
+ "characters": []
+}

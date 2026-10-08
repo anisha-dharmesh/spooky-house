@@ -1,0 +1,180 @@
+{
+ "id": "sc_classroom",
+ "name": "Classroom",
+ "location": "school",
+ "floor": "Ground",
+ "unlockLevel": 25,
+ "screen": [
+  1600,
+  900
+ ],
+ "camera": {
+  "view": "fixed room view",
+  "pxPerTileBack": 78.57,
+  "floorBackY": 415.7,
+  "perspective": 0.4,
+  "depthShown": 0.9,
+  "wallHeightTiles": 4.4,
+  "formula": "x = 800 + (u - W/2)*pxPerTileBack*k ; y = floorBackY + t*(900-floorBackY) ; t = v/D*depthShown ; k = 1 + perspective*t ; sprite scale = pxPerTileBack*k/64"
+ },
+ "background": "rooms/school/sc_classroom_bg.png",
+ "full": "rooms/school/sc_classroom.png",
+ "drawOrder": [
+  {
+   "uid": "blackboard_1",
+   "sprite": "blackboard",
+   "kind": "wall",
+   "x": 800.0,
+   "y": 323.4,
+   "scale": 1.2299,
+   "z": -0.5
+  },
+  {
+   "uid": "teacher_desk_1",
+   "sprite": "teacher_desk",
+   "kind": "floor",
+   "x": 752.2,
+   "y": 677.2,
+   "scale": 1.4929,
+   "z": 6
+  },
+  {
+   "uid": "student_desk_1",
+   "sprite": "student_desk",
+   "kind": "floor",
+   "x": 538.8,
+   "y": 546.5,
+   "scale": 1.3603,
+   "z": 3
+  },
+  {
+   "uid": "student_desk_2",
+   "sprite": "student_desk",
+   "kind": "floor",
+   "x": 1061.2,
+   "y": 546.5,
+   "scale": 1.3603,
+   "z": 3
+  },
+  {
+   "uid": "student_desk_3",
+   "sprite": "student_desk",
+   "kind": "floor",
+   "x": 496.4,
+   "y": 764.4,
+   "scale": 1.5813,
+   "z": 8
+  },
+  {
+   "uid": "student_desk_4",
+   "sprite": "student_desk",
+   "kind": "floor",
+   "x": 1103.6,
+   "y": 764.4,
+   "scale": 1.5813,
+   "z": 8
+  },
+  {
+   "uid": "student_desk_5",
+   "sprite": "student_desk",
+   "kind": "floor",
+   "x": 800.0,
+   "y": 546.5,
+   "scale": 1.3603,
+   "z": 3
+  },
+  {
+   "uid": "student_desk_6",
+   "sprite": "student_desk",
+   "kind": "floor",
+   "x": 800.0,
+   "y": 764.4,
+   "scale": 1.5813,
+   "z": 8
+  },
+  {
+   "uid": "school_bag_1",
+   "sprite": "school_bag",
+   "kind": "floor",
+   "x": 382.8,
+   "y": 633.6,
+   "scale": 1.4487,
+   "z": 5
+  },
+  {
+   "uid": "school_bag_2",
+   "sprite": "school_bag",
+   "kind": "floor",
+   "x": 1031.8,
+   "y": 633.6,
+   "scale": 1.4487,
+   "z": 5
+  },
+  {
+   "uid": "globe_1",
+   "sprite": "globe",
+   "kind": "floor",
+   "x": 1329.1,
+   "y": 459.3,
+   "scale": 1.2719,
+   "z": 1
+  },
+  {
+   "uid": "wall_clock_1",
+   "sprite": "wall_clock",
+   "kind": "wall",
+   "x": 288.4,
+   "y": 268.3,
+   "scale": 1.2299,
+   "z": -0.5
+  },
+  {
+   "uid": "school_chair_1",
+   "sprite": "school_chair",
+   "kind": "floor",
+   "x": 259.0,
+   "y": 720.8,
+   "scale": 1.5371,
+   "z": 7
+  },
+  {
+   "uid": "school_chair_2",
+   "sprite": "school_chair",
+   "kind": "floor",
+   "x": 1278.8,
+   "y": 546.5,
+   "scale": 1.3603,
+   "z": 3
+  },
+  {
+   "uid": "school_chair_3",
+   "sprite": "school_chair",
+   "kind": "floor",
+   "x": 321.2,
+   "y": 546.5,
+   "scale": 1.3603,
+   "z": 3
+  },
+  {
+   "uid": "pencil_1",
+   "sprite": "pencil",
+   "kind": "on-top",
+   "on": "student_desk_1",
+   "x": 495.3,
+   "y": 463.2,
+   "scale": 1.2242,
+   "z": 3.01
+  },
+  {
+   "uid": "eraser_1",
+   "sprite": "eraser",
+   "kind": "on-top",
+   "on": "student_desk_2",
+   "x": 1104.7,
+   "y": 463.2,
+   "scale": 1.2242,
+   "z": 3.01
+  }
+ ],
+ "characters": []
+}

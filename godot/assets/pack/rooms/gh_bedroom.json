@@ -1,0 +1,184 @@
+{
+ "id": "gh_bedroom",
+ "name": "Bedroom",
+ "location": "granny_house",
+ "floor": "Floor 1",
+ "unlockLevel": 7,
+ "screen": [
+  1600,
+  900
+ ],
+ "camera": {
+  "view": "fixed room view",
+  "pxPerTileBack": 91.67,
+  "floorBackY": 473.3,
+  "perspective": 0.4,
+  "depthShown": 0.9,
+  "wallHeightTiles": 4.4,
+  "formula": "x = 800 + (u - W/2)*pxPerTileBack*k ; y = floorBackY + t*(900-floorBackY) ; t = v/D*depthShown ; k = 1 + perspective*t ; sprite scale = pxPerTileBack*k/64"
+ },
+ "background": "rooms/granny_house/gh_bedroom_bg.png",
+ "full": "rooms/granny_house/gh_bedroom.png",
+ "drawOrder": [
+  {
+   "uid": "rug_1",
+   "sprite": "rug",
+   "kind": "floor-quad",
+   "quad": [
+    [
+     594.7,
+     601.3
+    ],
+    [
+     1005.3,
+     601.3
+    ],
+    [
+     1027.3,
+     729.3
+    ],
+    [
+     572.7,
+     729.3
+    ]
+   ]
+  },
+  {
+   "uid": "bunk_bed_1",
+   "sprite": "bunk_bed",
+   "kind": "floor",
+   "x": 800.0,
+   "y": 644.0,
+   "scale": 1.6615,
+   "z": 4
+  },
+  {
+   "uid": "bunk_bed_2",
+   "sprite": "bunk_bed",
+   "kind": "floor",
+   "x": 587.3,
+   "y": 644.0,
+   "scale": 1.6615,
+   "z": 4
+  },
+  {
+   "uid": "bunk_bed_3",
+   "sprite": "bunk_bed",
+   "kind": "floor",
+   "x": 1012.7,
+   "y": 644.0,
+   "scale": 1.6615,
+   "z": 4
+  },
+  {
+   "uid": "wardrobe_small_1",
+   "sprite": "wardrobe_small",
+   "kind": "floor",
+   "x": 800.0,
+   "y": 857.3,
+   "scale": 1.9479,
+   "z": 9
+  },
+  {
+   "uid": "drawer_unit_1",
+   "sprite": "drawer_unit",
+   "kind": "side-wall",
+   "matrix": [
+    -0.3437,
+    0.6667,
+    0,
+    1.6615,
+    184.0,
+    461.7708
+   ],
+   "z": 4.5
+  },
+  {
+   "uid": "drawer_unit_2",
+   "sprite": "drawer_unit",
+   "kind": "side-wall",
+   "matrix": [
+    -0.3438,
+    0.6667,
+    0,
+    1.776,
+    140.0,
+    537.4792
+   ],
+   "z": 6.5
+  },
+  {
+   "uid": "stairs_1",
+   "sprite": "stairs",
+   "kind": "floor",
+   "x": 437.0,
+   "y": 814.7,
+   "scale": 1.8906,
+   "z": 8
+  },
+  {
+   "uid": "cobweb_1",
+   "sprite": "cobweb",
+   "kind": "wall",
+   "x": 294.8,
+   "y": 301.0,
+   "scale": 1.4352,
+   "z": -0.5
+  },
+  {
+   "uid": "cobweb_2",
+   "sprite": "cobweb",
+   "kind": "side-wall",
+   "matrix": [
+    -0.3438,
+    -0.6667,
+    0,
+    1.4609,
+    1372.0,
+    310.3
+   ],
+   "z": 0.5
+  },
+  {
+   "uid": "trophy_1",
+   "sprite": "trophy",
+   "kind": "on-top",
+   "on": "drawer_unit_1",
+   "x": 214.0,
+   "y": 519.4,
+   "scale": 1.5469,
+   "z": 5.01
+  },
+  {
+   "uid": "watch_1",
+   "sprite": "watch",
+   "kind": "on-top",
+   "on": "drawer_unit_2",
+   "x": 170.0,
+   "y": 598.4,
+   "scale": 1.5984,
+   "z": 7.01
+  },
+  {
+   "uid": "medal_1",
+   "sprite": "medal",
+   "kind": "on-top",
+   "on": "drawer_unit_1",
+   "x": 214.0,
+   "y": 518.8,
+   "scale": 1.4953,
+   "z": 5.01
+  },
+  {
+   "uid": "lantern_1",
+   "sprite": "lantern",
+   "kind": "on-top",
+   "on": "drawer_unit_2",
+   "x": 170.0,
+   "y": 599.1,
+   "scale": 1.65,
+   "z": 7.01
+  }
+ ],
+ "characters": []
+}
