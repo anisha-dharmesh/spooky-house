@@ -1,7 +1,8 @@
 class_name LevelView
 extends Node3D
-## Shows the world in 3D and drives the game each frame. Two cameras: a tilted "dollhouse" view from above
-## and a third-person view behind Anisha (V switches, Q / R or a drag turns the third-person camera).
+## Shows the world in 3D and drives the game each frame. A tilted "dollhouse" view from above (a third-person view
+## is kept for screenshots). The only controls are taps: a tap on the ground walks there, a tap on a thing that
+## matters walks there and uses it, with a bubble over it that shows what it is.
 ## Only Granny's house is spooky: the light and fog change as Anisha walks in and out of it.
 
 signal pause_requested
@@ -12,14 +13,13 @@ const WALL_H_THIRD := 2.6
 var logic: GameLogic
 var world: WorldData
 var active := true
-var touch: Node = null   # TouchControls when on a touch device
 
 var cam: Camera3D
 var cam_mode := 0        # 0 = dollhouse, 1 = third person
 var yaw := 0.0
 
 var _player: Node3D
-var _player_fade: Array = []   # materials whose alpha shows sneaking / hiding
+var _player_fade: Array = []   # materials whose alpha shows hiding
 var _player_anim: AnimationPlayer
 var _prev_player := Vector2.ZERO
 var _you_label: Label3D
@@ -33,6 +33,14 @@ var _wall_h := WALL_H_DOLLHOUSE
 var _pickup_nodes := {}
 var _target_nodes := {}
 var _marker: MeshInstance3D
+var _rings := {}               # id -> a pulsing ring on a thing the current task needs
+var _bubble: Node3D            # the speech bubble over a tapped thing
+var _bubble_text: Label3D
+var _bubble_item: Node3D
+var _bubble_time := 0.0
+var _wiggle: Node3D
+var _wiggle_time := 0.0
+var _tap_ring: MeshInstance3D
 var _light: OmniLight3D
 var _sun: DirectionalLight3D
 var _env: Environment
@@ -53,6 +61,8 @@ func setup(done_ids: Array) -> void:
 	_build_characters()
 	_sync_baddie_nodes()
 	_build_camera()
+	_build_bubble()
+	logic.hint.connect(_show_hint)
 	logic.item_picked.connect(func(id: String) -> void:
 		if _pickup_nodes.has(id):
 			_pickup_nodes[id].visible = false)
@@ -61,6 +71,9 @@ func setup(done_ids: Array) -> void:
 			if _pickup_nodes.has(id):
 				_pickup_nodes[id].visible = true)
 	logic.steps_changed.connect(_place_marker)
+	logic.steps_changed.connect(_refresh_rings)
+	logic.item_picked.connect(func(_id: String) -> void: _refresh_rings())
+	logic.items_restored.connect(func(_ids: Array) -> void: _refresh_rings())
 	logic.pet_called.connect(_on_pet_called)
 	logic.target_used.connect(_pop_target)
 	logic.baddies_changed.connect(_sync_baddie_nodes)
@@ -70,6 +83,7 @@ func setup(done_ids: Array) -> void:
 		if _pickup_nodes.has(id):
 			_pickup_nodes[id].visible = false
 	_place_marker()
+	_refresh_rings()
 
 
 # ---------- building ----------
@@ -285,6 +299,7 @@ func _build_props() -> void:
 		var node: Node3D = made.node
 		add_child(node)
 		if _pickup_uid(s.uid):
+			node.set_meta("y0", node.position.y)
 			_pickup_nodes[s.uid] = node
 		if _is_target(s.uid):
 			_target_nodes[s.uid] = node
@@ -447,20 +462,7 @@ func _process(delta: float) -> void:
 	_time += delta
 	var dt := minf(delta, 0.05)
 	if active and logic.result == "":
-		var iv := Input.get_vector("move_left", "move_right", "move_up", "move_down")
-		var sneak := Input.is_action_pressed("sneak")
-		if touch != null:
-			if touch.move_vec.length() > 0.05:
-				iv = touch.move_vec
-			sneak = sneak or touch.sneak_on
-		var f := Vector2(sin(yaw), -cos(yaw))
-		var r := Vector2(cos(yaw), sin(yaw))
-		logic.tick(dt, r * iv.x + f * (-iv.y), sneak)
-		if cam_mode == 1:
-			var turn := Input.get_axis("cam_left", "cam_right")
-			if touch != null:
-				turn += touch.cam_turn
-			yaw += turn * 1.8 * dt
+		logic.tick(dt)
 	_sync_visuals(delta)
 	_update_camera(dt, false)
 
@@ -470,18 +472,212 @@ func _unhandled_input(event: InputEvent) -> void:
 		if event.is_action_pressed("pause") and logic.result == "":
 			pause_requested.emit()
 		return
-	if event.is_action_pressed("use"):
-		logic.use()
-	elif event.is_action_pressed("hide"):
-		logic.toggle_hide()
-	elif event.is_action_pressed("pet"):
-		logic.call_pet()
-	elif event.is_action_pressed("pause"):
+	if event.is_action_pressed("pause"):
 		pause_requested.emit()
-	elif event.is_action_pressed("cam_toggle"):
-		toggle_camera()
-	elif cam_mode == 1 and event is InputEventMouseMotion and (event.button_mask & MOUSE_BUTTON_MASK_RIGHT) != 0:
-		yaw += event.relative.x * 0.008
+	elif event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		_tap(event.position)
+
+
+# ---------- taps ----------
+
+## A tap or click at a screen position: a thing that matters, or else the ground.
+func _tap(screen: Vector2) -> void:
+	var o := cam.project_ray_origin(screen)
+	var d := cam.project_ray_normal(screen)
+	var thing := _thing_on_ray(o, d)
+	if not thing.is_empty():
+		logic.tap_thing(thing)
+		return
+	if absf(d.y) < 0.001:
+		return
+	var t := -o.y / d.y
+	if t <= 0.0:
+		return
+	var hit := o + d * t
+	logic.tap_ground(Vector2(hit.x, hit.z))
+	_show_tap(Vector2(hit.x, hit.z))
+
+
+## The thing a ray points at (a loose box around each thing, so a fat finger is fine). Things the current step
+## wants win over things that only happen to be in front.
+func _thing_on_ray(o: Vector3, d: Vector3) -> Dictionary:
+	var best := {}
+	var best_t := INF
+	var candidates: Array[Dictionary] = []
+	for p in world.pickups:
+		if not logic.picked.has(p.uid):
+			candidates.append({"kind": "pickup", "pickup": p, "rect": p.rect})
+	for tg in world.targets:
+		candidates.append({"kind": "target", "target": tg, "rect": tg.rect})
+	for h in world.hides:
+		candidates.append({"kind": "hide", "hide": h, "rect": h.rect})
+	for c in candidates:
+		var t := _ray_box(o, d, (c.rect as Rect2).grow(0.15), 1.6)
+		if t < 0.0:
+			continue
+		if logic.hint_for(c).go:
+			t -= 1.0
+		if t < best_t:
+			best_t = t
+			best = c
+	return best
+
+
+## Where a ray enters a box standing on the floor (-1 when it misses).
+func _ray_box(o: Vector3, d: Vector3, r: Rect2, height: float) -> float:
+	var lo := Vector3(r.position.x, 0.0, r.position.y)
+	var hi := Vector3(r.end.x, height, r.end.y)
+	var tmin := 0.0
+	var tmax := INF
+	for axis in 3:
+		if absf(d[axis]) < 1e-9:
+			if o[axis] < lo[axis] or o[axis] > hi[axis]:
+				return -1.0
+		else:
+			var t1: float = (lo[axis] - o[axis]) / d[axis]
+			var t2: float = (hi[axis] - o[axis]) / d[axis]
+			tmin = maxf(tmin, minf(t1, t2))
+			tmax = minf(tmax, maxf(t1, t2))
+			if tmin > tmax:
+				return -1.0
+	return tmin
+
+
+## A small ring that ripples where she was sent.
+func _show_tap(p: Vector2) -> void:
+	if _tap_ring == null:
+		_tap_ring = MeshInstance3D.new()
+		var tm := TorusMesh.new()
+		tm.inner_radius = 0.2
+		tm.outer_radius = 0.26
+		_tap_ring.mesh = tm
+		_tap_ring.material_override = _flat_material(Color(1, 1, 1), true)
+		add_child(_tap_ring)
+	_tap_ring.position = Vector3(p.x, 0.06, p.y)
+	_tap_ring.visible = true
+	_tap_ring.scale = Vector3(0.3, 1, 0.3)
+	var tw := create_tween()
+	tw.tween_property(_tap_ring, "scale", Vector3(1.4, 1, 1.4), 0.45)
+	tw.tween_callback(func() -> void: _tap_ring.visible = false)
+
+
+# ---------- the bubble over a tapped thing ----------
+
+func _build_bubble() -> void:
+	_bubble = Node3D.new()
+	_bubble.visible = false
+	add_child(_bubble)
+	var img := Image.create(128, 128, false, Image.FORMAT_RGBA8)
+	for y in 128:
+		for x in 128:
+			var dd := Vector2(x - 63.5, y - 63.5).length()
+			img.set_pixel(x, y, Color(1, 1, 1, clampf(64.0 - dd, 0.0, 1.0)))
+	var disc := Sprite3D.new()
+	disc.texture = ImageTexture.create_from_image(img)
+	disc.pixel_size = 0.0125
+	disc.billboard = BaseMaterial3D.BILLBOARD_ENABLED
+	disc.no_depth_test = true
+	disc.shaded = false
+	disc.render_priority = 1
+	_bubble.add_child(disc)
+	_bubble_item = Node3D.new()
+	_bubble_item.position.y = -0.1
+	_bubble.add_child(_bubble_item)
+	_bubble_text = Label3D.new()
+	_bubble_text.font = UIKit.body_font()
+	_bubble_text.font_size = 48
+	_bubble_text.pixel_size = 0.006
+	_bubble_text.modulate = Color(0.04, 0.04, 0.043)
+	_bubble_text.outline_size = 0
+	_bubble_text.billboard = BaseMaterial3D.BILLBOARD_ENABLED
+	_bubble_text.no_depth_test = true
+	_bubble_text.render_priority = 2
+	_bubble_text.position = Vector3(0, -0.5, 0)
+	_bubble.add_child(_bubble_text)
+
+
+func _show_hint(rect: Rect2, item: String, key: String, vars: Dictionary) -> void:
+	var text := GameData.L(vars.text) if key == "@text" else GameData.t(key, vars)
+	_bubble_text.text = text
+	for c in _bubble_item.get_children():
+		c.queue_free()
+	_bubble_text.position.y = -0.5
+	if item != "":
+		for sp in world.sprites:
+			if sp.uid == item:
+				var made := ModelLibrary.make(sp, 0.0, true)
+				var node: Node3D = made.node
+				node.position = Vector3.ZERO
+				node.rotation_degrees = Vector3(0, 30, 0)
+				node.scale = Vector3.ONE * clampf(0.55 / maxf(float(made.top), 0.1), 0.4, 3.0)
+				_bubble_item.add_child(node)
+				break
+	var c := rect.get_center()
+	_bubble.position = Vector3(c.x, 2.3, c.y)
+	_bubble.visible = true
+	_bubble_time = 2.4
+	# a thing that is not ready yet gives a little wiggle
+	_wiggle = null
+	if key == "needShort" or key == "notYetShort" or key == "bagFull":
+		for id in _target_nodes:
+			var n: Node3D = _target_nodes[id]
+			if Geo.point_in_rect(Vector2(n.position.x, n.position.z), rect.grow(0.3)):
+				_wiggle = n
+		_wiggle_time = 0.5
+
+
+func _animate_bubble(delta: float) -> void:
+	if _bubble_time > 0.0:
+		_bubble_time -= delta
+		_bubble.scale = Vector3.ONE * minf(1.0, (2.4 - _bubble_time) * 8.0 + 0.2) * minf(1.0, _bubble_time * 4.0)
+		if _bubble_time <= 0.0:
+			_bubble.visible = false
+	if _wiggle != null and is_instance_valid(_wiggle):
+		_wiggle_time -= delta
+		_wiggle.rotation.z = sin(_time * 40.0) * 0.12 * maxf(_wiggle_time, 0.0) * 2.0
+		if _wiggle_time <= 0.0:
+			_wiggle.rotation.z = 0.0
+			_wiggle = null
+
+
+## A soft pulsing ring under each thing the current task needs, so you can tell what matters from the scenery.
+func _refresh_rings() -> void:
+	var wanted := {}
+	for st in logic.task.get("steps", []):
+		for k in ["item", "target"]:
+			if st.has(k):
+				wanted[st[k]] = true
+	for id in _rings.keys():
+		if not wanted.has(id):
+			(_rings[id] as Node3D).queue_free()
+			_rings.erase(id)
+	for id in wanted:
+		var r := Rect2()
+		var found := false
+		var pk := logic.pick_by_id(id)
+		if not pk.is_empty():
+			r = pk.rect
+			found = true
+		else:
+			for t in world.targets:
+				if t.id == id:
+					r = t.rect
+					found = true
+		if not found:
+			continue
+		if not _rings.has(id):
+			var ring := MeshInstance3D.new()
+			var tm := TorusMesh.new()
+			var rad := maxf(0.4, minf(r.size.x, r.size.y) / 2.0 + 0.1)
+			tm.inner_radius = rad - 0.025
+			tm.outer_radius = rad + 0.025
+			ring.mesh = tm
+			ring.material_override = _flat_material(Color(1, 1, 1), true)
+			var c := r.get_center()
+			ring.position = Vector3(c.x, 0.04, c.y)
+			add_child(ring)
+			_rings[id] = ring
+		(_rings[id] as Node3D).visible = pk.is_empty() or not logic.picked.has(id)
 
 
 func toggle_camera() -> void:
@@ -496,7 +692,7 @@ func _sync_visuals(delta: float) -> void:
 	var p := logic.player_pos
 	_player.position = Vector3(p.x, 0, p.y)
 	_player.rotation.y = -logic.player_facing
-	var alpha := 0.22 if logic.is_hiding() else (0.7 if logic.sneaking else 1.0)
+	var alpha := 0.22 if logic.is_hiding() else 1.0
 	for mat in _player_fade:
 		mat.albedo_color.a = alpha
 	_animate_player()
@@ -515,6 +711,11 @@ func _sync_visuals(delta: float) -> void:
 	for uid in _pickup_nodes:
 		var n: Node3D = _pickup_nodes[uid]
 		n.rotation.y = _time * 1.2
+		n.position.y = float(n.get_meta("y0", 0.0)) + 0.04 + 0.04 * sin(_time * 3.0 + n.position.x)
+	for id in _rings:
+		var ring: MeshInstance3D = _rings[id]
+		ring.scale = Vector3.ONE * (1.0 + 0.1 * sin(_time * 3.0))
+	_animate_bubble(delta)
 	_marker.scale = Vector3.ONE * (1.0 + 0.18 * sin(_time * 4.0))
 	# walls drop low for the dollhouse view and rise for third person
 	var target_h := WALL_H_DOLLHOUSE if cam_mode == 0 else WALL_H_THIRD
@@ -533,7 +734,7 @@ func _animate_player() -> void:
 	if logic.is_hiding():
 		_play(_player_anim, "hide")
 	elif moved > 0.002:
-		_play(_player_anim, "sneak" if logic.sneaking else "walk")
+		_play(_player_anim, "walk")
 	else:
 		_play(_player_anim, "idle")
 

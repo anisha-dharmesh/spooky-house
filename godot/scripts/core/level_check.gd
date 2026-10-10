@@ -136,6 +136,30 @@ func path_to_rect(from: Vector2, r: Rect2, within: float) -> Array[Vector2]:
 	return out
 
 
+## True when the straight line between two points stays on free cells.
+func line_free(a: Vector2, b: Vector2) -> bool:
+	var n := int(ceil(a.distance_to(b) / (CELL * 0.5)))
+	for i in n + 1:
+		if not is_free(cell_of(a.lerp(b, float(i) / maxf(n, 1)))):
+			return false
+	return true
+
+
+## Cuts the corners off a grid route: keeps only the points where the way really bends.
+func smooth(path: Array[Vector2]) -> Array[Vector2]:
+	if path.size() < 3:
+		return path
+	var out: Array[Vector2] = []
+	var i := 0
+	while i < path.size() - 1:
+		var j := path.size() - 1
+		while j > i + 1 and not line_free(path[i], path[j]):
+			j -= 1
+		out.append(path[j])
+		i = j
+	return out
+
+
 ## Returns a list of problems (empty = fine).
 static func validate(world_def: Dictionary, tasks: Array, rooms: Dictionary, kinds: Dictionary) -> Array[String]:
 	var errors: Array[String] = []
@@ -222,6 +246,17 @@ static func validate(world_def: Dictionary, tasks: Array, rooms: Dictionary, kin
 							errors.append(at + 'no target "%s" (room id/uid of an item, or an id from "extras")' % s.target)
 						elif not chk.can_reach_rect(dist, tg.rect, reach):
 							errors.append(at + 'the player can\'t get to "%s" at this point (a locked room?)' % s.target)
+				"do", "watch":
+					var tg2: Variant = null
+					for tt2 in world.targets:
+						if tt2.id == s.target:
+							tg2 = tt2
+					if tg2 == null:
+						errors.append(at + 'no target "%s" (room id/uid of an item)' % s.target)
+					elif s.type == "do" and not chk.can_reach_rect(dist, tg2.rect, reach):
+						errors.append(at + 'the player can\'t get to "%s" at this point (a locked room?)' % s.target)
+					if s.type == "watch" and t.get("baddies", []).is_empty():
+						errors.append(at + '"watch" needs a baddie in the task')
 				"reach":
 					var rm := world.room_by_id(String(s.get("room", "")))
 					if rm.is_empty():

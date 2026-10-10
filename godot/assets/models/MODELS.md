@@ -2,7 +2,7 @@
 
 Written by `npm run models`. Rules: docs/3D_MODEL_BRIEF.md. Pictures of batch 1: docs/art/3d-batch1/. The newer models are built to match docs/art/reference/.
 
-## Made (291)
+## Made (295)
 
 | id | Name | Footprint (m) | Height (m) | Triangles | Animations | Made by |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -37,6 +37,10 @@ Written by `npm run models`. Rules: docs/3D_MODEL_BRIEF.md. Pictures of batch 1:
 | `lift` | Lift | 2 × 2 | 2.9 | 108 | - | Claude Design |
 | `front_door_mat` | Doormat | 2 × 1 | 0.04 | 24 | - | Claude Design |
 | `lamp_floor` | Floor lamp | 1 × 1 | 1.8 | 280 | - | Claude Design |
+| `teddy` | teddy | 1 × 1 | 0.705 | 1884 | - | generated |
+| `toy_box` | toy_box | 1.6 × 1 | 0.75 | 600 | - | generated |
+| `pet_food_sack` | pet_food_sack | 1 × 1 | 0.79 | 948 | - | generated |
+| `school_uniform` | school_uniform | 1 × 1 | 0.212 | 204 | - | generated |
 | `shoes` | shoes | 1.4 × 1 | 0.146 | 696 | - | generated |
 | `tv_small` | TV | 3 × 1 | 1.58 | 792 | - | generated |
 | `armchair` | Armchair | 1.4 × 1.2 | 1.06 | 384 | - | generated |

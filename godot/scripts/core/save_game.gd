@@ -1,5 +1,5 @@
 extends Node
-## Autoload "SaveGame": language and stars per task, kept in user://save.cfg.
+## Autoload "SaveGame": stars per task, kept in user://save.cfg.
 ## A finished task and its stars are all that is saved: the game always starts in Anisha's room.
 
 const PATH := "user://save.cfg"
@@ -11,12 +11,6 @@ func _ready() -> void:
 	if _cfg.has_section("levels") and not _cfg.has_section("tasks"): # saves from when tasks were called levels
 		for k in _cfg.get_section_keys("levels"):
 			_cfg.set_value("tasks", k, _cfg.get_value("levels", k))
-	GameData.lang = _cfg.get_value("settings", "lang", "en")
-
-
-func save_lang(lang: String) -> void:
-	_cfg.set_value("settings", "lang", lang)
-	_cfg.save(PATH)
 
 
 func completed_ids() -> Array:

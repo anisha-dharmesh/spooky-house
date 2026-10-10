@@ -161,6 +161,34 @@
    "tags": [
     "decor"
    ]
+  },
+  {
+   "uid": "watering_can_1",
+   "sprite": "watering_can",
+   "name": "Watering can",
+   "x": 7,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "pickup"
+   ]
+  },
+  {
+   "uid": "towel_2",
+   "sprite": "towel",
+   "name": "Towel",
+   "x": 7,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "pickup"
+   ]
   }
  ],
  "colliders": [
@@ -190,7 +218,9 @@
  "pickups": [
   "towel_1",
   "soap_1",
-  "toothbrush_1"
+  "toothbrush_1",
+  "watering_can_1",
+  "towel_2"
  ],
  "prankTargets": [
   "bathtub_1",

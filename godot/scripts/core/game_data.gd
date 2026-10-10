@@ -1,8 +1,6 @@
 extends Node
-## Autoload "GameData": the world, the tasks, baddie kinds, rooms and translated text, loaded from res://data.
+## Autoload "GameData": the world, the tasks, baddie kinds, rooms and text, loaded from res://data.
 ## These files are edited directly: see docs/ADDING_TASKS.md.
-
-signal language_changed
 
 const OPPOSITE := {"N": "S", "S": "N", "E": "W", "W": "E"}
 
@@ -10,16 +8,32 @@ var world_def: Dictionary = {}
 var tasks: Array = []
 var baddie_kinds: Dictionary = {}
 var strings: Dictionary = {}
-var lang := "en"
 var _rooms: Dictionary = {}
 var _world_rooms: Dictionary = {}
 
 
 func _ready() -> void:
 	world_def = _load_json("res://data/world.json")
-	tasks = _load_json("res://data/tasks.json").get("tasks", [])
+	tasks = _playable(_load_json("res://data/tasks.json").get("tasks", []))
 	baddie_kinds = _load_json("res://data/baddies.json")
 	strings = _load_json("res://data/strings.json")
+
+
+## tasks.json lists every task, built or not. Only the ones that have `steps` are played, in `play` order.
+## The game's own number is `play` (the `id` it uses everywhere); the planning id (like "E19") is kept as `ref`.
+func _playable(all: Array) -> Array:
+	var out: Array = []
+	for t in all:
+		if not t.has("steps"):
+			continue
+		var r: Dictionary = t.duplicate(true)
+		r.ref = t.id
+		r.id = int(t.play)
+		r.name = t.get("name", t.get("title", t.id))
+		r.task = t.get("task", t.text)
+		out.append(r)
+	out.sort_custom(func(a: Dictionary, b: Dictionary) -> bool: return a.id < b.id)
+	return out
 
 
 func _load_json(path: String) -> Variant:
@@ -88,35 +102,19 @@ func _make_street(st: Dictionary) -> Dictionary:
 	}
 
 
-func set_lang(l: String) -> void:
-	lang = l
-	language_changed.emit()
-
-
 func _fill(s: String, vars: Dictionary) -> String:
 	for k in vars:
 		s = s.replace("{%s}" % k, str(vars[k]))
 	return s
 
 
-## Menu / game text by key, in the current language.
+## Menu / game text by key (data/strings.json). An unknown key is shown as it is.
 func t(key: String, vars: Dictionary = {}) -> String:
-	var e: Variant = strings.get(key)
-	if e == null:
-		return key
-	var s: String = e.get(lang, "")
-	if s == "":
-		s = e.get("en", key)
-	return _fill(s, vars)
+	return _fill(str(strings.get(key, key)), vars)
 
 
-## Task or item text that may be a plain string or {en, hi}. Falls back to English.
+## Task or item text, with {name} placeholders filled in. A missing text is empty.
 func L(text: Variant, vars: Dictionary = {}) -> String:
 	if text == null:
 		return ""
-	if text is String:
-		return _fill(text, vars)
-	var s: String = text.get(lang, "")
-	if s == "":
-		s = text.get("en", "")
-	return _fill(s, vars)
+	return _fill(str(text), vars)

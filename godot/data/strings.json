@@ -1,274 +1,72 @@
 {
- "anisha": {
-  "en": "Anisha's",
-  "hi": "अनीशा का"
- },
- "gameTitle": {
-  "en": "Spooky House",
-  "hi": "भूतिया घर"
- },
- "tagline": {
-  "en": "Sneak in. Pull a prank. Don't get caught.",
-  "hi": "चुपके से जाओ। शरारत करो। पकड़े मत जाना।"
- },
- "play": {
-  "en": "Play",
-  "hi": "खेलो"
- },
- "continue": {
-  "en": "Continue · Level {n}",
-  "hi": "जारी रखो · लेवल {n}"
- },
- "spookyTown": {
-  "en": "Town",
-  "hi": "शहर"
- },
- "levelOf": {
-  "en": "Level {n} of {total}",
-  "hi": "लेवल {n} / {total}"
- },
- "level": {
-  "en": "Level {n}",
-  "hi": "लेवल {n}"
- },
- "startLevel": {
-  "en": "Start level",
-  "hi": "लेवल शुरू करो"
- },
- "needs": {
-  "en": "You need",
-  "hi": "चाहिए"
- },
- "watchOut": {
-  "en": "Watch out",
-  "hi": "सावधान"
- },
- "hideIn": {
-  "en": "Hide in",
-  "hi": "यहाँ छुपो"
- },
- "winStars": {
-  "en": "Win stars",
-  "hi": "सितारे जीतो"
- },
- "starDone": {
-  "en": "Do the prank",
-  "hi": "शरारत करो"
- },
- "starNotSeen": {
-  "en": "Don't get seen",
-  "hi": "दिखाई मत दो"
- },
- "starQuick": {
-  "en": "Be quick",
-  "hi": "जल्दी करो"
- },
- "comingSoon": {
-  "en": "More pranks coming soon…",
-  "hi": "और शरारतें जल्द आ रही हैं…"
- },
- "locked": {
-  "en": "Finish the earlier levels first",
-  "hi": "पहले पिछले लेवल पूरे करो"
- },
- "laterAreas": {
-  "en": "Sand Park and Palace later…",
-  "hi": "सैंड पार्क और महल बाद में…"
- },
- "playground": {
-  "en": "Playground · Level {n}",
-  "hi": "खेल का मैदान · लेवल {n}"
- },
- "garden": {
-  "en": "Garden · Level {n}",
-  "hi": "बगीचा · लेवल {n}"
- },
- "grannysHouse": {
-  "en": "Granny's big house",
-  "hi": "दादी का बड़ा घर"
- },
- "home": {
-  "en": "Home",
-  "hi": "घर"
- },
- "use": {
-  "en": "Use",
-  "hi": "उठाओ"
- },
- "hide": {
-  "en": "Hide",
-  "hi": "छुपो"
- },
- "sneak": {
-  "en": "Sneak",
-  "hi": "चुपके"
- },
- "paused": {
-  "en": "Paused",
-  "hi": "रुका हुआ"
- },
- "resume": {
-  "en": "Resume",
-  "hi": "चालू करो"
- },
- "restart": {
-  "en": "Restart",
-  "hi": "फिर से"
- },
- "map": {
-  "en": "Map",
-  "hi": "नक्शा"
- },
- "you": {
-  "en": "You",
-  "hi": "तुम"
- },
- "caught": {
-  "en": "Caught!",
-  "hi": "पकड़े गए!"
- },
- "sawYou": {
-  "en": "{name} saw you.",
-  "hi": "{name} ने तुम्हें देख लिया।"
- },
- "tryAgain": {
-  "en": "Try again",
-  "hi": "फिर से कोशिश"
- },
- "prankDone": {
-  "en": "Prank done!",
-  "hi": "शरारत हो गई!"
- },
- "levelComplete": {
-  "en": "Level {n} complete",
-  "hi": "लेवल {n} पूरा"
- },
- "starPrankDone": {
-  "en": "Prank done",
-  "hi": "शरारत हुई"
- },
- "starNotSeenLabel": {
-  "en": "Not seen",
-  "hi": "दिखाई नहीं दिए"
- },
- "starBeQuicker": {
-  "en": "Be quicker",
-  "hi": "थोड़ा जल्दी"
- },
- "starQuickLabel": {
-  "en": "Quick",
-  "hi": "जल्दी"
- },
- "nextLevel": {
-  "en": "Next: Level {n}",
-  "hi": "अगला: लेवल {n}"
- },
- "playAgain": {
-  "en": "Play again",
-  "hi": "फिर खेलो"
- },
- "grab": {
-  "en": "Grab {item}",
-  "hi": "{item} उठाओ"
- },
- "useItem": {
-  "en": "Use {item}",
-  "hi": "{item} इस्तेमाल करो"
- },
- "needItem": {
-  "en": "You need the {item} first!",
-  "hi": "पहले {item} चाहिए!"
- },
- "notYet": {
-  "en": "Not yet… do your current task first.",
-  "hi": "अभी नहीं… पहले अपना अभी वाला काम करो।"
- },
- "getOut": {
-  "en": "Come out",
-  "hi": "बाहर आओ"
- },
- "hideHere": {
-  "en": "Hide here",
-  "hi": "यहाँ छुपो"
- },
- "noPets": {
-  "en": "No pets left to help!",
-  "hi": "मदद के लिए कोई पालतू नहीं बचा!"
- },
- "petRuns": {
-  "en": "A pet runs out to help!",
-  "hi": "पालतू मदद के लिए दौड़ा!"
- },
- "petCall": {
-  "en": "Call a pet for help, {n} left",
-  "hi": "पालतू को बुलाओ, {n} बचे"
- },
- "pause": {
-  "en": "Pause",
-  "hi": "रोको"
- },
- "keysHelp": {
-  "en": "Arrows / WASD move · Shift sneak · E use · H hide · C pet · P pause",
-  "hi": "तीर / WASD चलो · Shift चुपके · E उठाओ · H छुपो · C पालतू · P रोको"
- },
- "language": {
-  "en": "Language",
-  "hi": "भाषा"
- },
- "seen": {
-  "en": "Seen",
-  "hi": "देखा"
- },
- "menu": {
-  "en": "Menu",
-  "hi": "मेन्यू"
- },
- "view": {
-  "en": "View",
-  "hi": "दृश्य"
- },
- "keysHelp3d": {
-  "en": "WASD / arrows move · Shift sneak · E use · H hide · C pet · V camera · Q / R turn view",
-  "hi": "WASD / तीर चलो · Shift चुपके · E उठाओ · H छुपो · C पालतू · V कैमरा · Q / R दृश्य घुमाओ"
- },
- "task": {
-  "en": "Task {n}",
-  "hi": "काम {n}"
- },
- "taskComplete": {
-  "en": "Task {n} complete",
-  "hi": "काम {n} पूरा"
- },
- "nextTask": {
-  "en": "Next task",
-  "hi": "अगला काम"
- },
- "doorLocked": {
-  "en": "Locked for now. Finish your tasks to open it.",
-  "hi": "अभी बंद है। अपने काम पूरे करो, तब खुलेगा।"
- },
- "lockedLabel": {
-  "en": "LOCKED",
-  "hi": "बंद"
- },
- "backHome": {
-  "en": "Back to my room",
-  "hi": "अपने कमरे में वापस"
- },
- "sentHome": {
-  "en": "You are sent back to your room and drop everything you were carrying.",
-  "hi": "तुम्हें तुम्हारे कमरे में भेज दिया गया और जो कुछ तुम्हारे पास था वो गिर गया।"
- },
- "newArea": {
-  "en": "New: {rooms}",
-  "hi": "नया खुला: {rooms}"
- },
- "allTasksDone": {
-  "en": "That is every task for now. More coming soon!",
-  "hi": "अभी के लिए बस इतने काम हैं। और जल्दी आएंगे!"
- },
- "allDone": {
-  "en": "All tasks done!",
-  "hi": "सारे काम पूरे!"
- }
+ "anisha": "Anisha's",
+ "gameTitle": "Spooky House",
+ "tagline": "Sneak in. Pull a prank. Don't get caught.",
+ "play": "Play",
+ "continue": "Continue · Level {n}",
+ "spookyTown": "Town",
+ "levelOf": "Level {n} of {total}",
+ "level": "Level {n}",
+ "startLevel": "Start level",
+ "needs": "You need",
+ "watchOut": "Watch out",
+ "hideIn": "Hide in",
+ "winStars": "Win stars",
+ "starDone": "Do the prank",
+ "starNotSeen": "Don't get seen",
+ "starQuick": "Be quick",
+ "comingSoon": "More pranks coming soon…",
+ "locked": "Finish the earlier levels first",
+ "laterAreas": "Sand Park and Palace later…",
+ "playground": "Playground · Level {n}",
+ "garden": "Garden · Level {n}",
+ "grannysHouse": "Granny's big house",
+ "home": "Home",
+ "hide": "Hide",
+ "paused": "Paused",
+ "resume": "Resume",
+ "restart": "Restart",
+ "map": "Map",
+ "you": "You",
+ "caught": "Caught!",
+ "sawYou": "{name} saw you.",
+ "tryAgain": "Try again",
+ "prankDone": "Prank done!",
+ "levelComplete": "Level {n} complete",
+ "starPrankDone": "Prank done",
+ "starNotSeenLabel": "Not seen",
+ "starBeQuicker": "Be quicker",
+ "starQuickLabel": "Quick",
+ "nextLevel": "Next: Level {n}",
+ "playAgain": "Play again",
+ "grab": "Grab {item}",
+ "needShort": "Need {item}",
+ "notYetShort": "Not yet…",
+ "bagFull": "Hands full!",
+ "cantGo": "I can't get there.",
+ "useItem": "Use {item}",
+ "needItem": "You need the {item} first!",
+ "notYet": "Not yet… do your current task first.",
+ "getOut": "Come out",
+ "hideHere": "Hide here",
+ "noPets": "No pets left to help!",
+ "petRuns": "A pet runs out to help!",
+ "petCall": "Call a pet for help, {n} left",
+ "pause": "Pause",
+ "language": "Language",
+ "seen": "Seen",
+ "menu": "Menu",
+ "view": "View",
+ "task": "Task {n}",
+ "taskComplete": "Task {n} complete",
+ "nextTask": "Next task",
+ "doorLocked": "Locked for now. Finish your tasks to open it.",
+ "lockedLabel": "LOCKED",
+ "backHome": "Back to my room",
+ "sentHome": "You are sent back to your room and drop everything you were carrying.",
+ "newArea": "New: {rooms}",
+ "allTasksDone": "That is every task for now. More coming soon!",
+ "allDone": "All tasks done!",
+ "wellDone": "Well done!",
+ "starTaskDone": "Finish the task"
 }

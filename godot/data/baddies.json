@@ -1,12 +1,9 @@
 {
   "teacher": {
-    "name": {
-      "en": "Scary teacher",
-      "hi": "डरावनी टीचर"
-    },
-    "speed": 70,
-    "range": 300,
-    "halfAngle": 28,
-    "model": "scary_teacher"
+	"name": "Scary teacher",
+	"speed": 70,
+	"range": 300,
+	"halfAngle": 28,
+	"model": "scary_teacher"
   }
 }

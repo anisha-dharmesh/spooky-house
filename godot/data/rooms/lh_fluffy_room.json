@@ -170,6 +170,35 @@
    "tags": [
     "decor"
    ]
+  },
+  {
+   "uid": "toy_box_1",
+   "sprite": "toy_box",
+   "name": "Toy box",
+   "x": 0,
+   "y": 1,
+   "w": 2,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "solid"
+   ]
+  },
+  {
+   "uid": "teddy_1",
+   "sprite": "teddy",
+   "name": "Teddy",
+   "x": 1,
+   "y": 4,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "on:bed_single",
+   "tags": [
+    "pickup"
+   ],
+   "onTopOf": "bed_single_1"
   }
  ],
  "colliders": [
@@ -186,6 +215,13 @@
    "y": 0,
    "w": 2,
    "h": 2
+  },
+  {
+   "uid": "toy_box_1",
+   "x": 0,
+   "y": 1,
+   "w": 2,
+   "h": 1
   }
  ],
  "hideSpots": [
@@ -196,7 +232,8 @@
   "soft_toy_2",
   "cushion_1",
   "cushion_2",
-  "soft_toy_3"
+  "soft_toy_3",
+  "teddy_1"
  ],
  "prankTargets": [],
  "climbables": [],

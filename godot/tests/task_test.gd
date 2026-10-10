@@ -27,7 +27,7 @@ func _init() -> void:
 
 
 ## The bot starts in Anisha's room (as after being caught) with the earlier tasks done, waits a while, then walks the
-## shortest route through the task, sneaking all the way. A task must be winnable at some starting moment; the share
+## shortest route through the task, walking all the way. A task must be winnable at some starting moment; the share
 ## of start moments it wins shows how hard it is.
 func _bot_run(gd: Node, world: WorldData, task: Dictionary, done: Array) -> void:
 	var wins := 0
@@ -41,13 +41,13 @@ func _bot_run(gd: Node, world: WorldData, task: Dictionary, done: Array) -> void
 			chk = LevelCheck.new(world, logic.locked)
 		var t := 0.0
 		while t < float(wait):
-			logic.tick(DT, Vector2.ZERO, true)
+			logic.tick(DT, Vector2.ZERO)
 			t += DT
 		var took := _do_task(logic, chk, int(task.id))
 		if took >= 0.0:
 			wins += 1
 			best_time = minf(best_time, took)
-	print("Task %d: bot won %d of %d start times (fastest %.1fs sneaking)" % [int(task.id), wins, tries, best_time])
+	print("Task %d: bot won %d of %d start times (fastest %.1fs)" % [int(task.id), wins, tries, best_time])
 	if wins == 0:
 		failed = true
 		printerr("FAIL Task %d: the bot could never do it" % int(task.id))
@@ -67,6 +67,7 @@ func _do_task(logic: GameLogic, chk: LevelCheck, task_id: int) -> float:
 		var goal := Rect2()
 		var within := GameLogic.REACH - 0.15
 		var is_use := true
+		var hide_goal := false
 		match step.get("type", ""):
 			"pickup":
 				goal = logic.pick_by_id(step.item).rect
@@ -74,6 +75,18 @@ func _do_task(logic: GameLogic, chk: LevelCheck, task_id: int) -> float:
 				for tg in logic.world.targets:
 					if tg.id == step.target:
 						goal = tg.rect
+			"do":
+				for tg in logic.world.targets:
+					if tg.id == step.target:
+						goal = tg.rect
+			"watch": # hide in the named spot, then just wait for the baddie to do it
+				if logic.is_hiding() or String(step.get("hide", "")) == "":
+					logic.tick(DT, Vector2.ZERO)
+					continue
+				for h in logic.world.hides:
+					if h.uid == step.hide:
+						goal = h.rect
+				hide_goal = true
 			"reach":
 				goal = (logic.world.room_by_id(step.room).interior as Rect2).grow(-1.0)
 				within = 0.0
@@ -86,13 +99,16 @@ func _do_task(logic: GameLogic, chk: LevelCheck, task_id: int) -> float:
 			if route.size() == 0:
 				return -1.0
 		if is_use and Geo.dist_to_rect(logic.player_pos, goal) < GameLogic.REACH - 0.05:
-			logic.use()
-			logic.tick(DT, Vector2.ZERO, true)
+			if hide_goal:
+				logic.toggle_hide()
+			else:
+				logic.use()
+			logic.tick(DT, Vector2.ZERO)
 			continue
 		while ri < route.size() - 1 and logic.player_pos.distance_to(route[ri]) < 0.35:
 			ri += 1
 		var aim := route[mini(ri + 1, route.size() - 1)]
-		logic.tick(DT, (aim - logic.player_pos).normalized(), true)
+		logic.tick(DT, (aim - logic.player_pos).normalized())
 		if logic.player_pos.distance_to(last_pos) < 0.01:
 			still += DT
 		else:

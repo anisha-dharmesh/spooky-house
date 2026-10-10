@@ -76,8 +76,8 @@
    "uid": "pet_bowl_1",
    "sprite": "pet_bowl",
    "name": "Pet food bowl",
-   "x": 4,
-   "y": 3,
+   "x": 6,
+   "y": 6,
    "w": 1,
    "h": 1,
    "rotation": 0,
@@ -90,7 +90,7 @@
    "uid": "pet_bowl_2",
    "sprite": "pet_bowl",
    "name": "Pet food bowl",
-   "x": 2,
+   "x": 1,
    "y": 1,
    "w": 1,
    "h": 1,
@@ -158,6 +158,34 @@
     "pet"
    ],
    "onTopOf": "cat_basket_1"
+  },
+  {
+   "uid": "pet_bowl_3",
+   "sprite": "pet_bowl",
+   "name": "Pet food bowl",
+   "x": 7,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "pickup"
+   ]
+  },
+  {
+   "uid": "pet_food_sack_1",
+   "sprite": "pet_food_sack",
+   "name": "Pet food sack",
+   "x": 4,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "pickup"
+   ]
   }
  ],
  "colliders": [
@@ -187,7 +215,9 @@
  "pickups": [
   "pet_bowl_1",
   "pet_bowl_2",
-  "pet_toys_1"
+  "pet_toys_1",
+  "pet_bowl_3",
+  "pet_food_sack_1"
  ],
  "prankTargets": [],
  "climbables": [],

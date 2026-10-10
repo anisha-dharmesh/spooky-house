@@ -1,227 +1,5638 @@
 {
-  "tasks": [
+ "note": "Quest map for Anisha's Spooky House: Anisha's 45 tasks (A), the 59 approved suggestions (S), and the new quests (E easy, M medium, H hard, ST story, MJ major). 'difficulty' = items needed, rooms crossed, baddies awake and timing (see CLAUDE.md); 'series' (main/story/major) and 'kind' (prank/help/mystery/event/build) are separate from difficulty. 'original_text' + 'tone_edit' show where Anisha's wording was lightly changed for the cheerful tone. Room ids are the art pack's (godot/data/rooms); science_lab, granny_outside and the museum rooms (mu_hall, mu_dino_hall, mu_gallery, mu_store) are not in the pack yet. Not sorted by difficulty.",
+ "tasks": [
+  {
+   "id": "A1",
+   "source": "anisha",
+   "number": 1,
+   "text": "Put cement in the scary teacher's shoe (level 1).",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_hall",
+   "collect_from": [
+    "gh_kitchen"
+   ],
+   "target": "scary_teacher",
+   "pack_objects": [
+    "cement_bag"
+   ],
+   "missing_objects": [
+    "shoes (made by script)"
+   ],
+   "earliest": "Granny's room #2",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": "Level 1, built. Cement bag is in the kitchen.",
+   "play": 7,
+   "steps": [
     {
-      "id": 1,
-      "name": {
-        "en": "Granny's kitchen",
-        "hi": "दादी की रसोई"
-      },
-      "task": {
-        "en": "Put cement in the scary teacher's shoe",
-        "hi": "डरावनी टीचर के जूते में सीमेंट डालो"
-      },
-      "extras": [
-        {
-          "id": "shoes",
-          "kind": "shoes",
-          "room": "gh_hall",
-          "tile": [
-            14.5,
-            8.2
-          ],
-          "label": {
-            "en": "her shoes",
-            "hi": "उसके जूते"
-          }
-        }
-      ],
-      "steps": [
-        {
-          "type": "pickup",
-          "item": "gh_kitchen/cement_bag_1",
-          "text": {
-            "en": "Grab the cement",
-            "hi": "सीमेंट उठाओ"
-          }
-        },
-        {
-          "type": "use",
-          "item": "gh_kitchen/cement_bag_1",
-          "target": "shoes",
-          "text": {
-            "en": "Sneak to her shoes",
-            "hi": "उसके जूतों तक चुपके से जाओ"
-          }
-        },
-        {
-          "type": "reach",
-          "room": "lh_hall",
-          "text": {
-            "en": "Run back home",
-            "hi": "भागकर घर जाओ"
-          }
-        }
-      ],
-      "needs": {
-        "en": "Cement bag",
-        "hi": "सीमेंट की थैली"
-      },
-      "watchOut": {
-        "en": "Scary teacher (slow)",
-        "hi": "डरावनी टीचर (धीमी)"
-      },
-      "hideIn": {
-        "en": "Hall cupboard",
-        "hi": "हॉल की अलमारी"
-      },
-      "baddies": [
-        {
-          "id": "teacher1",
-          "kind": "teacher",
-          "patrol": [
-            {
-              "room": "gh_hall",
-              "tile": [
-                7,
-                2.5
-              ],
-              "wait": 0.8
-            },
-            {
-              "room": "gh_hall",
-              "tile": [
-                10.5,
-                2.5
-              ],
-              "wait": 0.8
-            },
-            {
-              "room": "gh_hall",
-              "tile": [
-                10.5,
-                6.5
-              ],
-              "wait": 1
-            },
-            {
-              "room": "gh_hall",
-              "tile": [
-                7,
-                6.5
-              ],
-              "wait": 1
-            }
-          ]
-        }
-      ],
-      "petHelp": 2,
-      "parTime": 85,
-      "tip": {
-        "en": "Tip: when she turns your way, jump into the hall cupboard.",
-        "hi": "सुझाव: जब वो तुम्हारी तरफ़ मुड़े, तो हॉल की अलमारी में छुप जाओ।"
-      },
-      "completeText": {
-        "en": "Her shoes are full of cement. She's stomping around the hall!",
-        "hi": "उसके जूते सीमेंट से भर गए। वो हॉल में पैर पटकती घूम रही है!"
-      }
+     "type": "pickup",
+     "item": "gh_kitchen/cement_bag_1",
+     "text": "Grab the cement"
     },
     {
-      "id": 2,
-      "name": {
-        "en": "Sour tea",
-        "hi": "खट्टी चाय"
-      },
-      "task": {
-        "en": "Put lemon in the scary teacher's tea",
-        "hi": "डरावनी टीचर की चाय में नींबू डालो"
-      },
-      "unlocks": [
-        "gh_store_room"
-      ],
-      "steps": [
-        {
-          "type": "pickup",
-          "item": "gh_kitchen/lemon_1",
-          "text": {
-            "en": "Grab a lemon",
-            "hi": "नींबू उठाओ"
-          }
-        },
-        {
-          "type": "use",
-          "item": "gh_kitchen/lemon_1",
-          "target": "gh_kitchen/tea_cup_1",
-          "text": {
-            "en": "Squeeze it into her tea",
-            "hi": "उसकी चाय में निचोड़ो"
-          }
-        },
-        {
-          "type": "reach",
-          "room": "lh_hall",
-          "text": {
-            "en": "Run back home",
-            "hi": "भागकर घर जाओ"
-          }
-        }
-      ],
-      "needs": {
-        "en": "Lemon",
-        "hi": "नींबू"
-      },
-      "watchOut": {
-        "en": "Scary teacher (slow)",
-        "hi": "डरावनी टीचर (धीमी)"
-      },
-      "hideIn": {
-        "en": "Hall cupboard",
-        "hi": "हॉल की अलमारी"
-      },
-      "baddies": [
-        {
-          "id": "teacher1",
-          "kind": "teacher",
-          "patrol": [
-            {
-              "room": "gh_kitchen",
-              "tile": [
-                12.5,
-                4.5
-              ],
-              "wait": 0.8
-            },
-            {
-              "room": "gh_kitchen",
-              "tile": [
-                12.5,
-                7.8
-              ]
-            },
-            {
-              "room": "gh_kitchen",
-              "tile": [
-                2.5,
-                7.8
-              ],
-              "wait": 0.8
-            },
-            {
-              "room": "gh_kitchen",
-              "tile": [
-                2.5,
-                2.2
-              ]
-            },
-            {
-              "room": "gh_kitchen",
-              "tile": [
-                12.5,
-                2.2
-              ]
-            }
-          ]
-        }
-      ],
-      "petHelp": 2,
-      "parTime": 70,
-      "tip": {
-        "en": "Tip: she walks round the table. Wait for her to pass, then dash.",
-        "hi": "सुझाव: वो मेज़ के चारों ओर घूमती है। उसके निकलने का इंतज़ार करो, फिर दौड़ो।"
-      },
-      "completeText": {
-        "en": "Her tea is sour! Her face looks just like a lemon.",
-        "hi": "उसकी चाय खट्टी है! उसका मुँह नींबू जैसा हो गया।"
-      }
+     "type": "use",
+     "item": "gh_kitchen/cement_bag_1",
+     "target": "shoes",
+     "text": "Sneak to her shoes"
+    },
+    {
+     "type": "reach",
+     "room": "lh_hall",
+     "text": "Run back home"
     }
-  ]
+   ],
+   "needs": "Cement bag",
+   "watchOut": "Scary teacher (slow)",
+   "hideIn": "Hall cupboard",
+   "baddies": [
+    {
+     "id": "teacher1",
+     "kind": "teacher",
+     "patrol": [
+      {
+       "room": "gh_hall",
+       "tile": [
+        7,
+        2.5
+       ],
+       "wait": 0.8
+      },
+      {
+       "room": "gh_hall",
+       "tile": [
+        10.5,
+        2.5
+       ],
+       "wait": 0.8
+      },
+      {
+       "room": "gh_hall",
+       "tile": [
+        10.5,
+        6.5
+       ],
+       "wait": 1
+      },
+      {
+       "room": "gh_hall",
+       "tile": [
+        7,
+        6.5
+       ],
+       "wait": 1
+      }
+     ]
+    }
+   ],
+   "petHelp": 2,
+   "parTime": 85,
+   "tip": "Tip: when she turns your way, jump into the hall cupboard.",
+   "completeText": "Her shoes are full of cement. She's stomping around the hall!",
+   "extras": [
+    {
+     "id": "shoes",
+     "kind": "shoes",
+     "room": "gh_hall",
+     "tile": [
+      14.5,
+      8.2
+     ],
+     "label": "her shoes"
+    }
+   ],
+   "name": "Granny's kitchen",
+   "task": "Put cement in the scary teacher's shoe"
+  },
+  {
+   "id": "A2",
+   "source": "anisha",
+   "number": 2,
+   "text": "Put granny and Kamala / Rani and Kamala in a pretend rocket with a confetti-pop 'bomb' (level 2).",
+   "original_text": "Put granny and Kamala / Rani and Kamala in a rocket with a bomb (level 2).",
+   "tone_edit": "A bomb becomes a confetti pop.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "science_lab",
+   "collect_from": [],
+   "target": "granny + Kamala (or Rani + Kamala)",
+   "pack_objects": [],
+   "missing_objects": [
+    "rocket",
+    "confetti-pop 'bomb'",
+    "science lab in Granny's house"
+   ],
+   "earliest": "level 45+ · slot-in room: Science lab (see decision)",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": "Fixed as level 2. DECISION: the spec lists the science lab under Granny's house, but the pack puts it in the school (opens level 45). Rocket launch spot also not decided (roof?)."
+  },
+  {
+   "id": "A3",
+   "source": "anisha",
+   "number": 3,
+   "text": "Swap Rani and Kamala's eye-drop bottle for a look-alike squeaky toy bottle.",
+   "original_text": "Put onion juice in Rani and Kamala's eye drops.",
+   "tone_edit": "Nothing goes near eyes; a squeak instead.",
+   "place": "granny_house",
+   "places": [
+    "granny_house",
+    "little_house"
+   ],
+   "room": "gh_bedroom",
+   "collect_from": [
+    "lh_animal_room"
+   ],
+   "target": "rani_kamala",
+   "pack_objects": [
+    "pet_toys"
+   ],
+   "missing_objects": [
+    "look-alike toy bottle"
+   ],
+   "earliest": "Granny's room #4",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": "Kids' bunk beds fit Rani and Kamala. Could also be the hospital pharmacy (level 75)."
+  },
+  {
+   "id": "A4",
+   "source": "anisha",
+   "number": 4,
+   "text": "Cut a plum, squeeze lemon on it, leave it in a bowl for the plum-loving scary teacher.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_kitchen",
+   "collect_from": [],
+   "target": "scary_teacher",
+   "pack_objects": [
+    "knife",
+    "lemon"
+   ],
+   "missing_objects": [
+    "plum",
+    "bowl"
+   ],
+   "earliest": "Granny's room #1",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": "Teacher task: could move to the school canteen or staff room."
+  },
+  {
+   "id": "A5",
+   "source": "anisha",
+   "number": 5,
+   "text": "Put a spoonful of slime in Labubu's back-massage machine so it goes squelch.",
+   "original_text": "Put cement in Labubu's back-massage machine.",
+   "tone_edit": "Cement would break the machine; slime is silly and washes out.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_exercise_room",
+   "collect_from": [
+    "gh_bathroom"
+   ],
+   "target": "labubu",
+   "pack_objects": [
+    "slime_bucket"
+   ],
+   "missing_objects": [
+    "back-massage machine"
+   ],
+   "earliest": "slot-in room: Exercise room",
+   "difficulty": "hard",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": "Labubu appears around level 10."
+  },
+  {
+   "id": "A6",
+   "source": "anisha",
+   "number": 6,
+   "text": "Make soup in granny's favourite bowl with a squeeze of lemon in it so it is extra sour.",
+   "original_text": "Make soup in granny's favourite bowl with something bitter in it.",
+   "tone_edit": "Sour and silly instead of bitter.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_kitchen",
+   "collect_from": [
+    "gh_dining_room"
+   ],
+   "target": "granny",
+   "pack_objects": [
+    "gas_stove",
+    "bowl"
+   ],
+   "missing_objects": [
+    "bitter ingredient (karela)",
+    "granny's favourite bowl"
+   ],
+   "earliest": "Granny's room #5",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "A7",
+   "source": "anisha",
+   "number": 7,
+   "text": "Glue the bouncy ball so Kamala sticks to it.",
+   "place": "park",
+   "places": [
+    "park",
+    "granny_house"
+   ],
+   "room": "pk_playground",
+   "collect_from": [
+    "gh_craft_office"
+   ],
+   "target": "kamala",
+   "pack_objects": [
+    "glue"
+   ],
+   "missing_objects": [
+    "bouncy ball"
+   ],
+   "earliest": "level 5+ · Granny's room #7",
+   "difficulty": "hard",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": "Alternative: the roof play zone. Glue comes from the craft office."
+  },
+  {
+   "id": "A8",
+   "source": "anisha",
+   "number": 8,
+   "text": "Colour a flower and put it on the scary teacher's favourite cake labelled \"edible\" so her mouth gets messy.",
+   "place": "granny_house",
+   "places": [
+    "granny_house",
+    "park"
+   ],
+   "room": "gh_kitchen",
+   "collect_from": [
+    "gh_craft_office",
+    "pk_garden"
+   ],
+   "target": "scary_teacher",
+   "pack_objects": [
+    "colored_paper",
+    "flower_bed"
+   ],
+   "missing_objects": [
+    "cake",
+    "flower",
+    "\"edible\" label"
+   ],
+   "earliest": "level 10+ · Granny's room #7",
+   "difficulty": "hard",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": "Three places: colour from the craft office, flower from the garden, cake in the kitchen."
+  },
+  {
+   "id": "A9",
+   "source": "anisha",
+   "number": 9,
+   "text": "Put colours on the scary teacher's clothes, then wash and dry them so they come out colourful.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_bathroom",
+   "collect_from": [
+    "gh_craft_office"
+   ],
+   "target": "scary_teacher",
+   "pack_objects": [],
+   "missing_objects": [
+    "clothes",
+    "washing machine",
+    "clothes line (roof)"
+   ],
+   "earliest": "Granny's room #7 · slot-in room: Bathroom",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": "Wash in the bathroom, dry on the roof. Needs a washing spot (no laundry room in the pack)."
+  },
+  {
+   "id": "A10",
+   "source": "anisha",
+   "number": 10,
+   "text": "Mix food colour into the scary teacher's shampoo so her bubbles come out blue.",
+   "original_text": "Mix lemon or something bitter into the scary teacher's shampoo.",
+   "tone_edit": "Nothing that stings; colourful bubbles instead.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_bathroom",
+   "collect_from": [
+    "gh_kitchen"
+   ],
+   "target": "scary_teacher",
+   "pack_objects": [
+    "shampoo",
+    "lemon"
+   ],
+   "missing_objects": [
+    "food colouring"
+   ],
+   "earliest": "Granny's room #1 · slot-in room: Bathroom",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "A11",
+   "source": "anisha",
+   "number": 11,
+   "text": "Swap her favourite chocolate for a chocolate-wrapped sponge.",
+   "original_text": "Rub chilli all over her favourite chocolate.",
+   "tone_edit": "No chilli on food; a harmless swap instead.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_kitchen",
+   "collect_from": [],
+   "target": "scary_teacher",
+   "pack_objects": [
+    "chilli"
+   ],
+   "missing_objects": [
+    "chocolate",
+    "sponge"
+   ],
+   "earliest": "Granny's room #1",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "A12",
+   "source": "anisha",
+   "number": 12,
+   "text": "Make the dance-room JBL speaker play silly animal sounds when granny starts her music (Anisha still deciding).",
+   "original_text": "Pour water on the dance-room JBL speaker so it breaks (Anisha still deciding).",
+   "tone_edit": "Water would break the speaker; silly sounds instead.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_dance_room",
+   "collect_from": [],
+   "target": "her (not said)",
+   "pack_objects": [
+    "jbl_speaker"
+   ],
+   "missing_objects": [],
+   "earliest": "Granny's room #6",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": "Anisha is still deciding whether to keep this one."
+  },
+  {
+   "id": "A13",
+   "source": "anisha",
+   "number": 13,
+   "text": "Mix lemon and strawberry juice into the water tank / RO.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_roof",
+   "collect_from": [
+    "gh_kitchen"
+   ],
+   "target": "granny",
+   "pack_objects": [
+    "water_tank"
+   ],
+   "missing_objects": [
+    "strawberry",
+    "RO water purifier"
+   ],
+   "earliest": "Granny's room #1 · slot-in room: Roof",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": "Water tank is on the roof; the RO could be a kitchen object instead."
+  },
+  {
+   "id": "A14",
+   "source": "anisha",
+   "number": 14,
+   "text": "Put funny doodle bookmarks inside her favourite books.",
+   "original_text": "Rub pencil shavings and pen over her favourite books.",
+   "tone_edit": "Pencil shavings and ink would spoil the books.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_study",
+   "collect_from": [
+    "gh_craft_office"
+   ],
+   "target": "her (granny or the scary teacher: not said)",
+   "pack_objects": [
+    "book_big",
+    "pencil",
+    "pen_holder"
+   ],
+   "missing_objects": [
+    "bookmarks"
+   ],
+   "earliest": "Granny's room #8",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "A15",
+   "source": "anisha",
+   "number": 15,
+   "text": "Put a 'Wet paint!' sign on a dining chair so whoever comes eats standing up.",
+   "original_text": "Put glue on a dining chair so whoever sits sticks.",
+   "tone_edit": "Glue would trap someone; a sign makes people laugh.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_dining_room",
+   "collect_from": [
+    "gh_craft_office"
+   ],
+   "target": "whoever sits (granny)",
+   "pack_objects": [
+    "colored_paper",
+    "pencil"
+   ],
+   "missing_objects": [
+    "sign"
+   ],
+   "earliest": "Granny's room #7",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "A16",
+   "source": "anisha",
+   "number": 16,
+   "text": "Stick funny moustache stickers on the glass of all her favourite photos.",
+   "original_text": "Break the glass of all her favourite photos.",
+   "tone_edit": "Nothing gets broken.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_granny_room",
+   "collect_from": [],
+   "target": "her (granny or the scary teacher: not said)",
+   "pack_objects": [
+    "photo_frame"
+   ],
+   "missing_objects": [
+    "moustache stickers"
+   ],
+   "earliest": "slot-in room: Granny's room",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": "Photo frames also hang in the hall and dining room."
+  },
+  {
+   "id": "A17",
+   "source": "anisha",
+   "number": 17,
+   "text": "Change her clock so she rushes to a birthday party that isn't happening.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_granny_room",
+   "collect_from": [],
+   "target": "her (granny or the scary teacher: not said)",
+   "pack_objects": [
+    "wall_clock"
+   ],
+   "missing_objects": [],
+   "earliest": "slot-in room: Granny's room",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "A18",
+   "source": "anisha",
+   "number": 18,
+   "text": "Secretly set the treadmill to snail speed so her run turns into a slow-motion walk.",
+   "original_text": "Secretly speed up the treadmill so she runs too fast and falls.",
+   "tone_edit": "Nobody falls.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_exercise_room",
+   "collect_from": [],
+   "target": "her (granny or the scary teacher: not said)",
+   "pack_objects": [
+    "treadmill"
+   ],
+   "missing_objects": [],
+   "earliest": "slot-in room: Exercise room",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "A19",
+   "source": "anisha",
+   "number": 19,
+   "text": "Stick funny footprint stickers on the treadmill belt so she has to dance to match them.",
+   "original_text": "Put oil on the treadmill and set it to slow so she slips.",
+   "tone_edit": "Oil makes people slip; stickers make people dance.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_exercise_room",
+   "collect_from": [],
+   "target": "her (granny or the scary teacher: not said)",
+   "pack_objects": [
+    "treadmill"
+   ],
+   "missing_objects": [
+    "footprint stickers"
+   ],
+   "earliest": "slot-in room: Exercise room",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "A20",
+   "source": "anisha",
+   "number": 20,
+   "text": "Turn the astronaut light to disco colours so granny's room becomes a party room.",
+   "original_text": "Turn the astronaut light very bright so it shines in granny's eyes.",
+   "tone_edit": "Bright light in her eyes becomes disco fun.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_granny_room",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [],
+   "missing_objects": [
+    "astronaut light"
+   ],
+   "earliest": "slot-in room: Granny's room",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "A21",
+   "source": "anisha",
+   "number": 21,
+   "text": "Swap the yoga room's calm music for funny animal sounds (cow, duck, rooster).",
+   "original_text": "Swap the yoga room's calm music for very loud music.",
+   "tone_edit": "Very loud music hurts ears; animal sounds make people smile.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_yoga_room",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [
+    "music_player"
+   ],
+   "missing_objects": [],
+   "earliest": "slot-in room: Yoga room",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "A22",
+   "source": "anisha",
+   "number": 22,
+   "text": "Cover granny's scooty with funny stickers.",
+   "original_text": "Put glue all over granny's scooty.",
+   "tone_edit": "Glue would ruin the scooty; stickers peel off.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "granny_outside",
+   "collect_from": [
+    "gh_craft_office"
+   ],
+   "target": "granny",
+   "pack_objects": [],
+   "missing_objects": [
+    "stickers"
+   ],
+   "earliest": "Granny's room #7 · slot-in room: Outside Granny's house (street, parked vehicles)",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": "Parked outside Granny's house: needs a front-yard / street space."
+  },
+  {
+   "id": "A23",
+   "source": "anisha",
+   "number": 23,
+   "text": "Put grass in granny's Maggi while she turns to grab the TV remote.",
+   "place": "granny_house",
+   "places": [
+    "granny_house",
+    "park"
+   ],
+   "room": "gh_hall",
+   "collect_from": [
+    "pk_garden"
+   ],
+   "target": "granny",
+   "pack_objects": [
+    "tv_remote",
+    "sofa",
+    "maggi_packet"
+   ],
+   "missing_objects": [
+    "grass"
+   ],
+   "earliest": "level 10+ · Granny's room #2",
+   "difficulty": "hard",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": "Timed: she turns away for the remote."
+  },
+  {
+   "id": "A24",
+   "source": "anisha",
+   "number": 24,
+   "text": "Tie funny ribbon bows on the sleeves of her clothes.",
+   "original_text": "Tear her clothes.",
+   "tone_edit": "Nothing is torn.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_granny_room",
+   "collect_from": [
+    "gh_craft_office"
+   ],
+   "target": "her (granny or the scary teacher: not said)",
+   "pack_objects": [
+    "wardrobe_small"
+   ],
+   "missing_objects": [
+    "ribbons"
+   ],
+   "earliest": "Granny's room #7 · slot-in room: Granny's room",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "A25",
+   "source": "anisha",
+   "number": 25,
+   "text": "Hide granny's specs and leave a rhyming clue so she can find them.",
+   "original_text": "Break granny's specs.",
+   "tone_edit": "Nothing is broken; it becomes a little treasure hunt.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_granny_room",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [],
+   "missing_objects": [
+    "clue note"
+   ],
+   "earliest": "slot-in room: Granny's room",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank",
+    "mystery"
+   ],
+   "note": ""
+  },
+  {
+   "id": "A26",
+   "source": "anisha",
+   "number": 26,
+   "text": "Stick smiley-face stickers on each of granny's favourite thalis.",
+   "original_text": "Break granny's favourite thalis.",
+   "tone_edit": "Nothing is broken.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_dining_room",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [
+    "thali"
+   ],
+   "missing_objects": [
+    "smiley stickers"
+   ],
+   "earliest": "Granny's room #5",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "A27",
+   "source": "anisha",
+   "number": 27,
+   "text": "While granny bathes, hide her towel and leave a funny note that sends her to the store room (the inverter) to find it.",
+   "original_text": "Switch off all lights (except the bathroom) at the inverter while granny bathes, so she comes out to no light and no towel.",
+   "tone_edit": "No darkness in the bathroom; a clue hunt instead.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_store_room",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [
+    "inverter"
+   ],
+   "missing_objects": [
+    "clue note"
+   ],
+   "earliest": "Granny's room #3",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank",
+    "mystery"
+   ],
+   "note": "Timed: granny is bathing in the bathroom. Two rooms: inverter in the store room, then the bathroom."
+  },
+  {
+   "id": "A28",
+   "source": "anisha",
+   "number": 28,
+   "text": "Stick a funny sticker over the face of granny's charging watch.",
+   "original_text": "Pour mango juice on granny's charging watch.",
+   "tone_edit": "Juice would damage the watch.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_granny_room",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [
+    "watch"
+   ],
+   "missing_objects": [
+    "sticker"
+   ],
+   "earliest": "slot-in room: Granny's room",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "A29",
+   "source": "anisha",
+   "number": 29,
+   "text": "Make a pink 'strawberry surprise' drink in her favourite glass: a little milk, lots of water, crushed strawberry.",
+   "original_text": "Make a drink in her favourite glass: a little milk, lots of water, crushed strawberry, lots of chilli.",
+   "tone_edit": "No chilli in a drink.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_kitchen",
+   "collect_from": [
+    "gh_dining_room"
+   ],
+   "target": "granny",
+   "pack_objects": [
+    "fridge",
+    "glass"
+   ],
+   "missing_objects": [
+    "strawberry",
+    "milk"
+   ],
+   "earliest": "Granny's room #5",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "A30",
+   "source": "anisha",
+   "number": 30,
+   "text": "Put giant cardboard sunglasses on the roof solar panel.",
+   "original_text": "Pour mango juice mixed with water on the roof solar panel so there's no hot water.",
+   "tone_edit": "Juice would dirty the panel; sunglasses are funny and come off.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_roof",
+   "collect_from": [
+    "gh_store_room"
+   ],
+   "target": "granny",
+   "pack_objects": [
+    "box_cardboard"
+   ],
+   "missing_objects": [
+    "cardboard sunglasses"
+   ],
+   "earliest": "Granny's room #3 · slot-in room: Roof",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "A31",
+   "source": "anisha",
+   "number": 31,
+   "text": "Swap the name tags of granny's garden plants (the rose gets the cactus's name).",
+   "original_text": "Pull out the roots of granny's garden plants.",
+   "tone_edit": "Plants stay in the ground.",
+   "place": "park",
+   "places": [
+    "park"
+   ],
+   "room": "pk_garden",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [
+    "flower_bed"
+   ],
+   "missing_objects": [
+    "plant name tags"
+   ],
+   "earliest": "level 10+",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "A32",
+   "source": "anisha",
+   "number": 32,
+   "text": "Tie colourful ribbons and bells all over granny's big bicycle.",
+   "original_text": "Put cement all over granny's big bicycle.",
+   "tone_edit": "Cement would ruin the bicycle; ribbons and bells are cheerful.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "granny_outside",
+   "collect_from": [
+    "gh_craft_office"
+   ],
+   "target": "granny",
+   "pack_objects": [],
+   "missing_objects": [
+    "big bicycle (in the pack, not placed in a room)",
+    "ribbons",
+    "bells"
+   ],
+   "earliest": "Granny's room #7 · slot-in room: Outside Granny's house (street, parked vehicles)",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": "Parked outside Granny's house."
+  },
+  {
+   "id": "A33",
+   "source": "anisha",
+   "number": 33,
+   "text": "Stick funny footprint stickers on the bathroom floor, leading to a rubber duck in the bathtub.",
+   "original_text": "Put oil and water on the bathroom floor before granny bathes.",
+   "tone_edit": "Oil and water make people slip.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_bathroom",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [],
+   "missing_objects": [
+    "footprint stickers",
+    "rubber duck"
+   ],
+   "earliest": "slot-in room: Bathroom",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": "Timed: before she bathes."
+  },
+  {
+   "id": "A34",
+   "source": "anisha",
+   "number": 34,
+   "text": "Give granny's Bullet a cardboard moustache and a funny hat.",
+   "original_text": "Put water in the engine of granny's Bullet.",
+   "tone_edit": "Water would damage the engine.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "granny_outside",
+   "collect_from": [
+    "gh_store_room"
+   ],
+   "target": "granny",
+   "pack_objects": [
+    "box_cardboard"
+   ],
+   "missing_objects": [
+    "Bullet motorbike (in the pack, not placed in a room)",
+    "funny hat"
+   ],
+   "earliest": "Granny's room #3 · slot-in room: Outside Granny's house (street, parked vehicles)",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": "Parked outside Granny's house."
+  },
+  {
+   "id": "A35",
+   "source": "anisha",
+   "number": 35,
+   "text": "Take the wheels off granny's toy car (they click back on) and hide them somewhere clever.",
+   "original_text": "Take the wheels off granny's toy car.",
+   "tone_edit": "Everything can be put back.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "granny_outside",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [],
+   "missing_objects": [
+    "toy car (in the pack, not placed in a room)"
+   ],
+   "earliest": "slot-in room: Outside Granny's house (street, parked vehicles)",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": "No room for the toy car yet: outside, or the play zone."
+  },
+  {
+   "id": "A36",
+   "source": "anisha",
+   "number": 36,
+   "text": "Fill the big white bathtub with slime.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_bathroom",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [
+    "bathtub",
+    "slime_bucket"
+   ],
+   "missing_objects": [],
+   "earliest": "slot-in room: Bathroom",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "A37",
+   "source": "anisha",
+   "number": 37,
+   "text": "Line up granny's medals and trophies in a funny parade in front of her.",
+   "original_text": "Break granny's medals and trophies and set them in front of her.",
+   "tone_edit": "Nothing is broken.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_bedroom",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [
+    "trophy",
+    "medal",
+    "drawer_unit"
+   ],
+   "missing_objects": [],
+   "earliest": "Granny's room #4",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": "Trophies and medals are in the bedroom drawers."
+  },
+  {
+   "id": "A38",
+   "source": "anisha",
+   "number": 38,
+   "text": "Cover granny's very big TV with a big 'snow' sheet so it looks broken (then hide and laugh).",
+   "original_text": "Break granny's very big TV (then hide and laugh).",
+   "tone_edit": "Looks broken, isn't.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_hall",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [
+    "tv_big",
+    "cupboard_big"
+   ],
+   "missing_objects": [
+    "snow sheet"
+   ],
+   "earliest": "Granny's room #2",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": "Then hide in the big cupboard."
+  },
+  {
+   "id": "A39",
+   "source": "anisha",
+   "number": 39,
+   "text": "Hide granny's Alexa under a funny hat so she can't find it when the remote is lost.",
+   "original_text": "Break granny's Alexa so she can't turn on the TV when the remote is lost.",
+   "tone_edit": "Nothing is broken.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_hall",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [
+    "alexa",
+    "tv_remote"
+   ],
+   "missing_objects": [
+    "funny hat"
+   ],
+   "earliest": "Granny's room #2",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "A40",
+   "source": "anisha",
+   "number": 40,
+   "text": "In the Sand Park, lure the scary teacher there and tip a bucket of sand into her shoes (just her shoes!).",
+   "original_text": "In the Sand Park, lure the scary teacher there and throw sand in her eyes.",
+   "tone_edit": "Sand stays away from eyes.",
+   "place": "park",
+   "places": [
+    "park"
+   ],
+   "room": "pk_sand_park",
+   "collect_from": [],
+   "target": "scary_teacher",
+   "pack_objects": [
+    "bucket_spade",
+    "sand_pit"
+   ],
+   "missing_objects": [],
+   "earliest": "level 60+",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": "Needs a \"lure the baddie\" mechanic."
+  },
+  {
+   "id": "A41",
+   "source": "anisha",
+   "number": 41,
+   "text": "Roll granny's yoga mat up and tie it with ribbons while she cooks.",
+   "original_text": "Tear granny's yoga mat while she cooks.",
+   "tone_edit": "Nothing is torn.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_yoga_room",
+   "collect_from": [
+    "gh_craft_office"
+   ],
+   "target": "granny",
+   "pack_objects": [
+    "yoga_mat"
+   ],
+   "missing_objects": [
+    "yoga mat",
+    "ribbons"
+   ],
+   "earliest": "Granny's room #7 · slot-in room: Yoga room",
+   "difficulty": "hard",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": "Timed: while she cooks in the kitchen."
+  },
+  {
+   "id": "A42",
+   "source": "anisha",
+   "number": 42,
+   "text": "Pour orange juice on granny's pizza while she turns for the remote.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_hall",
+   "collect_from": [
+    "gh_kitchen"
+   ],
+   "target": "granny",
+   "pack_objects": [
+    "tv_remote",
+    "sofa"
+   ],
+   "missing_objects": [
+    "pizza",
+    "orange juice"
+   ],
+   "earliest": "Granny's room #2",
+   "difficulty": "hard",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": "Timed: she turns for the remote."
+  },
+  {
+   "id": "A43",
+   "source": "anisha",
+   "number": 43,
+   "text": "Float lots of rubber ducks in the swimming pool.",
+   "original_text": "Put lots of oil in the swimming pool.",
+   "tone_edit": "Oil would spoil the pool.",
+   "place": "swimming_pool",
+   "places": [
+    "swimming_pool"
+   ],
+   "room": "sp_pool_deck",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [
+    "pool"
+   ],
+   "missing_objects": [
+    "rubber ducks"
+   ],
+   "earliest": "level 30+",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "A44",
+   "source": "anisha",
+   "number": 44,
+   "text": "Swap granny's necklaces and earrings in the palace treasury for shiny toy ones, and put the real ones safely in the treasure chest.",
+   "original_text": "Steal granny's necklaces and earrings from the palace.",
+   "tone_edit": "No stealing: a swap, and the real ones are kept safe.",
+   "place": "palace",
+   "places": [
+    "palace"
+   ],
+   "room": "pl_treasury",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [
+    "necklace",
+    "treasure_chest"
+   ],
+   "missing_objects": [
+    "toy necklace and earrings"
+   ],
+   "earliest": "level 90+",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": "Necklace is in the treasury, earrings in the queen's room. Steal and escape."
+  },
+  {
+   "id": "A45",
+   "source": "anisha",
+   "number": 45,
+   "text": "Hide a toy rubber bug at the bottom of granny's jar of cashews.",
+   "original_text": "Put salt and a little karela juice in the cashews.",
+   "tone_edit": "Salt and bitter juice in food could upset her tummy.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_kitchen",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [
+    "cashew_bowl"
+   ],
+   "missing_objects": [
+    "toy rubber bug"
+   ],
+   "earliest": "Granny's room #1",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S1",
+   "source": "approved",
+   "number": 1,
+   "text": "Put a pinch of salt in the scary teacher's tea.",
+   "original_text": "Put lots of salt in the scary teacher's tea.",
+   "tone_edit": "A pinch, not lots.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_kitchen",
+   "collect_from": [],
+   "target": "scary_teacher",
+   "pack_objects": [
+    "tea_cup",
+    "salt_jar"
+   ],
+   "missing_objects": [],
+   "earliest": "Granny's room #1",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": "Teacher task: could move to the school staff room."
+  },
+  {
+   "id": "S2",
+   "source": "approved",
+   "number": 2,
+   "text": "Stick googly eyes on her favourite hat.",
+   "original_text": "Cut small holes in her favourite hat with craft-room scissors.",
+   "tone_edit": "No cutting holes.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_granny_room",
+   "collect_from": [
+    "gh_craft_office"
+   ],
+   "target": "her (granny or the scary teacher: not said)",
+   "pack_objects": [
+    "scissors"
+   ],
+   "missing_objects": [
+    "hat",
+    "googly eyes"
+   ],
+   "earliest": "Granny's room #7 · slot-in room: Granny's room",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S3",
+   "source": "approved",
+   "number": 3,
+   "text": "Hide her slippers near the puja room.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_puja_room",
+   "collect_from": [
+    "gh_granny_room"
+   ],
+   "target": "her (granny or the scary teacher: not said)",
+   "pack_objects": [
+    "idol"
+   ],
+   "missing_objects": [
+    "slippers"
+   ],
+   "earliest": "Granny's room #9 · slot-in room: Granny's room",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S4",
+   "source": "approved",
+   "number": 4,
+   "text": "Wet her towel near the pool so there's no dry towel.",
+   "place": "swimming_pool",
+   "places": [
+    "swimming_pool"
+   ],
+   "room": "sp_pool_deck",
+   "collect_from": [],
+   "target": "her (granny or the scary teacher: not said)",
+   "pack_objects": [
+    "towel_stack"
+   ],
+   "missing_objects": [],
+   "earliest": "level 30+",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S5",
+   "source": "approved",
+   "number": 5,
+   "text": "Swap the sugar and salt jars.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_kitchen",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [
+    "salt_jar",
+    "sugar_jar"
+   ],
+   "missing_objects": [],
+   "earliest": "Granny's room #1",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S6",
+   "source": "approved",
+   "number": 6,
+   "text": "Tie granny's shoelaces in big silly bows.",
+   "original_text": "Tie granny's shoelaces together.",
+   "tone_edit": "Shoelaces tied together could trip her.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_hall",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [
+    "front_door_mat"
+   ],
+   "missing_objects": [
+    "shoes (shoe rack)"
+   ],
+   "earliest": "Granny's room #2",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S7",
+   "source": "approved",
+   "number": 7,
+   "text": "Put a googly-eyed toy spider in her slipper.",
+   "original_text": "Put a fake spider in her slipper.",
+   "tone_edit": "Silly, not scary.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_hall",
+   "collect_from": [],
+   "target": "her (granny or the scary teacher: not said)",
+   "pack_objects": [],
+   "missing_objects": [
+    "toy spider with googly eyes"
+   ],
+   "earliest": "Granny's room #2",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S8",
+   "source": "approved",
+   "number": 8,
+   "text": "Fill her umbrella with confetti.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_hall",
+   "collect_from": [],
+   "target": "her (granny or the scary teacher: not said)",
+   "pack_objects": [],
+   "missing_objects": [
+    "umbrella",
+    "confetti"
+   ],
+   "earliest": "Granny's room #2",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S9",
+   "source": "approved",
+   "number": 9,
+   "text": "Hide all the TV remotes.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_hall",
+   "collect_from": [
+    "gh_play_zone"
+   ],
+   "target": "granny",
+   "pack_objects": [
+    "tv_remote"
+   ],
+   "missing_objects": [],
+   "earliest": "Granny's room #10",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": "The play zone has a remote controller too."
+  },
+  {
+   "id": "S10",
+   "source": "approved",
+   "number": 10,
+   "text": "Put bubble soap in the kitchen tap.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_kitchen",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [
+    "sink"
+   ],
+   "missing_objects": [
+    "bubble soap"
+   ],
+   "earliest": "Granny's room #1",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S11",
+   "source": "approved",
+   "number": 11,
+   "text": "Swap her reading glasses with funny coloured ones.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_study",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [],
+   "missing_objects": [
+    "reading glasses",
+    "funny coloured glasses"
+   ],
+   "earliest": "Granny's room #8",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S12",
+   "source": "approved",
+   "number": 12,
+   "text": "Stick googly eyes on everything in the fridge.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_kitchen",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [
+    "fridge"
+   ],
+   "missing_objects": [
+    "googly eyes"
+   ],
+   "earliest": "Granny's room #1",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S13",
+   "source": "approved",
+   "number": 13,
+   "text": "Set all clocks to different wrong times.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_hall",
+   "collect_from": [
+    "gh_granny_room"
+   ],
+   "target": "granny",
+   "pack_objects": [
+    "wall_clock"
+   ],
+   "missing_objects": [],
+   "earliest": "Granny's room #2 · slot-in room: Granny's room",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": "Clocks in every room: several rooms in one level."
+  },
+  {
+   "id": "S14",
+   "source": "approved",
+   "number": 14,
+   "text": "Put a whoopee cushion on granny's favourite chair.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_dining_room",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [
+    "chair"
+   ],
+   "missing_objects": [
+    "whoopee cushion"
+   ],
+   "earliest": "Granny's room #5",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S15",
+   "source": "approved",
+   "number": 15,
+   "text": "Put jelly in granny's shoes.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_hall",
+   "collect_from": [
+    "gh_kitchen"
+   ],
+   "target": "granny",
+   "pack_objects": [],
+   "missing_objects": [
+    "shoes (shoe rack)",
+    "jelly"
+   ],
+   "earliest": "Granny's room #2",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S16",
+   "source": "approved",
+   "number": 16,
+   "text": "Swap her toothpaste with something sour.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_bathroom",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [
+    "toothpaste"
+   ],
+   "missing_objects": [
+    "sour stuff"
+   ],
+   "earliest": "slot-in room: Bathroom",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S17",
+   "source": "approved",
+   "number": 17,
+   "text": "Hide a toy frog in her teapot.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_kitchen",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [
+    "tea_cup"
+   ],
+   "missing_objects": [
+    "teapot",
+    "toy frog"
+   ],
+   "earliest": "Granny's room #1",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S18",
+   "source": "approved",
+   "number": 18,
+   "text": "Tie a balloon to her chair so it floats up when she stands.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_study",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [
+    "office_chair"
+   ],
+   "missing_objects": [
+    "balloon"
+   ],
+   "earliest": "Granny's room #8",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": "Any chair works (dining chair too)."
+  },
+  {
+   "id": "S19",
+   "source": "approved",
+   "number": 19,
+   "text": "Put glitter in her hairbrush.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_granny_room",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [
+    "dressing_table"
+   ],
+   "missing_objects": [
+    "glitter",
+    "hairbrush"
+   ],
+   "earliest": "slot-in room: Granny's room",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S20",
+   "source": "approved",
+   "number": 20,
+   "text": "Swap family photos with funny cartoon faces.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_hall",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [
+    "photo_frame"
+   ],
+   "missing_objects": [
+    "cartoon face pictures"
+   ],
+   "earliest": "Granny's room #2",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S21",
+   "source": "approved",
+   "number": 21,
+   "text": "Fill her handbag with ping-pong balls.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_granny_room",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [],
+   "missing_objects": [
+    "handbag",
+    "ping-pong balls"
+   ],
+   "earliest": "slot-in room: Granny's room",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S22",
+   "source": "approved",
+   "number": 22,
+   "text": "Put a tiny animal-sound speaker under her bed.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_granny_room",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [
+    "bed_double"
+   ],
+   "missing_objects": [
+    "animal-sound speaker"
+   ],
+   "earliest": "slot-in room: Granny's room",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S23",
+   "source": "approved",
+   "number": 23,
+   "text": "Tape all her pens to the table.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_study",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [
+    "pen_holder",
+    "desk"
+   ],
+   "missing_objects": [
+    "tape"
+   ],
+   "earliest": "Granny's room #8",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S24",
+   "source": "approved",
+   "number": 24,
+   "text": "Swap her shampoo with colourful bubble liquid.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_bathroom",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [
+    "shampoo"
+   ],
+   "missing_objects": [
+    "bubble liquid"
+   ],
+   "earliest": "slot-in room: Bathroom",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S25",
+   "source": "approved",
+   "number": 25,
+   "text": "Put a rubber duck in her soup bowl.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_dining_room",
+   "collect_from": [
+    "gh_kitchen"
+   ],
+   "target": "granny",
+   "pack_objects": [
+    "bowl"
+   ],
+   "missing_objects": [
+    "rubber duck",
+    "soup"
+   ],
+   "earliest": "Granny's room #5",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S26",
+   "source": "approved",
+   "number": 26,
+   "text": "Fill her gloves with jelly.",
+   "place": "park",
+   "places": [
+    "park"
+   ],
+   "room": "pk_garden",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [],
+   "missing_objects": [
+    "gloves",
+    "jelly"
+   ],
+   "earliest": "level 10+",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S27",
+   "source": "approved",
+   "number": 27,
+   "text": "Hide a smiley toy snake in her garden hat.",
+   "original_text": "Hide a toy snake in her garden hat.",
+   "tone_edit": "Silly, not scary.",
+   "place": "park",
+   "places": [
+    "park"
+   ],
+   "room": "pk_garden",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [
+    "garden_hat"
+   ],
+   "missing_objects": [
+    "smiley toy snake"
+   ],
+   "earliest": "level 10+",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S28",
+   "source": "approved",
+   "number": 28,
+   "text": "Put bubble wrap under the doormat.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_hall",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [
+    "front_door_mat"
+   ],
+   "missing_objects": [
+    "bubble wrap"
+   ],
+   "earliest": "Granny's room #2",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S29",
+   "source": "approved",
+   "number": 29,
+   "text": "Swap the remote batteries so nothing works.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_hall",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [
+    "tv_remote"
+   ],
+   "missing_objects": [
+    "batteries"
+   ],
+   "earliest": "Granny's room #2",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S30",
+   "source": "approved",
+   "number": 30,
+   "text": "Put food colouring in the milk so it turns blue.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_kitchen",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [
+    "fridge"
+   ],
+   "missing_objects": [
+    "food colouring"
+   ],
+   "earliest": "Granny's room #1",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S31",
+   "source": "approved",
+   "number": 31,
+   "text": "Glue a coin to the floor.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_hall",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [],
+   "missing_objects": [
+    "coin",
+    "glue"
+   ],
+   "earliest": "Granny's room #2",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S32",
+   "source": "approved",
+   "number": 32,
+   "text": "Fill her slippers with cotton.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_hall",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [],
+   "missing_objects": [
+    "slippers",
+    "cotton"
+   ],
+   "earliest": "Granny's room #2",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S33",
+   "source": "approved",
+   "number": 33,
+   "text": "Put a tiny bell in her bag.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_granny_room",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [],
+   "missing_objects": [
+    "handbag",
+    "bell"
+   ],
+   "earliest": "slot-in room: Granny's room",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S34",
+   "source": "approved",
+   "number": 34,
+   "text": "Swap her shampoo and ketchup bottles.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_bathroom",
+   "collect_from": [
+    "gh_kitchen"
+   ],
+   "target": "granny",
+   "pack_objects": [
+    "shampoo"
+   ],
+   "missing_objects": [
+    "ketchup bottle"
+   ],
+   "earliest": "Granny's room #1 · slot-in room: Bathroom",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": "Two rooms: swap the bottles between the kitchen and the bathroom."
+  },
+  {
+   "id": "S35",
+   "source": "approved",
+   "number": 35,
+   "text": "Hide all the left shoes.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_hall",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [],
+   "missing_objects": [
+    "shoes (shoe rack)"
+   ],
+   "earliest": "Granny's room #2",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S36",
+   "source": "approved",
+   "number": 36,
+   "text": "Put a googly-eyed toy beetle on her toast.",
+   "original_text": "Put a fake cockroach on her toast.",
+   "tone_edit": "Silly, not yucky.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_kitchen",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [],
+   "missing_objects": [
+    "toy beetle with googly eyes",
+    "toast"
+   ],
+   "earliest": "Granny's room #1",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S37",
+   "source": "approved",
+   "number": 37,
+   "text": "Tie her curtains in a big knot.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_bedroom",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [],
+   "missing_objects": [
+    "curtains"
+   ],
+   "earliest": "Granny's room #4",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S38",
+   "source": "approved",
+   "number": 38,
+   "text": "Put sand in her watering can.",
+   "place": "park",
+   "places": [
+    "park"
+   ],
+   "room": "pk_garden",
+   "collect_from": [
+    "pk_sand_park"
+   ],
+   "target": "granny",
+   "pack_objects": [
+    "watering_can"
+   ],
+   "missing_objects": [],
+   "earliest": "level 60+",
+   "difficulty": "hard",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": "Sand comes from the sand park (opens level 60) or the playground sand."
+  },
+  {
+   "id": "S39",
+   "source": "approved",
+   "number": 39,
+   "text": "Change her ringtone to a loud cow sound.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_granny_room",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [],
+   "missing_objects": [
+    "phone"
+   ],
+   "earliest": "slot-in room: Granny's room",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S40",
+   "source": "approved",
+   "number": 40,
+   "text": "Fill her umbrella with feathers.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_hall",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [],
+   "missing_objects": [
+    "umbrella",
+    "feathers"
+   ],
+   "earliest": "Granny's room #2",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S41",
+   "source": "approved",
+   "number": 41,
+   "text": "Put double-sided tape on the TV remote.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_hall",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [
+    "tv_remote"
+   ],
+   "missing_objects": [
+    "double-sided tape"
+   ],
+   "earliest": "Granny's room #2",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S42",
+   "source": "approved",
+   "number": 42,
+   "text": "Hide her reading glasses in the fridge.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_kitchen",
+   "collect_from": [
+    "gh_study"
+   ],
+   "target": "granny",
+   "pack_objects": [
+    "fridge"
+   ],
+   "missing_objects": [
+    "reading glasses"
+   ],
+   "earliest": "Granny's room #8",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": "Take her glasses from the study, hide them in the fridge."
+  },
+  {
+   "id": "S43",
+   "source": "approved",
+   "number": 43,
+   "text": "Put a tiny toy car in her shoe.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_hall",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [],
+   "missing_objects": [
+    "shoes (shoe rack)",
+    "toy car"
+   ],
+   "earliest": "Granny's room #2",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S44",
+   "source": "approved",
+   "number": 44,
+   "text": "Fill her pillow with bells.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_granny_room",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [
+    "bed_double"
+   ],
+   "missing_objects": [
+    "pillow",
+    "bells"
+   ],
+   "earliest": "slot-in room: Granny's room",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S45",
+   "source": "approved",
+   "number": 45,
+   "text": "Put clear nail polish on the soap.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_bathroom",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [
+    "soap"
+   ],
+   "missing_objects": [
+    "clear nail polish"
+   ],
+   "earliest": "slot-in room: Bathroom",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S46",
+   "source": "approved",
+   "number": 46,
+   "text": "Sew her socks together.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_granny_room",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [
+    "drawer_unit"
+   ],
+   "missing_objects": [
+    "socks",
+    "needle and thread"
+   ],
+   "earliest": "slot-in room: Granny's room",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S47",
+   "source": "approved",
+   "number": 47,
+   "text": "Put everything in the fridge upside down.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_kitchen",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [
+    "fridge"
+   ],
+   "missing_objects": [],
+   "earliest": "Granny's room #1",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S48",
+   "source": "approved",
+   "number": 48,
+   "text": "Fill her pen with invisible ink.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_study",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [
+    "pen_holder"
+   ],
+   "missing_objects": [
+    "invisible ink"
+   ],
+   "earliest": "Granny's room #8",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S49",
+   "source": "approved",
+   "number": 49,
+   "text": "Hang the wall clock upside down.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_hall",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [
+    "wall_clock"
+   ],
+   "missing_objects": [],
+   "earliest": "Granny's room #2",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S50",
+   "source": "approved",
+   "number": 50,
+   "text": "Stick tiny joke notes between her book's pages.",
+   "original_text": "Glue her book's pages together.",
+   "tone_edit": "Glued pages would ruin the book.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_study",
+   "collect_from": [
+    "gh_craft_office"
+   ],
+   "target": "granny",
+   "pack_objects": [
+    "colored_paper",
+    "pencil"
+   ],
+   "missing_objects": [
+    "joke notes"
+   ],
+   "earliest": "Granny's room #8",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S51",
+   "source": "approved",
+   "number": 51,
+   "text": "Make her umbrella refuse to open.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_hall",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [],
+   "missing_objects": [
+    "umbrella"
+   ],
+   "earliest": "Granny's room #2",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S52",
+   "source": "approved",
+   "number": 52,
+   "text": "Put lemon in her tea so it curdles.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_kitchen",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [
+    "lemon",
+    "tea_cup"
+   ],
+   "missing_objects": [],
+   "earliest": "Granny's room #1",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": "",
+   "play": 8,
+   "steps": [
+    {
+     "type": "pickup",
+     "item": "gh_kitchen/lemon_1",
+     "text": "Grab a lemon"
+    },
+    {
+     "type": "use",
+     "item": "gh_kitchen/lemon_1",
+     "target": "gh_kitchen/tea_cup_1",
+     "text": "Squeeze it into her tea"
+    },
+    {
+     "type": "reach",
+     "room": "lh_hall",
+     "text": "Run back home"
+    }
+   ],
+   "needs": "Lemon",
+   "watchOut": "Scary teacher (slow)",
+   "hideIn": "Hall cupboard",
+   "baddies": [
+    {
+     "id": "teacher1",
+     "kind": "teacher",
+     "patrol": [
+      {
+       "room": "gh_kitchen",
+       "tile": [
+        12.5,
+        4.5
+       ],
+       "wait": 0.8
+      },
+      {
+       "room": "gh_kitchen",
+       "tile": [
+        12.5,
+        7.8
+       ]
+      },
+      {
+       "room": "gh_kitchen",
+       "tile": [
+        2.5,
+        7.8
+       ],
+       "wait": 0.8
+      },
+      {
+       "room": "gh_kitchen",
+       "tile": [
+        2.5,
+        2.2
+       ]
+      },
+      {
+       "room": "gh_kitchen",
+       "tile": [
+        12.5,
+        2.2
+       ]
+      }
+     ]
+    }
+   ],
+   "petHelp": 2,
+   "parTime": 70,
+   "tip": "Tip: she walks round the table. Wait for her to pass, then dash.",
+   "completeText": "Her tea is sour! Her face looks just like a lemon.",
+   "unlocks": [
+    "gh_store_room"
+   ],
+   "name": "Sour tea",
+   "task": "Put lemon in the scary teacher's tea"
+  },
+  {
+   "id": "S53",
+   "source": "approved",
+   "number": 53,
+   "text": "Make her shoelaces disappear.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_hall",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [],
+   "missing_objects": [
+    "shoes (shoe rack)"
+   ],
+   "earliest": "Granny's room #2",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S54",
+   "source": "approved",
+   "number": 54,
+   "text": "Fill her bed with toys.",
+   "place": "granny_house",
+   "places": [
+    "granny_house",
+    "little_house"
+   ],
+   "room": "gh_granny_room",
+   "collect_from": [
+    "lh_fluffy_room"
+   ],
+   "target": "granny",
+   "pack_objects": [
+    "bed_double",
+    "soft_toy"
+   ],
+   "missing_objects": [],
+   "earliest": "slot-in room: Granny's room",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": "Toys come from the fluffy room in your little house: the only task that uses it."
+  },
+  {
+   "id": "S55",
+   "source": "approved",
+   "number": 55,
+   "text": "Put salt on her toothbrush.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_bathroom",
+   "collect_from": [
+    "gh_kitchen"
+   ],
+   "target": "granny",
+   "pack_objects": [],
+   "missing_objects": [
+    "toothbrush (only in the little house's bathroom)"
+   ],
+   "earliest": "Granny's room #1 · slot-in room: Bathroom",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": "Salt from the kitchen."
+  },
+  {
+   "id": "S56",
+   "source": "approved",
+   "number": 56,
+   "text": "Tie colourful ribbons on the fan.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_hall",
+   "collect_from": [
+    "gh_craft_office"
+   ],
+   "target": "granny",
+   "pack_objects": [],
+   "missing_objects": [
+    "ceiling fan",
+    "ribbons"
+   ],
+   "earliest": "Granny's room #7",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S57",
+   "source": "approved",
+   "number": 57,
+   "text": "Dip her comb in honey.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_granny_room",
+   "collect_from": [
+    "gh_kitchen"
+   ],
+   "target": "granny",
+   "pack_objects": [
+    "dressing_table"
+   ],
+   "missing_objects": [
+    "comb",
+    "honey"
+   ],
+   "earliest": "Granny's room #1 · slot-in room: Granny's room",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S58",
+   "source": "approved",
+   "number": 58,
+   "text": "Change the doorbell to a laughing sound.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_hall",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [],
+   "missing_objects": [
+    "doorbell"
+   ],
+   "earliest": "Granny's room #2",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S59",
+   "source": "approved",
+   "number": 59,
+   "text": "Put stickers on her glasses.",
+   "place": "granny_house",
+   "places": [
+    "granny_house"
+   ],
+   "room": "gh_study",
+   "collect_from": [],
+   "target": "granny",
+   "pack_objects": [],
+   "missing_objects": [
+    "glasses",
+    "stickers"
+   ],
+   "earliest": "Granny's room #8",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "note": ""
+  },
+  {
+   "id": "E1",
+   "source": "quest-list",
+   "number": 1,
+   "title": "Help the Teddy",
+   "text": "Teddy has a wobbly arm. Find Teddy on the Fluffy room bed, get a bandage from the hospital, and fix the arm.",
+   "place": "little_house",
+   "places": [
+    "little_house",
+    "hospital"
+   ],
+   "room": "lh_fluffy_room",
+   "collect_from": [
+    "hs_pharmacy"
+   ],
+   "target": "teddy",
+   "pack_objects": [
+    "first_aid_box"
+   ],
+   "missing_objects": [
+    "teddy",
+    "bandage"
+   ],
+   "earliest": "level 75+",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "help"
+   ],
+   "learn": "Bandages live in the hospital's first-aid box.",
+   "message": "Looking after a friend's toy shows you care.",
+   "watcher": "kabla",
+   "note": ""
+  },
+  {
+   "id": "E2",
+   "source": "quest-list",
+   "number": 2,
+   "title": "The Missing Football",
+   "text": "Find a clue on the school notice board and follow it to the football at the playground.",
+   "place": "park",
+   "places": [
+    "park",
+    "school"
+   ],
+   "room": "pk_playground",
+   "collect_from": [
+    "sc_corridor"
+   ],
+   "target": "playground kids",
+   "pack_objects": [
+    "notice_board"
+   ],
+   "missing_objects": [
+    "football",
+    "clue note"
+   ],
+   "earliest": "level 45+",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "mystery"
+   ],
+   "learn": "Notice boards share news and clues.",
+   "message": "Reading carefully helps you find what is lost.",
+   "watcher": "scary_teacher",
+   "note": ""
+  },
+  {
+   "id": "E3",
+   "source": "quest-list",
+   "number": 3,
+   "title": "Paint the Playground Sign",
+   "text": "Get paint and a brush from the school classroom, then paint the playground sign.",
+   "place": "park",
+   "places": [
+    "park",
+    "school"
+   ],
+   "room": "pk_playground",
+   "collect_from": [
+    "sc_classroom"
+   ],
+   "target": "playground kids",
+   "pack_objects": [],
+   "missing_objects": [
+    "paint",
+    "paintbrush",
+    "playground sign"
+   ],
+   "earliest": "level 45+",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "help"
+   ],
+   "learn": "Paint and brushes belong in the art corner at school.",
+   "message": "Making a place look nice is a gift to everyone.",
+   "watcher": "scary_teacher",
+   "note": ""
+  },
+  {
+   "id": "E4",
+   "source": "quest-list",
+   "number": 4,
+   "title": "Surprise Party",
+   "text": "Get balloons from home, find granny's secret decoration trick in her craft room, and decorate the dining room for a surprise party.",
+   "place": "granny_house",
+   "places": [
+    "granny_house",
+    "little_house"
+   ],
+   "room": "gh_dining_room",
+   "collect_from": [
+    "lh_fluffy_room",
+    "gh_craft_office"
+   ],
+   "target": "granny",
+   "pack_objects": [
+    "colored_paper"
+   ],
+   "missing_objects": [
+    "balloons"
+   ],
+   "earliest": "Granny's room #7",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "event"
+   ],
+   "learn": "Party things are kept at home; craft ideas are in the craft room.",
+   "message": "A surprise made with love is the best present.",
+   "watcher": "granny",
+   "note": "Granny must not see the party before it is ready."
+  },
+  {
+   "id": "E5",
+   "source": "quest-list",
+   "number": 5,
+   "title": "Granny's Little Plant",
+   "text": "Take the plant pot from your hall, get seeds from granny's garden, and plant them.",
+   "place": "park",
+   "places": [
+    "park",
+    "little_house"
+   ],
+   "room": "pk_garden",
+   "collect_from": [
+    "lh_hall"
+   ],
+   "target": "granny",
+   "pack_objects": [
+    "plant_pot",
+    "flower_bed"
+   ],
+   "missing_objects": [
+    "seeds"
+   ],
+   "earliest": "level 10+",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "help"
+   ],
+   "learn": "Seeds and soil are found in the garden.",
+   "message": "Plants grow when we look after them every day.",
+   "watcher": "granny",
+   "note": ""
+  },
+  {
+   "id": "E6",
+   "source": "quest-list",
+   "number": 6,
+   "title": "The Book Delivery",
+   "text": "Pick up the lost book at the museum and take it back to the school library.",
+   "place": "school",
+   "places": [
+    "school",
+    "museum"
+   ],
+   "room": "sc_library",
+   "collect_from": [
+    "mu_store"
+   ],
+   "target": "librarian",
+   "pack_objects": [
+    "bookshelf"
+   ],
+   "missing_objects": [
+    "museum book"
+   ],
+   "earliest": "level 52+",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "help"
+   ],
+   "learn": "Books go home to the library.",
+   "message": "Returning things helps everyone find them again.",
+   "watcher": "scary_teacher",
+   "note": ""
+  },
+  {
+   "id": "E7",
+   "source": "quest-list",
+   "number": 7,
+   "title": "Clean the Museum Statue",
+   "text": "Take a clean towel from your bathroom and wipe the dusty statue in the museum hall.",
+   "place": "museum",
+   "places": [
+    "museum",
+    "little_house"
+   ],
+   "room": "mu_hall",
+   "collect_from": [
+    "lh_bathroom"
+   ],
+   "target": "museum visitors",
+   "pack_objects": [
+    "towel"
+   ],
+   "missing_objects": [
+    "dusty statue"
+   ],
+   "earliest": "level 52+",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "help"
+   ],
+   "learn": "Cloths and towels are kept in the bathroom.",
+   "message": "Looking after old things keeps their stories shining.",
+   "watcher": "kabla",
+   "note": ""
+  },
+  {
+   "id": "E8",
+   "source": "quest-list",
+   "number": 8,
+   "title": "The Doctor's Missing Stethoscope",
+   "text": "The doctor left a stethoscope at your house. Find it in the Fluffy room and bring it back to the doctor's room at the hospital.",
+   "place": "hospital",
+   "places": [
+    "hospital",
+    "little_house"
+   ],
+   "room": "hs_doctor_room",
+   "collect_from": [
+    "lh_fluffy_room"
+   ],
+   "target": "doctor",
+   "pack_objects": [
+    "stethoscope"
+   ],
+   "missing_objects": [
+    "stethoscope hidden at home"
+   ],
+   "earliest": "level 75+",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "mystery",
+    "help"
+   ],
+   "learn": "A doctor's tools go back to the doctor's room.",
+   "message": "When you find something that is not yours, give it back.",
+   "watcher": "kabla",
+   "note": ""
+  },
+  {
+   "id": "E9",
+   "source": "quest-list",
+   "number": 9,
+   "title": "Granny's Recipe",
+   "text": "Granny needs a recipe card. Get paper and a pencil from the school classroom and bring them to her kitchen.",
+   "place": "granny_house",
+   "places": [
+    "granny_house",
+    "school"
+   ],
+   "room": "gh_kitchen",
+   "collect_from": [
+    "sc_classroom"
+   ],
+   "target": "granny",
+   "pack_objects": [
+    "pencil"
+   ],
+   "missing_objects": [
+    "recipe card"
+   ],
+   "earliest": "level 45+ · Granny's room #1",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "help"
+   ],
+   "learn": "Paper and pencils are in the classroom.",
+   "message": "Sharing a recipe shares a little love.",
+   "watcher": "scary_teacher",
+   "note": ""
+  },
+  {
+   "id": "E10",
+   "source": "quest-list",
+   "number": 10,
+   "title": "The Squeaky Chair Prank",
+   "text": "Take the squeaky toy from your animal room and slip it under the scary teacher's chair at school.",
+   "place": "school",
+   "places": [
+    "school",
+    "little_house"
+   ],
+   "room": "sc_classroom",
+   "collect_from": [
+    "lh_animal_room"
+   ],
+   "target": "scary_teacher",
+   "pack_objects": [
+    "pet_toys",
+    "teacher_desk"
+   ],
+   "missing_objects": [],
+   "earliest": "level 45+",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "learn": "Toys that squeak live in the animal room.",
+   "message": "A harmless giggle can brighten a grumpy day.",
+   "watcher": "scary_teacher",
+   "note": ""
+  },
+  {
+   "id": "E11",
+   "source": "draft",
+   "number": 11,
+   "title": "Squeaky Sofa",
+   "text": "Hide a squeaky pet toy under the cushion of granny's hall sofa.",
+   "place": "granny_house",
+   "places": [
+    "granny_house",
+    "little_house"
+   ],
+   "room": "gh_hall",
+   "collect_from": [
+    "lh_animal_room"
+   ],
+   "target": "granny",
+   "pack_objects": [
+    "pet_toys",
+    "sofa"
+   ],
+   "missing_objects": [],
+   "earliest": "Granny's room #2",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "learn": "Squeaky toys come from the animal room; sofas have cushions to hide things under.",
+   "message": "A tiny squeak can make a whole room giggle.",
+   "watcher": "scary_teacher",
+   "note": "First early-game home-to-granny's task. Uses only rooms open at Granny's room #2."
+  },
+  {
+   "id": "E12",
+   "source": "draft",
+   "number": 12,
+   "title": "Feeding Time",
+   "text": "The pets are hungry! Fill a food bowl for the dog, the cat and the parrot.",
+   "place": "little_house",
+   "places": [
+    "little_house"
+   ],
+   "room": "lh_animal_room",
+   "collect_from": [],
+   "target": "pets",
+   "pack_objects": [
+    "pet_bowl",
+    "pet_dog",
+    "pet_cat",
+    "pet_parrot",
+    "pet_toys"
+   ],
+   "missing_objects": [
+    "pet food",
+    "parrot seed dish"
+   ],
+   "earliest": "level 1",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "help"
+   ],
+   "learn": "Each pet has its own food and spot: seeds for the parrot, a bowl by the dog bed, a bowl by the cat basket.",
+   "message": "Looking after animals makes them your friends, and friends help you back.",
+   "watcher": "none",
+   "note": "Calm task: no baddie. Three feeding spots in the Animal room (parrot cage, dog bed, cat basket). Reward: the pets become helpers who run out to distract a chaser in later tasks (rule 6). The room has 2 bowls in the pack, so one more bowl and the pet food are needed.",
+   "play": 3,
+   "steps": [
+    {
+     "type": "pickup",
+     "item": "lh_animal_room/pet_food_sack_1",
+     "text": "Pick up the pet food"
+    },
+    {
+     "type": "use",
+     "item": "lh_animal_room/pet_food_sack_1",
+     "target": "lh_animal_room/pet_bowl_1",
+     "keep": true,
+     "text": "Fill the dog's bowl"
+    },
+    {
+     "type": "use",
+     "item": "lh_animal_room/pet_food_sack_1",
+     "target": "lh_animal_room/pet_bowl_2",
+     "keep": true,
+     "text": "Fill the cat's bowl"
+    },
+    {
+     "type": "use",
+     "item": "lh_animal_room/pet_food_sack_1",
+     "target": "lh_animal_room/pet_bowl_3",
+     "text": "Fill the parrot's dish"
+    }
+   ],
+   "needs": "The pet food in the animal room",
+   "watchOut": "Nobody: it is a calm task",
+   "hideIn": "No need to hide",
+   "baddies": [],
+   "petHelp": 0,
+   "parTime": 60,
+   "tip": "Tip: each pet has its own bowl, by its bed, basket or cage.",
+   "completeText": "Yum! Now the pets are your friends. They will help you when someone chases you."
+  },
+  {
+   "id": "E13",
+   "source": "draft",
+   "number": 13,
+   "title": "Smiley Mirror",
+   "text": "Take the soap from your bathroom and draw a big smiley face on the mirror in granny's bathroom.",
+   "place": "granny_house",
+   "places": [
+    "granny_house",
+    "little_house"
+   ],
+   "room": "gh_bathroom",
+   "collect_from": [
+    "lh_bathroom"
+   ],
+   "target": "granny",
+   "pack_objects": [
+    "soap",
+    "mirror"
+   ],
+   "missing_objects": [],
+   "earliest": "slot-in room: Bathroom",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "learn": "Soap and mirrors live in the bathroom.",
+   "message": "A smile is the nicest surprise (and she wipes it off with a laugh).",
+   "watcher": "scary_teacher",
+   "note": ""
+  },
+  {
+   "id": "E14",
+   "source": "draft",
+   "number": 14,
+   "title": "Lost and Found",
+   "text": "A swim ring and a football were left in granny's store room. Take the ring back to the pool and the ball back to the playground.",
+   "place": "swimming_pool",
+   "places": [
+    "swimming_pool",
+    "granny_house",
+    "park"
+   ],
+   "room": "sp_pool_deck",
+   "collect_from": [
+    "gh_store_room",
+    "pk_playground"
+   ],
+   "target": "pool and playground",
+   "pack_objects": [
+    "float_ring",
+    "box_stack"
+   ],
+   "missing_objects": [
+    "football",
+    "swim ring found in the store room"
+   ],
+   "earliest": "level 30+ · Granny's room #3",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "help"
+   ],
+   "learn": "Swim rings belong at the pool and balls belong at the playground.",
+   "message": "Putting things back where they belong helps everyone.",
+   "watcher": "scary_teacher",
+   "note": "Teaches 'which building does this belong in?'."
+  },
+  {
+   "id": "E15",
+   "source": "draft",
+   "number": 15,
+   "title": "Googly-Eyed Statue",
+   "text": "Stick a pair of big googly eyes on the statue in the museum hall.",
+   "place": "museum",
+   "places": [
+    "museum",
+    "granny_house"
+   ],
+   "room": "mu_hall",
+   "collect_from": [
+    "gh_craft_office"
+   ],
+   "target": "museum visitors",
+   "pack_objects": [],
+   "missing_objects": [
+    "googly eyes",
+    "statue"
+   ],
+   "earliest": "level 52+ · Granny's room #7",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "learn": "Craft supplies like googly eyes are in the craft room.",
+   "message": "A silly face on a serious statue makes everyone smile.",
+   "watcher": "kabla",
+   "note": ""
+  },
+  {
+   "id": "E16",
+   "source": "draft",
+   "number": 16,
+   "title": "Football in the Flower Pot",
+   "text": "Hide the football inside the big plant pot in granny's store room.",
+   "place": "granny_house",
+   "places": [
+    "granny_house",
+    "park"
+   ],
+   "room": "gh_store_room",
+   "collect_from": [
+    "pk_playground"
+   ],
+   "target": "granny",
+   "pack_objects": [
+    "big_plant_pot"
+   ],
+   "missing_objects": [
+    "football"
+   ],
+   "earliest": "level 5+ · Granny's room #3",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "learn": "Footballs live at the playground; big pots are in the store room.",
+   "message": "Hide-and-seek with a ball is a game, not a fight.",
+   "watcher": "scary_teacher",
+   "note": ""
+  },
+  {
+   "id": "E17",
+   "source": "draft",
+   "number": 17,
+   "title": "Royal Cat",
+   "text": "Make a paper crown in granny's craft room and place it on the sleepy cat in your animal room.",
+   "place": "little_house",
+   "places": [
+    "little_house",
+    "granny_house"
+   ],
+   "room": "lh_animal_room",
+   "collect_from": [
+    "gh_craft_office"
+   ],
+   "target": "pet cat",
+   "pack_objects": [
+    "pet_cat",
+    "colored_paper"
+   ],
+   "missing_objects": [],
+   "earliest": "Granny's room #7",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank",
+    "help"
+   ],
+   "learn": "Paper and scissors are in the craft room.",
+   "message": "Even a cat can be a king for a day.",
+   "watcher": "scary_teacher (visiting)",
+   "note": "Decided (Dharmesh): the scary teacher visits for tea, so there is someone at home to keep the stakes."
+  },
+  {
+   "id": "E18",
+   "source": "draft",
+   "number": 18,
+   "title": "Silly Portrait",
+   "text": "Clip a silly drawing with a big moustache over a royal painting in the palace throne room.",
+   "place": "palace",
+   "places": [
+    "palace",
+    "granny_house"
+   ],
+   "room": "pl_throne_room",
+   "collect_from": [
+    "gh_craft_office"
+   ],
+   "target": "granny",
+   "pack_objects": [
+    "painting",
+    "colored_paper",
+    "pencil"
+   ],
+   "missing_objects": [],
+   "earliest": "level 90+ · Granny's room #7",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "learn": "Paper, pencils and clips are found in the craft room.",
+   "message": "Even royal faces enjoy a joke.",
+   "watcher": "granny",
+   "note": ""
+  },
+  {
+   "id": "M1",
+   "source": "quest-list",
+   "number": 1,
+   "title": "Emergency Teddy Rescue",
+   "text": "Teddy fell off the playground slide! Get an ice pack from your house and a bandage from the hospital, then help Teddy.",
+   "place": "park",
+   "places": [
+    "park",
+    "little_house",
+    "hospital"
+   ],
+   "room": "pk_playground",
+   "collect_from": [
+    "lh_bathroom",
+    "hs_pharmacy"
+   ],
+   "target": "teddy",
+   "pack_objects": [
+    "first_aid_box",
+    "slide_play"
+   ],
+   "missing_objects": [
+    "teddy",
+    "ice pack",
+    "bandage"
+   ],
+   "earliest": "level 75+",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "help"
+   ],
+   "learn": "Ice packs are for bumps (at home) and bandages are for scratches (at the hospital).",
+   "message": "Being kind and quick helps a friend feel better.",
+   "watcher": "kabla",
+   "note": ""
+  },
+  {
+   "id": "M2",
+   "source": "quest-list",
+   "number": 2,
+   "title": "Fix the Broken Bicycle",
+   "text": "A bicycle at the playground has a wobbly wheel and its rider has a scratch. Bring tools from your house and a bandage from the hospital.",
+   "place": "park",
+   "places": [
+    "park",
+    "little_house",
+    "hospital"
+   ],
+   "room": "pk_playground",
+   "collect_from": [
+    "lh_hall",
+    "hs_pharmacy"
+   ],
+   "target": "playground kids",
+   "pack_objects": [
+    "first_aid_box"
+   ],
+   "missing_objects": [
+    "bicycle",
+    "tools",
+    "bandage"
+   ],
+   "earliest": "level 75+",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "help"
+   ],
+   "learn": "Tools live in the toolbox at home; bandages live at the hospital.",
+   "message": "Fixing things and helping people makes you a hero.",
+   "watcher": "granny",
+   "note": "Needs a toolbox in the little house hall (not in the pack)."
+  },
+  {
+   "id": "M3",
+   "source": "quest-list",
+   "number": 3,
+   "title": "Mini Playground Festival",
+   "text": "School gives the decorations, granny gives the snacks, and you set up a little festival at the playground.",
+   "place": "park",
+   "places": [
+    "park",
+    "school",
+    "granny_house"
+   ],
+   "room": "pk_playground",
+   "collect_from": [
+    "sc_classroom",
+    "gh_kitchen"
+   ],
+   "target": "playground kids",
+   "pack_objects": [
+    "cashew_bowl",
+    "bench"
+   ],
+   "missing_objects": [
+    "decorations"
+   ],
+   "earliest": "level 45+ · Granny's room #1",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "event"
+   ],
+   "learn": "Snacks come from the kitchen and decorations come from school.",
+   "message": "Parties are happier when everyone brings something.",
+   "watcher": "granny",
+   "note": ""
+  },
+  {
+   "id": "M4",
+   "source": "quest-list",
+   "number": 4,
+   "title": "Restore the Painting",
+   "text": "A museum painting has a faded corner. Get a brush from school and old paint from granny's craft room, then touch it up.",
+   "place": "museum",
+   "places": [
+    "museum",
+    "school",
+    "granny_house"
+   ],
+   "room": "mu_gallery",
+   "collect_from": [
+    "sc_classroom",
+    "gh_craft_office"
+   ],
+   "target": "museum visitors",
+   "pack_objects": [],
+   "missing_objects": [
+    "faded painting",
+    "paintbrush",
+    "old paint"
+   ],
+   "earliest": "level 52+ · Granny's room #7",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "help"
+   ],
+   "learn": "Art tools are at school and in the craft room.",
+   "message": "Fixing old art keeps its beauty for everyone.",
+   "watcher": "kabla",
+   "note": ""
+  },
+  {
+   "id": "M5",
+   "source": "quest-list",
+   "number": 5,
+   "title": "Who Took the Giant Spoon?",
+   "text": "The museum's giant spoon is missing! Follow funny clues from granny's kitchen and the school science lab to find who borrowed it for an experiment.",
+   "place": "museum",
+   "places": [
+    "museum",
+    "granny_house",
+    "school"
+   ],
+   "room": "mu_store",
+   "collect_from": [
+    "gh_kitchen",
+    "sc_science_lab"
+   ],
+   "target": "scary_teacher",
+   "pack_objects": [
+    "flask"
+   ],
+   "missing_objects": [
+    "giant spoon",
+    "clue notes"
+   ],
+   "earliest": "level 52+ · Granny's room #1",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "mystery"
+   ],
+   "learn": "Spoons live in the kitchen and experiments happen in the science lab.",
+   "message": "Asking questions kindly solves a mystery.",
+   "watcher": "scary_teacher",
+   "note": ""
+  },
+  {
+   "id": "M6",
+   "source": "quest-list",
+   "number": 6,
+   "title": "The Sleeping Guard Prank",
+   "text": "Get a toy moustache from home and a funny hat from school, then dress up the museum guard's statue.",
+   "place": "museum",
+   "places": [
+    "museum",
+    "little_house",
+    "school"
+   ],
+   "room": "mu_hall",
+   "collect_from": [
+    "lh_fluffy_room",
+    "sc_classroom"
+   ],
+   "target": "museum visitors",
+   "pack_objects": [],
+   "missing_objects": [
+    "toy moustache",
+    "funny hat",
+    "guard statue"
+   ],
+   "earliest": "level 52+",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "learn": "Dress-up things are at home and hats are in school's lost property.",
+   "message": "Making people smile is the best kind of mischief.",
+   "watcher": "kabla",
+   "note": ""
+  },
+  {
+   "id": "M7",
+   "source": "quest-list",
+   "number": 7,
+   "title": "The Impossible Birthday Cake",
+   "text": "Granny writes the recipe, the school canteen lends a measuring cup, you bake in granny's kitchen and carry the cake home.",
+   "place": "granny_house",
+   "places": [
+    "granny_house",
+    "school",
+    "little_house"
+   ],
+   "room": "gh_kitchen",
+   "collect_from": [
+    "sc_canteen",
+    "lh_hall"
+   ],
+   "target": "granny",
+   "pack_objects": [
+    "sugar_jar"
+   ],
+   "missing_objects": [
+    "measuring cup",
+    "recipe card",
+    "cake ingredients"
+   ],
+   "earliest": "level 45+ · Granny's room #1",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "event"
+   ],
+   "learn": "Cooking tools are in the kitchen and canteen.",
+   "message": "Baking for someone is a way to say I love you.",
+   "watcher": "scary_teacher",
+   "note": "The little house has no kitchen, so the baking happens at granny's. DECISION: or add a kitchen corner at home."
+  },
+  {
+   "id": "M8",
+   "source": "quest-list",
+   "number": 8,
+   "title": "School Sports Day",
+   "text": "Get a whistle from school, water bottles from home, and the football from the playground, then start the sports event.",
+   "place": "park",
+   "places": [
+    "park",
+    "school",
+    "little_house"
+   ],
+   "room": "pk_playground",
+   "collect_from": [
+    "sc_classroom",
+    "lh_hall"
+   ],
+   "target": "playground kids",
+   "pack_objects": [],
+   "missing_objects": [
+    "whistle",
+    "water bottles",
+    "football"
+   ],
+   "earliest": "level 45+",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "event"
+   ],
+   "learn": "Whistles belong to PE teachers at school; bottles are kept at home.",
+   "message": "Playing together matters more than winning.",
+   "watcher": "scary_teacher",
+   "note": ""
+  },
+  {
+   "id": "M9",
+   "source": "quest-list",
+   "number": 9,
+   "title": "Grow a Giant Flower",
+   "text": "Get a seed from granny's garden, a pot from home and a bottle of 'plant medicine' from the hospital pharmacy, and grow a giant flower.",
+   "place": "park",
+   "places": [
+    "park",
+    "little_house",
+    "hospital"
+   ],
+   "room": "pk_garden",
+   "collect_from": [
+    "lh_hall",
+    "hs_pharmacy"
+   ],
+   "target": "granny",
+   "pack_objects": [
+    "plant_pot",
+    "flower_bed"
+   ],
+   "missing_objects": [
+    "seed",
+    "bottle of plant medicine"
+   ],
+   "earliest": "level 75+",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "help"
+   ],
+   "learn": "Plants need water, light and care, like people.",
+   "message": "Patience and care help big things grow.",
+   "watcher": "granny",
+   "note": ""
+  },
+  {
+   "id": "M10",
+   "source": "quest-list",
+   "number": 10,
+   "title": "Museum Detective",
+   "text": "Find a mysterious object in the museum, borrow a magnifying glass from the school science lab, then ask granny what the object is.",
+   "place": "museum",
+   "places": [
+    "museum",
+    "school",
+    "granny_house"
+   ],
+   "room": "mu_store",
+   "collect_from": [
+    "sc_science_lab",
+    "gh_granny_room"
+   ],
+   "target": "granny",
+   "pack_objects": [
+    "microscope"
+   ],
+   "missing_objects": [
+    "mysterious object",
+    "magnifying glass"
+   ],
+   "earliest": "level 52+ · slot-in room: Granny's room",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "mystery"
+   ],
+   "learn": "Magnifying glasses and microscopes live in the science lab.",
+   "message": "Looking closely helps us understand the past.",
+   "watcher": "kabla",
+   "note": ""
+  },
+  {
+   "id": "M11",
+   "source": "quest-list",
+   "number": 11,
+   "title": "The Fizzy Science Trick",
+   "text": "Collect lemon and a pinch of baking soda from granny's kitchen and soap from home, then put on a fizzy bubbling show in the school science lab.",
+   "place": "school",
+   "places": [
+    "school",
+    "granny_house",
+    "little_house"
+   ],
+   "room": "sc_science_lab",
+   "collect_from": [
+    "gh_kitchen",
+    "lh_bathroom"
+   ],
+   "target": "scary_teacher",
+   "pack_objects": [
+    "lemon",
+    "flask",
+    "soap"
+   ],
+   "missing_objects": [
+    "baking soda"
+   ],
+   "earliest": "level 45+ · Granny's room #1",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "prank",
+    "mystery"
+   ],
+   "learn": "Lemons and soda are in the kitchen; flasks are in the science lab.",
+   "message": "Science is more fun when we try it safely.",
+   "watcher": "scary_teacher",
+   "note": ""
+  },
+  {
+   "id": "M12",
+   "source": "quest-list",
+   "number": 12,
+   "title": "The Museum Ghost Prank",
+   "text": "Make a friendly sheet ghost at home and hide it behind a museum exhibit to surprise your friends.",
+   "place": "museum",
+   "places": [
+    "museum",
+    "little_house",
+    "school"
+   ],
+   "room": "mu_dino_hall",
+   "collect_from": [
+    "lh_fluffy_room",
+    "sc_classroom"
+   ],
+   "target": "friends",
+   "pack_objects": [],
+   "missing_objects": [
+    "sheet",
+    "ghost eyes",
+    "dinosaur exhibit"
+   ],
+   "earliest": "level 52+",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "learn": "Sheets are at home; eyes can be cut from paper at school.",
+   "message": "A friendly 'boo' makes friends laugh, not scream.",
+   "watcher": "kabla",
+   "note": "A friendly ghost: the spooky look stays in Granny's house only."
+  },
+  {
+   "id": "M13",
+   "source": "draft",
+   "number": 13,
+   "title": "Funny Labels",
+   "text": "Get sticker labels from school and put funny names under the museum exhibits (granny's slipper, anyone?).",
+   "place": "museum",
+   "places": [
+    "museum",
+    "school"
+   ],
+   "room": "mu_hall",
+   "collect_from": [
+    "sc_classroom"
+   ],
+   "target": "museum visitors",
+   "pack_objects": [],
+   "missing_objects": [
+    "sticker labels",
+    "exhibits"
+   ],
+   "earliest": "level 52+",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "learn": "Labels and stickers are kept at school.",
+   "message": "Silly names help us notice what is really there.",
+   "watcher": "kabla",
+   "note": ""
+  },
+  {
+   "id": "M14",
+   "source": "draft",
+   "number": 14,
+   "title": "Sandcastle Flag",
+   "text": "Make a flag from coloured paper (granny's craft room) and a pencil (school) and plant it on top of the sandcastle.",
+   "place": "park",
+   "places": [
+    "park",
+    "granny_house",
+    "school"
+   ],
+   "room": "pk_sand_park",
+   "collect_from": [
+    "gh_craft_office",
+    "sc_classroom"
+   ],
+   "target": "sand park kids",
+   "pack_objects": [
+    "sand_castle",
+    "colored_paper",
+    "pencil"
+   ],
+   "missing_objects": [],
+   "earliest": "level 60+ · Granny's room #7",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "help",
+    "event"
+   ],
+   "learn": "Paper is in the craft room and pencils are at school.",
+   "message": "Making something yourself feels great.",
+   "watcher": "scary_teacher",
+   "note": ""
+  },
+  {
+   "id": "M15",
+   "source": "draft",
+   "number": 15,
+   "title": "Ward Cheer-Up",
+   "text": "Take soft toys and cushions from your Fluffy room to the hospital ward beds without Kabla seeing you.",
+   "place": "hospital",
+   "places": [
+    "hospital",
+    "little_house"
+   ],
+   "room": "hs_ward",
+   "collect_from": [
+    "lh_fluffy_room"
+   ],
+   "target": "hospital patients",
+   "pack_objects": [
+    "soft_toy",
+    "cushion",
+    "hospital_bed"
+   ],
+   "missing_objects": [],
+   "earliest": "level 75+",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "help"
+   ],
+   "learn": "Soft things comfort people; toys are in the Fluffy room.",
+   "message": "Sharing something you love can make someone's day.",
+   "watcher": "kabla",
+   "note": ""
+  },
+  {
+   "id": "M16",
+   "source": "draft",
+   "number": 16,
+   "title": "Lemonade Stall",
+   "text": "Get lemons and sugar from granny's kitchen, cups from the school canteen, and set up a lemonade stall at the playground.",
+   "place": "park",
+   "places": [
+    "park",
+    "granny_house",
+    "school"
+   ],
+   "room": "pk_playground",
+   "collect_from": [
+    "gh_kitchen",
+    "sc_canteen"
+   ],
+   "target": "playground kids",
+   "pack_objects": [
+    "lemon",
+    "sugar_jar",
+    "water_cooler",
+    "bench"
+   ],
+   "missing_objects": [
+    "cups",
+    "stall sign"
+   ],
+   "earliest": "level 45+ · Granny's room #1",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "help",
+    "event"
+   ],
+   "learn": "Lemons and sugar are in the kitchen; cups are in the canteen.",
+   "message": "Sharing a cold drink makes new friends.",
+   "watcher": "granny",
+   "note": ""
+  },
+  {
+   "id": "M17",
+   "source": "draft",
+   "number": 17,
+   "title": "The Talking Dinosaur",
+   "text": "Hide a tiny animal-sound speaker in the museum dinosaur's mouth so it 'talks' when visitors walk by.",
+   "place": "museum",
+   "places": [
+    "museum",
+    "little_house"
+   ],
+   "room": "mu_dino_hall",
+   "collect_from": [
+    "lh_animal_room"
+   ],
+   "target": "museum visitors",
+   "pack_objects": [
+    "pet_toys"
+   ],
+   "missing_objects": [
+    "tiny animal-sound speaker",
+    "dinosaur skeleton"
+   ],
+   "earliest": "level 52+",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "learn": "Sound toys are in the animal room.",
+   "message": "A surprise voice makes learning about dinosaurs fun.",
+   "watcher": "kabla",
+   "note": ""
+  },
+  {
+   "id": "M18",
+   "source": "draft",
+   "number": 18,
+   "title": "The Quacking Bell",
+   "text": "Tie a squeaky duck toy to the school bell so it quacks when it rings.",
+   "place": "school",
+   "places": [
+    "school",
+    "little_house"
+   ],
+   "room": "sc_corridor",
+   "collect_from": [
+    "lh_animal_room"
+   ],
+   "target": "scary_teacher",
+   "pack_objects": [
+    "school_bell",
+    "pet_toys"
+   ],
+   "missing_objects": [
+    "rubber duck"
+   ],
+   "earliest": "level 45+",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "learn": "Squeaky toys live in the animal room; the school bell hangs in the corridor.",
+   "message": "A quack can cheer up even Monday.",
+   "watcher": "scary_teacher",
+   "note": ""
+  },
+  {
+   "id": "M19",
+   "source": "draft",
+   "number": 19,
+   "title": "Doctor Teddy",
+   "text": "Dress Teddy as a doctor with a paper mask and the doctor's stethoscope, then sit Teddy in the hospital reception.",
+   "place": "hospital",
+   "places": [
+    "hospital",
+    "little_house"
+   ],
+   "room": "hs_reception",
+   "collect_from": [
+    "hs_doctor_room",
+    "lh_fluffy_room"
+   ],
+   "target": "hospital patients",
+   "pack_objects": [
+    "stethoscope",
+    "waiting_chairs"
+   ],
+   "missing_objects": [
+    "teddy",
+    "paper mask"
+   ],
+   "earliest": "level 75+",
+   "difficulty": "medium",
+   "series": "main",
+   "kind": [
+    "prank",
+    "help"
+   ],
+   "learn": "Stethoscopes live in the doctor's room.",
+   "message": "A friendly toy doctor can make a visit less scary.",
+   "watcher": "kabla",
+   "note": ""
+  },
+  {
+   "id": "H1",
+   "source": "quest-list",
+   "number": 1,
+   "title": "The Great Treasure Hunt",
+   "text": "The museum gives the first clue, school solves a picture clue, granny gives the map, and the treasure is buried at the playground.",
+   "place": "park",
+   "places": [
+    "park",
+    "museum",
+    "school",
+    "granny_house"
+   ],
+   "room": "pk_playground",
+   "collect_from": [
+    "mu_hall",
+    "sc_classroom",
+    "gh_granny_room"
+   ],
+   "target": "friends",
+   "pack_objects": [],
+   "missing_objects": [
+    "clue 1",
+    "picture clue",
+    "treasure map",
+    "treasure box"
+   ],
+   "earliest": "level 52+ · slot-in room: Granny's room",
+   "difficulty": "hard",
+   "series": "main",
+   "kind": [
+    "mystery"
+   ],
+   "learn": "Follow the clues one place at a time.",
+   "message": "The best treasure is the fun of searching together.",
+   "watcher": "scary_teacher",
+   "note": ""
+  },
+  {
+   "id": "H2",
+   "source": "quest-list",
+   "number": 2,
+   "title": "The Missing Crown",
+   "text": "The palace crown is missing! Find a clue at the museum, decode a symbol at school, ask granny where it was last seen, and bring it back.",
+   "place": "palace",
+   "places": [
+    "palace",
+    "museum",
+    "school",
+    "granny_house"
+   ],
+   "room": "pl_throne_room",
+   "collect_from": [
+    "mu_gallery",
+    "sc_library",
+    "gh_granny_room"
+   ],
+   "target": "palace",
+   "pack_objects": [
+    "crown_cushion"
+   ],
+   "missing_objects": [
+    "clue",
+    "symbol code"
+   ],
+   "earliest": "level 90+ · slot-in room: Granny's room",
+   "difficulty": "hard",
+   "series": "main",
+   "kind": [
+    "mystery"
+   ],
+   "learn": "Libraries help us read symbols; grannies remember old stories.",
+   "message": "Everyone helps when something precious is lost.",
+   "watcher": "kabla",
+   "note": ""
+  },
+  {
+   "id": "H3",
+   "source": "quest-list",
+   "number": 3,
+   "title": "The Flying Balloon Machine",
+   "text": "Collect string from home, paper from school and a strange material from the museum, and build a balloon decoration that floats at the playground.",
+   "place": "park",
+   "places": [
+    "park",
+    "little_house",
+    "school",
+    "museum"
+   ],
+   "room": "pk_playground",
+   "collect_from": [
+    "lh_fluffy_room",
+    "sc_classroom",
+    "mu_store"
+   ],
+   "target": "playground kids",
+   "pack_objects": [],
+   "missing_objects": [
+    "string",
+    "paper",
+    "museum material",
+    "balloon"
+   ],
+   "earliest": "level 52+",
+   "difficulty": "hard",
+   "series": "main",
+   "kind": [
+    "help",
+    "event"
+   ],
+   "learn": "String is at home, paper at school and curiosities in the museum.",
+   "message": "Inventing starts with simple things.",
+   "watcher": "scary_teacher",
+   "note": ""
+  },
+  {
+   "id": "H4",
+   "source": "quest-list",
+   "number": 4,
+   "title": "Rescue the Lost Teddy",
+   "text": "Find a toy at the playground, discover its owner at school, follow a hospital clue, and let granny tell you where the child went.",
+   "place": "granny_house",
+   "places": [
+    "granny_house",
+    "park",
+    "school",
+    "hospital"
+   ],
+   "room": "gh_hall",
+   "collect_from": [
+    "pk_playground",
+    "sc_classroom",
+    "hs_reception"
+   ],
+   "target": "teddy owner",
+   "pack_objects": [
+    "wall_clock"
+   ],
+   "missing_objects": [
+    "toy",
+    "owner clue"
+   ],
+   "earliest": "level 75+ · Granny's room #2",
+   "difficulty": "hard",
+   "series": "main",
+   "kind": [
+    "help",
+    "mystery"
+   ],
+   "learn": "Lost toys are returned by asking at school and the hospital.",
+   "message": "Helping a lost toy find its friend is a kindness.",
+   "watcher": "granny",
+   "note": ""
+  },
+  {
+   "id": "H5",
+   "source": "quest-list",
+   "number": 5,
+   "title": "The Royal Prank",
+   "text": "Make a funny royal costume from home, borrow a prop from the museum, make a paper crown at school, and surprise the palace characters.",
+   "place": "palace",
+   "places": [
+    "palace",
+    "little_house",
+    "museum",
+    "school"
+   ],
+   "room": "pl_throne_room",
+   "collect_from": [
+    "lh_fluffy_room",
+    "mu_hall",
+    "sc_classroom"
+   ],
+   "target": "granny",
+   "pack_objects": [
+    "crown_cushion",
+    "throne"
+   ],
+   "missing_objects": [
+    "costume",
+    "museum prop",
+    "paper crown"
+   ],
+   "earliest": "level 90+",
+   "difficulty": "hard",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "learn": "Dress-up is at home; props are at the museum.",
+   "message": "Dressing up and laughing together is royal fun.",
+   "watcher": "granny",
+   "note": ""
+  },
+  {
+   "id": "H6",
+   "source": "quest-list",
+   "number": 6,
+   "title": "Build a Secret Treehouse",
+   "text": "Collect wood from the playground, tools from home, rope from granny's store room and decorations from school, then build a secret treehouse in granny's garden.",
+   "place": "park",
+   "places": [
+    "park",
+    "little_house",
+    "granny_house",
+    "school"
+   ],
+   "room": "pk_garden",
+   "collect_from": [
+    "pk_playground",
+    "lh_hall",
+    "gh_store_room",
+    "sc_classroom"
+   ],
+   "target": "friends",
+   "pack_objects": [
+    "tree",
+    "box_cardboard"
+   ],
+   "missing_objects": [
+    "wood",
+    "tools",
+    "rope",
+    "decorations"
+   ],
+   "earliest": "level 45+ · Granny's room #3",
+   "difficulty": "hard",
+   "series": "main",
+   "kind": [
+    "build"
+   ],
+   "learn": "Wood, tools and rope all come from different places.",
+   "message": "Building together makes a place to share.",
+   "watcher": "granny",
+   "note": ""
+  },
+  {
+   "id": "H7",
+   "source": "quest-list",
+   "number": 7,
+   "title": "The Backyard Space Mission",
+   "text": "Build a cardboard rocket from granny's store room, get supplies from school, collect a 'space artifact' from the museum and launch a pretend mission at the playground.",
+   "place": "park",
+   "places": [
+    "park",
+    "granny_house",
+    "school",
+    "museum"
+   ],
+   "room": "pk_playground",
+   "collect_from": [
+    "gh_store_room",
+    "sc_classroom",
+    "mu_store"
+   ],
+   "target": "friends",
+   "pack_objects": [
+    "box_cardboard"
+   ],
+   "missing_objects": [
+    "rocket decorations",
+    "space artifact"
+   ],
+   "earliest": "level 52+ · Granny's room #3",
+   "difficulty": "hard",
+   "series": "main",
+   "kind": [
+    "build",
+    "event"
+   ],
+   "learn": "Big cardboard boxes are in the store room.",
+   "message": "Pretending together can take you anywhere.",
+   "watcher": "scary_teacher",
+   "note": "Related to level 2 (A2): same rocket, friendlier launch."
+  },
+  {
+   "id": "H8",
+   "source": "quest-list",
+   "number": 8,
+   "title": "The Dinosaur Mystery",
+   "text": "The museum finds a footprint. School looks it up, the hospital X-ray room shows what is inside, and granny remembers an old story.",
+   "place": "museum",
+   "places": [
+    "museum",
+    "school",
+    "hospital",
+    "granny_house"
+   ],
+   "room": "mu_dino_hall",
+   "collect_from": [
+    "sc_library",
+    "hs_xray_room",
+    "gh_granny_room"
+   ],
+   "target": "museum visitors",
+   "pack_objects": [
+    "xray_machine",
+    "skeleton_model"
+   ],
+   "missing_objects": [
+    "fossil footprint"
+   ],
+   "earliest": "level 75+ · slot-in room: Granny's room",
+   "difficulty": "hard",
+   "series": "main",
+   "kind": [
+    "mystery"
+   ],
+   "learn": "Libraries explain things; X-ray machines show bones.",
+   "message": "Scientists and doctors both study bones.",
+   "watcher": "kabla",
+   "note": "Changed from the original (a hospital 'magnifier') to the X-ray room, which exists in the pack."
+  },
+  {
+   "id": "H9",
+   "source": "quest-list",
+   "number": 9,
+   "title": "The Biggest Party Ever",
+   "text": "Bring food from granny, decorations from home, games from the playground and an invitation from school, then throw a giant town party at the palace.",
+   "place": "palace",
+   "places": [
+    "palace",
+    "granny_house",
+    "little_house",
+    "park",
+    "school"
+   ],
+   "room": "pl_royal_dining",
+   "collect_from": [
+    "gh_kitchen",
+    "lh_fluffy_room",
+    "pk_playground",
+    "sc_classroom"
+   ],
+   "target": "everyone",
+   "pack_objects": [
+    "royal_table",
+    "plate"
+   ],
+   "missing_objects": [
+    "invitations",
+    "party games",
+    "decorations"
+   ],
+   "earliest": "level 90+ · Granny's room #1",
+   "difficulty": "hard",
+   "series": "main",
+   "kind": [
+    "event"
+   ],
+   "learn": "A party needs food, decorations, games and invitations from different places.",
+   "message": "A party is better when everyone is invited.",
+   "watcher": "granny",
+   "note": ""
+  },
+  {
+   "id": "H10",
+   "source": "quest-list",
+   "number": 10,
+   "title": "The Secret Town Map",
+   "text": "Find map pieces in every building, put them together, and discover a hidden spot.",
+   "place": "palace",
+   "places": [
+    "palace",
+    "little_house",
+    "granny_house",
+    "school",
+    "park",
+    "hospital",
+    "museum"
+   ],
+   "room": "pl_throne_room",
+   "collect_from": [
+    "lh_hall",
+    "gh_study",
+    "sc_classroom",
+    "pk_playground",
+    "hs_ward",
+    "mu_store"
+   ],
+   "target": "friends",
+   "pack_objects": [],
+   "missing_objects": [
+    "7 map pieces",
+    "hidden spot"
+   ],
+   "earliest": "level 90+ · Granny's room #8",
+   "difficulty": "hard",
+   "series": "main",
+   "kind": [
+    "mystery"
+   ],
+   "learn": "Every building holds one piece of the story.",
+   "message": "A big picture is made of small pieces.",
+   "watcher": "kabla",
+   "note": "DECISION: what is the hidden spot (Secret Clubhouse, see MJ5)?"
+  },
+  {
+   "id": "H11",
+   "source": "draft",
+   "number": 11,
+   "title": "The Great Mix-up",
+   "text": "Five things are in the wrong building: a towel in the museum, a stethoscope at school, a book at granny's, a football at the pool and a crown at home. Put each one back where it belongs.",
+   "place": "palace",
+   "places": [
+    "palace",
+    "museum",
+    "school",
+    "granny_house",
+    "swimming_pool",
+    "little_house"
+   ],
+   "room": "pl_throne_room",
+   "collect_from": [
+    "mu_hall",
+    "sc_classroom",
+    "gh_hall",
+    "sp_pool_deck",
+    "lh_hall"
+   ],
+   "target": "everyone",
+   "pack_objects": [
+    "crown_cushion"
+   ],
+   "missing_objects": [
+    "towel",
+    "stethoscope",
+    "book",
+    "football"
+   ],
+   "earliest": "level 90+ · Granny's room #2",
+   "difficulty": "hard",
+   "series": "main",
+   "kind": [
+    "help",
+    "mystery"
+   ],
+   "learn": "Everything has a home: towels at the pool, stethoscopes at the hospital, books at the library, balls at the playground, crowns at the palace.",
+   "message": "Tidying up is teamwork.",
+   "watcher": "scary_teacher",
+   "note": "The 'where do things belong?' quest in one. Deliveries: pool, hospital, library, playground, palace."
+  },
+  {
+   "id": "ST1",
+   "source": "quest-list",
+   "number": 1,
+   "title": "Welcome to the Town",
+   "text": "Ride through town for the first time: your house, granny's hall and the playground.",
+   "place": "park",
+   "places": [
+    "park",
+    "granny_house"
+   ],
+   "room": "pk_playground",
+   "collect_from": [
+    "gh_hall"
+   ],
+   "target": "story characters",
+   "pack_objects": [],
+   "missing_objects": [],
+   "earliest": "level 5+ · Granny's room #2",
+   "difficulty": "easy",
+   "series": "story",
+   "kind": [
+    "help"
+   ],
+   "learn": "A town has places for everything: homes, parks and streets.",
+   "message": "A new town is friendlier when you say hello.",
+   "watcher": "scary_teacher",
+   "note": "Changed from House > School > Playground to match the unlock order (the school opens at level 45)."
+  },
+  {
+   "id": "ST2",
+   "source": "quest-list",
+   "number": 2,
+   "title": "Granny Needs Help",
+   "text": "Granny can't find her reading glasses. Look at home, then at the hospital doctor's room (the eye chart!).",
+   "place": "hospital",
+   "places": [
+    "hospital",
+    "granny_house",
+    "little_house"
+   ],
+   "room": "hs_doctor_room",
+   "collect_from": [
+    "gh_granny_room",
+    "lh_hall"
+   ],
+   "target": "story characters",
+   "pack_objects": [],
+   "missing_objects": [],
+   "earliest": "level 75+ · slot-in room: Granny's room",
+   "difficulty": "easy",
+   "series": "story",
+   "kind": [
+    "help",
+    "mystery"
+   ],
+   "learn": "Eye charts and glasses belong to the doctor's room.",
+   "message": "Helping family find things is a way to say thank you.",
+   "watcher": "kabla",
+   "note": "Story quest: the steps get designed one task at a time."
+  },
+  {
+   "id": "ST3",
+   "source": "quest-list",
+   "number": 3,
+   "title": "The Playground Mystery",
+   "text": "Something strange squeaks at the playground at night. Follow the clues through school and home.",
+   "place": "park",
+   "places": [
+    "park",
+    "school",
+    "little_house"
+   ],
+   "room": "pk_playground",
+   "collect_from": [
+    "sc_corridor",
+    "lh_animal_room"
+   ],
+   "target": "story characters",
+   "pack_objects": [],
+   "missing_objects": [],
+   "earliest": "level 45+",
+   "difficulty": "medium",
+   "series": "story",
+   "kind": [
+    "mystery"
+   ],
+   "learn": "Clues lead from one place to the next.",
+   "message": "Mysteries are friendlier when you ask kindly.",
+   "watcher": "scary_teacher",
+   "note": "Story quest: the steps get designed one task at a time."
+  },
+  {
+   "id": "ST4",
+   "source": "quest-list",
+   "number": 4,
+   "title": "The Museum's Secret",
+   "text": "You find an old object in the museum. School and granny help you work out its story.",
+   "place": "museum",
+   "places": [
+    "museum",
+    "school",
+    "granny_house"
+   ],
+   "room": "mu_store",
+   "collect_from": [
+    "sc_library",
+    "gh_granny_room"
+   ],
+   "target": "story characters",
+   "pack_objects": [],
+   "missing_objects": [],
+   "earliest": "level 52+ · slot-in room: Granny's room",
+   "difficulty": "medium",
+   "series": "story",
+   "kind": [
+    "mystery"
+   ],
+   "learn": "Libraries and grannies both hold stories.",
+   "message": "Old things have stories worth hearing.",
+   "watcher": "kabla",
+   "note": "Story quest: the steps get designed one task at a time."
+  },
+  {
+   "id": "ST5",
+   "source": "quest-list",
+   "number": 5,
+   "title": "The Palace Invitation",
+   "text": "A palace invitation arrives! Find the museum's royal etiquette book and a school-made gift before you go.",
+   "place": "palace",
+   "places": [
+    "palace",
+    "museum",
+    "school"
+   ],
+   "room": "pl_throne_room",
+   "collect_from": [
+    "mu_hall",
+    "sc_classroom"
+   ],
+   "target": "story characters",
+   "pack_objects": [],
+   "missing_objects": [],
+   "earliest": "level 90+",
+   "difficulty": "medium",
+   "series": "story",
+   "kind": [
+    "event"
+   ],
+   "learn": "Gifts can be made by hand at school.",
+   "message": "A handmade gift is a royal present.",
+   "watcher": "granny",
+   "note": "Story quest: the steps get designed one task at a time."
+  },
+  {
+   "id": "ST6",
+   "source": "quest-list",
+   "number": 6,
+   "title": "The Missing Character",
+   "text": "Kamala has disappeared! Follow clues from the playground, school and hospital, and ask granny where she went.",
+   "place": "granny_house",
+   "places": [
+    "granny_house",
+    "park",
+    "school",
+    "hospital"
+   ],
+   "room": "gh_hall",
+   "collect_from": [
+    "pk_playground",
+    "sc_classroom",
+    "hs_reception"
+   ],
+   "target": "story characters",
+   "pack_objects": [],
+   "missing_objects": [],
+   "earliest": "level 75+ · Granny's room #2",
+   "difficulty": "hard",
+   "series": "story",
+   "kind": [
+    "mystery"
+   ],
+   "learn": "Asking people in each place finds what you need.",
+   "message": "Friends look for friends.",
+   "watcher": "scary_teacher",
+   "note": "Story quest: the steps get designed one task at a time."
+  },
+  {
+   "id": "ST7",
+   "source": "quest-list",
+   "number": 7,
+   "title": "The Town Festival",
+   "text": "Everyone brings something: your house, granny, the school, the playground and the palace.",
+   "place": "park",
+   "places": [
+    "park",
+    "little_house",
+    "granny_house",
+    "school",
+    "palace"
+   ],
+   "room": "pk_playground",
+   "collect_from": [
+    "lh_hall",
+    "gh_kitchen",
+    "sc_classroom",
+    "pl_throne_room"
+   ],
+   "target": "story characters",
+   "pack_objects": [],
+   "missing_objects": [],
+   "earliest": "level 90+ · Granny's room #1",
+   "difficulty": "hard",
+   "series": "story",
+   "kind": [
+    "event"
+   ],
+   "learn": "A festival needs a bit of everything.",
+   "message": "Many hands make a happy festival.",
+   "watcher": "granny",
+   "note": "Story quest: the steps get designed one task at a time."
+  },
+  {
+   "id": "ST8",
+   "source": "quest-list",
+   "number": 8,
+   "title": "The Secret Behind the Museum",
+   "text": "A bigger mystery begins behind the museum: granny, school and the palace each know a piece.",
+   "place": "museum",
+   "places": [
+    "museum",
+    "granny_house",
+    "school",
+    "palace"
+   ],
+   "room": "mu_store",
+   "collect_from": [
+    "gh_granny_room",
+    "sc_library",
+    "pl_king_room"
+   ],
+   "target": "story characters",
+   "pack_objects": [],
+   "missing_objects": [],
+   "earliest": "level 90+ · slot-in room: Granny's room",
+   "difficulty": "hard",
+   "series": "story",
+   "kind": [
+    "mystery"
+   ],
+   "learn": "Big mysteries need many helpers.",
+   "message": "Old secrets belong to everyone.",
+   "watcher": "kabla",
+   "note": "Story quest: the steps get designed one task at a time."
+  },
+  {
+   "id": "MJ1",
+   "source": "quest-list",
+   "number": 1,
+   "title": "Build the Community Playground",
+   "text": "Collect tools (house), wood (playground), a design (school), plants (granny) and a first-aid box (hospital), then build a new playground area.",
+   "place": "park",
+   "places": [
+    "park",
+    "little_house",
+    "school",
+    "granny_house",
+    "hospital"
+   ],
+   "room": "pk_playground",
+   "collect_from": [
+    "lh_hall",
+    "sc_classroom",
+    "gh_kitchen",
+    "hs_pharmacy"
+   ],
+   "target": "the whole town",
+   "pack_objects": [],
+   "missing_objects": [],
+   "earliest": "level 75+ · Granny's room #1",
+   "difficulty": "hard",
+   "series": "major",
+   "kind": [
+    "build"
+   ],
+   "learn": "Every part of a project comes from a different place.",
+   "message": "A place built together belongs to everyone.",
+   "watcher": "granny",
+   "unlocks": "a new playground area with new characters and new games",
+   "note": "Major quest: built from several smaller tasks."
+  },
+  {
+   "id": "MJ2",
+   "source": "quest-list",
+   "number": 2,
+   "title": "The Grand Town Festival",
+   "text": "Every building adds one thing: first-aid booth, decorations, games, equipment, food, a museum display and the palace's festival funds.",
+   "place": "park",
+   "places": [
+    "park",
+    "hospital",
+    "school",
+    "little_house",
+    "granny_house",
+    "museum",
+    "palace"
+   ],
+   "room": "pk_playground",
+   "collect_from": [
+    "hs_pharmacy",
+    "sc_classroom",
+    "lh_hall",
+    "gh_kitchen",
+    "mu_hall",
+    "pl_throne_room"
+   ],
+   "target": "the whole town",
+   "pack_objects": [],
+   "missing_objects": [],
+   "earliest": "level 90+ · Granny's room #1",
+   "difficulty": "hard",
+   "series": "major",
+   "kind": [
+    "event"
+   ],
+   "learn": "A festival is built from lots of different jobs.",
+   "message": "A happy town is one where everyone helps.",
+   "watcher": "granny",
+   "unlocks": "the Town Festival: all characters appear together",
+   "note": "Major quest: built from several smaller tasks."
+  },
+  {
+   "id": "MJ3",
+   "source": "quest-list",
+   "number": 3,
+   "title": "The Museum Grand Opening",
+   "text": "Collect a historical object, an information board, an old photograph, a royal item and a display frame, and build the exhibition.",
+   "place": "museum",
+   "places": [
+    "museum",
+    "school",
+    "granny_house",
+    "palace",
+    "little_house"
+   ],
+   "room": "mu_hall",
+   "collect_from": [
+    "sc_library",
+    "gh_granny_room",
+    "pl_throne_room",
+    "lh_hall"
+   ],
+   "target": "the whole town",
+   "pack_objects": [],
+   "missing_objects": [],
+   "earliest": "level 90+ · slot-in room: Granny's room",
+   "difficulty": "hard",
+   "series": "major",
+   "kind": [
+    "build",
+    "event"
+   ],
+   "learn": "Museums keep objects, photos and stories safe.",
+   "message": "Sharing old things teaches new things.",
+   "watcher": "kabla",
+   "unlocks": "the museum's secret room",
+   "note": "Major quest: built from several smaller tasks."
+  },
+  {
+   "id": "MJ4",
+   "source": "quest-list",
+   "number": 4,
+   "title": "The Royal Treasure Hunt",
+   "text": "The palace gives you an old treasure map. Pieces are spread around town, and the final spot is the playground, where you find a giant box of funny prank supplies!",
+   "place": "park",
+   "places": [
+    "park",
+    "palace",
+    "museum",
+    "school",
+    "granny_house"
+   ],
+   "room": "pk_playground",
+   "collect_from": [
+    "pl_throne_room",
+    "mu_hall",
+    "sc_classroom",
+    "gh_granny_room"
+   ],
+   "target": "the whole town",
+   "pack_objects": [],
+   "missing_objects": [],
+   "earliest": "level 90+ · slot-in room: Granny's room",
+   "difficulty": "hard",
+   "series": "major",
+   "kind": [
+    "mystery",
+    "prank"
+   ],
+   "learn": "Maps help us find places.",
+   "message": "Sharing a treasure is the best treasure.",
+   "watcher": "granny",
+   "unlocks": "a box of funny prank supplies for later tasks",
+   "note": "Major quest: built from several smaller tasks."
+  },
+  {
+   "id": "MJ5",
+   "source": "quest-list",
+   "number": 5,
+   "title": "Build the Secret Clubhouse",
+   "text": "Each building gives one thing: first-aid kit, books, sports gear, tools, decorations, a mysterious old object and a special palace key.",
+   "place": "park",
+   "places": [
+    "park",
+    "hospital",
+    "school",
+    "little_house",
+    "granny_house",
+    "museum",
+    "palace"
+   ],
+   "room": "pk_garden",
+   "collect_from": [
+    "hs_pharmacy",
+    "sc_library",
+    "pk_playground",
+    "lh_hall",
+    "gh_craft_office",
+    "mu_store",
+    "pl_throne_room"
+   ],
+   "target": "the whole town",
+   "pack_objects": [],
+   "missing_objects": [],
+   "earliest": "level 90+ · Granny's room #7",
+   "difficulty": "hard",
+   "series": "major",
+   "kind": [
+    "build"
+   ],
+   "learn": "A clubhouse is made from lots of different things.",
+   "message": "A secret place is better when you share the key.",
+   "watcher": "granny",
+   "unlocks": "a permanent Secret Clubhouse where future quests begin",
+   "note": "Major quest: built from several smaller tasks."
+  },
+  {
+   "id": "E19",
+   "source": "draft",
+   "number": 19,
+   "title": "Good Morning",
+   "text": "Get ready for school in order: fold your bed, brush your teeth, take a shower, then put on your uniform and pick up your school bag.",
+   "place": "little_house",
+   "places": [
+    "little_house"
+   ],
+   "room": "lh_hall",
+   "collect_from": [
+    "lh_fluffy_room",
+    "lh_bathroom"
+   ],
+   "target": "Anisha",
+   "pack_objects": [
+    "bed_single",
+    "toothbrush",
+    "shower",
+    "towel",
+    "soap"
+   ],
+   "missing_objects": [
+    "toothpaste",
+    "school uniform",
+    "school bag at home"
+   ],
+   "earliest": "level 1",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "help"
+   ],
+   "learn": "Each job has its own room: beds in the bedroom, teeth and showers in the bathroom, school things by the door.",
+   "message": "Good morning habits make the whole day happier.",
+   "watcher": "none",
+   "note": "Calm tutorial task: no baddie and nothing to get caught by. Four steps in order: Fluffy room bed, bathroom toothbrush, shower, then the Hall for the uniform and bag. Teaches walking, picking up and using items. Could be the very first task, before level 1.",
+   "play": 1,
+   "steps": [
+    {
+     "type": "do",
+     "target": "lh_fluffy_room/bed_single_1",
+     "text": "Fold your bed"
+    },
+    {
+     "type": "pickup",
+     "item": "lh_hall/school_uniform_1",
+     "text": "Get your school uniform from the sofa"
+    },
+    {
+     "type": "pickup",
+     "item": "lh_bathroom/toothbrush_1",
+     "text": "Pick up your toothbrush"
+    },
+    {
+     "type": "use",
+     "item": "lh_bathroom/toothbrush_1",
+     "target": "lh_bathroom/wash_basin_1",
+     "text": "Brush your teeth"
+    },
+    {
+     "type": "do",
+     "target": "lh_bathroom/shower_1",
+     "text": "Take a shower"
+    },
+    {
+     "type": "pickup",
+     "item": "lh_bathroom/towel_1",
+     "text": "Grab your towel"
+    },
+    {
+     "type": "use",
+     "item": "lh_bathroom/towel_1",
+     "target": "lh_bathroom/shower_1",
+     "text": "Dry yourself"
+    },
+    {
+     "type": "use",
+     "item": "lh_hall/school_uniform_1",
+     "target": "lh_bathroom/mirror_1",
+     "text": "Get dressed at the mirror"
+    },
+    {
+     "type": "pickup",
+     "item": "lh_hall/school_bag_1",
+     "text": "Pick up your school bag"
+    }
+   ],
+   "needs": "Everything is in your house",
+   "watchOut": "Nobody: it is a calm morning",
+   "hideIn": "No need to hide",
+   "baddies": [],
+   "petHelp": 0,
+   "parTime": 100,
+   "tip": "Tip: the list tells you what comes next. Walk up to things and press E.",
+   "completeText": "Ready for school! Good morning, Anisha."
+  },
+  {
+   "id": "E20",
+   "source": "draft",
+   "number": 20,
+   "title": "Tidy the Fluffy Room",
+   "text": "The Fluffy room is in a muddle! Put the 3 soft toys in the toy box, the 2 cushions on the bean bag, and switch on the fairy lights when it is neat.",
+   "place": "little_house",
+   "places": [
+    "little_house"
+   ],
+   "room": "lh_fluffy_room",
+   "collect_from": [],
+   "target": "Anisha",
+   "pack_objects": [
+    "soft_toy",
+    "cushion",
+    "bean_bag",
+    "fairy_lights",
+    "bed_single"
+   ],
+   "missing_objects": [
+    "toy box"
+   ],
+   "earliest": "level 1",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "help"
+   ],
+   "learn": "Everything has a place: toys go in the toy box, cushions go on the bean bag.",
+   "message": "A tidy room is a happy room, and tidying is quicker when you do it with a smile.",
+   "watcher": "none",
+   "note": "Calm task: no baddie. Tidy-up by picking up and putting down items; the lights switch on at the end as the reward. Pairs with Good Morning (E19), which folds the bed in the same room. The toy box is also where later quests keep dress-up things, so it is worth adding anyway.",
+   "play": 2,
+   "steps": [
+    {
+     "type": "pickup",
+     "item": "lh_fluffy_room/soft_toy_1",
+     "text": "Pick up a soft toy"
+    },
+    {
+     "type": "use",
+     "item": "lh_fluffy_room/soft_toy_1",
+     "target": "lh_fluffy_room/toy_box_1",
+     "text": "Put it in the toy box"
+    },
+    {
+     "type": "pickup",
+     "item": "lh_fluffy_room/soft_toy_2",
+     "text": "Pick up the next soft toy"
+    },
+    {
+     "type": "use",
+     "item": "lh_fluffy_room/soft_toy_2",
+     "target": "lh_fluffy_room/toy_box_1",
+     "text": "Put it in the toy box"
+    },
+    {
+     "type": "pickup",
+     "item": "lh_fluffy_room/soft_toy_3",
+     "text": "Pick up the last soft toy"
+    },
+    {
+     "type": "use",
+     "item": "lh_fluffy_room/soft_toy_3",
+     "target": "lh_fluffy_room/toy_box_1",
+     "text": "Put it in the toy box"
+    },
+    {
+     "type": "pickup",
+     "item": "lh_fluffy_room/cushion_1",
+     "text": "Pick up a cushion"
+    },
+    {
+     "type": "use",
+     "item": "lh_fluffy_room/cushion_1",
+     "target": "lh_fluffy_room/bean_bag_1",
+     "text": "Put it on the bean bag"
+    },
+    {
+     "type": "pickup",
+     "item": "lh_fluffy_room/cushion_2",
+     "text": "Pick up the other cushion"
+    },
+    {
+     "type": "use",
+     "item": "lh_fluffy_room/cushion_2",
+     "target": "lh_fluffy_room/bean_bag_1",
+     "text": "Put it on the bean bag"
+    },
+    {
+     "type": "do",
+     "target": "lh_fluffy_room/fairy_lights_1",
+     "text": "Switch on the fairy lights"
+    }
+   ],
+   "needs": "Nothing: it is all in the room",
+   "watchOut": "Nobody: it is a calm task",
+   "hideIn": "No need to hide",
+   "baddies": [],
+   "petHelp": 0,
+   "parTime": 75,
+   "tip": "Tip: toys go in the toy box, cushions go on the bean bag.",
+   "completeText": "The fairy lights glow. What a cosy room!"
+  },
+  {
+   "id": "E21",
+   "source": "draft",
+   "number": 21,
+   "title": "Water the Hall Plant",
+   "text": "The plant in the Hall looks droopy. Fill the watering can from the bathroom tap, carry it to the Hall, and give the plant a drink.",
+   "place": "little_house",
+   "places": [
+    "little_house"
+   ],
+   "room": "lh_hall",
+   "collect_from": [
+    "lh_bathroom"
+   ],
+   "target": "plant",
+   "pack_objects": [
+    "plant_pot",
+    "wash_basin"
+   ],
+   "missing_objects": [
+    "watering can"
+   ],
+   "earliest": "level 1",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "help"
+   ],
+   "learn": "Water comes from the tap in the bathroom, and plants live where there is light.",
+   "message": "Plants need a little care every day, just like pets and people.",
+   "watcher": "none",
+   "note": "Calm task: no baddie. Fetch, carry, use. The plant perks up when watered. Later, E5 (Granny's Little Plant) reuses this same pot, so Anisha already knows how to look after it.",
+   "play": 4,
+   "steps": [
+    {
+     "type": "pickup",
+     "item": "lh_bathroom/watering_can_1",
+     "text": "Pick up the watering can"
+    },
+    {
+     "type": "use",
+     "item": "lh_bathroom/watering_can_1",
+     "target": "lh_bathroom/wash_basin_1",
+     "keep": true,
+     "text": "Fill it at the basin"
+    },
+    {
+     "type": "use",
+     "item": "lh_bathroom/watering_can_1",
+     "target": "lh_hall/plant_pot_1",
+     "text": "Water the plant in the Hall"
+    }
+   ],
+   "needs": "The watering can in the bathroom",
+   "watchOut": "Nobody: it is a calm task",
+   "hideIn": "No need to hide",
+   "baddies": [],
+   "petHelp": 0,
+   "parTime": 60,
+   "tip": "Tip: the water comes from the bathroom tap. Fill the can first.",
+   "completeText": "The plant lifts its leaves. Thank you, Anisha!"
+  },
+  {
+   "id": "E22",
+   "source": "draft",
+   "number": 22,
+   "title": "Bath Time for Teddy",
+   "text": "Teddy got dusty from the playground! Take Teddy to the bathroom, wash Teddy with soap in the bathtub, dry Teddy with the towel, and put Teddy back on the Fluffy room bed.",
+   "place": "little_house",
+   "places": [
+    "little_house"
+   ],
+   "room": "lh_bathroom",
+   "collect_from": [
+    "lh_fluffy_room"
+   ],
+   "target": "teddy",
+   "pack_objects": [
+    "bathtub",
+    "soap",
+    "towel",
+    "bed_single"
+   ],
+   "missing_objects": [
+    "teddy"
+   ],
+   "earliest": "level 1",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "help"
+   ],
+   "learn": "Washing happens in the bathroom with soap and water, and a towel dries things afterwards.",
+   "message": "Keeping your things clean shows you care about them.",
+   "watcher": "none",
+   "note": "Calm task: no baddie. Four steps in order (fetch Teddy, wash, dry, return). Uses the soap, bathtub and towel already in the bathroom. Teddy is also the character in E1 and M1, so Anisha meets Teddy here first.",
+   "play": 5,
+   "steps": [
+    {
+     "type": "pickup",
+     "item": "lh_fluffy_room/teddy_1",
+     "text": "Pick up Teddy from the bed"
+    },
+    {
+     "type": "use",
+     "item": "lh_fluffy_room/teddy_1",
+     "target": "lh_bathroom/bathtub_1",
+     "keep": true,
+     "text": "Put Teddy in the bathtub"
+    },
+    {
+     "type": "pickup",
+     "item": "lh_bathroom/soap_1",
+     "text": "Pick up the soap"
+    },
+    {
+     "type": "use",
+     "item": "lh_bathroom/soap_1",
+     "target": "lh_bathroom/bathtub_1",
+     "text": "Wash Teddy with the soap"
+    },
+    {
+     "type": "pickup",
+     "item": "lh_bathroom/towel_2",
+     "text": "Pick up the towel"
+    },
+    {
+     "type": "use",
+     "item": "lh_bathroom/towel_2",
+     "target": "lh_bathroom/bathtub_1",
+     "text": "Dry Teddy with the towel"
+    },
+    {
+     "type": "use",
+     "item": "lh_fluffy_room/teddy_1",
+     "target": "lh_fluffy_room/bed_single_1",
+     "text": "Put Teddy back on the bed"
+    }
+   ],
+   "needs": "Teddy, soap and a towel",
+   "watchOut": "Nobody: it is a calm task",
+   "hideIn": "No need to hide",
+   "baddies": [],
+   "petHelp": 0,
+   "parTime": 80,
+   "tip": "Tip: soap first, then the towel.",
+   "completeText": "Teddy is clean, fluffy and very happy."
+  },
+  {
+   "id": "E23",
+   "source": "draft",
+   "number": 23,
+   "title": "Squeaky Doormat",
+   "text": "The scary teacher is coming for tea! Take the squeaky toy from the Animal room and hide it under the Hall doormat, then wait out of sight until she steps on it.",
+   "place": "little_house",
+   "places": [
+    "little_house"
+   ],
+   "room": "lh_hall",
+   "collect_from": [
+    "lh_animal_room"
+   ],
+   "target": "scary_teacher",
+   "pack_objects": [
+    "pet_toys",
+    "front_door_mat",
+    "sofa",
+    "bed_single"
+   ],
+   "missing_objects": [],
+   "earliest": "level 1",
+   "difficulty": "easy",
+   "series": "main",
+   "kind": [
+    "prank"
+   ],
+   "learn": "Squeaky toys live in the animal room, and a doormat is the first thing a visitor steps on.",
+   "message": "A harmless squeak is a funny welcome, and she laughs too.",
+   "watcher": "scary_teacher (visiting)",
+   "note": "Decided (Dharmesh): the scary teacher visits for tea, so the house has someone to prank and the stakes stay. She walks a slow patrol from the front door through the Hall. Anisha can hide behind the sofa or in the Fluffy room (the bed is a hiding spot). If she is seen planting it she is caught and replays. The first easy home prank, and the home version of E10 (the squeaky chair at school).",
+   "play": 6,
+   "steps": [
+    {
+     "type": "pickup",
+     "item": "lh_animal_room/pet_toys_1",
+     "text": "Pick up the squeaky toy"
+    },
+    {
+     "type": "use",
+     "item": "lh_animal_room/pet_toys_1",
+     "target": "lh_hall/front_door_mat_1",
+     "text": "Hide it under the doormat"
+    },
+    {
+     "type": "watch",
+     "target": "lh_hall/front_door_mat_1",
+     "hide": "lh_hall/sofa_1",
+     "text": "Hide behind the sofa and wait for the teacher"
+    }
+   ],
+   "needs": "The squeaky toy from the animal room",
+   "watchOut": "The scary teacher (slow)",
+   "hideIn": "Behind the sofa, or the Fluffy room bed",
+   "baddies": [
+    {
+     "id": "teacher1",
+     "kind": "teacher",
+     "speed": 55,
+     "range": 260,
+     "halfAngle": 24,
+     "patrol": [
+      {
+       "room": "lh_hall",
+       "tile": [
+        6,
+        8.5
+       ],
+       "wait": 1.5
+      },
+      {
+       "room": "lh_hall",
+       "tile": [
+        9.5,
+        8.5
+       ],
+       "wait": 0.5
+      }
+     ]
+    }
+   ],
+   "petHelp": 1,
+   "parTime": 70,
+   "tip": "Tip: she comes in through the front door. Hide behind the sofa (press H).",
+   "completeText": "SQUEAK! She jumps, then laughs. 'Very funny, Anisha!'"
+  }
+ ]
 }

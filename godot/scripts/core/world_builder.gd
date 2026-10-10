@@ -109,7 +109,7 @@ static func build(world_def: Dictionary, tasks: Array, rooms: Dictionary) -> Wor
 		for s in t.steps:
 			if s.type == "pickup" or s.type == "use":
 				wanted_pickups[s.item] = true
-			if s.type == "use":
+			if s.type == "use" or s.type == "do" or s.type == "watch":
 				wanted_targets[s.target] = true
 
 	for id in ids:

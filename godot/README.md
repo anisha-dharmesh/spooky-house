@@ -15,19 +15,17 @@ From a terminal: `godot --path godot`. To start at a later task: `godot --path g
 
 ## Controls
 
-| | Keyboard | Touch |
-| --- | --- | --- |
-| Move | WASD / arrows | Stick (left side) |
-| Sneak | Hold Shift | Sneak button (toggle) |
-| Use / grab | E or Space | Use button |
-| Hide / come out | H | Hide button |
-| Call a pet | C | Pet button (top) |
-| Switch camera | V | View button (top) |
-| Turn the third-person camera | Q / R, or right-mouse drag | Drag on the right half |
-| Pause | Esc or P | II button (top) |
+One input for everything: **click with the mouse, or tap with a finger.** There is no D-pad and no keyboard play.
 
-Two cameras: the tilted **dollhouse** view (walls drop low so you can see in) and **third person** behind Anisha
-(walls rise to full height). Touch controls turn on by themselves on phones and tablets (`--touch` forces them on a computer).
+| Tap on | What happens |
+| --- | --- |
+| The ground | Anisha walks there (round walls and furniture) |
+| A thing that matters (an item, a prank target, a hiding spot) | A bubble pops up over it with a picture of the item and a few words, and she walks there and does it |
+| A thing that is not ready yet | The bubble shows what is missing (or "Not yet…") and the thing wiggles. She stays put |
+| Any other tap while hiding | She comes out of hiding and walks there |
+
+Things the current task needs have a pulsing ring under them. The pet button and the pause button are at the top (Esc also pauses).
+The camera is the tilted **dollhouse** view (walls drop low so you can see in).
 
 ## Where things are
 
@@ -36,10 +34,10 @@ Two cameras: the tilted **dollhouse** view (walls drop low so you can see in) an
 | `scripts/core/world_builder.gd` | Turns the world's rooms (from the art pack) into walls, doors, furniture and hiding spots |
 | `scripts/core/geo.gd` | Floor-plan geometry: sight rays, cones, collisions |
 | `scripts/game/game_logic.gd` | The rules: movement, patrols, sight, "seen" meter, locked rooms, items, hiding, the tasks in order, getting caught, pets. No drawing |
-| `scripts/game/level_view.gd` | Shows the logic in 3D, plus both cameras, the sight cones and the light (dark in Granny's house, bright elsewhere) |
+| `scripts/game/level_view.gd` | Shows the logic in 3D, plus the camera, taps and the hint bubble, the sight cones and the light (dark in Granny's house, bright elsewhere) |
 | `scripts/game/model_library.gd` | Makes each object (a grey box today). **This is where real 3D models plug in** |
-| `scripts/ui/` | Title screen, HUD, pause / caught / prank-done screens, touch controls |
-| `data/` | The world, the tasks, baddies, text (English and Hindi) and the room layouts. Edit these directly |
+| `scripts/ui/` | Title screen, HUD, pause / caught / prank-done screens |
+| `data/` | The world, the tasks, baddies, text and the room layouts. Edit these directly |
 | `tests/` | Headless checks |
 
 ## Data
@@ -85,7 +83,7 @@ godot --headless --path godot -- --selftest                   # presses keys in 
 After a fresh clone, run `godot --headless --path godot --import` once so Godot registers the scripts and fonts.
 
 The bot starts in Anisha's room with the earlier tasks done, waits a different time each try, then walks the shortest route
-(sneaking, never hiding). A task must be winnable at some moment. The share of start moments it wins shows how hard the task is.
+(walking, never hiding). A task must be winnable at some moment. The share of start moments it wins shows how hard the task is.
 
 ## Publishing
 

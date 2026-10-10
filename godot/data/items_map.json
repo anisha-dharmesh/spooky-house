@@ -1,0 +1,5014 @@
+{
+ "note": "All 184 art-pack objects with where they are placed (building, floor, room). Written from godot/data/rooms and godot/data/pack-items.json.",
+ "items": [
+  {
+   "id": "alexa",
+   "name": "Alexa speaker",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "solid",
+    "prank"
+   ],
+   "model": "made",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Ground",
+     "room": "gh_hall",
+     "room_name": "Hall",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "baby_stroller",
+   "name": "Baby stroller",
+   "footprint_m": [
+    2,
+    2
+   ],
+   "tags": [
+    "solid"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Ground",
+     "room": "gh_store_room",
+     "room_name": "Store room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "bean_bag",
+   "name": "Bean bag",
+   "footprint_m": [
+    2,
+    2
+   ],
+   "tags": [
+    "solid",
+    "safe"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "little_house",
+     "floor": "Ground",
+     "room": "lh_fluffy_room",
+     "room_name": "Fluffy room",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Roof",
+     "room": "gh_play_zone",
+     "room_name": "Play zone",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "id": "bench",
+   "name": "Bench",
+   "footprint_m": [
+    3,
+    1
+   ],
+   "tags": [
+    "solid"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "park",
+     "floor": "Outside",
+     "room": "pk_garden",
+     "room_name": "Granny's garden",
+     "count": 1
+    },
+    {
+     "location": "park",
+     "floor": "Outside",
+     "room": "pk_playground",
+     "room_name": "Playground",
+     "count": 1
+    },
+    {
+     "location": "park",
+     "floor": "Outside",
+     "room": "pk_sand_park",
+     "room_name": "Sand Park",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "bicycle_big",
+   "name": "Big bicycle",
+   "footprint_m": [
+    2,
+    4
+   ],
+   "tags": [
+    "solid",
+    "prank"
+   ],
+   "model": "box",
+   "placements": []
+  },
+  {
+   "id": "cupboard_big",
+   "name": "Big cupboard",
+   "footprint_m": [
+    2,
+    4
+   ],
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "model": "made",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Ground",
+     "room": "gh_hall",
+     "room_name": "Hall",
+     "count": 1
+    },
+    {
+     "location": "school",
+     "floor": "Floor 1",
+     "room": "sc_staff_room",
+     "room_name": "Staff room (scary teacher's desk)",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "book_big",
+   "name": "Big instruction book",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Floor 2",
+     "room": "gh_craft_office",
+     "room_name": "Craft room / office",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 3",
+     "room": "gh_study",
+     "room_name": "Study",
+     "count": 1
+    },
+    {
+     "location": "school",
+     "floor": "Floor 1",
+     "room": "sc_library",
+     "room_name": "Library",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "big_plant_pot",
+   "name": "Big plant pot",
+   "footprint_m": [
+    2,
+    2
+   ],
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Ground",
+     "room": "gh_store_room",
+     "room_name": "Store room",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "id": "tv_big",
+   "name": "Big TV",
+   "footprint_m": [
+    5,
+    1
+   ],
+   "tags": [
+    "solid",
+    "prank"
+   ],
+   "model": "made",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Ground",
+     "room": "gh_hall",
+     "room_name": "Hall",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "bathtub",
+   "name": "Big white bathtub",
+   "footprint_m": [
+    2,
+    4
+   ],
+   "tags": [
+    "solid",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "little_house",
+     "floor": "Ground",
+     "room": "lh_bathroom",
+     "room_name": "Bathroom",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 1",
+     "room": "gh_bathroom",
+     "room_name": "Bathroom",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "blackboard",
+   "name": "Blackboard",
+   "footprint_m": [
+    6,
+    1
+   ],
+   "tags": [
+    "decor",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "school",
+     "floor": "Ground",
+     "room": "sc_classroom",
+     "room_name": "Classroom",
+     "count": 1
+    },
+    {
+     "location": "school",
+     "floor": "Floor 1",
+     "room": "sc_science_lab",
+     "room_name": "Science lab",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "bookshelf",
+   "name": "Bookshelf",
+   "footprint_m": [
+    4,
+    1
+   ],
+   "tags": [
+    "solid"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Floor 2",
+     "room": "gh_craft_office",
+     "room_name": "Craft room / office",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 3",
+     "room": "gh_study",
+     "room_name": "Study",
+     "count": 2
+    },
+    {
+     "location": "school",
+     "floor": "Floor 1",
+     "room": "sc_library",
+     "room_name": "Library",
+     "count": 4
+    },
+    {
+     "location": "school",
+     "floor": "Floor 1",
+     "room": "sc_staff_room",
+     "room_name": "Staff room (scary teacher's desk)",
+     "count": 1
+    },
+    {
+     "location": "palace",
+     "floor": "Floor 1",
+     "room": "pl_king_room",
+     "room_name": "King's room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "bowl",
+   "name": "Bowl",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Floor 1",
+     "room": "gh_dining_room",
+     "room_name": "Dining room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "bucket_spade",
+   "name": "Bucket and spade",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "park",
+     "floor": "Outside",
+     "room": "pk_sand_park",
+     "room_name": "Sand Park",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "bullet_bike",
+   "name": "Bullet motorbike",
+   "footprint_m": [
+    2,
+    4
+   ],
+   "tags": [
+    "solid",
+    "prank"
+   ],
+   "model": "box",
+   "placements": []
+  },
+  {
+   "id": "bunk_bed",
+   "name": "Bunk bed (3 high)",
+   "footprint_m": [
+    2,
+    4
+   ],
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Floor 1",
+     "room": "gh_bedroom",
+     "room_name": "Bedroom",
+     "count": 3
+    }
+   ]
+  },
+  {
+   "id": "bus_stop",
+   "name": "Bus stop",
+   "footprint_m": [
+    3,
+    1
+   ],
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "model": "box",
+   "placements": []
+  },
+  {
+   "id": "canteen_counter",
+   "name": "Canteen counter",
+   "footprint_m": [
+    6,
+    1
+   ],
+   "tags": [
+    "solid"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "school",
+     "floor": "Ground",
+     "room": "sc_canteen",
+     "room_name": "Canteen",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "box_cardboard",
+   "name": "Cardboard box",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Ground",
+     "room": "gh_store_room",
+     "room_name": "Store room",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "id": "cashew_bowl",
+   "name": "Cashew bowl",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "model": "made",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Ground",
+     "room": "gh_kitchen",
+     "room_name": "Kitchen",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "pet_cat",
+   "name": "Cat (pet helper)",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pet"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "little_house",
+     "floor": "Ground",
+     "room": "lh_animal_room",
+     "room_name": "Animal room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "cat_basket",
+   "name": "Cat basket",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "solid"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "little_house",
+     "floor": "Ground",
+     "room": "lh_animal_room",
+     "room_name": "Animal room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "cement_bag",
+   "name": "Cement bag",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "model": "made",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Ground",
+     "room": "gh_kitchen",
+     "room_name": "Kitchen",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Ground",
+     "room": "gh_store_room",
+     "room_name": "Store room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "chair",
+   "name": "Chair",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "solid",
+    "prank"
+   ],
+   "model": "made",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Ground",
+     "room": "gh_kitchen",
+     "room_name": "Kitchen",
+     "count": 2
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 1",
+     "room": "gh_dining_room",
+     "room_name": "Dining room",
+     "count": 4
+    },
+    {
+     "location": "school",
+     "floor": "Ground",
+     "room": "sc_canteen",
+     "room_name": "Canteen",
+     "count": 3
+    },
+    {
+     "location": "school",
+     "floor": "Floor 1",
+     "room": "sc_library",
+     "room_name": "Library",
+     "count": 2
+    },
+    {
+     "location": "palace",
+     "floor": "Ground",
+     "room": "pl_royal_dining",
+     "room_name": "Royal dining hall",
+     "count": 4
+    }
+   ]
+  },
+  {
+   "id": "chandelier",
+   "name": "Chandelier",
+   "footprint_m": [
+    3,
+    3
+   ],
+   "tags": [
+    "decor",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "palace",
+     "floor": "Ground",
+     "room": "pl_royal_dining",
+     "room_name": "Royal dining hall",
+     "count": 1
+    },
+    {
+     "location": "palace",
+     "floor": "Ground",
+     "room": "pl_throne_room",
+     "room_name": "Throne room",
+     "count": 1
+    },
+    {
+     "location": "palace",
+     "floor": "Floor 1",
+     "room": "pl_king_room",
+     "room_name": "King's room",
+     "count": 1
+    },
+    {
+     "location": "palace",
+     "floor": "Floor 1",
+     "room": "pl_queen_room",
+     "room_name": "Queen's room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "changing_bench",
+   "name": "Changing bench",
+   "footprint_m": [
+    4,
+    1
+   ],
+   "tags": [
+    "solid"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "swimming_pool",
+     "floor": "Outside",
+     "room": "sp_changing_room",
+     "room_name": "Changing room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "chilli",
+   "name": "Chilli",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "model": "made",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Ground",
+     "room": "gh_kitchen",
+     "room_name": "Kitchen",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "climbing_wall",
+   "name": "Climbing wall",
+   "footprint_m": [
+    6,
+    1
+   ],
+   "tags": [
+    "solid",
+    "climb"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Floor 3",
+     "room": "gh_climbing_room",
+     "room_name": "Mountain climbing room",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "id": "cobweb",
+   "name": "Cobweb",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "decor"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "little_house",
+     "floor": "Ground",
+     "room": "lh_bathroom",
+     "room_name": "Bathroom",
+     "count": 1
+    },
+    {
+     "location": "little_house",
+     "floor": "Ground",
+     "room": "lh_fluffy_room",
+     "room_name": "Fluffy room",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 1",
+     "room": "gh_bathroom",
+     "room_name": "Bathroom",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 1",
+     "room": "gh_bedroom",
+     "room_name": "Bedroom",
+     "count": 2
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 1",
+     "room": "gh_dining_room",
+     "room_name": "Dining room",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 1",
+     "room": "gh_granny_room",
+     "room_name": "Granny's room",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 2",
+     "room": "gh_craft_office",
+     "room_name": "Craft room / office",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 2",
+     "room": "gh_puja_room",
+     "room_name": "Puja room",
+     "count": 2
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 3",
+     "room": "gh_climbing_room",
+     "room_name": "Mountain climbing room",
+     "count": 2
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 3",
+     "room": "gh_dance_room",
+     "room_name": "Dance room",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 3",
+     "room": "gh_study",
+     "room_name": "Study",
+     "count": 2
+    },
+    {
+     "location": "granny_house",
+     "floor": "Roof",
+     "room": "gh_play_zone",
+     "room_name": "Play zone",
+     "count": 2
+    },
+    {
+     "location": "swimming_pool",
+     "floor": "Outside",
+     "room": "sp_changing_room",
+     "room_name": "Changing room",
+     "count": 2
+    },
+    {
+     "location": "school",
+     "floor": "Ground",
+     "room": "sc_canteen",
+     "room_name": "Canteen",
+     "count": 2
+    },
+    {
+     "location": "school",
+     "floor": "Ground",
+     "room": "sc_corridor",
+     "room_name": "Corridor",
+     "count": 1
+    },
+    {
+     "location": "school",
+     "floor": "Floor 1",
+     "room": "sc_library",
+     "room_name": "Library",
+     "count": 2
+    },
+    {
+     "location": "school",
+     "floor": "Floor 1",
+     "room": "sc_staff_room",
+     "room_name": "Staff room (scary teacher's desk)",
+     "count": 1
+    },
+    {
+     "location": "hospital",
+     "floor": "Ground",
+     "room": "hs_doctor_room",
+     "room_name": "Doctor's room",
+     "count": 2
+    },
+    {
+     "location": "hospital",
+     "floor": "Ground",
+     "room": "hs_pharmacy",
+     "room_name": "Pharmacy",
+     "count": 2
+    },
+    {
+     "location": "hospital",
+     "floor": "Ground",
+     "room": "hs_xray_room",
+     "room_name": "X-ray room",
+     "count": 1
+    },
+    {
+     "location": "hospital",
+     "floor": "Floor 1",
+     "room": "hs_ward",
+     "room_name": "Ward",
+     "count": 2
+    },
+    {
+     "location": "palace",
+     "floor": "Basement",
+     "room": "pl_treasury",
+     "room_name": "Treasury",
+     "count": 1
+    },
+    {
+     "location": "palace",
+     "floor": "Ground",
+     "room": "pl_royal_dining",
+     "room_name": "Royal dining hall",
+     "count": 2
+    },
+    {
+     "location": "palace",
+     "floor": "Floor 1",
+     "room": "pl_king_room",
+     "room_name": "King's room",
+     "count": 1
+    },
+    {
+     "location": "palace",
+     "floor": "Floor 1",
+     "room": "pl_queen_room",
+     "room_name": "Queen's room",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "id": "colored_paper",
+   "name": "Coloured paper",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Floor 2",
+     "room": "gh_craft_office",
+     "room_name": "Craft room / office",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "computer",
+   "name": "Computer",
+   "footprint_m": [
+    2,
+    1
+   ],
+   "tags": [
+    "solid",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Floor 2",
+     "room": "gh_craft_office",
+     "room_name": "Craft room / office",
+     "count": 1
+    },
+    {
+     "location": "school",
+     "floor": "Floor 1",
+     "room": "sc_staff_room",
+     "room_name": "Staff room (scary teacher's desk)",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "crown_cushion",
+   "name": "Crown on cushion",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "palace",
+     "floor": "Basement",
+     "room": "pl_treasury",
+     "room_name": "Treasury",
+     "count": 1
+    },
+    {
+     "location": "palace",
+     "floor": "Ground",
+     "room": "pl_throne_room",
+     "room_name": "Throne room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "curtain_screen",
+   "name": "Curtain screen",
+   "footprint_m": [
+    3,
+    1
+   ],
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "hospital",
+     "floor": "Ground",
+     "room": "hs_doctor_room",
+     "room_name": "Doctor's room",
+     "count": 1
+    },
+    {
+     "location": "hospital",
+     "floor": "Ground",
+     "room": "hs_xray_room",
+     "room_name": "X-ray room",
+     "count": 1
+    },
+    {
+     "location": "hospital",
+     "floor": "Floor 1",
+     "room": "hs_ward",
+     "room_name": "Ward",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "cushion",
+   "name": "Cushion",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "little_house",
+     "floor": "Ground",
+     "room": "lh_fluffy_room",
+     "room_name": "Fluffy room",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "id": "tree_dead",
+   "name": "Dead tree",
+   "footprint_m": [
+    2,
+    2
+   ],
+   "tags": [
+    "solid",
+    "decor"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "park",
+     "floor": "Outside",
+     "room": "pk_garden",
+     "room_name": "Granny's garden",
+     "count": 1
+    },
+    {
+     "location": "park",
+     "floor": "Outside",
+     "room": "pk_playground",
+     "room_name": "Playground",
+     "count": 1
+    },
+    {
+     "location": "park",
+     "floor": "Outside",
+     "room": "pk_sand_park",
+     "room_name": "Sand Park",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "desk",
+   "name": "Desk",
+   "footprint_m": [
+    3,
+    2
+   ],
+   "tags": [
+    "solid"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Floor 2",
+     "room": "gh_craft_office",
+     "room_name": "Craft room / office",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 3",
+     "room": "gh_study",
+     "room_name": "Study",
+     "count": 1
+    },
+    {
+     "location": "hospital",
+     "floor": "Ground",
+     "room": "hs_doctor_room",
+     "room_name": "Doctor's room",
+     "count": 1
+    },
+    {
+     "location": "palace",
+     "floor": "Floor 1",
+     "room": "pl_king_room",
+     "room_name": "King's room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "table_dining",
+   "name": "Dining table",
+   "footprint_m": [
+    5,
+    3
+   ],
+   "tags": [
+    "solid"
+   ],
+   "model": "made",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Ground",
+     "room": "gh_kitchen",
+     "room_name": "Kitchen",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 1",
+     "room": "gh_dining_room",
+     "room_name": "Dining room",
+     "count": 1
+    },
+    {
+     "location": "school",
+     "floor": "Ground",
+     "room": "sc_canteen",
+     "room_name": "Canteen",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "id": "disco_light",
+   "name": "Disco light",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "decor"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Floor 3",
+     "room": "gh_dance_room",
+     "room_name": "Dance room",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "id": "diya",
+   "name": "Diya",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "decor"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Floor 2",
+     "room": "gh_puja_room",
+     "room_name": "Puja room",
+     "count": 2
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 3",
+     "room": "gh_yoga_room",
+     "room_name": "Yoga room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "pet_dog",
+   "name": "Dog (pet helper)",
+   "footprint_m": [
+    1,
+    2
+   ],
+   "tags": [
+    "pet"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "little_house",
+     "floor": "Ground",
+     "room": "lh_animal_room",
+     "room_name": "Animal room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "dog_bed",
+   "name": "Dog bed",
+   "footprint_m": [
+    2,
+    2
+   ],
+   "tags": [
+    "solid"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "little_house",
+     "floor": "Ground",
+     "room": "lh_animal_room",
+     "room_name": "Animal room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "front_door_mat",
+   "name": "Doormat",
+   "footprint_m": [
+    2,
+    1
+   ],
+   "tags": [
+    "prank"
+   ],
+   "model": "made",
+   "placements": [
+    {
+     "location": "little_house",
+     "floor": "Ground",
+     "room": "lh_hall",
+     "room_name": "Hall",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Ground",
+     "room": "gh_hall",
+     "room_name": "Hall",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "bed_double",
+   "name": "Double bed",
+   "footprint_m": [
+    4,
+    5
+   ],
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Floor 1",
+     "room": "gh_granny_room",
+     "room_name": "Granny's room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "drawer_unit",
+   "name": "Drawer unit",
+   "footprint_m": [
+    2,
+    1
+   ],
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Floor 1",
+     "room": "gh_bedroom",
+     "room_name": "Bedroom",
+     "count": 2
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 1",
+     "room": "gh_granny_room",
+     "room_name": "Granny's room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "dressing_table",
+   "name": "Dressing table",
+   "footprint_m": [
+    3,
+    1
+   ],
+   "tags": [
+    "solid"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Floor 1",
+     "room": "gh_granny_room",
+     "room_name": "Granny's room",
+     "count": 1
+    },
+    {
+     "location": "palace",
+     "floor": "Floor 1",
+     "room": "pl_queen_room",
+     "room_name": "Queen's room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "drip_stand",
+   "name": "Drip stand",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "solid"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "hospital",
+     "floor": "Floor 1",
+     "room": "hs_ward",
+     "room_name": "Ward",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "id": "dumbbell",
+   "name": "Dumbbell",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Floor 2",
+     "room": "gh_exercise_room",
+     "room_name": "Exercise room",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "id": "dustbin",
+   "name": "Dustbin",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Roof",
+     "room": "gh_roof",
+     "room_name": "Roof",
+     "count": 1
+    },
+    {
+     "location": "park",
+     "floor": "Outside",
+     "room": "pk_playground",
+     "room_name": "Playground",
+     "count": 1
+    },
+    {
+     "location": "school",
+     "floor": "Ground",
+     "room": "sc_canteen",
+     "room_name": "Canteen",
+     "count": 1
+    },
+    {
+     "location": "school",
+     "floor": "Ground",
+     "room": "sc_corridor",
+     "room_name": "Corridor",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "earrings",
+   "name": "Earrings",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "palace",
+     "floor": "Floor 1",
+     "room": "pl_queen_room",
+     "room_name": "Queen's room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "eraser",
+   "name": "Eraser",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Floor 2",
+     "room": "gh_craft_office",
+     "room_name": "Craft room / office",
+     "count": 1
+    },
+    {
+     "location": "school",
+     "floor": "Ground",
+     "room": "sc_classroom",
+     "room_name": "Classroom",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "exercise_bike",
+   "name": "Exercise bike",
+   "footprint_m": [
+    2,
+    2
+   ],
+   "tags": [
+    "solid"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Floor 2",
+     "room": "gh_exercise_room",
+     "room_name": "Exercise room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "eye_chart",
+   "name": "Eye chart",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "decor",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "hospital",
+     "floor": "Ground",
+     "room": "hs_doctor_room",
+     "room_name": "Doctor's room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "fairy_lights",
+   "name": "Fairy lights",
+   "footprint_m": [
+    4,
+    1
+   ],
+   "tags": [
+    "decor"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "little_house",
+     "floor": "Ground",
+     "room": "lh_fluffy_room",
+     "room_name": "Fluffy room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "first_aid_box",
+   "name": "First-aid box",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "school",
+     "floor": "Floor 1",
+     "room": "sc_science_lab",
+     "room_name": "Science lab",
+     "count": 1
+    },
+    {
+     "location": "hospital",
+     "floor": "Ground",
+     "room": "hs_doctor_room",
+     "room_name": "Doctor's room",
+     "count": 1
+    },
+    {
+     "location": "hospital",
+     "floor": "Ground",
+     "room": "hs_pharmacy",
+     "room_name": "Pharmacy",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "flask",
+   "name": "Flask",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "school",
+     "floor": "Floor 1",
+     "room": "sc_science_lab",
+     "room_name": "Science lab",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "id": "lamp_floor",
+   "name": "Floor lamp",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "solid"
+   ],
+   "model": "made",
+   "placements": [
+    {
+     "location": "little_house",
+     "floor": "Ground",
+     "room": "lh_hall",
+     "room_name": "Hall",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Ground",
+     "room": "gh_hall",
+     "room_name": "Hall",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 1",
+     "room": "gh_granny_room",
+     "room_name": "Granny's room",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 3",
+     "room": "gh_study",
+     "room_name": "Study",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "flower_bed",
+   "name": "Flower bed",
+   "footprint_m": [
+    3,
+    1
+   ],
+   "tags": [
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "park",
+     "floor": "Outside",
+     "room": "pk_garden",
+     "room_name": "Granny's garden",
+     "count": 3
+    }
+   ]
+  },
+  {
+   "id": "fountain",
+   "name": "Fountain",
+   "footprint_m": [
+    3,
+    3
+   ],
+   "tags": [
+    "solid"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "park",
+     "floor": "Outside",
+     "room": "pk_garden",
+     "room_name": "Granny's garden",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "fridge",
+   "name": "Fridge",
+   "footprint_m": [
+    2,
+    2
+   ],
+   "tags": [
+    "solid",
+    "prank"
+   ],
+   "model": "made",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Ground",
+     "room": "gh_kitchen",
+     "room_name": "Kitchen",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "game_controller",
+   "name": "Game controller",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Roof",
+     "room": "gh_play_zone",
+     "room_name": "Play zone",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "id": "garden_hat",
+   "name": "Garden hat",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "park",
+     "floor": "Outside",
+     "room": "pk_garden",
+     "room_name": "Granny's garden",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "gas_stove",
+   "name": "Gas stove",
+   "footprint_m": [
+    3,
+    1
+   ],
+   "tags": [
+    "solid"
+   ],
+   "model": "made",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Ground",
+     "room": "gh_kitchen",
+     "room_name": "Kitchen",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "glass",
+   "name": "Glass",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Floor 1",
+     "room": "gh_dining_room",
+     "room_name": "Dining room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "globe",
+   "name": "Globe",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "solid"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "school",
+     "floor": "Ground",
+     "room": "sc_classroom",
+     "room_name": "Classroom",
+     "count": 1
+    },
+    {
+     "location": "school",
+     "floor": "Floor 1",
+     "room": "sc_library",
+     "room_name": "Library",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "glue",
+   "name": "Glue bottle",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Floor 2",
+     "room": "gh_craft_office",
+     "room_name": "Craft room / office",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "goblet",
+   "name": "Goblet",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "palace",
+     "floor": "Ground",
+     "room": "pl_royal_dining",
+     "room_name": "Royal dining hall",
+     "count": 2
+    },
+    {
+     "location": "palace",
+     "floor": "Floor 1",
+     "room": "pl_king_room",
+     "room_name": "King's room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "scooty",
+   "name": "Granny's scooty",
+   "footprint_m": [
+    2,
+    3
+   ],
+   "tags": [
+    "solid",
+    "prank"
+   ],
+   "model": "box",
+   "placements": []
+  },
+  {
+   "id": "gravestone",
+   "name": "Gravestone",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "solid",
+    "decor"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "park",
+     "floor": "Outside",
+     "room": "pk_garden",
+     "room_name": "Granny's garden",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "id": "hanging_bulb",
+   "name": "Hanging bulb",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "decor"
+   ],
+   "model": "made",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Ground",
+     "room": "gh_kitchen",
+     "room_name": "Kitchen",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Ground",
+     "room": "gh_store_room",
+     "room_name": "Store room",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 1",
+     "room": "gh_dining_room",
+     "room_name": "Dining room",
+     "count": 1
+    },
+    {
+     "location": "hospital",
+     "floor": "Floor 1",
+     "room": "hs_ward",
+     "room_name": "Ward",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "hedge",
+   "name": "Hedge",
+   "footprint_m": [
+    4,
+    1
+   ],
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "park",
+     "floor": "Outside",
+     "room": "pk_garden",
+     "room_name": "Granny's garden",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "id": "hospital_bed",
+   "name": "Hospital bed",
+   "footprint_m": [
+    2,
+    4
+   ],
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "hospital",
+     "floor": "Ground",
+     "room": "hs_doctor_room",
+     "room_name": "Doctor's room",
+     "count": 1
+    },
+    {
+     "location": "hospital",
+     "floor": "Floor 1",
+     "room": "hs_ward",
+     "room_name": "Ward",
+     "count": 5
+    }
+   ]
+  },
+  {
+   "id": "idol",
+   "name": "Idol of the gods",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "solid"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Floor 2",
+     "room": "gh_puja_room",
+     "room_name": "Puja room",
+     "count": 3
+    }
+   ]
+  },
+  {
+   "id": "inverter",
+   "name": "Inverter (light switch box)",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "solid",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Ground",
+     "room": "gh_store_room",
+     "room_name": "Store room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "jbl_speaker",
+   "name": "JBL speaker",
+   "footprint_m": [
+    2,
+    1
+   ],
+   "tags": [
+    "solid",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Floor 3",
+     "room": "gh_dance_room",
+     "room_name": "Dance room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "jewellery_box",
+   "name": "Jewellery box",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Floor 1",
+     "room": "gh_granny_room",
+     "room_name": "Granny's room",
+     "count": 1
+    },
+    {
+     "location": "palace",
+     "floor": "Floor 1",
+     "room": "pl_queen_room",
+     "room_name": "Queen's room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "counter",
+   "name": "Kitchen counter",
+   "footprint_m": [
+    2,
+    1
+   ],
+   "tags": [
+    "solid"
+   ],
+   "model": "made",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Ground",
+     "room": "gh_kitchen",
+     "room_name": "Kitchen",
+     "count": 3
+    },
+    {
+     "location": "hospital",
+     "floor": "Ground",
+     "room": "hs_pharmacy",
+     "room_name": "Pharmacy",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "id": "knife",
+   "name": "Knife",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup"
+   ],
+   "model": "made",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Ground",
+     "room": "gh_kitchen",
+     "room_name": "Kitchen",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "lemon",
+   "name": "Lemon",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "model": "made",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Ground",
+     "room": "gh_kitchen",
+     "room_name": "Kitchen",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "lifeguard_chair",
+   "name": "Lifeguard chair",
+   "footprint_m": [
+    2,
+    2
+   ],
+   "tags": [
+    "solid",
+    "safe"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "swimming_pool",
+     "floor": "Outside",
+     "room": "sp_pool_deck",
+     "room_name": "Pool deck",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "lift",
+   "name": "Lift",
+   "footprint_m": [
+    2,
+    2
+   ],
+   "tags": [
+    "lift"
+   ],
+   "model": "made",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Ground",
+     "room": "gh_hall",
+     "room_name": "Hall",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 1",
+     "room": "gh_dining_room",
+     "room_name": "Dining room",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 2",
+     "room": "gh_craft_office",
+     "room_name": "Craft room / office",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 3",
+     "room": "gh_dance_room",
+     "room_name": "Dance room",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Roof",
+     "room": "gh_roof",
+     "room_name": "Roof",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "lockers",
+   "name": "Lockers",
+   "footprint_m": [
+    4,
+    1
+   ],
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "swimming_pool",
+     "floor": "Outside",
+     "room": "sp_changing_room",
+     "room_name": "Changing room",
+     "count": 2
+    },
+    {
+     "location": "school",
+     "floor": "Ground",
+     "room": "sc_corridor",
+     "room_name": "Corridor",
+     "count": 3
+    }
+   ]
+  },
+  {
+   "id": "lunch_tray",
+   "name": "Lunch tray",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "school",
+     "floor": "Ground",
+     "room": "sc_canteen",
+     "room_name": "Canteen",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "id": "maggi_packet",
+   "name": "Maggi packet",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "model": "made",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Ground",
+     "room": "gh_kitchen",
+     "room_name": "Kitchen",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "matchbox",
+   "name": "Matchbox",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Floor 2",
+     "room": "gh_puja_room",
+     "room_name": "Puja room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "medal",
+   "name": "Medal",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Floor 1",
+     "room": "gh_bedroom",
+     "room_name": "Bedroom",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "medicine_shelf",
+   "name": "Medicine shelf",
+   "footprint_m": [
+    4,
+    1
+   ],
+   "tags": [
+    "solid",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "hospital",
+     "floor": "Ground",
+     "room": "hs_pharmacy",
+     "room_name": "Pharmacy",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "id": "merry_go_round",
+   "name": "Merry-go-round",
+   "footprint_m": [
+    3,
+    3
+   ],
+   "tags": [
+    "solid"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "park",
+     "floor": "Outside",
+     "room": "pk_playground",
+     "room_name": "Playground",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "microscope",
+   "name": "Microscope",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "school",
+     "floor": "Floor 1",
+     "room": "sc_science_lab",
+     "room_name": "Science lab",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "mirror",
+   "name": "Mirror",
+   "footprint_m": [
+    2,
+    1
+   ],
+   "tags": [
+    "decor"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "little_house",
+     "floor": "Ground",
+     "room": "lh_bathroom",
+     "room_name": "Bathroom",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 1",
+     "room": "gh_bathroom",
+     "room_name": "Bathroom",
+     "count": 1
+    },
+    {
+     "location": "swimming_pool",
+     "floor": "Outside",
+     "room": "sp_changing_room",
+     "room_name": "Changing room",
+     "count": 1
+    },
+    {
+     "location": "palace",
+     "floor": "Floor 1",
+     "room": "pl_queen_room",
+     "room_name": "Queen's room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "mirror_wall",
+   "name": "Mirror wall",
+   "footprint_m": [
+    4,
+    1
+   ],
+   "tags": [
+    "decor"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Floor 2",
+     "room": "gh_exercise_room",
+     "room_name": "Exercise room",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 3",
+     "room": "gh_dance_room",
+     "room_name": "Dance room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "monkey_bars",
+   "name": "Monkey bars",
+   "footprint_m": [
+    5,
+    2
+   ],
+   "tags": [
+    "climb"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "park",
+     "floor": "Outside",
+     "room": "pk_playground",
+     "room_name": "Playground",
+     "count": 1
+    },
+    {
+     "location": "park",
+     "floor": "Outside",
+     "room": "pk_sand_park",
+     "room_name": "Sand Park",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "music_player",
+   "name": "Music player",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Floor 2",
+     "room": "gh_exercise_room",
+     "room_name": "Exercise room",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 3",
+     "room": "gh_yoga_room",
+     "room_name": "Yoga room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "necklace",
+   "name": "Necklace",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "palace",
+     "floor": "Basement",
+     "room": "pl_treasury",
+     "room_name": "Treasury",
+     "count": 1
+    },
+    {
+     "location": "palace",
+     "floor": "Floor 1",
+     "room": "pl_queen_room",
+     "room_name": "Queen's room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "notice_board",
+   "name": "Notice board",
+   "footprint_m": [
+    3,
+    1
+   ],
+   "tags": [
+    "decor"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "school",
+     "floor": "Ground",
+     "room": "sc_classroom",
+     "room_name": "Classroom",
+     "count": 1
+    },
+    {
+     "location": "school",
+     "floor": "Ground",
+     "room": "sc_corridor",
+     "room_name": "Corridor",
+     "count": 1
+    },
+    {
+     "location": "hospital",
+     "floor": "Ground",
+     "room": "hs_reception",
+     "room_name": "Reception",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "office_chair",
+   "name": "Office chair",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "solid"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Floor 2",
+     "room": "gh_craft_office",
+     "room_name": "Craft room / office",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 3",
+     "room": "gh_study",
+     "room_name": "Study",
+     "count": 1
+    },
+    {
+     "location": "school",
+     "floor": "Floor 1",
+     "room": "sc_staff_room",
+     "room_name": "Staff room (scary teacher's desk)",
+     "count": 2
+    },
+    {
+     "location": "hospital",
+     "floor": "Ground",
+     "room": "hs_doctor_room",
+     "room_name": "Doctor's room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "car_parked",
+   "name": "Parked car",
+   "footprint_m": [
+    2,
+    3
+   ],
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "model": "box",
+   "placements": []
+  },
+  {
+   "id": "pet_parrot",
+   "name": "Parrot (pet helper)",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pet"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "little_house",
+     "floor": "Ground",
+     "room": "lh_animal_room",
+     "room_name": "Animal room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "parrot_cage",
+   "name": "Parrot cage",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "solid"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "little_house",
+     "floor": "Ground",
+     "room": "lh_animal_room",
+     "room_name": "Animal room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "pen_holder",
+   "name": "Pen holder",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Floor 2",
+     "room": "gh_craft_office",
+     "room_name": "Craft room / office",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 3",
+     "room": "gh_study",
+     "room_name": "Study",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "pencil",
+   "name": "Pencil",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Floor 2",
+     "room": "gh_craft_office",
+     "room_name": "Craft room / office",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 3",
+     "room": "gh_study",
+     "room_name": "Study",
+     "count": 1
+    },
+    {
+     "location": "school",
+     "floor": "Ground",
+     "room": "sc_classroom",
+     "room_name": "Classroom",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "pet_bowl",
+   "name": "Pet food bowl",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "little_house",
+     "floor": "Ground",
+     "room": "lh_animal_room",
+     "room_name": "Animal room",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "id": "pet_toys",
+   "name": "Pet toys",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "little_house",
+     "floor": "Ground",
+     "room": "lh_animal_room",
+     "room_name": "Animal room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "photo_frame",
+   "name": "Photo frame",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "prank"
+   ],
+   "model": "made",
+   "placements": [
+    {
+     "location": "little_house",
+     "floor": "Ground",
+     "room": "lh_hall",
+     "room_name": "Hall",
+     "count": 2
+    },
+    {
+     "location": "granny_house",
+     "floor": "Ground",
+     "room": "gh_hall",
+     "room_name": "Hall",
+     "count": 2
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 1",
+     "room": "gh_dining_room",
+     "room_name": "Dining room",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 1",
+     "room": "gh_granny_room",
+     "room_name": "Granny's room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "piano",
+   "name": "Piano",
+   "footprint_m": [
+    3,
+    2
+   ],
+   "tags": [
+    "solid"
+   ],
+   "model": "made",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Ground",
+     "room": "gh_hall",
+     "room_name": "Hall",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "gold_pile",
+   "name": "Pile of gold",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "palace",
+     "floor": "Basement",
+     "room": "pl_treasury",
+     "room_name": "Treasury",
+     "count": 3
+    }
+   ]
+  },
+  {
+   "id": "pillar",
+   "name": "Pillar",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "palace",
+     "floor": "Basement",
+     "room": "pl_treasury",
+     "room_name": "Treasury",
+     "count": 1
+    },
+    {
+     "location": "palace",
+     "floor": "Ground",
+     "room": "pl_royal_dining",
+     "room_name": "Royal dining hall",
+     "count": 2
+    },
+    {
+     "location": "palace",
+     "floor": "Ground",
+     "room": "pl_throne_room",
+     "room_name": "Throne room",
+     "count": 4
+    }
+   ]
+  },
+  {
+   "id": "plant_pot",
+   "name": "Plant pot",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "solid"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "little_house",
+     "floor": "Ground",
+     "room": "lh_hall",
+     "room_name": "Hall",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 3",
+     "room": "gh_yoga_room",
+     "room_name": "Yoga room",
+     "count": 2
+    },
+    {
+     "location": "hospital",
+     "floor": "Ground",
+     "room": "hs_reception",
+     "room_name": "Reception",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "plate",
+   "name": "Plate",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Floor 1",
+     "room": "gh_dining_room",
+     "room_name": "Dining room",
+     "count": 1
+    },
+    {
+     "location": "palace",
+     "floor": "Ground",
+     "room": "pl_royal_dining",
+     "room_name": "Royal dining hall",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "game_tv_play",
+   "name": "Play-zone TV",
+   "footprint_m": [
+    4,
+    1
+   ],
+   "tags": [
+    "solid"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Roof",
+     "room": "gh_play_zone",
+     "room_name": "Play zone",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "pool_ladder",
+   "name": "Pool ladder",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "climb"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "swimming_pool",
+     "floor": "Outside",
+     "room": "sp_pool_deck",
+     "room_name": "Pool deck",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "reading_table",
+   "name": "Reading table",
+   "footprint_m": [
+    4,
+    2
+   ],
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "school",
+     "floor": "Floor 1",
+     "room": "sc_library",
+     "room_name": "Library",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "id": "reception_desk",
+   "name": "Reception desk",
+   "footprint_m": [
+    5,
+    2
+   ],
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "hospital",
+     "floor": "Ground",
+     "room": "hs_reception",
+     "room_name": "Reception",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "royal_bed",
+   "name": "Royal bed",
+   "footprint_m": [
+    5,
+    5
+   ],
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "palace",
+     "floor": "Floor 1",
+     "room": "pl_king_room",
+     "room_name": "King's room",
+     "count": 1
+    },
+    {
+     "location": "palace",
+     "floor": "Floor 1",
+     "room": "pl_queen_room",
+     "room_name": "Queen's room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "royal_carpet",
+   "name": "Royal carpet",
+   "footprint_m": [
+    3,
+    8
+   ],
+   "tags": [],
+   "model": "box",
+   "placements": [
+    {
+     "location": "palace",
+     "floor": "Ground",
+     "room": "pl_throne_room",
+     "room_name": "Throne room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "painting",
+   "name": "Royal painting",
+   "footprint_m": [
+    2,
+    1
+   ],
+   "tags": [
+    "decor",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "palace",
+     "floor": "Ground",
+     "room": "pl_royal_dining",
+     "room_name": "Royal dining hall",
+     "count": 1
+    },
+    {
+     "location": "palace",
+     "floor": "Ground",
+     "room": "pl_throne_room",
+     "room_name": "Throne room",
+     "count": 1
+    },
+    {
+     "location": "palace",
+     "floor": "Floor 1",
+     "room": "pl_king_room",
+     "room_name": "King's room",
+     "count": 1
+    },
+    {
+     "location": "palace",
+     "floor": "Floor 1",
+     "room": "pl_queen_room",
+     "room_name": "Queen's room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "royal_table",
+   "name": "Royal table",
+   "footprint_m": [
+    6,
+    2
+   ],
+   "tags": [
+    "solid"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "palace",
+     "floor": "Ground",
+     "room": "pl_royal_dining",
+     "room_name": "Royal dining hall",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "rug",
+   "name": "Rug",
+   "footprint_m": [
+    4,
+    3
+   ],
+   "tags": [],
+   "model": "made",
+   "placements": [
+    {
+     "location": "little_house",
+     "floor": "Ground",
+     "room": "lh_fluffy_room",
+     "room_name": "Fluffy room",
+     "count": 1
+    },
+    {
+     "location": "little_house",
+     "floor": "Ground",
+     "room": "lh_hall",
+     "room_name": "Hall",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Ground",
+     "room": "gh_hall",
+     "room_name": "Hall",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 1",
+     "room": "gh_bedroom",
+     "room_name": "Bedroom",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 1",
+     "room": "gh_granny_room",
+     "room_name": "Granny's room",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 2",
+     "room": "gh_puja_room",
+     "room_name": "Puja room",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Roof",
+     "room": "gh_play_zone",
+     "room_name": "Play zone",
+     "count": 1
+    },
+    {
+     "location": "palace",
+     "floor": "Floor 1",
+     "room": "pl_king_room",
+     "room_name": "King's room",
+     "count": 1
+    },
+    {
+     "location": "palace",
+     "floor": "Floor 1",
+     "room": "pl_queen_room",
+     "room_name": "Queen's room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "safety_harness",
+   "name": "Safety jacket",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Floor 3",
+     "room": "gh_climbing_room",
+     "room_name": "Mountain climbing room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "salt_jar",
+   "name": "Salt jar",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "model": "made",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Ground",
+     "room": "gh_kitchen",
+     "room_name": "Kitchen",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "sand_castle",
+   "name": "Sand castle",
+   "footprint_m": [
+    2,
+    2
+   ],
+   "tags": [
+    "solid"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "park",
+     "floor": "Outside",
+     "room": "pk_sand_park",
+     "room_name": "Sand Park",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "sand_pit",
+   "name": "Sand pit",
+   "footprint_m": [
+    5,
+    4
+   ],
+   "tags": [
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "park",
+     "floor": "Outside",
+     "room": "pk_sand_park",
+     "room_name": "Sand Park",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "teacher_desk",
+   "name": "Scary teacher's desk",
+   "footprint_m": [
+    3,
+    2
+   ],
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "school",
+     "floor": "Ground",
+     "room": "sc_classroom",
+     "room_name": "Classroom",
+     "count": 1
+    },
+    {
+     "location": "school",
+     "floor": "Floor 1",
+     "room": "sc_staff_room",
+     "room_name": "Staff room (scary teacher's desk)",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "id": "school_bag",
+   "name": "School bag",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "school",
+     "floor": "Ground",
+     "room": "sc_classroom",
+     "room_name": "Classroom",
+     "count": 2
+    },
+    {
+     "location": "school",
+     "floor": "Floor 1",
+     "room": "sc_staff_room",
+     "room_name": "Staff room (scary teacher's desk)",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "school_bell",
+   "name": "School bell",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "school",
+     "floor": "Ground",
+     "room": "sc_corridor",
+     "room_name": "Corridor",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "lab_bench",
+   "name": "Science lab bench",
+   "footprint_m": [
+    6,
+    2
+   ],
+   "tags": [
+    "solid"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "school",
+     "floor": "Floor 1",
+     "room": "sc_science_lab",
+     "room_name": "Science lab",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "id": "scissors",
+   "name": "Scissors",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Floor 2",
+     "room": "gh_craft_office",
+     "room_name": "Craft room / office",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "see_saw",
+   "name": "See-saw",
+   "footprint_m": [
+    4,
+    1
+   ],
+   "tags": [
+    "solid"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "park",
+     "floor": "Outside",
+     "room": "pk_playground",
+     "room_name": "Playground",
+     "count": 1
+    },
+    {
+     "location": "park",
+     "floor": "Outside",
+     "room": "pk_sand_park",
+     "room_name": "Sand Park",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "shampoo",
+   "name": "Shampoo",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Floor 1",
+     "room": "gh_bathroom",
+     "room_name": "Bathroom",
+     "count": 1
+    },
+    {
+     "location": "swimming_pool",
+     "floor": "Outside",
+     "room": "sp_changing_room",
+     "room_name": "Changing room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "shower",
+   "name": "Shower",
+   "footprint_m": [
+    2,
+    2
+   ],
+   "tags": [
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "little_house",
+     "floor": "Ground",
+     "room": "lh_bathroom",
+     "room_name": "Bathroom",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 1",
+     "room": "gh_bathroom",
+     "room_name": "Bathroom",
+     "count": 1
+    },
+    {
+     "location": "swimming_pool",
+     "floor": "Outside",
+     "room": "sp_changing_room",
+     "room_name": "Changing room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "bed_single",
+   "name": "Single bed",
+   "footprint_m": [
+    2,
+    4
+   ],
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "little_house",
+     "floor": "Ground",
+     "room": "lh_fluffy_room",
+     "room_name": "Fluffy room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "sink",
+   "name": "Sink",
+   "footprint_m": [
+    2,
+    1
+   ],
+   "tags": [
+    "solid",
+    "prank"
+   ],
+   "model": "made",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Ground",
+     "room": "gh_kitchen",
+     "room_name": "Kitchen",
+     "count": 1
+    },
+    {
+     "location": "school",
+     "floor": "Floor 1",
+     "room": "sc_science_lab",
+     "room_name": "Science lab",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "skates",
+   "name": "Skates",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup"
+   ],
+   "model": "made",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Ground",
+     "room": "gh_hall",
+     "room_name": "Hall",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "skeleton_model",
+   "name": "Skeleton model",
+   "footprint_m": [
+    1,
+    2
+   ],
+   "tags": [
+    "solid",
+    "decor"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "school",
+     "floor": "Floor 1",
+     "room": "sc_science_lab",
+     "room_name": "Science lab",
+     "count": 1
+    },
+    {
+     "location": "hospital",
+     "floor": "Ground",
+     "room": "hs_xray_room",
+     "room_name": "X-ray room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "slide_play",
+   "name": "Slide",
+   "footprint_m": [
+    2,
+    4
+   ],
+   "tags": [
+    "solid",
+    "climb"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "park",
+     "floor": "Outside",
+     "room": "pk_playground",
+     "room_name": "Playground",
+     "count": 1
+    },
+    {
+     "location": "park",
+     "floor": "Outside",
+     "room": "pk_sand_park",
+     "room_name": "Sand Park",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "slide_chute",
+   "name": "Slide (roof to pool)",
+   "footprint_m": [
+    2,
+    6
+   ],
+   "tags": [
+    "climb"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Roof",
+     "room": "gh_roof",
+     "room_name": "Roof",
+     "count": 1
+    },
+    {
+     "location": "swimming_pool",
+     "floor": "Outside",
+     "room": "sp_pool_deck",
+     "room_name": "Pool deck",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "slime_bucket",
+   "name": "Slime bucket",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Floor 1",
+     "room": "gh_bathroom",
+     "room_name": "Bathroom",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "wardrobe_small",
+   "name": "Small wardrobe",
+   "footprint_m": [
+    2,
+    1
+   ],
+   "tags": [
+    "solid"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Floor 1",
+     "room": "gh_bedroom",
+     "room_name": "Bedroom",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 1",
+     "room": "gh_dining_room",
+     "room_name": "Dining room",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 1",
+     "room": "gh_granny_room",
+     "room_name": "Granny's room",
+     "count": 1
+    },
+    {
+     "location": "palace",
+     "floor": "Floor 1",
+     "room": "pl_queen_room",
+     "room_name": "Queen's room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "soap",
+   "name": "Soap",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "little_house",
+     "floor": "Ground",
+     "room": "lh_bathroom",
+     "room_name": "Bathroom",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 1",
+     "room": "gh_bathroom",
+     "room_name": "Bathroom",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "sofa",
+   "name": "Sofa",
+   "footprint_m": [
+    4,
+    2
+   ],
+   "tags": [
+    "solid"
+   ],
+   "model": "made",
+   "placements": [
+    {
+     "location": "little_house",
+     "floor": "Ground",
+     "room": "lh_hall",
+     "room_name": "Hall",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Ground",
+     "room": "gh_hall",
+     "room_name": "Hall",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "soft_toy",
+   "name": "Soft toy",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "little_house",
+     "floor": "Ground",
+     "room": "lh_fluffy_room",
+     "room_name": "Fluffy room",
+     "count": 3
+    }
+   ]
+  },
+  {
+   "id": "solar_panel",
+   "name": "Solar panel",
+   "footprint_m": [
+    3,
+    2
+   ],
+   "tags": [
+    "solid",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Roof",
+     "room": "gh_roof",
+     "room_name": "Roof",
+     "count": 3
+    }
+   ]
+  },
+  {
+   "id": "spice_rack",
+   "name": "Spice jars",
+   "footprint_m": [
+    2,
+    1
+   ],
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "model": "made",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Ground",
+     "room": "gh_kitchen",
+     "room_name": "Kitchen",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "sponge_mat",
+   "name": "Sponge mat",
+   "footprint_m": [
+    4,
+    3
+   ],
+   "tags": [
+    "safe"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Floor 3",
+     "room": "gh_climbing_room",
+     "room_name": "Mountain climbing room",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "id": "box_stack",
+   "name": "Stack of boxes",
+   "footprint_m": [
+    2,
+    2
+   ],
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Ground",
+     "room": "gh_store_room",
+     "room_name": "Store room",
+     "count": 1
+    },
+    {
+     "location": "hospital",
+     "floor": "Ground",
+     "room": "hs_pharmacy",
+     "room_name": "Pharmacy",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "stethoscope",
+   "name": "Stethoscope",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "hospital",
+     "floor": "Ground",
+     "room": "hs_doctor_room",
+     "room_name": "Doctor's room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "street_lamp",
+   "name": "Street lamp",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "solid",
+    "decor"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "park",
+     "floor": "Outside",
+     "room": "pk_garden",
+     "room_name": "Granny's garden",
+     "count": 1
+    },
+    {
+     "location": "park",
+     "floor": "Outside",
+     "room": "pk_playground",
+     "room_name": "Playground",
+     "count": 2
+    },
+    {
+     "location": "park",
+     "floor": "Outside",
+     "room": "pk_sand_park",
+     "room_name": "Sand Park",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "student_desk",
+   "name": "Student desk",
+   "footprint_m": [
+    2,
+    1
+   ],
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "school",
+     "floor": "Ground",
+     "room": "sc_classroom",
+     "room_name": "Classroom",
+     "count": 6
+    }
+   ]
+  },
+  {
+   "id": "sugar_jar",
+   "name": "Sugar jar",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "model": "made",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Ground",
+     "room": "gh_kitchen",
+     "room_name": "Kitchen",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "armour_stand",
+   "name": "Suit of armour",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "solid",
+    "decor",
+    "hide"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "palace",
+     "floor": "Ground",
+     "room": "pl_throne_room",
+     "room_name": "Throne room",
+     "count": 2
+    },
+    {
+     "location": "palace",
+     "floor": "Floor 1",
+     "room": "pl_king_room",
+     "room_name": "King's room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "lounger",
+   "name": "Sun lounger",
+   "footprint_m": [
+    1,
+    3
+   ],
+   "tags": [
+    "solid"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "swimming_pool",
+     "floor": "Outside",
+     "room": "sp_pool_deck",
+     "room_name": "Pool deck",
+     "count": 3
+    }
+   ]
+  },
+  {
+   "id": "float_ring",
+   "name": "Swim ring",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "swimming_pool",
+     "floor": "Outside",
+     "room": "sp_pool_deck",
+     "room_name": "Pool deck",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "pool",
+   "name": "Swimming pool",
+   "footprint_m": [
+    8,
+    5
+   ],
+   "tags": [
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "swimming_pool",
+     "floor": "Outside",
+     "room": "sp_pool_deck",
+     "room_name": "Pool deck",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "swing",
+   "name": "Swing",
+   "footprint_m": [
+    4,
+    2
+   ],
+   "tags": [
+    "solid"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "park",
+     "floor": "Outside",
+     "room": "pk_playground",
+     "room_name": "Playground",
+     "count": 1
+    },
+    {
+     "location": "park",
+     "floor": "Outside",
+     "room": "pk_sand_park",
+     "room_name": "Sand Park",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "tea_cup",
+   "name": "Tea cup",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "model": "made",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Ground",
+     "room": "gh_kitchen",
+     "room_name": "Kitchen",
+     "count": 1
+    },
+    {
+     "location": "school",
+     "floor": "Floor 1",
+     "room": "sc_staff_room",
+     "room_name": "Staff room (scary teacher's desk)",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "thali",
+   "name": "Thali",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Floor 1",
+     "room": "gh_dining_room",
+     "room_name": "Dining room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "puja_thali",
+   "name": "Thali with diyas",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Floor 2",
+     "room": "gh_puja_room",
+     "room_name": "Puja room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "throne",
+   "name": "Throne",
+   "footprint_m": [
+    2,
+    2
+   ],
+   "tags": [
+    "solid"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "palace",
+     "floor": "Ground",
+     "room": "pl_throne_room",
+     "room_name": "Throne room",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "id": "toilet",
+   "name": "Toilet",
+   "footprint_m": [
+    1,
+    2
+   ],
+   "tags": [
+    "solid"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "little_house",
+     "floor": "Ground",
+     "room": "lh_bathroom",
+     "room_name": "Bathroom",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 1",
+     "room": "gh_bathroom",
+     "room_name": "Bathroom",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "toothbrush",
+   "name": "Toothbrush",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "little_house",
+     "floor": "Ground",
+     "room": "lh_bathroom",
+     "room_name": "Bathroom",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "toothpaste",
+   "name": "Toothpaste",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Floor 1",
+     "room": "gh_bathroom",
+     "room_name": "Bathroom",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "towel",
+   "name": "Towel",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "little_house",
+     "floor": "Ground",
+     "room": "lh_bathroom",
+     "room_name": "Bathroom",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 1",
+     "room": "gh_bathroom",
+     "room_name": "Bathroom",
+     "count": 1
+    },
+    {
+     "location": "swimming_pool",
+     "floor": "Outside",
+     "room": "sp_changing_room",
+     "room_name": "Changing room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "towel_rack",
+   "name": "Towel rack",
+   "footprint_m": [
+    2,
+    1
+   ],
+   "tags": [
+    "solid"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "swimming_pool",
+     "floor": "Outside",
+     "room": "sp_changing_room",
+     "room_name": "Changing room",
+     "count": 1
+    },
+    {
+     "location": "swimming_pool",
+     "floor": "Outside",
+     "room": "sp_pool_deck",
+     "room_name": "Pool deck",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "towel_stack",
+   "name": "Towel stack",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "swimming_pool",
+     "floor": "Outside",
+     "room": "sp_pool_deck",
+     "room_name": "Pool deck",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "toy_car",
+   "name": "Toy car",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "model": "box",
+   "placements": []
+  },
+  {
+   "id": "treadmill",
+   "name": "Treadmill",
+   "footprint_m": [
+    2,
+    4
+   ],
+   "tags": [
+    "solid",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Floor 2",
+     "room": "gh_exercise_room",
+     "room_name": "Exercise room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "treasure_chest",
+   "name": "Treasure chest",
+   "footprint_m": [
+    2,
+    1
+   ],
+   "tags": [
+    "solid",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "palace",
+     "floor": "Basement",
+     "room": "pl_treasury",
+     "room_name": "Treasury",
+     "count": 3
+    },
+    {
+     "location": "palace",
+     "floor": "Floor 1",
+     "room": "pl_king_room",
+     "room_name": "King's room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "tree",
+   "name": "Tree",
+   "footprint_m": [
+    2,
+    2
+   ],
+   "tags": [
+    "solid"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "park",
+     "floor": "Outside",
+     "room": "pk_garden",
+     "room_name": "Granny's garden",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "id": "trophy",
+   "name": "Trophy",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Floor 1",
+     "room": "gh_bedroom",
+     "room_name": "Bedroom",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "tv_small",
+   "name": "TV",
+   "footprint_m": [
+    3,
+    1
+   ],
+   "tags": [
+    "solid"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "little_house",
+     "floor": "Ground",
+     "room": "lh_hall",
+     "room_name": "Hall",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "tv_remote",
+   "name": "TV remote",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "model": "made",
+   "placements": [
+    {
+     "location": "little_house",
+     "floor": "Ground",
+     "room": "lh_hall",
+     "room_name": "Hall",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Ground",
+     "room": "gh_hall",
+     "room_name": "Hall",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "beach_umbrella",
+   "name": "Umbrella",
+   "footprint_m": [
+    2,
+    2
+   ],
+   "tags": [
+    "solid",
+    "hide"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "swimming_pool",
+     "floor": "Outside",
+     "room": "sp_pool_deck",
+     "room_name": "Pool deck",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "waiting_chairs",
+   "name": "Waiting chairs",
+   "footprint_m": [
+    4,
+    1
+   ],
+   "tags": [
+    "solid"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "hospital",
+     "floor": "Ground",
+     "room": "hs_reception",
+     "room_name": "Reception",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "id": "wall_clock",
+   "name": "Wall clock",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "prank"
+   ],
+   "model": "made",
+   "placements": [
+    {
+     "location": "little_house",
+     "floor": "Ground",
+     "room": "lh_hall",
+     "room_name": "Hall",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Ground",
+     "room": "gh_hall",
+     "room_name": "Hall",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 1",
+     "room": "gh_granny_room",
+     "room_name": "Granny's room",
+     "count": 1
+    },
+    {
+     "location": "school",
+     "floor": "Ground",
+     "room": "sc_classroom",
+     "room_name": "Classroom",
+     "count": 1
+    },
+    {
+     "location": "school",
+     "floor": "Floor 1",
+     "room": "sc_staff_room",
+     "room_name": "Staff room (scary teacher's desk)",
+     "count": 1
+    },
+    {
+     "location": "hospital",
+     "floor": "Ground",
+     "room": "hs_reception",
+     "room_name": "Reception",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "wash_basin",
+   "name": "Wash basin",
+   "footprint_m": [
+    2,
+    1
+   ],
+   "tags": [
+    "solid"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "little_house",
+     "floor": "Ground",
+     "room": "lh_bathroom",
+     "room_name": "Bathroom",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 1",
+     "room": "gh_bathroom",
+     "room_name": "Bathroom",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "watch",
+   "name": "Watch",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Floor 1",
+     "room": "gh_bedroom",
+     "room_name": "Bedroom",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 1",
+     "room": "gh_granny_room",
+     "room_name": "Granny's room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "water_cooler",
+   "name": "Water cooler",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "solid",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "school",
+     "floor": "Ground",
+     "room": "sc_canteen",
+     "room_name": "Canteen",
+     "count": 1
+    },
+    {
+     "location": "school",
+     "floor": "Ground",
+     "room": "sc_corridor",
+     "room_name": "Corridor",
+     "count": 1
+    },
+    {
+     "location": "hospital",
+     "floor": "Ground",
+     "room": "hs_reception",
+     "room_name": "Reception",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "water_tank",
+   "name": "Water tank",
+   "footprint_m": [
+    2,
+    2
+   ],
+   "tags": [
+    "solid",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Roof",
+     "room": "gh_roof",
+     "room_name": "Roof",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "watering_can",
+   "name": "Watering can",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "pickup",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "park",
+     "floor": "Outside",
+     "room": "pk_garden",
+     "room_name": "Granny's garden",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "weighing_scale",
+   "name": "Weighing scale",
+   "footprint_m": [
+    1,
+    1
+   ],
+   "tags": [
+    "solid",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "hospital",
+     "floor": "Ground",
+     "room": "hs_doctor_room",
+     "room_name": "Doctor's room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "wheelchair",
+   "name": "Wheelchair",
+   "footprint_m": [
+    2,
+    2
+   ],
+   "tags": [
+    "solid",
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "hospital",
+     "floor": "Ground",
+     "room": "hs_reception",
+     "room_name": "Reception",
+     "count": 1
+    },
+    {
+     "location": "hospital",
+     "floor": "Floor 1",
+     "room": "hs_ward",
+     "room_name": "Ward",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "xray_lightbox",
+   "name": "X-ray lightbox",
+   "footprint_m": [
+    2,
+    1
+   ],
+   "tags": [
+    "decor"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "hospital",
+     "floor": "Ground",
+     "room": "hs_xray_room",
+     "room_name": "X-ray room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "xray_machine",
+   "name": "X-ray machine",
+   "footprint_m": [
+    3,
+    3
+   ],
+   "tags": [
+    "solid"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "hospital",
+     "floor": "Ground",
+     "room": "hs_xray_room",
+     "room_name": "X-ray room",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "yoga_mat",
+   "name": "Yoga mat",
+   "footprint_m": [
+    2,
+    4
+   ],
+   "tags": [
+    "prank"
+   ],
+   "model": "box",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Floor 3",
+     "room": "gh_yoga_room",
+     "room_name": "Yoga room",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "id": "stairs",
+   "name": "Zigzag stairs",
+   "footprint_m": [
+    2,
+    3
+   ],
+   "tags": [
+    "stairs"
+   ],
+   "model": "made",
+   "placements": [
+    {
+     "location": "granny_house",
+     "floor": "Ground",
+     "room": "gh_hall",
+     "room_name": "Hall",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 1",
+     "room": "gh_bedroom",
+     "room_name": "Bedroom",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 2",
+     "room": "gh_craft_office",
+     "room_name": "Craft room / office",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Floor 3",
+     "room": "gh_dance_room",
+     "room_name": "Dance room",
+     "count": 1
+    },
+    {
+     "location": "granny_house",
+     "floor": "Roof",
+     "room": "gh_play_zone",
+     "room_name": "Play zone",
+     "count": 1
+    }
+   ]
+  }
+ ]
+}

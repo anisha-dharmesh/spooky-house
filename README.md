@@ -18,7 +18,7 @@ godot --path godot -- --gallery   # look at all the 3D models
 | Folder | What |
 | --- | --- |
 | `godot/` | The game |
-| `godot/data/` | The world, the tasks, baddies, text (English and Hindi) and the room layouts |
+| `godot/data/` | The world, the tasks, baddies, text and the room layouts |
 | `godot/assets/models/` | The 3D models (generated; see `MODELS.md` there) |
 | `scripts/` | Tools that build the 3D models (`npm run models`) |
 | `tests/` | Checks for the generated models (`npm test`) |
@@ -42,4 +42,3 @@ npm run check   # model checks, then Godot's world and task check, a bot that do
 A first 2D version (Phaser, in the browser) was built and later removed in favour of the 3D game. It is still in the git
 history: commit `fff3950`.
 
-Hindi text was written by Claude and should be checked by a Hindi speaker.

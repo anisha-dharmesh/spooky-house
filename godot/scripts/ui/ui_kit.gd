@@ -17,7 +17,7 @@ static var _title: Font
 static func body_font() -> Font:
 	if _body == null:
 		var base: FontFile = load("res://assets/fonts/patrick-hand-latin-400-normal.woff2")
-		base.fallbacks = [load("res://assets/fonts/kalam-latin-400-normal.woff2"), load("res://assets/fonts/kalam-devanagari-400-normal.woff2")]
+		base.fallbacks = [load("res://assets/fonts/kalam-latin-400-normal.woff2")]
 		_body = base
 	return _body
 
@@ -25,7 +25,7 @@ static func body_font() -> Font:
 static func title_font() -> Font:
 	if _title == null:
 		var base: FontFile = load("res://assets/fonts/creepster-latin-400-normal.woff2")
-		base.fallbacks = [load("res://assets/fonts/kalam-latin-400-normal.woff2"), load("res://assets/fonts/kalam-devanagari-400-normal.woff2")]
+		base.fallbacks = [load("res://assets/fonts/kalam-latin-400-normal.woff2")]
 		_title = base
 	return _title
 

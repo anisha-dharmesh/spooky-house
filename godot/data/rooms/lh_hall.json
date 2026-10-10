@@ -70,8 +70,8 @@
    "uid": "front_door_mat_1",
    "sprite": "front_door_mat",
    "name": "Doormat",
-   "x": 2,
-   "y": 1,
+   "x": 5,
+   "y": 8,
    "w": 2,
    "h": 1,
    "rotation": 0,
@@ -91,7 +91,8 @@
    "rotation": 180,
    "anchor": "S",
    "tags": [
-    "solid"
+    "solid",
+    "hide"
    ]
   },
   {
@@ -193,6 +194,35 @@
     "prank"
    ],
    "onTopOf": "rug_1"
+  },
+  {
+   "uid": "school_uniform_1",
+   "sprite": "school_uniform",
+   "name": "School uniform",
+   "x": 2,
+   "y": 7,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "on:sofa",
+   "tags": [
+    "pickup"
+   ],
+   "onTopOf": "sofa_1"
+  },
+  {
+   "uid": "school_bag_1",
+   "sprite": "school_bag",
+   "name": "School bag",
+   "x": 8,
+   "y": 7,
+   "w": 1,
+   "h": 1,
+   "rotation": 0,
+   "anchor": "C",
+   "tags": [
+    "pickup"
+   ]
   }
  ],
  "colliders": [
@@ -225,9 +255,13 @@
    "h": 1
   }
  ],
- "hideSpots": [],
+ "hideSpots": [
+  "sofa_1"
+ ],
  "pickups": [
-  "tv_remote_1"
+  "tv_remote_1",
+  "school_uniform_1",
+  "school_bag_1"
  ],
  "prankTargets": [
   "front_door_mat_1",

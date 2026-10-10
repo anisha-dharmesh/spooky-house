@@ -34,15 +34,23 @@ To see every room with all its objects named, open the pictures in `docs/art/pre
 
 Adding a place means adding its rooms to `rooms`, and (for a new house) a street door.
 
+## Which tasks the game plays
+
+`godot/data/tasks.json` lists **every** task, built or not (planning fields like `title`, `difficulty`, `kind`, `learn`, `message`).
+The game plays only the ones that have **`steps`**, in order of **`play`** (1, 2, 3…). The game's own number is `play`; the
+planning id (like `E19`) is kept as `ref`. To build a task, add `play`, `steps`, `needs`, `watchOut`, `hideIn`, `baddies`,
+`petHelp`, `parTime`, `tip` and `completeText` to its record. `message` is shown on the "well done" screen, and tasks without
+`prank` in `kind` get "Well done!" instead of "Prank done!".
+
 ## A task: `godot/data/tasks.json`
 
 ```json
 {
   "id": 2,
-  "name": { "en": "Sour tea", "hi": "…" },
-  "task": { "en": "Put lemon in the scary teacher's tea", "hi": "…" },
+  "name": "Sour tea",
+  "task": "Put lemon in the scary teacher's tea",
   "unlocks": ["gh_store_room"],
-  "extras": [{ "id": "shoes", "kind": "shoes", "room": "gh_hall", "tile": [14.5, 8.2], "label": { "en": "her shoes" } }],
+  "extras": [{ "id": "shoes", "kind": "shoes", "room": "gh_hall", "tile": [14.5, 8.2], "label": "her shoes" }],
   "steps": [ … ],
   "needs": …, "watchOut": …, "hideIn": …,
   "baddies": [ … ],
@@ -57,7 +65,7 @@ Adding a place means adding its rooms to `rooms`, and (for a new house) a street
   every other room is open from the start. The checker makes sure the task itself never needs a room that is still locked.
 - **`extras`**: things the pack has no picture for. At the moment only `"kind": "shoes"`. They use `room` plus `tile: [x, y]`,
   counted in tiles from the room's top-left (decimals are fine).
-- **`parTime`**: seconds for the "quick" star. The checker's bot prints how fast it sneaks the task; a normal player walking
+- **`parTime`**: seconds for the "quick" star. The checker's bot prints how fast it walks the task; a normal player walking
   can beat that.
 
 ## Steps
@@ -70,8 +78,13 @@ because the same uid can be in different rooms: `gh_kitchen/cement_bag_1`.
 | `pickup` | `item` | Grab an object that has the `pickup` tag (e.g. `gh_kitchen/chilli_1`, `gh_kitchen/lemon_1`) |
 | `use` | `item`, `target` | Use a carried item on a target: another object (e.g. `gh_hall/tv_big_1`) or an `extras` id |
 | `reach` | `room` | Walk into a room (for example back home: `lh_hall`) |
+| `do` | `target` | Do something to an object without carrying anything (fold the bed, take a shower, switch on the lights) |
+| `watch` | `target`, `hide` (optional) | Wait until a baddie steps on the target (the teacher on the doormat). `hide` names a hiding spot for the bot |
 
-Each step has `"text": { "en": "…", "hi": "…" }` for the task list. An item belongs to one task only.
+A `use` step may have `"keep": true`: the item stays in her hands (Teddy, the watering can, the pet food sack) and is put away when
+the task is done.
+
+Each step has `"text": "…"` for the task list. An item belongs to one task only.
 
 ## Baddies
 
@@ -103,8 +116,8 @@ own model and behaviour (guarding, chasing, quiet) needs a small change in `godo
 
 ## Text
 
-Any text can be a plain string or `{ "en": "…", "hi": "…" }`. Missing Hindi falls back to English. Object names (like
-"Cement bag") are English only for now.
+All text is plain English strings, for example `"tip": "Tip: wait for her to pass, then dash."`. Menu text is in
+`godot/data/strings.json`.
 
 ## Try it
 

@@ -3,7 +3,6 @@ extends Control
 ## Title screen: the haunted house, the moon, the name and a Play button.
 
 signal play_pressed
-signal language_chosen(lang: String)
 
 var _bats: Array[Vector2] = []
 var _t := 0.0
@@ -39,14 +38,6 @@ func _ready() -> void:
 	var play := UIKit.button(GameData.t("play"), "primary", 36, func() -> void: play_pressed.emit())
 	play.custom_minimum_size = Vector2(340, 72)
 	col.add_child(play)
-	var lang_row := HBoxContainer.new()
-	lang_row.add_theme_constant_override("separation", 8)
-	for spec in [["en", "English"], ["hi", "हिन्दी"]]:
-		var active: bool = GameData.lang == spec[0]
-		var b := UIKit.button(spec[1], "primary" if active else "dark", 20, func() -> void: language_chosen.emit(spec[0]))
-		b.custom_minimum_size = Vector2(120, 48)
-		lang_row.add_child(b)
-	col.add_child(lang_row)
 
 
 func _process(delta: float) -> void:

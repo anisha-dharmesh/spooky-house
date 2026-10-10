@@ -318,6 +318,50 @@
   "kind": "object",
   "source": "claude-design-batch1"
  },
+ "teddy": {
+  "height": 0.705,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 1884,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "toy_box": {
+  "height": 0.75,
+  "foot": [
+   1.6,
+   1
+  ],
+  "tris": 600,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "pet_food_sack": {
+  "height": 0.79,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 948,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
+ "school_uniform": {
+  "height": 0.212,
+  "foot": [
+   1,
+   1
+  ],
+  "tris": 204,
+  "kind": "extra",
+  "limit": 3000,
+  "source": "generated"
+ },
  "shoes": {
   "height": 0.146,
   "foot": [

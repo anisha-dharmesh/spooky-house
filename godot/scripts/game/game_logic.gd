@@ -7,17 +7,18 @@ extends RefCounted
 
 const PLAYER_RADIUS := 0.4
 const WALK_SPEED := 2.83
-const SNEAK_SPEED := 1.5
 const REACH := 0.9
 const BADDIE_RADIUS := 0.53
 const MAX_ITEMS := 3
-const METER_FILL := 0.55
+const METER_FILL := 0.35
 const METER_DRAIN := 0.3
 const PET_DISTRACTION := 5.0
 const TURN_RATE := 3.2
 const NOT_SEEN_LIMIT := 0.6
 const PX_PER_M := 60.0 # speeds and ranges in the data are pixels of the old 2D version (1 tile = 60 px = 1 m)
 const DOOR_NOTICE := 0.15 # how close to a locked door counts as bumping into it
+const ARRIVE := 0.12      # how close to a route point counts as being there
+const STUCK_SECONDS := 0.7
 
 signal steps_changed
 signal inventory_changed
@@ -31,6 +32,7 @@ signal task_completed(task: Dictionary, rating: Dictionary, opened: Array) # rat
 signal room_unlocked(room_id: String)
 signal finished(result: String)             # "caught"; the game goes on after respawn()
 signal respawned
+signal hint(rect: Rect2, item: String, key: String, vars: Dictionary) # a bubble over a tapped thing: the item's picture, a text key
 
 var world: WorldData
 var tasks: Array
@@ -47,7 +49,10 @@ var star_log := {}                   # task id -> stars earned in this session
 
 var player_pos := Vector2.ZERO
 var player_facing := PI / 2.0
-var sneaking := false
+var route: Array[Vector2] = []       # the way she is walking now (from a tap)
+var pending: Dictionary = {}         # the thing she will use when she gets there
+var _stuck := 0.0
+var _chk: LevelCheck
 var hiding: Dictionary = {}          # the hide spot we're inside, or {}
 var _pre_hide := Vector2.ZERO
 var inventory: Array[String] = []    # what she carries
@@ -88,6 +93,9 @@ func _init(p_world: WorldData, p_tasks: Array, p_kinds: Dictionary, done_ids: Ar
 func _rebuild_blockers() -> void:
 	blockers = world.blockers(locked)
 	closed_doors = world.closed_doors(locked)
+	_chk = null
+	route.clear()
+	pending = {}
 
 
 func current_step() -> Dictionary:
@@ -128,6 +136,10 @@ func _complete_task() -> void:
 	var earned := rating()
 	completed.append(int(done.id))
 	star_log[int(done.id)] = earned.stars
+	for s in done.steps: # things she kept carrying for this task are finished with (they stay gone)
+		if (s.type == "pickup" or s.type == "use") and inventory.has(s.item):
+			inventory.erase(s.item)
+	inventory_changed.emit()
 	task_used.clear()
 	var opened: Array = []
 	for r in done.get("unlocks", []):
@@ -163,7 +175,7 @@ func respawn() -> void:
 	inventory.clear()
 	task_used.clear()
 	hiding = {}
-	sneaking = false
+	stop_walking()
 	player_pos = world.respawn
 	player_facing = PI / 2.0
 	meter = 0.0
@@ -237,14 +249,19 @@ func _apply_baddies() -> void:
 
 # ---------- the main step ----------
 
-## move_dir is a world-space direction (length <= 1). Does nothing while she is caught (until respawn()).
-func tick(dt: float, move_dir: Vector2, want_sneak: bool) -> void:
+## She walks along `route` (set by a tap). `move_dir` (a world-space direction, length <= 1) is only for tests and
+## overrides the route. Does nothing while she is caught (until respawn()).
+func tick(dt: float, move_dir: Vector2 = Vector2.ZERO) -> void:
 	if result != "":
 		return
 	elapsed += dt
-	sneaking = want_sneak
+	var walking_route := false
+	if move_dir.length() <= 0.001 and not is_hiding():
+		move_dir = _route_dir()
+		walking_route = move_dir != Vector2.ZERO
+	var before := player_pos
 	if not is_hiding() and move_dir.length() > 0.001:
-		var speed := SNEAK_SPEED if sneaking else WALK_SPEED
+		var speed := WALK_SPEED
 		player_facing = move_dir.angle()
 		var p := player_pos + move_dir.normalized() * move_dir.length() * speed * dt
 		p = Geo.resolve_circle(p, PLAYER_RADIUS, Geo.near(p, PLAYER_RADIUS + 1.0, blockers))
@@ -253,6 +270,11 @@ func tick(dt: float, move_dir: Vector2, want_sneak: bool) -> void:
 			clampf(p.x, b.position.x + PLAYER_RADIUS, b.end.x - PLAYER_RADIUS),
 			clampf(p.y, b.position.y + PLAYER_RADIUS, b.end.y - PLAYER_RADIUS))
 		_check_locked_door(dt)
+	if walking_route:
+		_stuck = _stuck + dt if player_pos.distance_to(before) < WALK_SPEED * dt * 0.25 else 0.0
+		if _stuck > STUCK_SECONDS:
+			stop_walking()
+	_arrive()
 	for b in baddies:
 		_update_baddie(b, dt)
 	_detect(dt)
@@ -263,6 +285,18 @@ func tick(dt: float, move_dir: Vector2, want_sneak: bool) -> void:
 		var r := world.room_by_id(step.room)
 		if not r.is_empty() and Geo.point_in_rect(player_pos, (r.interior as Rect2).grow(-0.5)):
 			_complete_step()
+	elif step.get("type", "") == "watch" and _baddie_on(step.target):
+		_complete_step()
+
+
+## True when a baddie is standing on the target (a "watch" step: the teacher steps on the doormat).
+func _baddie_on(target_id: String) -> bool:
+	for t in world.targets:
+		if t.id == target_id:
+			for b in baddies:
+				if (t.rect as Rect2).has_point(b.pos):
+					return true
+	return false
 
 
 func _check_locked_door(dt: float) -> void:
@@ -326,7 +360,7 @@ func _detect(dt: float) -> void:
 			sees = true
 			caught_by = b.kind
 	if sees:
-		meter += METER_FILL * (0.5 if sneaking else 1.0) * dt
+		meter += METER_FILL * dt
 	else:
 		meter -= METER_DRAIN * dt
 	meter = clampf(meter, 0.0, 1.0)
@@ -342,6 +376,9 @@ func _detect(dt: float) -> void:
 func reachable() -> Dictionary:
 	if is_hiding():
 		return {"kind": "hide", "hide": hiding, "rect": hiding.rect}
+	var wanted := _wanted_near()
+	if not wanted.is_empty():
+		return wanted
 	var best := {}
 	var best_d := REACH
 	for p in world.pickups:
@@ -358,10 +395,34 @@ func reachable() -> Dictionary:
 			best = {"kind": "target", "target": t, "rect": t.rect}
 	for h in world.hides:
 		var d3 := Geo.dist_to_rect(player_pos, h.rect)
-		if d3 < best_d:
+		if d3 < best_d or (d3 <= best_d and best.get("kind", "") == "target" and not _in_task(best.target.id)):
 			best_d = d3
 			best = {"kind": "hide", "hide": h, "rect": h.rect}
 	return best
+
+
+## The thing the current step is about, when she is close to it. It wins over anything else that is just as close
+## (Teddy lies on the bed, but when the step says "fold your bed" the bed is what she means).
+func _wanted_near() -> Dictionary:
+	var step := current_step()
+	match step.get("type", ""):
+		"pickup":
+			var p := pick_by_id(step.item)
+			if not p.is_empty() and not picked.has(p.uid) and Geo.dist_to_rect(player_pos, p.rect) < REACH:
+				return {"kind": "pickup", "pickup": p, "rect": p.rect}
+		"use", "do":
+			for t in world.targets:
+				if t.id == step.target and Geo.dist_to_rect(player_pos, t.rect) < REACH:
+					return {"kind": "target", "target": t, "rect": t.rect}
+	return {}
+
+
+## True when a step of the current task uses this target.
+func _in_task(target_id: String) -> bool:
+	for s in task.get("steps", []):
+		if s.get("target", "") == target_id:
+			return true
+	return false
 
 
 func item_name(id: String) -> String:
@@ -369,17 +430,26 @@ func item_name(id: String) -> String:
 	return p.get("name", id)
 
 
+## Does what the nearest thing in reach asks for (used by tests; the game uses taps).
 func use() -> void:
 	if result != "":
 		return
-	var near := reachable()
+	_act(reachable())
+
+
+## Uses one thing: {kind: "pickup"|"target"|"hide", ...} as reachable() describes it.
+func _act(near: Dictionary) -> void:
 	if near.is_empty():
 		return
 	match near.kind:
 		"hide":
-			toggle_hide()
+			if is_hiding():
+				toggle_hide()
+			else:
+				_enter_hide(near.hide)
 		"pickup":
 			if inventory.size() >= MAX_ITEMS:
+				toast.emit("bagFull", {})
 				return
 			inventory.append(near.pickup.uid)
 			picked[near.pickup.uid] = true
@@ -388,17 +458,21 @@ func use() -> void:
 			_sync_steps()
 		"target":
 			var step := current_step()
-			if step.get("type", "") == "use" and step.target == near.target.id:
-				if not inventory.has(step.item):
-					toast.emit("needItem", {"item": item_name(step.item)})
-					return
-				inventory.erase(step.item)
-				task_used.append(step.item)
-				inventory_changed.emit()
+			var type: String = step.get("type", "")
+			if (type == "use" or type == "do") and step.target == near.target.id:
+				if type == "use":
+					if not inventory.has(step.item):
+						toast.emit("needItem", {"item": item_name(step.item)})
+						return
+					if not step.get("keep", false): # "keep": the item stays in her hands (Teddy, the watering can)
+						inventory.erase(step.item)
+						task_used.append(step.item)
+					inventory_changed.emit()
 				target_used.emit(near.target.id)
 				_complete_step()
 				return
-			for s in task.get("steps", []):
+			for i in range(step_index, task.get("steps", []).size()):
+				var s: Dictionary = task.steps[i]
 				if s.type == "use" and s.target == near.target.id and not inventory.has(s.item):
 					toast.emit("needItem", {"item": item_name(s.item)})
 					return
@@ -415,9 +489,120 @@ func toggle_hide() -> void:
 	var near := reachable()
 	if near.get("kind", "") != "hide":
 		return
+	_enter_hide(near.hide)
+
+
+func _enter_hide(spot: Dictionary) -> void:
+	stop_walking()
 	_pre_hide = player_pos
-	hiding = near.hide
-	player_pos = (near.hide.rect as Rect2).get_center()
+	hiding = spot
+	player_pos = (spot.rect as Rect2).get_center()
+
+
+# ---------- taps: walk there, then do the thing ----------
+
+func _checker() -> LevelCheck:
+	if _chk == null:
+		_chk = LevelCheck.new(world, locked)
+	return _chk
+
+
+func stop_walking() -> void:
+	route.clear()
+	pending = {}
+	_stuck = 0.0
+
+
+## The way to a point or to within `within` metres of a rect, with the corners cut off ([] when there is none).
+func plan_route(rect: Rect2, within: float) -> Array[Vector2]:
+	var chk := _checker()
+	return chk.smooth(chk.path_to_rect(player_pos, rect, within))
+
+
+## A tap on the ground: walk there (or as near as she can get).
+func tap_ground(p: Vector2) -> void:
+	if result != "":
+		return
+	if is_hiding():
+		toggle_hide()
+	stop_walking()
+	var spot := Rect2(p - Vector2(0.05, 0.05), Vector2(0.1, 0.1))
+	var path := plan_route(spot, 0.3)
+	if path.is_empty():
+		path = plan_route(spot, 1.2)
+	if path.is_empty():
+		for d in closed_doors:
+			if Geo.dist_to_rect(p, d.rect) < 1.2:
+				toast.emit("doorLocked", {})
+		return
+	route = path
+
+
+## A tap on a thing ({kind, ...} like reachable()): show what it is and, when it makes sense, walk there and use it.
+func tap_thing(near: Dictionary) -> void:
+	if result != "" or near.is_empty():
+		return
+	if is_hiding():
+		toggle_hide()
+	stop_walking()
+	var info := hint_for(near)
+	hint.emit(near.rect, info.item, info.key, info.vars)
+	if not info.go:
+		return
+	if Geo.dist_to_rect(player_pos, near.rect) < REACH - 0.15:
+		_act(near)
+		return
+	var path := plan_route(near.rect, REACH - 0.2)
+	if path.is_empty():
+		toast.emit("doorLocked", {})
+		return
+	route = path
+	pending = near
+
+
+## What a bubble over a tapped thing says: {item: the item to draw or "", key, vars, go: whether she walks there}.
+func hint_for(near: Dictionary) -> Dictionary:
+	match near.kind:
+		"pickup":
+			if inventory.size() >= MAX_ITEMS:
+				return {"item": "", "key": "bagFull", "vars": {}, "go": false}
+			return {"item": near.pickup.uid, "key": "grab", "vars": {"item": near.pickup.name}, "go": true}
+		"hide":
+			return {"item": "", "key": "hideHere", "vars": {}, "go": true}
+		"target":
+			var step := current_step()
+			var type: String = step.get("type", "")
+			if (type == "use" or type == "do") and step.target == near.target.id:
+				if type == "do":
+					return {"item": "", "key": "@text", "vars": {"text": step.text}, "go": true} # "@text": the step's own words
+				if not inventory.has(step.item):
+					return {"item": step.item, "key": "needShort", "vars": {"item": item_name(step.item)}, "go": false}
+				return {"item": step.item, "key": "useItem", "vars": {"item": item_name(step.item)}, "go": true}
+			for i in range(step_index, task.get("steps", []).size()):
+				var s: Dictionary = task.steps[i]
+				if s.type == "use" and s.target == near.target.id and not inventory.has(s.item):
+					return {"item": s.item, "key": "needShort", "vars": {"item": item_name(s.item)}, "go": false}
+			return {"item": "", "key": "notYetShort", "vars": {}, "go": false}
+	return {"item": "", "key": "notYetShort", "vars": {}, "go": false}
+
+
+func _route_dir() -> Vector2:
+	while not route.is_empty() and player_pos.distance_to(route[0]) < ARRIVE:
+		route.pop_front()
+	if route.is_empty():
+		return Vector2.ZERO
+	return (route[0] - player_pos).normalized()
+
+
+## Uses the tapped thing as soon as she is close enough.
+func _arrive() -> void:
+	if pending.is_empty():
+		return
+	if Geo.dist_to_rect(player_pos, pending.rect) < REACH - 0.1 or route.is_empty():
+		var thing := pending
+		stop_walking()
+		if Geo.dist_to_rect(player_pos, thing.rect) < REACH:
+			_act(thing)
 
 
 func call_pet() -> void:

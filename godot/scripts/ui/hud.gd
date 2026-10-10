@@ -18,13 +18,12 @@ var _meter_fill: ColorRect
 var _meter_track: Panel
 var _pet_btn: Button
 var _slots: HBoxContainer
-var _hint: Label
 var _toast: Label
 var _toast_time := 0.0
 var _overlay: Control
 
 
-func setup(p_view: LevelView, show_keys: bool) -> void:
+func setup(p_view: LevelView) -> void:
 	view = p_view
 	logic = p_view.logic
 	layer = 10
@@ -73,12 +72,11 @@ func setup(p_view: LevelView, show_keys: bool) -> void:
 	top.add_child(meter_chip)
 	_pet_btn = UIKit.button("", "dark", 20, func() -> void: logic.call_pet())
 	top.add_child(_pet_btn)
-	top.add_child(UIKit.button(GameData.t("view"), "dark", 20, func() -> void: view.toggle_camera()))
 	var pause := UIKit.button("II", "dark", 20, func() -> void: pause_requested.emit())
 	pause.custom_minimum_size = Vector2(52, 0)
 	top.add_child(pause)
 
-	# bottom: hint, item slots, toast
+	# bottom: item slots, toast
 	var bottom := VBoxContainer.new()
 	bottom.set_anchors_preset(Control.PRESET_CENTER_BOTTOM)
 	bottom.grow_horizontal = Control.GROW_DIRECTION_BOTH
@@ -93,20 +91,11 @@ func setup(p_view: LevelView, show_keys: bool) -> void:
 	_toast.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	_toast.visible = false
 	bottom.add_child(_toast)
-	_hint = UIKit.label("", 22, UIKit.BG)
-	_hint.add_theme_stylebox_override("normal", UIKit.box(UIKit.WHITE, Color(0, 0, 0, 0), 10))
-	_hint.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	_hint.visible = false
-	bottom.add_child(_hint)
 	_slots = HBoxContainer.new()
 	_slots.add_theme_constant_override("separation", 10)
 	_slots.alignment = BoxContainer.ALIGNMENT_CENTER
 	_slots.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	bottom.add_child(_slots)
-	if show_keys:
-		var keys := UIKit.label(GameData.t("keysHelp3d"), 16, Color("8a8a85"))
-		keys.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-		bottom.add_child(keys)
 
 	logic.steps_changed.connect(_refresh_steps)
 	logic.inventory_changed.connect(_refresh_slots)
@@ -131,32 +120,6 @@ func _process(delta: float) -> void:
 		_toast_time -= delta
 		if _toast_time <= 0.0:
 			_toast.visible = false
-	_update_hint()
-
-
-func _update_hint() -> void:
-	var near := logic.reachable()
-	if near.is_empty() or logic.result != "":
-		_hint.visible = false
-		return
-	var touch := view.touch != null
-	var text := ""
-	match near.kind:
-		"pickup":
-			text = ("" if touch else "E: ") + GameData.t("grab", {"item": near.pickup.name})
-		"target":
-			var item := ""
-			for s in logic.task.get("steps", []):
-				if s.type == "use" and s.target == near.target.id:
-					item = s.item
-			if item != "" and logic.inventory.has(item):
-				text = ("" if touch else "E: ") + GameData.t("useItem", {"item": logic.item_name(item)})
-			else:
-				text = ("" if touch else "E: ") + GameData.L(near.target.label)
-		"hide":
-			text = ("" if touch else "H: ") + (GameData.t("getOut") if logic.is_hiding() else GameData.t("hideHere"))
-	_hint.text = text
-	_hint.visible = true
 
 
 func _refresh_steps() -> void:
@@ -294,12 +257,19 @@ func _show_caught() -> void:
 func _show_task_done(task: Dictionary, rating: Dictionary, opened: Array) -> void:
 	var box := _make_overlay()
 	box.add_child(_center(UIKit.label(GameData.t("taskComplete", {"n": int(task.id)}), 24, UIKit.DIM)))
-	box.add_child(_center(UIKit.label(GameData.t("prankDone"), 100, UIKit.WHITE, true)))
+	var is_prank: bool = task.get("kind", ["prank"]).has("prank")
+	box.add_child(_center(UIKit.label(GameData.t("prankDone" if is_prank else "wellDone"), 100, UIKit.WHITE, true)))
 	var text := UIKit.label(GameData.L(task.completeText), 28, UIKit.LIGHT)
 	text.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	text.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	text.custom_minimum_size = Vector2(760, 0)
 	box.add_child(text)
+	if task.has("message"): # the good message every task leaves (see CLAUDE.md)
+		var msg := UIKit.label(GameData.L(task.message), 24, UIKit.WHITE)
+		msg.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		msg.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		msg.custom_minimum_size = Vector2(760, 0)
+		box.add_child(msg)
 	var sr := UIKit.StarRow.new()
 	sr.earned = [true, rating.not_seen, rating.quick]
 	var center := CenterContainer.new()
@@ -308,7 +278,7 @@ func _show_task_done(task: Dictionary, rating: Dictionary, opened: Array) -> voi
 	var labels := HBoxContainer.new()
 	labels.alignment = BoxContainer.ALIGNMENT_CENTER
 	labels.add_theme_constant_override("separation", 0)
-	var texts := [GameData.t("starPrankDone"), GameData.t("starNotSeenLabel") if sr.earned[1] else GameData.t("starNotSeen"), GameData.t("starQuickLabel") if sr.earned[2] else GameData.t("starBeQuicker")]
+	var texts := [GameData.t("starPrankDone" if is_prank else "starTaskDone"), GameData.t("starNotSeenLabel") if sr.earned[1] else GameData.t("starNotSeen"), GameData.t("starQuickLabel") if sr.earned[2] else GameData.t("starBeQuicker")]
 	for i in 3:
 		var l := UIKit.label(texts[i], 22, UIKit.WHITE if sr.earned[i] else UIKit.DIM)
 		l.custom_minimum_size = Vector2(2.6 * sr.star_r, 0)

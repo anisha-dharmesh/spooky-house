@@ -4,7 +4,6 @@ extends Node
 var _title: TitleScreen
 var _view: LevelView
 var _hud: Hud
-var _touch: TouchControls
 var _ui_layer: CanvasLayer
 
 
@@ -36,33 +35,20 @@ func _ready() -> void:
 		show_title()
 
 
-func _use_touch() -> bool:
-	if "--touch" in OS.get_cmdline_user_args() or OS.has_feature("mobile"):
-		return true
-	if OS.has_feature("web"):
-		return bool(JavaScriptBridge.eval("(('ontouchstart' in window) || (navigator.maxTouchPoints > 0))", true))
-	return false
-
-
 func show_title() -> void:
 	_clear_game()
 	_title = TitleScreen.new()
 	_title.play_pressed.connect(func() -> void: start_game())
-	_title.language_chosen.connect(func(lang: String) -> void:
-		GameData.set_lang(lang)
-		SaveGame.save_lang(lang)
-		show_title())
 	_ui_layer.add_child(_title)
 
 
 func _clear_game() -> void:
-	for n in [_title, _view, _hud, _touch]:
+	for n in [_title, _view, _hud]:
 		if is_instance_valid(n):
 			n.queue_free()
 	_title = null
 	_view = null
 	_hud = null
-	_touch = null
 
 
 ## Starts the world. `from_task` (a task id, for testing: --task 2) skips ahead as if the tasks before it were done;
@@ -81,13 +67,7 @@ func start_game(from_task: int = 0) -> void:
 	_view.setup(done)
 	_hud = Hud.new()
 	add_child(_hud)
-	var touch := _use_touch()
-	if touch:
-		_touch = TouchControls.new()
-		_ui_layer.add_child(_touch)
-		_touch.setup(func() -> void: _view.logic.use(), func() -> void: _view.logic.toggle_hide())
-		_view.touch = _touch
-	_hud.setup(_view, not touch)
+	_hud.setup(_view)
 	# handy for taking screenshots: --third starts in third person, --at x,y starts somewhere else
 	var args := OS.get_cmdline_user_args()
 	if "--at" in args:
@@ -135,32 +115,38 @@ func _respawn() -> void:
 	_resume()
 
 
-## `godot --headless --path godot -- --selftest`: presses keys in the real game and checks the controls work.
+## `godot --headless --path godot -- --selftest`: clicks in the real game and checks the controls work.
 func _selftest() -> void:
-	start_game(1)
-	var start := _view.logic.player_pos
-	Input.action_press("move_left")
-	for i in 90:
-		await get_tree().process_frame
-	Input.action_release("move_left")
-	var moved := _view.logic.player_pos.distance_to(start)
-	_view.toggle_camera()
-	var cam_mode := _view.cam_mode
-	# grab the cement by standing next to it and pressing Use
+	start_game(7)
+	# click the ground a little way off and let her walk there
 	var cement: Dictionary = _view.logic.pick_by_id("gh_kitchen/cement_bag_1")
-	_view.logic.player_pos = (cement.rect as Rect2).get_center() + Vector2(1.0, 0)
-	var ev := InputEventAction.new()
-	ev.action = "use"
-	ev.pressed = true
-	Input.parse_input_event(ev)
-	await get_tree().process_frame
-	await get_tree().process_frame
-	var has_cement := _view.logic.inventory.has("gh_kitchen/cement_bag_1")
-	print("moved %.2f m holding left; camera mode %d; picked up cement: %s" % [moved, cam_mode, has_cement])
-	var ok: bool = moved > 1.0 and cam_mode == 1 and has_cement
+	var target := (cement.rect as Rect2).get_center()
+	_view.logic.player_pos = target + Vector2(1.0, 0.0) # right beside it, so it is on screen
+	for i in 3:
+		await get_tree().process_frame
+	_view._update_camera(1.0, true) # the camera jumps to her
+	var cam := _view.cam
+	var click_at := cam.unproject_position(Vector3(target.x, 0.2, target.y))
+	var click := InputEventMouseButton.new()
+	click.button_index = MOUSE_BUTTON_LEFT
+	click.pressed = true
+	var sent := get_window().get_final_transform() * click_at # (the window may be scaled)
+	click.position = sent
+	click.global_position = sent
+	Input.parse_input_event(click)
+	for i in 60:
+		await get_tree().process_frame
+	var bubble: bool = _view._bubble.visible
+	for i in 1800:
+		if _view.logic.inventory.has("gh_kitchen/cement_bag_1"):
+			break
+		await get_tree().process_frame
+	var has_cement: bool = _view.logic.inventory.has("gh_kitchen/cement_bag_1")
+	print("clicked the cement: bubble shown: %s; picked up cement: %s" % [bubble, has_cement])
+	var ok: bool = bubble and has_cement
 
-	# finish task 2 in the real game: the store room door should slide away and the "prank done" screen should show
-	start_game(2)
+	# finish the lemon task (8) in the real game: the store room door should slide away and the "prank done" screen should show
+	start_game(8)
 	var logic := _view.logic
 	var slabs_before := _view._door_slabs.size()
 	var spots := [logic.pick_by_id("gh_kitchen/lemon_1").rect]
@@ -174,7 +160,7 @@ func _selftest() -> void:
 	await get_tree().create_timer(1.3).timeout # the door slides open, then the screen comes up
 	var slabs_after := _view._door_slabs.size()
 	var screen := _hud.has_overlay()
-	print("task 2 done: door slabs %d -> %d; prank-done screen up: %s; world waiting: %s" % [slabs_before, slabs_after, screen, not _view.active])
+	print("lemon task done: door slabs %d -> %d; prank-done screen up: %s; world waiting: %s" % [slabs_before, slabs_after, screen, not _view.active])
 	ok = ok and slabs_before > 0 and slabs_after == 0 and screen and not _view.active
 	_resume()
 	logic.result = "caught"
