@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<title>Anisha's House – Coming soon</title>
+<style>
+  :root{--ink:#3b2a4a;--berry:#e0457b;--sun:#ffd23f}
+  html,body{margin:0;height:100%;overflow:hidden;background:#bfe6fb;touch-action:none;-webkit-user-select:none;user-select:none;font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif}
+  #view{position:fixed;inset:0;overflow:hidden;cursor:pointer}
+  #world{position:absolute;left:0;top:0;width:4284px;height:1000px;transform-origin:0 0}
+  #street{position:absolute;left:0;top:0;width:4284px;height:1000px;background:
+    linear-gradient(#bfe6fb 0,#d9f1fc 380px,transparent 381px),
+    linear-gradient(transparent 0,transparent 480px,#a6dd8c 481px,#a6dd8c 640px,transparent 641px),
+    linear-gradient(transparent 0,transparent 640px,#e6e0d6 641px,#e6e0d6 700px,#565b66 701px,#565b66 870px,#e6e0d6 871px)}
+  .roaddash{position:absolute;top:780px;height:10px;width:90px;background:#fff;border-radius:5px}
+  .it{position:absolute;pointer-events:none}
+  .cloud{position:absolute;height:60px;background:#fff;border-radius:60px;opacity:.95}
+  #sun{position:absolute;left:3980px;top:50px;width:130px;height:130px;border-radius:50%;background:var(--sun);box-shadow:0 0 0 18px rgba(255,210,63,.3)}
+  #anisha{position:absolute;width:160px;height:300px;transform-origin:50% 100%;pointer-events:none;will-change:transform}
+  #anisha img{width:100%;height:100%;display:block}
+  #spot{position:absolute;width:60px;height:24px;margin:-12px 0 0 -30px;border-radius:50%;border:5px solid var(--berry);opacity:0;pointer-events:none}
+  #spot.go{animation:ping .7s ease-out}
+  @keyframes ping{from{opacity:1;transform:scale(.3)}to{opacity:0;transform:scale(1.6)}}
+  #title{position:fixed;left:50%;top:max(14px,env(safe-area-inset-top));transform:translateX(-50%);text-align:center;pointer-events:none;width:min(92vw,720px)}
+  #title .logo{display:inline-block;background:#fff;border:5px solid var(--ink);border-radius:26px;padding:10px 26px 12px;box-shadow:0 7px 0 var(--ink)}
+  #title h1{margin:0;font-size:clamp(22px,5.2vw,44px);color:var(--ink);letter-spacing:.5px}
+  #title h1 b{color:var(--berry)}
+  #title p{margin:2px 0 0;font-size:clamp(15px,3.2vw,24px);font-weight:700;color:#fff;background:var(--berry);border-radius:999px;padding:3px 18px;display:inline-block;transform:translateY(8px);border:4px solid var(--ink)}
+  #hint{position:fixed;left:50%;bottom:max(16px,env(safe-area-inset-bottom));transform:translateX(-50%);background:#fff;border:4px solid var(--ink);border-radius:999px;padding:8px 20px;font-weight:700;color:var(--ink);font-size:clamp(14px,3vw,20px);transition:opacity .6s;pointer-events:none;white-space:nowrap;animation:bob 1.6s ease-in-out infinite}
+  #hint.off{opacity:0}
+  @keyframes bob{50%{margin-bottom:8px}}
+</style>
+</head>
+<body>
+<div id="view">
+  <div id="world">
+    <div id="street"></div>
+    <div id="spot"></div>
+    <div id="anisha"><img id="frame" src="img/anisha_idle.png" alt="Anisha" draggable="false"></div>
+  </div>
+</div>
+<div id="title"><div class="logo"><h1>Anisha's <b>House</b></h1></div><br><p>Coming soon!</p></div>
+<div id="hint">Tap anywhere – Anisha will go there</div>
+<script>
+(() => {
+  const W = 4284, H = 1000;
+  const Y_MIN = 700, Y_MAX = 975;          // the walkable pavement and road
+  const view = document.getElementById('view'), world = document.getElementById('world');
+  const who = document.getElementById('anisha'), frame = document.getElementById('frame');
+  const spot = document.getElementById('spot'), hint = document.getElementById('hint');
+  const street = document.getElementById('street');
+  const add = (f, x, bottom, w, flip) => {            // x = left edge, bottom = ground line, w = drawn width
+    const i = new Image(); i.src = 'img/' + f + '.png'; i.className = 'it'; i.draggable = false;
+    i.style.cssText = `left:${x}px;width:${w}px;top:${bottom}px;transform:translateY(-100%)${flip ? ' scaleX(-1)' : ''};z-index:${bottom}`;
+    street.appendChild(i);
+  };
+  for (let x = 20; x < W; x += 200) { const d = document.createElement('div'); d.className = 'roaddash'; d.style.left = x + 'px'; street.appendChild(d); }
+  [[120,120,380],[800,150,440],[1700,90,360],[2500,130,420],[3300,110,380],[3900,100,420]].forEach(([x,y,w]) => { const c = document.createElement('div'); c.className = 'cloud'; c.style.cssText = `left:${x}px;top:${y}px;width:${w*0.5}px`; street.appendChild(c); });
+  { const sun = document.createElement('div'); sun.id = 'sun'; street.appendChild(sun); }
+  const B = 640;                                       // back pavement ground line
+  [['bld_little_house',30,B,340],['tree',380,B,170],['bld_school',560,B,600],['street_lamp',1180,B,70],
+   ['bld_playground_gate',1260,B,340],['mailbox',1620,B,70],['bld_garden_gate',1720,B,320],['blossom_tree',2060,B,170],
+   ['bld_pool',2260,B,440],['signpost',2720,B,100],['bld_hospital',2840,B,560],['bus_stop',3420,B,260],['traffic_cone',3720,B,50],
+   ['bld_palace',3800,B,900],['bush',1160,B,110],['hedge',2660,B,200],['tree',4150,B,170],
+   ['car_parked',380,800,260],['bicycle_big',900,820,200],['school_bus',1500,810,420],['bullet_bike',2300,820,230],['ambulance',3000,815,380],['car_parked',3800,800,260,true],
+   ['char_granny',1800,985,140],['char_rani',2050,985,105],['char_kamala',2170,985,105],['char_kabla',2290,985,105],['char_navya',3050,985,105]
+  ].forEach(a => add(...a));
+  const img = n => `img/anisha_${n}.png`;
+  const pad = n => String(n).padStart(2, '0');
+  const SETS = {
+    walk: ['walk_01', 'walk_03', 'walk_02', 'walk_04'],
+    run: [1,2,3,4,5,6,7,8].map(i => 'run_' + pad([1,3,4,2,5,6,7,8][i-1])),
+    sit: Array.from({length: 29}, (_, i) => 'pickup_' + pad(i + 1)),
+  };
+  Object.values(SETS).flat().concat(['idle', 'think_01', 'blink_01']).forEach(n => { new Image().src = img(n); });
+
+  let s = 1, cam = 0;
+  const pos = {x: 520, y: 900}, target = {x: 520, y: 900};
+  let face = 1, motion = 'idle', clock = 0, idle = 0, blink = 3, sitT = -1, last = performance.now();
+
+  function layout() {
+    s = Math.max(innerHeight / H, innerWidth / W);
+    world.style.transform = `translate(${-cam * s}px,0) scale(${s})`;
+  }
+  function clampCam() {
+    const vw = innerWidth / s;
+    const want = pos.x - vw / 2;
+    cam += (Math.max(0, Math.min(W - vw, want)) - cam) * 0.08;
+  }
+  addEventListener('resize', layout);
+
+  view.addEventListener('pointerdown', e => {
+    const wx = e.clientX / s + cam, wy = e.clientY / s;
+    target.x = Math.max(80, Math.min(W - 80, wx));
+    target.y = Math.max(Y_MIN, Math.min(Y_MAX, wy));
+    sitT = -1;
+    spot.style.left = target.x + 'px'; spot.style.top = target.y + 'px';
+    spot.classList.remove('go'); void spot.offsetWidth; spot.classList.add('go');
+    hint.classList.add('off');
+  });
+
+  function show(n) { const src = img(n); if (!frame.src.endsWith(src)) frame.src = src; }
+
+  function tick(now) {
+    const dt = Math.min(0.05, (now - last) / 1000); last = now; clock += dt;
+    const dx = target.x - pos.x, dy = target.y - pos.y, d = Math.hypot(dx, dy);
+    if (d > 6) {
+      const run = d > 700;
+      const v = (run ? 640 : 330) * dt;
+      pos.x += dx / d * Math.min(v, d); pos.y += dy / d * Math.min(v, d);
+      if (Math.abs(dx) > 4) face = dx > 0 ? 1 : -1;
+      const m = run ? 'run' : 'walk';
+      if (m !== motion) { motion = m; clock = 0; }
+      const set = SETS[m], dur = run ? 0.1 : 0.12;
+      show(set[Math.floor(clock / dur) % set.length]);
+      idle = 0; sitT = -1;
+    } else {
+      if (motion !== 'idle') { motion = 'idle'; idle = 0; sitT = -1; blink = 2.5; }
+      idle += dt; blink -= dt;
+      if (sitT >= 0) {
+        sitT += dt;
+        const i = Math.floor(sitT / 0.06);
+        if (i >= SETS.sit.length) { sitT = -1; idle = 0; show('idle'); } else show(SETS.sit[i]);
+      } else if (idle > 7) { sitT = 0; }                       // sits for a rest if left alone
+      else if (blink < 0) { blink = Math.random() * 3 + 2.5; show('blink_01'); setTimeout(() => { if (motion === 'idle' && sitT < 0) show('idle'); }, 140); }
+      else if (idle % 8 > 4.2 && idle % 8 < 5.6) show('think_01');
+      else if (!frame.src.endsWith('blink_01.png')) show('idle');
+    }
+    const depth = 0.8 + 0.35 * (pos.y - Y_MIN) / (Y_MAX - Y_MIN);
+    who.style.left = (pos.x - 80) + 'px'; who.style.top = (pos.y - 300) + 'px';
+    who.style.transform = `scale(${face * depth * 0.95},${depth * 0.95})`;
+    who.style.zIndex = Math.round(pos.y);
+    clampCam(); layout();
+    requestAnimationFrame(tick);
+  }
+  layout(); requestAnimationFrame(tick);
+})();
+</script>
+</body>
+</html>
